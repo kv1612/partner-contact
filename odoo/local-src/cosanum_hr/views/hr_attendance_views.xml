@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="hr_attendance.hr_attendance_action_graph" model="ir.actions.act_window">
+    <field name="view_mode">pivot,graph</field>
+  </record>
+</odoo>

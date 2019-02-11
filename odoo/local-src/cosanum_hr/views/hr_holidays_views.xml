@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="hr_holidays.action_hr_available_holidays_report" model="ir.actions.act_window">
+    <field name="view_mode">pivot,graph,calendar,form</field>
+  </record>
+
+  <record id="hr_holidays.action_window_leave_graph" model="ir.actions.act_window.view">
+    <field name="sequence" eval="2"/>
+  </record>
+
+  <record id="action_window_leave_pivot" model="ir.actions.act_window.view">
+    <field name="sequence" eval="1"/>
+    <field name="view_mode">pivot</field>
+    <field name="act_window_id" ref="hr_holidays.action_hr_available_holidays_report"/>
+  </record>
+</odoo>
