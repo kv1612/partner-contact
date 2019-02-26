@@ -12,11 +12,13 @@
         'hr',
         'hr_attendance',
         'hr_holidays',
+        'hr_attendance_report_theoretical_time',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
         'views/hr_attendance_views.xml',
         'views/hr_holidays_views.xml',
+        'views/hr_attendance_theoretical_time_views.xml'
     ],
     'installable': True,
 }
