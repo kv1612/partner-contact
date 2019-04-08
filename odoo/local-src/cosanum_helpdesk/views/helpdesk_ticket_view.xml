@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="helpdesk_ticket_view_form" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.form</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="vendor_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="helpdesk_tickets_view_tree" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.tree</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_tree" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="vendor_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="helpdesk_tickets_view_search" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.search</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_search" />
+        <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <!-- search by Vendor -->
+                    <field name="vendor_id"/>
+                </xpath>
+
+                <xpath expr="//group[@expand='0']" position="inside">
+                    <!-- group by by Vendor -->
+                    <filter string="Vendor" name="vendor" context="{'group_by':'vendor_id'}"/>
+                </xpath>
+
+        </field>
+    </record>
+
+</odoo>
