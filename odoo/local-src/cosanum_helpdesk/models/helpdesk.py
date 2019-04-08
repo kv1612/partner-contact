@@ -12,3 +12,6 @@ class HelpdeskTicket(models.Model):
         string='Vendor',
         domain=[('supplier', '=', True)],
     )
+
+    # field overloading from text to html
+    description = fields.Html()
