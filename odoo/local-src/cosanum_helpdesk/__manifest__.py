@@ -8,6 +8,7 @@
     'author': 'Camptocamp',
     'license': 'AGPL-3',
     'depends': [
+        'cosanum_base',
         'helpdesk',
     ],
     'website': 'http://www.camptocamp.com',
