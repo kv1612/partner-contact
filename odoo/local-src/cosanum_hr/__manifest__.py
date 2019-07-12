@@ -9,6 +9,7 @@
     'author': 'Camptocamp',
     'license': 'AGPL-3',
     'depends': [
+        'cosanum_base',
         'hr',
         'hr_attendance',
         'hr_holidays',
