@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="document_page_procedure.menu_mgmtsystem_manuals_procedures" model="ir.ui.menu">
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_report"/>
+    </record>
+
+    <record id="document_page_work_instruction.menu_mgmtsystem_manuals_work_instructions" model="ir.ui.menu">
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_report"/>
+    </record>
+
+    <record id="mgmtsystem_manual.menu_mgmtsystem_manuals_manuals" model="ir.ui.menu">
+        <field name="parent_id" ref="mgmtsystem.menu_mgmtsystem_report"/>
+    </record>
+
+</odoo>
