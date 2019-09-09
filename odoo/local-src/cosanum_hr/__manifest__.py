@@ -18,7 +18,8 @@
     'data': [
         'views/hr_attendance_views.xml',
         'views/hr_holidays_views.xml',
-        'views/hr_attendance_theoretical_time_views.xml'
+        'views/hr_attendance_theoretical_time_views.xml',
+        'views/hr_holiday_report.xml'
     ],
     'installable': False,
 }
