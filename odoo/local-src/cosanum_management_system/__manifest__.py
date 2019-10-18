@@ -17,5 +17,5 @@
     'data': [
         'views/menus.xml'
     ],
-    'installable': True,
+    'installable': False,
 }
