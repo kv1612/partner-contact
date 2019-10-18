@@ -15,5 +15,5 @@
     'data': [
         'views/helpdesk_ticket_view.xml',
     ],
-    'installable': True,
+    'installable': False,
 }
