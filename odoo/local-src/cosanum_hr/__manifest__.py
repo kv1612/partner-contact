@@ -20,5 +20,5 @@
         'views/hr_holidays_views.xml',
         'views/hr_attendance_theoretical_time_views.xml'
     ],
-    'installable': True,
+    'installable': False,
 }
