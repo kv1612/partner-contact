@@ -3,7 +3,7 @@
 {
     'name': 'Stock Warehouse Block Auto Config',
     'summary': 'Prevent Warehouse Routes Automatic Configuration',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'category': 'Warehouse',
     'author': 'Camptocamp',
     'license': 'AGPL-3',
@@ -14,5 +14,5 @@
     'data': [
         'views/stock_warehouse_views.xml',
     ],
-    'installable': False,
+    'installable': True,
 }
