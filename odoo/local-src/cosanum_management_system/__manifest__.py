@@ -3,7 +3,7 @@
 {
     'name': 'Cosanum Management System',
     'summary': 'Specific Management System for Cosanum',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'category': 'Management System',
     'author': 'Camptocamp',
     'license': 'AGPL-3',
@@ -13,9 +13,9 @@
         'mgmtsystem',
         'mgmtsystem_manual',
     ],
-    'website': 'http://www.camptocamp.com',
+    'website': 'https://www.camptocamp.com',
     'data': [
         'views/menus.xml'
     ],
-    'installable': False,
+    'installable': True,
 }
