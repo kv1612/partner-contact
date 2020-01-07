@@ -3,16 +3,16 @@
 {
     'name': 'Cosanum Knowledge',
     'summary': 'Specific Knowledge for Cosanum',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'category': 'Knowledge',
     'author': 'Camptocamp',
     'license': 'AGPL-3',
     'depends': [
         'knowledge',
     ],
-    'website': 'http://www.camptocamp.com',
+    'website': 'https://www.camptocamp.com',
     'data': [
         'views/menus.xml'
     ],
-    'installable': False,
+    'installable': True,
 }
