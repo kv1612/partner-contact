@@ -1,12 +1,12 @@
 # Copyright 2019 Camptocamp SA
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     'name': 'Cosanum Helpdesk',
     'summary': 'Specific Helpdesk features for Cosanum',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'category': 'Helpdesk',
     'author': 'Camptocamp',
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'depends': [
         'cosanum_base',
         'helpdesk',
@@ -15,5 +15,5 @@
     'data': [
         'views/helpdesk_ticket_view.xml',
     ],
-    'installable': False,
+    'installable': True,
 }
