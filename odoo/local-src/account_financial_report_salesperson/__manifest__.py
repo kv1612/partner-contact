@@ -16,5 +16,5 @@
         'wizard/aged_partner_balance_wizard.xml',
         'wizard/open_items_wizard.xml',
     ],
-    'installable': False,
+    'installable': True,
 }
