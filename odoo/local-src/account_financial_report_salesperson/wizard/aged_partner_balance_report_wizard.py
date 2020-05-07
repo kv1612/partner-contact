@@ -4,11 +4,13 @@
 from odoo import api, fields, models
 
 
-class AgedPartnerBalanceWizard(models.TransientModel):
+class AgedPartnerBalanceReportWizard(models.TransientModel):
     """Aged partner balance report wizard."""
 
-    _description = 'Aged Partner Balance Wizard'
-    _inherit = 'aged.partner.balance.wizard'
+    _description = 'Aged Partner Balance Report Wizard'
+    _inherit = 'aged.partner.balance.report.wizard'
+
+    # OCA change the name of the model to add "report" but nothing in xml
 
     user_id = fields.Many2one(comodel_name='res.users', string='Salesman')
 

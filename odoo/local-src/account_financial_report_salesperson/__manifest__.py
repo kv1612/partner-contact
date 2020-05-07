@@ -3,7 +3,7 @@
 {
     'name': 'Account financial report salesperson',
     'summary': 'Inprove OCA account financial report with the salesperson',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'category': 'Accounting',
     'author': 'Camptocamp',
     'license': 'AGPL-3',
@@ -13,7 +13,7 @@
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
-        'wizard/aged_partner_balance_wizard.xml',
+        'wizard/aged_partner_balance_report_wizard.xml',
         'wizard/open_items_wizard.xml',
     ],
     'installable': True,
