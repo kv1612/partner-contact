@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Camptocamp SA
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+  <record id="res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">res.config.settings.form.inherit</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='group_discount_per_so_line']/../../.." position="inside">
+        <div class="col-12 col-lg-6 o_setting_box" title="Industries for which fixed prices are automatically set.">
+          <div class="o_setting_left_pane"></div>
+          <div class="o_setting_right_pane">
+            <label for="pricelist_industry_ids"/>
+            <div class="text-muted">Auto add fixed price industries</div>
+            <div class="mt8">
+              <field name="pricelist_industry_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+            </div>
+          </div>
+        </div>
+       
+      </xpath> 
+    </field>
+  </record>
+
+</odoo>
