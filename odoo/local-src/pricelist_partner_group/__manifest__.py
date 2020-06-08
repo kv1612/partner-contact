@@ -14,6 +14,9 @@
     ],
     "website": "https://www.camptocamp.com",
     "data": [
+        # views
+        "views/res_partner.xml",
+        # wizards
         "wizards/res_config_settings.xml",
     ],
     "installable": True,
