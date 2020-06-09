@@ -9,7 +9,7 @@
     <field name="inherit_id" ref="product.view_partner_property_form"/>
     <field name="arch" type="xml">
       <xpath expr="//field[@name='property_product_pricelist']" position="after">
-        <field name="factor_pricelist_item" attrs="{'invisible': [('is_company','=',False)]}"/>
+        <field name="factor_pricelist_item" attrs="{'invisible': [('is_company', '=', False), ('factor_pricelist_item', '=', False)]}"/>
       </xpath>
     </field>
   </record>

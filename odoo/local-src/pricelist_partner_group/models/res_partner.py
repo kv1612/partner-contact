@@ -30,12 +30,14 @@ class ResPartner(models.Model):
             else:
                 pricelist = record.property_product_pricelist
             factor_item = pricelist.item_ids.filtered(
-                lambda i: i.compute_price == "formula" and not i.product_id
+                lambda i: i.compute_price == "formula"
+                # pricelist items applied on all products
+                and i.applied_on == "3_global"
             )
-            if not factor_item or len(factor_item) > 1:
+            if len(factor_item) > 1:
                 raise exceptions.UserError(
                     _(
-                        "There should be exactly one factor price for pricelist {}"
+                        "There is more than one factor price in pricelist {}"
                     ).format(pricelist.name)
                 )
             record.factor_pricelist_item = factor_item.base_pricelist_id.id
