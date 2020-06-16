@@ -1,0 +1,5 @@
+id,name,full_name
+pricelist_partner_group.industry_ems,EMS,Heim
+pricelist_partner_group.industry_hospital,Hospital,Spital
+pricelist_partner_group.industry_psa,PSA & Hygiene,PSA & Hygiene
+pricelist_partner_group.industry_spitex,Spitex,SPITEX
