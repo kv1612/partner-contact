@@ -15,6 +15,7 @@
     "website": "https://www.camptocamp.com",
     "data": [
         # views
+        "views/product_pricelist.xml",
         "views/res_partner.xml",
         # wizards
         "wizards/res_config_settings.xml",
