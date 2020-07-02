@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_picking_withcarrier_out_form_inherit_brauch" model="ir.ui.view">
+        <field name="name">delivery.stock.picking_withcarrier.form.view.inherit.brauch</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>
+        <field name="arch" type="xml">
+            <group name="carrier_data" position="inside">
+                <field name="brauch_exported_file_display" invisible="1"/>
+                <field name="brauch_exported_file" attrs="{'invisible': [('brauch_exported_file_display', '=', False)]}" filename="brauch_exported_filename"/>
+                <field name="brauch_exported_filename" invisible="1"/>
+            </group>
+        </field>
+    </record>
+</odoo>
