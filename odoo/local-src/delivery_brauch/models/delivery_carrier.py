@@ -3,7 +3,7 @@
 import ftplib
 from io import BytesIO
 
-from odoo import fields, models
+from odoo import _, exceptions, fields, models
 from odoo.addons.queue_job.job import job
 
 
@@ -32,12 +32,19 @@ class DeliveryCarrier(models.Model):
 
     @job
     def _brauch_push_to_ftp(self, csv_data, csv_file_name):
+        if not (
+            self.brauch_ftp_uri
+            and self.brauch_ftp_login
+            and self.brauch_ftp_password
+        ):
+            raise exceptions.UserError(_("Missing credentials for FTP"))
         with ftplib.FTP(
             self.brauch_ftp_uri,
             self.brauch_ftp_login,
             self.brauch_ftp_password,
         ) as ftp:
-            ftp.cwd(self.brauch_ftp_path)
+            if self.brauch_ftp_path:
+                ftp.cwd(self.brauch_ftp_path)
             with BytesIO() as file_obj:
                 file_obj.write(csv_data.encode())
                 file_obj.seek(0)
