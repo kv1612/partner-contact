@@ -83,6 +83,16 @@ class TestPricelist(SavepointCase):
         company = cls.env["res.company"].search([])
         company.write({"pricelist_industry_ids": [(6, 0, industries.ids)]})
 
+        # FIXME @mmequignon: adjust tests so that this is not required.
+        # Right now tests do not take into account any modification of prices
+        # applied by currencies' exchange rates
+        # (default records from odoo core demo).
+        # NOTE: currency rates are lookedup by date so maybe we can fix this
+        # by freezing to a specific date.
+        cls.env["res.currency.rate"].search(
+            [("currency_id", "=", cls.env.ref("base.USD").id)]
+        ).unlink()
+
     def test_pricelist_partner_group(self):
         self.case_01()
         self.case_02()
