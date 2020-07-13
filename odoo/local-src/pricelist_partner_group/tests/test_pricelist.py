@@ -17,7 +17,7 @@ class TestPricelist(SavepointCase):
     at_install = False
     post_install = True
 
-    def create_order(self, partner, products):
+    def _create_order(self, partner, products):
         """
         Creates a sale order given a customer and a list of products.
         """
@@ -28,7 +28,7 @@ class TestPricelist(SavepointCase):
                 line.product_id = product
         return sale_form.save()
 
-    def check_order_prices(self, order, prices_mapping):
+    def _check_order_prices(self, order, prices_mapping):
         """
         Given a list of (product, price) mapping, check that orer lines price units
         are valid.
@@ -100,39 +100,39 @@ class TestPricelist(SavepointCase):
         customer = self.env.ref("pricelist_partner_group.customer_00")
         pricelist = customer.property_product_pricelist
         products = [self.product_00, self.product_02]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [(self.product_00, 110), (self.product_02, 128)]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [(self.product_00, 1, 110)]
         self.check_pricelist_items(pricelist, items_mapping)
 
     def case_02(self):
         customer = self.env.ref("pricelist_partner_group.customer_01")
         products = [self.product_00, self.product_03]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [(self.product_00, 90), (self.product_03, 12.6)]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
 
     def case_03(self):
         customer = self.env.ref("pricelist_partner_group.customer_02")
         pricelist = customer.property_product_pricelist
         products = [self.product_00]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [(self.product_00, 120)]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [(self.product_00, 1, 120)]
         self.check_pricelist_items(pricelist, items_mapping)
 
     def case_04(self):
         customer = self.env.ref("pricelist_partner_group.customer_03")
         products = [self.product_00]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [(self.product_00, 100)]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
 
     def case_05(self):
         customer = self.env.ref("pricelist_partner_group.customer_05")
@@ -143,15 +143,15 @@ class TestPricelist(SavepointCase):
             self.product_00,
             self.product_12,
         ]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [
             (self.product_05, 85.12),
             (self.product_02, 118.96),
             (self.product_00, 90),
             (self.product_12, 70.35),
         ]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [(self.product_00, 1, 90)]
         self.check_pricelist_items(pricelist, items_mapping)
 
@@ -164,15 +164,15 @@ class TestPricelist(SavepointCase):
             self.product_02,
             self.product_00,
         ]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [
             (self.product_05, 90.72),
             (self.product_12, 59.12),
             (self.product_02, 118.96),
             (self.product_00, 90),
         ]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [(self.product_05, 1, 90.72)]
         self.check_pricelist_items(pricelist, items_mapping)
 
@@ -184,24 +184,24 @@ class TestPricelist(SavepointCase):
             self.product_00,
             self.product_05,
         ]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [
             (self.product_10, 2.38),
             (self.product_12, 70.35),
             (self.product_00, 90),
             (self.product_05, 90.72),
         ]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
 
     def case_08(self):
         customer = self.env.ref("pricelist_partner_group.customer_09")
         pricelist = customer.company_group_id.property_product_pricelist
         products = [self.product_01, self.product_00]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [(self.product_01, 2.93), (self.product_00, 100)]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [
             (self.product_01, 0, None),
             (self.product_00, 0, None),
@@ -212,10 +212,10 @@ class TestPricelist(SavepointCase):
         customer = self.env.ref("pricelist_partner_group.customer_10")
         pricelist = customer.company_group_id.property_product_pricelist
         products = [self.product_01, self.product_00]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [(self.product_01, 7.17), (self.product_00, 100)]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [
             (self.product_01, 0, None),
             (self.product_00, 0, None),
@@ -226,25 +226,25 @@ class TestPricelist(SavepointCase):
         customer = self.env.ref("pricelist_partner_group.customer_12")
         pricelist = customer.company_group_id.property_product_pricelist
         products = [self.product_12, self.product_00, self.product_06]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [
             (self.product_12, 46),
             (self.product_00, 90),
             (self.product_06, 14),
         ]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
         items_mapping = [(self.product_00, 1, 90)]
         self.check_pricelist_items(pricelist, items_mapping)
 
     def case_11(self):
         customer = self.env.ref("pricelist_partner_group.customer_13")
         products = [self.product_12, self.product_11, self.product_06]
-        SO = self.create_order(customer, products)
+        order = self._create_order(customer, products)
         prices_mapping = [
             (self.product_12, 46),
             (self.product_11, 5.13),
             (self.product_06, 16.96),
         ]
-        self.check_order_prices(SO, prices_mapping)
-        SO.action_confirm()
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()

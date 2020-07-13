@@ -8,16 +8,18 @@ class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
-    @classmethod
-    def _get_pricelist_line(cls, pricelist, product):
-        item_ids = pricelist.item_ids.filtered(
-            lambda i: i.product_id.id == product.id
-            and i.compute_price == "fixed"
-        )
-        return item_ids
+    @staticmethod
+    def _pricelist_fixed_price_lines_by_product(pricelist):
+        """Return mapping of pricelist lines by product."""
+        return {
+            line.product_id.id: line
+            for line in pricelist.item_ids
+            if line.compute_price == "fixed"
+        }
 
     def action_confirm(self):
-        """
+        """Handle pricelist based on industry.
+
         If partner's industry in one of the industries specified in the config
         and if ordered products are ordered for the first time then the
         price is saved on its group (if any) or user pricelist for future orders.
@@ -34,12 +36,18 @@ class SaleOrder(models.Model):
             group_pricelist = (
                 company.company_group_id.property_product_pricelist
             )
+            partner_pricelist_lines_by_product = self._pricelist_fixed_price_lines_by_product(
+                partner_pricelist
+            )
+            group_pricelist_lines_by_product = self._pricelist_fixed_price_lines_by_product(
+                group_pricelist
+            )
             for line in order.order_line:
-                partner_fixed_price = self._get_pricelist_line(
-                    partner_pricelist, line.product_id
+                partner_fixed_price = partner_pricelist_lines_by_product.get(
+                    line.product_id.id
                 )
-                group_fixed_price = self._get_pricelist_line(
-                    group_pricelist, line.product_id
+                group_fixed_price = group_pricelist_lines_by_product.get(
+                    line.product_id.id
                 )
                 if partner_fixed_price or group_fixed_price:
                     continue

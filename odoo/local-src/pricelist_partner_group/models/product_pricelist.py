@@ -13,22 +13,17 @@ class ProductPricelist(models.Model):
     _inherit = "product.pricelist"
 
     def check_duplicate_item(self, vals):
-        """
-        Search and returns existing product.pricelist.item records
-        matching the vals passed as argument.
-        """
+        """Search existing product.pricelist.item records matching the vals."""
         domain = [
             (key, "=", val)
             for key, val in vals.items()
             if val and key not in ["price_discount", "fixed_price"]
         ]
         domain.append(("pricelist_id", "=", self.id))
-        return self.env["product.pricelist.item"].search(domain)
+        return self.env["product.pricelist.item"].search_count(domain)
 
     def filter_existing_items(self, item_vals):
-        """
-        Do not create a product.pricelist.item that already exists.
-        """
+        """Do not create a product.pricelist.item that already exists."""
         item_ids = []
         for item in item_vals:
             # (0, False, vals) tuples
@@ -41,9 +36,7 @@ class ProductPricelist(models.Model):
         return item_ids
 
     def update_prices(self, item, vals):
-        """
-        Update pricelist item if prices was changed.
-        """
+        """Update pricelist item if prices was changed."""
         if vals.get("applied_on") == SINGLE_PRODUCT:
             new_price = vals.get("fixed_price")
             price_changed = new_price and float_compare(
@@ -68,9 +61,7 @@ class ProductPricelist(models.Model):
 
     @api.constrains("item_ids")
     def _check_qty_all_products_formulas(self):
-        """
-        Check that there's at most one formula item applied to all products in
-        the pricelist.
+        """Check there's at most one formula item applied to all products.
         """
         for record in self:
             formulas = record.item_ids.filtered(

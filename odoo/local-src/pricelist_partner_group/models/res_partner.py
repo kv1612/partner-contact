@@ -16,7 +16,8 @@ class ResPartner(models.Model):
 
     @api.depends("is_company", "company_group_id")
     def _compute_factor_pricelist(self):
-        """
+        """Compute pricelist on partner.
+
         For a given partner, if part of a partner group,
         the applied pricelist is the group pricelist, otherwise,
         applied pricelist is it's own pricelist.
