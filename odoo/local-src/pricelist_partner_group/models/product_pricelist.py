@@ -12,7 +12,7 @@ class ProductPricelist(models.Model):
 
     _inherit = "product.pricelist"
 
-    def check_duplicate_item(self, vals):
+    def _get_existing_pricelist_items(self, vals):
         """Search existing product.pricelist.item records matching the vals."""
         domain = [
             (key, "=", val)
@@ -20,7 +20,7 @@ class ProductPricelist(models.Model):
             if val and key not in ["price_discount", "fixed_price"]
         ]
         domain.append(("pricelist_id", "=", self.id))
-        return self.env["product.pricelist.item"].search_count(domain)
+        return self.env["product.pricelist.item"].search(domain)
 
     def filter_existing_items(self, item_vals):
         """Do not create a product.pricelist.item that already exists."""
@@ -28,7 +28,7 @@ class ProductPricelist(models.Model):
         for item in item_vals:
             # (0, False, vals) tuples
             vals = item[2]
-            existing_item = self.check_duplicate_item(vals)
+            existing_item = self._get_existing_pricelist_items(vals)
             if existing_item:
                 self.update_prices(existing_item, vals)
             else:
