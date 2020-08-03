@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page name="delivery_info" string="Delivery info">
+                <page name="delivery_info" string="Delivery info" groups="base.group_no_one">
                     <field name="brauch_delivery_info" />
                 </page>
             </xpath>
