@@ -9,6 +9,11 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["cosanum_base", "delivery_brauch", "sale_partner_delivery_window"],
+    "depends": [
+        "cosanum_delivery",
+        "delivery_brauch",
+        "sale_partner_delivery_window",
+        "server_environment_delivery",
+    ],
     "data": [],
 }
