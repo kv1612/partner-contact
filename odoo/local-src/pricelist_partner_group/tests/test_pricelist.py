@@ -51,6 +51,13 @@ class TestPricelist(SavepointCase):
                 self.assertEqual(item.fixed_price, price)
 
     @classmethod
+    def set_currency(cls):
+        """
+        Sets the same currency for user than the one set on records created from csv.
+        """
+        cls.env.user.company_id.currency_id = cls.env.ref("base.USD")
+
+    @classmethod
     def load_data(cls):
         cr = cls.env.cr
         for filename in DATA_FILES:
@@ -60,6 +67,7 @@ class TestPricelist(SavepointCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.set_currency()
         # Load data
         cls.load_data()
         # Get products
@@ -82,16 +90,6 @@ class TestPricelist(SavepointCase):
         industries |= cls.env.ref("pricelist_partner_group.industry_ems")
         company = cls.env["res.company"].search([])
         company.write({"pricelist_industry_ids": [(6, 0, industries.ids)]})
-
-        # FIXME @mmequignon: adjust tests so that this is not required.
-        # Right now tests do not take into account any modification of prices
-        # applied by currencies' exchange rates
-        # (default records from odoo core demo).
-        # NOTE: currency rates are lookedup by date so maybe we can fix this
-        # by freezing to a specific date.
-        cls.env["res.currency.rate"].search(
-            [("currency_id", "=", cls.env.ref("base.USD").id)]
-        ).unlink()
 
     def test_pricelist_partner_group(self):
         self.case_01()
