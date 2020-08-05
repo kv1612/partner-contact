@@ -9,6 +9,7 @@
   <record model="product.template.link.type" id="product_template_link_type_replacement">
     <field name="name">Replacement</field>
     <field name="code">replacement</field>
+    <field name="is_symmetric" eval="False"/>
   </record>
 
 </odoo>
