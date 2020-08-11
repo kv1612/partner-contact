@@ -1,7 +1,7 @@
 # Copyright 2019 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, exceptions, fields, models
+from odoo import _, exceptions, fields, models, tools
 
 
 class StockWarehouse(models.Model):
@@ -15,6 +15,10 @@ class StockWarehouse(models.Model):
     )
 
     def write(self, values):
+        if tools.config["init"] or tools.config["update"]:
+            # ignore the constraints when installing/updating modules,
+            # which can make it fail
+            return super().write(values)
         for wh in self:
             if (
                 values.get('block_delivery_route_update')
