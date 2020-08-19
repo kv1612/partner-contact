@@ -86,10 +86,10 @@ class StockPicking(models.Model):
             lambda p: p.carrier_id.delivery_type == "brauch"
         )
         if brauch_pickings:
-            moves_without_package = brauch_pickings.mapped(
-                "move_ids_without_package"
-            ).filtered(lambda m: not m.result_package_id)
-            if moves_without_package:
+            moves_lines_without_package = brauch_pickings.mapped(
+                "move_line_ids_without_package"
+            ).filtered(lambda ml: not ml.result_package_id)
+            if moves_lines_without_package:
                 raise UserError(
                     _(
                         "Following pickings are set to be delivered using 'Brauch'"
