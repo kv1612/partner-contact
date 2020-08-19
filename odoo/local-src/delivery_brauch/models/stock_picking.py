@@ -88,7 +88,7 @@ class StockPicking(models.Model):
         if brauch_pickings:
             moves_without_package = brauch_pickings.mapped(
                 "move_ids_without_package"
-            )
+            ).filtered(lambda m: not m.result_package_id)
             if moves_without_package:
                 raise UserError(
                     _(
