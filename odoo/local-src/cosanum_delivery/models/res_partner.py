@@ -12,6 +12,10 @@ class ResPartner(models.Model):
         string="Truck Weight limit (in T)",
     )
     delivery_info = fields.Text(string="Info for delivery carrier")
+    customs_privileged = fields.Selection(
+        selection=[("gdk", "GDK"), ("no_gdk", "No GDK")],
+        string="Customs privileged",
+    )
 
     @api.model
     def _selection_truck_weight_limit(self):

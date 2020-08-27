@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cosanum_delivery
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-27 08:15+0000\n"
+"PO-Revision-Date: 2020-08-27 08:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cosanum_delivery
+#: model:ir.model,name:cosanum_delivery.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__customs_privileged
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__customs_privileged
+#: model:ir.model.fields,field_description:cosanum_delivery.field_shopinvader_partner__customs_privileged
+msgid "Customs privileged"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model.fields.selection,name:cosanum_delivery.selection__res_partner__customs_privileged__gdk
+msgid "GDK"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__delivery_info
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__delivery_info
+#: model:ir.model.fields,field_description:cosanum_delivery.field_shopinvader_partner__delivery_info
+msgid "Info for delivery carrier"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model.fields.selection,name:cosanum_delivery.selection__res_partner__customs_privileged__no_gdk
+msgid "No GDK"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__truck_weight_limit
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__truck_weight_limit
+#: model:ir.model.fields,field_description:cosanum_delivery.field_shopinvader_partner__truck_weight_limit
+msgid "Truck Weight limit (in T)"
+msgstr ""

@@ -8,7 +8,21 @@
             <xpath expr="//page[@name='sales_purchases']//group[@name='sale']" position="inside">
                 <field name="truck_weight_limit" />
                 <field name="delivery_info" />
+                <field name="customs_privileged" />
             </xpath>
         </field>
     </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select.ref.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="company_group_id" position="replace"/>
+            <field name="name" position="after" >
+                <field name="customs_privileged" />
+            </field>
+        </field>
+    </record>
+
 </odoo>
