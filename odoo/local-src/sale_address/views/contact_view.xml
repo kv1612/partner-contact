@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="vat" position="before">
-                <field name="partner_shipping_id" attrs="{'invisible': [('is_company','=', False)]}"/>
-                <field name="partner_invoicing_id" attrs="{'invisible': [('is_company','=', False)]}"/>
+                <field name="partner_shipping_id"/>
+                <field name="partner_invoicing_id"/>
             </field>
         </field>
     </record>
