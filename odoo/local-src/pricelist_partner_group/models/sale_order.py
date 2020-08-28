@@ -1,12 +1,43 @@
 # Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
-from odoo import models
+from odoo import api, models
 
 
 class SaleOrder(models.Model):
 
     _inherit = "sale.order"
+
+    @api.onchange("partner_id")
+    def onchange_partner_id(self):
+        # The super call already sets the pricelist from the partner.
+        result = super().onchange_partner_id()
+        # The rules for the pricelist are:
+
+        # * If the partner has a defined pricelist take it (meaning the
+        #   pricelist if different from "Public Pricelist (CHF)")
+        # * Elif the partner has a company group, take the pricelist of it company group
+        # * Otherwise, take pricelist from partner
+
+        default_pricelist = self.env.ref(
+            "product.list0", raise_if_not_found=False
+        )
+        if not default_pricelist:
+            # For defensiveness... they shouldn't delete the Public Pricelist
+            # but who knows. Without relying on the xmlid, it's hopefully a
+            # good approximation to the "default" pricelist
+            default_pricelist = self.env["product.pricelist"].search(
+                [], limit=1
+            )
+        has_default_pricelist = (
+            self.partner_id.property_product_pricelist == default_pricelist
+        )
+        if has_default_pricelist and self.partner_id.company_group_id:
+            self.pricelist_id = (
+                self.partner_id.company_group_id.property_product_pricelist
+            )
+
+        return result
 
     @staticmethod
     def _pricelist_fixed_price_lines_by_product(pricelist):
