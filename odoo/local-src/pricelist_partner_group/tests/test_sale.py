@@ -8,6 +8,7 @@ class TestSaleOnchangePartnerSetPricelist(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
         cls.partner = cls.env["res.partner"].create({"name": "Test Partner"})
         cls.partner_group = cls.env["res.partner"].create(
             {"name": "Test Group"}
