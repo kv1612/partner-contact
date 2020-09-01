@@ -9,8 +9,12 @@
     "author": "Camptocamp",
     "license": "AGPL-3",
     "depends": [
+        # OCA/account-invoicing
         "account_invoice_mode_at_shipping",
+        # OCA/stock-logistics-workflow
         "stock_picking_group_by_partner_by_carrier",
+        # OCA/queue
+        "queue_job",
     ],
     "website": "https://www.camptocamp.com",
     "installable": True,
