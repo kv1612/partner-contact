@@ -38,4 +38,8 @@ class DeliveryCarrier(models.Model):
         """
         self.ensure_one()
         base = self._server_env_global_section_name()
-        return ".".join((base, self.delivery_type))
+        if self.delivery_type == "brauch":
+
+            return ".".join((base, "brauch"))
+        else:
+            return super()._server_env_section_name()
