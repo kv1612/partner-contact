@@ -73,7 +73,6 @@ class DeliveryCarrier(models.Model):
                 file_obj.write(csv_data.encode())
                 file_obj.seek(0)
                 ftp.storbinary("STOR %s" % csv_file_name, file_obj)
-        return {'exact_price': 0.0, 'tracking_number': False}
 
     def _brauch_get_csv_columns(self):
         return [

@@ -40,11 +40,10 @@ class StockPicking(models.Model):
             }
         )
         if self.carrier_id.prod_environment:
-            return self.carrier_id.with_delay()._brauch_push_to_ftp(
+            self.carrier_id.with_delay()._brauch_push_to_ftp(
                 csv_data, csv_file_name
             )
-        else:
-            return {'exact_price': 0.0, 'tracking_number': False}
+        return {'exact_price': 0.0, 'tracking_number': False}
 
     def _generate_brauch_csv(self):
         columns = self.carrier_id._brauch_get_csv_columns()
