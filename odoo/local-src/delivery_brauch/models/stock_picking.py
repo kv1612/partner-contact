@@ -46,10 +46,14 @@ class StockPicking(models.Model):
         return {'exact_price': 0.0, 'tracking_number': False}
 
     def _generate_brauch_csv(self):
+        dialect = csv.excel
+        dialect.delimiter = ";"
         columns = self.carrier_id._brauch_get_csv_columns()
         common_picking_data = self._brauch_get_common_picking_data()
         with StringIO() as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=columns)
+            writer = csv.DictWriter(
+                csvfile, fieldnames=columns, dialect=dialect
+            )
             writer.writeheader()
             for pack in self.package_ids:
                 pack_data = pack._brauch_get_pack_data()
@@ -77,7 +81,9 @@ class StockPicking(models.Model):
             "Lieferant-Adres Zusatz": self.partner_id.street2,
             "Lieferant-PLZ": self.partner_id.zip,
             "Lieferant-Ort": self.partner_id.city,
-            "Auslieferhinweis (Info 2)": self.partner_id.brauch_delivery_info,
+            "Auslieferhinweis (Info 2)": self.partner_id.brauch_delivery_info.replace(
+                "\n", " "
+            ),
         }
 
     def action_done(self):
