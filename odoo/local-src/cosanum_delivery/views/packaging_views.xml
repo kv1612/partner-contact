@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record model="ir.ui.view" id="product_packaging_delivery_form">
+  <field name="model">product.packaging</field>
+  <field name="inherit_id" ref="delivery.product_packaging_delivery_form"/>
+  <field name="arch" type="xml">
+    <field name="package_carrier_type" position="after">
+      <!-- display packaging type -->
+      <field name="packaging_type_id"/>
+    </field>
+  </field>
+</record>
+
+<record model="ir.ui.view" id="product_packaging_delivery_tree">
+  <field name="model">product.packaging</field>
+  <field name="inherit_id" ref="delivery.product_packaging_delivery_tree"/>
+  <field name="arch" type="xml">
+    <field name="name" position="after">
+      <field name="packaging_type_id"/>
+    </field>
+  </field>
+</record>
+
+</odoo>

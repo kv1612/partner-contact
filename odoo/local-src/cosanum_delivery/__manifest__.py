@@ -10,5 +10,5 @@
     "application": False,
     "installable": True,
     "depends": ["cosanum_base", "delivery", "sale_partner_delivery_window"],
-    "data": ["views/res_partner.xml"],
+    "data": ["views/res_partner.xml", "views/packaging_views.xml"],
 }
