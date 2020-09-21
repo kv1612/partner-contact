@@ -12,9 +12,7 @@ class ProductTemplate(models.Model):
         self.ensure_one()
         replacement_type = self.env[
             'product.template.link.type'
-        ].get_link_type(
-            "cosanum_product_multi_link.product_template_link_type_replacement"
-        )
+        ].get_type_replacement()
         replacement = self.product_template_link_ids.filtered(
             lambda r: r.type_id == replacement_type and r.is_link_active
         )

@@ -14,3 +14,15 @@ class ProductTemplateMultiLink(models.Model):
         if not link_type:
             raise UserError(_("Product Link Type {} not found".format(xmlid)))
         return link_type
+
+    @api.model
+    def get_type_replacement(self):
+        return self.get_link_type(
+            "cosanum_product_multi_link.product_template_link_type_replacement"
+        )
+
+    @api.model
+    def get_type_alternative(self):
+        return self.get_link_type(
+            "cosanum_product_multi_link.product_template_link_type_alternative"
+        )
