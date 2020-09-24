@@ -67,11 +67,11 @@ class StockPicking(models.Model):
         auftrags_prio = (
             "Fixtermin" if self.sale_id.commitment_date else "Standard"
         )
+        delivery_date = self.sale_id.commitment_date or self.scheduled_date
         return {
             "Verladedatum": "",
             "Auftrags-Prio": auftrags_prio,
-            "Lieferdatum": self.sale_id.commitment_date
-            or self.scheduled_date.strftime(
+            "Lieferdatum": delivery_date.strftime(
                 self.carrier_id.brauch_datetime_format
             ),
             "Lieferschein-Nr": self.name,
