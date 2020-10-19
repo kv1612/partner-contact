@@ -9,6 +9,7 @@ class DeliveryCarrier(models.Model):
 
     def _brauch_get_csv_columns(self):
         res = super()._brauch_get_csv_columns()
+        res.append("LKW-Gewicht")
         res.append("Schlieren")
         res.append("Werrikon")
         return res

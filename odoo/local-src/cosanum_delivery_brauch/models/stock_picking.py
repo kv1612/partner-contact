@@ -18,4 +18,5 @@ class StockPicking(models.Model):
         wh = self.picking_type_id.warehouse_id
         res["Schlieren"] = "10" if wh == schlieren_wh else ""
         res["Werrikon"] = "20" if wh == werrikon_wh else ""
+        res["LKW-Gewicht"] = self.partner_id.truck_weight_limit or ""
         return res

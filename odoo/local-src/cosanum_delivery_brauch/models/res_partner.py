@@ -21,10 +21,16 @@ class ResPartner(models.Model):
     def _compute_brauch_delivery_info(self):
         desc = self.with_context(lang="de_DE").get_delivery_time_description()
         for partner in self:
-            delivery_info = partner.delivery_info
-            delivery_times_string = _("Delivery times:\n%s") % desc.get(
-                partner.id
+            delivery_info = (
+                partner.delivery_info + "\n--\n"
+                if partner.delivery_info
+                else ""
             )
+            delivery_times_string = _("Delivery times: Anytime")
+            if partner.delivery_time_preference == "time_windows":
+                delivery_times_string = _("Delivery times:\n%s") % desc.get(
+                    partner.id
+                )
             delivery_phone_string = False
             delivery_mobile_string = False
             if partner.phone:
@@ -38,9 +44,9 @@ class ResPartner(models.Model):
                     None,
                     [
                         delivery_info,
-                        delivery_times_string,
                         delivery_phone_string,
                         delivery_mobile_string,
+                        delivery_times_string,
                     ],
                 )
             )
