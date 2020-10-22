@@ -13,6 +13,9 @@ class StockWarehouse(models.Model):
     block_reception_route_update = fields.Boolean(
         string="Block Outgoing Shipments Configuration"
     )
+    block_manufacture_route_update = fields.Boolean(
+        string="Block Manufacture Configuration"
+    )
 
     def write(self, values):
         if tools.config["init"] or tools.config["update"]:
@@ -31,6 +34,11 @@ class StockWarehouse(models.Model):
                 or wh.block_reception_route_update
             ) and 'reception_steps' in values:
                 raise exceptions.UserError(_('Reception Steps are blocked.'))
+            if (
+                values.get('block_manufacture_route_update')
+                or wh.block_manufacture_route_update
+            ) and 'manufacture_steps' in values:
+                raise exceptions.UserError(_('Manufacture Steps are blocked.'))
         return super().write(values)
 
     def _get_routes_values(self):
@@ -39,4 +47,6 @@ class StockWarehouse(models.Model):
             values.pop('delivery_route_id', None)
         if self.block_reception_route_update:
             values.pop('reception_route_id', None)
+        if self.block_manufacture_route_update:
+            values.pop('pbm_route_id', None)
         return values

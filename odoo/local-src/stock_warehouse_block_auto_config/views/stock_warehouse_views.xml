@@ -18,6 +18,12 @@
             <field name="delivery_steps" position="attributes">
                 <attribute name="attrs">{'readonly': [('block_delivery_route_update', '=', True)]}</attribute>
             </field>
+            <field name="manufacture_steps" position="after">
+                <field name="block_manufacture_route_update" groups="base.group_no_one" />
+            </field>
+            <field name="manufacture_steps" position="attributes">
+                <attribute name="attrs">{'readonly': [('block_manufacture_route_update', '=', True)]}</attribute>
+            </field>
         </field>
     </record>
 
