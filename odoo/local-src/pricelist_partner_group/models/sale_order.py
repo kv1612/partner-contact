@@ -12,36 +12,9 @@ class SaleOrder(models.Model):
     def onchange_partner_id(self):
         # The super call already sets the pricelist from the partner.
         result = super().onchange_partner_id()
-        group_pricelist = self._get_partner_group_pricelist(self.partner_id)
-        if group_pricelist:
-            self.pricelist_id = group_pricelist
+        if self.partner_id and self.partner_id.partner_group_pricelist_id:
+            self.pricelist_id = self.partner_id.partner_group_pricelist_id
         return result
-
-    def _get_partner_group_pricelist(self, partner):
-        pricelist = None
-
-        # The rules for the pricelist are:
-
-        # * If the partner has a defined pricelist take it (meaning the
-        #   pricelist if different from "Public Pricelist (CHF)")
-        # * Elif the partner has a company group, take the pricelist of it company group
-        # * Otherwise, take pricelist from partner
-        default_pricelist = self.env.ref(
-            "product.list0", raise_if_not_found=False
-        )
-        if not default_pricelist:
-            # For defensiveness... they shouldn't delete the Public Pricelist
-            # but who knows. Without relying on the xmlid, it's hopefully a
-            # good approximation to the "default" pricelist
-            default_pricelist = self.env["product.pricelist"].search(
-                [], limit=1
-            )
-        has_default_pricelist = (
-            partner.property_product_pricelist == default_pricelist
-        )
-        if has_default_pricelist and partner.company_group_id:
-            pricelist = partner.company_group_id.property_product_pricelist
-        return pricelist
 
     @staticmethod
     def _pricelist_fixed_price_lines_by_product(pricelist):
