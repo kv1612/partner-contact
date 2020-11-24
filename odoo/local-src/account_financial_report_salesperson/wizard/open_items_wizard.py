@@ -28,3 +28,16 @@ class OpenItemsReportWizard(models.TransientModel):
             self.partner_ids = self.env['res.partner'].search(domain)
         else:
             self.partner_ids = False
+
+    @api.onchange("receivable_accounts_only", "payable_accounts_only")
+    def onchange_type_accounts_only(self):
+
+        domain = [("company_id", "=", self.company_id.id)]
+        if (
+            not self.receivable_accounts_only
+            and not self.payable_accounts_only
+        ):
+            domain += [("reconcile", "=", True)]
+            self.account_ids = self.env["account.account"].search(domain)
+            return
+        return super().onchange_type_accounts_only()
