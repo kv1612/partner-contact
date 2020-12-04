@@ -9,7 +9,12 @@
     "author": "Camptocamp",
     "website": "https://www.camptocamp.com",
     "license": "AGPL-3",
-    "depends": ["product_variant_multi_link"],
-    "data": ["data/product_template_link_type.xml"],
+    "depends": [
+        "product_template_multi_link_date_span",
+    ],
+    "data": [
+        "data/product_template_link_type.xml",
+        "views/product_template_link_view.xml",
+    ],
     "installable": True,
 }
