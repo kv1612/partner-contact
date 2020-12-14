@@ -9,19 +9,19 @@ class SaleOrder(models.Model):
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
-        ret = super().onchange_partner_id()
+        res = super().onchange_partner_id() or {}
         values = {}
+        partner = self.partner_id
         if self.partner_id.is_company:
             partner = self.partner_id
         elif self.partner_id.parent_id:
             partner = self.partner_id.parent_id
-        else:
-            partner = self.partner_id
         if partner:
             if partner.partner_invoicing_id:
-                values['partner_invoice_id'] = partner.partner_invoicing_id
+                values['partner_invoice_id'] = partner.partner_invoicing_id.id
             if partner.partner_shipping_id:
-                values['partner_shipping_id'] = partner.partner_shipping_id
+                values['partner_shipping_id'] = partner.partner_shipping_id.id
         if values:
             self.update(values)
-        return ret
+            res["value"] = dict(res.get("value", {}), **values)
+        return res
