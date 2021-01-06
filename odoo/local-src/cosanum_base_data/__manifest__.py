@@ -31,6 +31,7 @@
         # from odoo/external-src/stock-logistics-workflow
         'stock_picking_group_by_partner_by_carrier',
         'stock_putaway_by_route',
+        'stock_picking_backorder_strategy',
         # from odoo/external-src/stock-logistics-warehouse
         'stock_location_bin_name',
         'stock_location_zone',

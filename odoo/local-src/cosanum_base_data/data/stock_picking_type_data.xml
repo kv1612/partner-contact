@@ -474,6 +474,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
   <record id="stock_picking_type_pick_parcel_hpu_replenish_hrl" model="stock.picking.type">
       <field name="name">Replenish Pre-Pick HPU Highbay</field>
@@ -490,6 +491,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_pick_parcel_opl_replenish_hrl" model="stock.picking.type">
@@ -524,6 +526,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_replenish_fbg" model="stock.picking.type">
@@ -541,6 +544,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_pick_gp_replenish_hrl" model="stock.picking.type">
@@ -558,6 +562,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_pick_gp_opl_replenish_hrl" model="stock.picking.type">
@@ -575,6 +580,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_replenish_hpu" model="stock.picking.type">
@@ -609,6 +615,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_replenish_op" model="stock.picking.type">
@@ -626,6 +633,7 @@
       <field name="color" eval="3"/>
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
+      <field name="backorder_strategy">no_create</field>
   </record>
 
   <record id="stock_picking_type_replenish_ug_sch" model="stock.picking.type">
