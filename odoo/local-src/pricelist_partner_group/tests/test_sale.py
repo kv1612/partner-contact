@@ -9,6 +9,15 @@ class TestSaleOnchangePartnerSetPricelist(SavepointCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        field = cls.env['ir.model.fields'].search(
+            [
+                ('model', '=', 'res.partner'),
+                ('name', '=', 'property_product_pricelist'),
+            ]
+        )
+        cls.env['ir.property'].search(
+            [('fields_id', '=', field.id), ('res_id', '=', False)]
+        ).unlink()
         cls.partner = cls.env["res.partner"].create({"name": "Test Partner"})
         cls.partner_group = cls.env["res.partner"].create(
             {"name": "Test Group"}
