@@ -197,7 +197,7 @@
             'procure_method': 'make_to_order',
             'location_src_id': obj().env.ref('stock.stock_location_company').id,
             'location_id': obj().env.ref('stock.stock_location_stock').id,
-            'picking_type_id': obj().env.ref('cosanum_base.stock_picking_type_put_away').id,
+            'picking_type_id': obj().env.ref('cosanum_base_data.stock_picking_type_put_away').id,
             'route_id': obj().env['stock.location.route'].search([('name', '=', 'Schlieren: Receive in 2 steps (input + stock)')], limit=1).id,
             'delay_alert': False,
       }"/>
@@ -206,17 +206,17 @@
   <function model="stock.rule" name="write">
       <value model="stock.rule"
              search="[
-                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id),
-                ('location_id', '=', obj().env.ref('cosanum_base.warehouse_wer').lot_stock_id.id)
+                ('location_src_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id),
+                ('location_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').lot_stock_id.id)
              ]"/>
       <value model="stock.rule" eval="{
             'name': 'WER: Input → Stock',
             'action': 'pull',
             'auto': 'manual',
             'procure_method': 'make_to_order',
-            'location_src_id': obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id,
-            'location_id': obj().env.ref('cosanum_base.location_zone_Werrikon').id,
-            'picking_type_id': obj().env.ref('cosanum_base.stock_picking_type_put_away_wer').id,
+            'location_src_id': obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id,
+            'location_id': obj().env.ref('cosanum_base_data.location_zone_Werrikon').id,
+            'picking_type_id': obj().env.ref('cosanum_base_data.stock_picking_type_put_away_wer').id,
             'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Receive in 2 steps (input + stock)')], limit=1).id,
             'delay_alert': False,
       }"/>
@@ -225,17 +225,17 @@
   <function model="stock.rule" name="write">
       <value model="stock.rule"
              search="[
-                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').lot_stock_id.id),
-                ('location_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_pack_stock_loc_id.id)
+                ('location_src_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').lot_stock_id.id),
+                ('location_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').wh_pack_stock_loc_id.id)
              ]"/>
       <value model="stock.rule" eval="{
             'name': 'WER: Werrikon → Packing Zone',
             'action': 'pull',
             'auto': 'manual',
             'procure_method': 'make_to_stock',
-            'location_src_id': obj().env.ref('cosanum_base.location_zone_Werrikon').id,
-            'location_id': obj().env.ref('cosanum_base.location_area_CCOWER').id,
-            'picking_type_id': obj().env.ref('cosanum_base.warehouse_wer').pick_type_id.id,
+            'location_src_id': obj().env.ref('cosanum_base_data.location_zone_Werrikon').id,
+            'location_id': obj().env.ref('cosanum_base_data.location_area_CCOWER').id,
+            'picking_type_id': obj().env.ref('cosanum_base_data.warehouse_wer').pick_type_id.id,
             'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Deliver in 2 steps (pick + ship)')], limit=1).id,
             'delay_alert': False,
       }"/>
@@ -244,17 +244,17 @@
   <function model="stock.rule" name="write">
       <value model="stock.rule"
              search="[
-                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_pack_stock_loc_id.id),
-                ('location_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id),
+                ('location_src_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').wh_pack_stock_loc_id.id),
+                ('location_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').wh_output_stock_loc_id.id),
              ]"/>
       <value model="stock.rule" eval="{
             'name': 'WER: Packing Zone → Output',
             'action': 'pull',
             'auto': 'manual',
             'procure_method': 'make_to_order',
-            'location_src_id': obj().env.ref('cosanum_base.location_area_CCOWER').id,
-            'location_id': obj().env.ref('cosanum_base.location_area_WEGVSDShip').id,
-            'picking_type_id': obj().env.ref('cosanum_base.warehouse_wer').pack_type_id.id,
+            'location_src_id': obj().env.ref('cosanum_base_data.location_area_CCOWER').id,
+            'location_id': obj().env.ref('cosanum_base_data.location_area_WEGVSDShip').id,
+            'picking_type_id': obj().env.ref('cosanum_base_data.warehouse_wer').pack_type_id.id,
             'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Deliver in 2 steps (pick + ship)')], limit=1).id,
             'delay_alert': False,
       }"/>
@@ -263,7 +263,7 @@
   <function model="stock.rule" name="write">
       <value model="stock.rule"
              search="[
-                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id),
+                ('location_src_id', '=', obj().env.ref('cosanum_base_data.warehouse_wer').wh_output_stock_loc_id.id),
                 ('location_id', '=', obj().env.ref('stock.stock_location_customers').id)
              ]"/>
       <value model="stock.rule" eval="{
@@ -271,7 +271,7 @@
             'action': 'pull',
             'auto': 'manual',
             'procure_method': 'make_to_order',
-            'location_src_id': obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id,
+            'location_src_id': obj().env.ref('cosanum_base_data.warehouse_wer').wh_output_stock_loc_id.id,
             'location_id': obj().env.ref('stock.stock_location_customers').id,
             'picking_type_id': obj().env.ref('stock.warehouse0').out_type_id.id,
             'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Deliver in 2 steps (pick + ship)')], limit=1).id,
@@ -376,7 +376,7 @@
       <field name="location_src_id" ref="stock.stock_location_stock"/>
       <field name="location_id" ref="stock.stock_location_output"/>
       <field name="procure_method">make_to_order</field>
-      <field name="picking_type_id" ref="cosanum_base.stock_picking_type_pick_pack_mo_op"/>
+      <field name="picking_type_id" ref="cosanum_base_data.stock_picking_type_pick_pack_mo_op"/>
       <field name="route_id" ref="mrp.route_warehouse0_manufacture"/>
       <field name="delay_alert" eval="0"/>
   </record>
@@ -386,7 +386,7 @@
       <field name="action">pull</field>
       <field name="auto">manual</field>
       <field name="location_src_id" ref="stock.stock_location_output"/>
-      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor1"/>
+      <field name="location_id" ref="cosanum_base_data.location_internal_subcontract_vendor1"/>
       <field name="procure_method">make_to_order</field>
       <field name="picking_type_id" ref="stock.picking_type_out"/>
       <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
@@ -399,7 +399,7 @@
       <field name="action">pull</field>
       <field name="auto">manual</field>
       <field name="location_src_id" ref="stock.stock_location_output"/>
-      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor2"/>
+      <field name="location_id" ref="cosanum_base_data.location_internal_subcontract_vendor2"/>
       <field name="procure_method">make_to_order</field>
       <field name="picking_type_id" ref="stock.picking_type_out"/>
       <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
@@ -412,7 +412,7 @@
       <field name="action">pull</field>
       <field name="auto">manual</field>
       <field name="location_src_id" ref="stock.stock_location_output"/>
-      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor3"/>
+      <field name="location_id" ref="cosanum_base_data.location_internal_subcontract_vendor3"/>
       <field name="procure_method">make_to_order</field>
       <field name="picking_type_id" ref="stock.picking_type_out"/>
       <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
@@ -425,7 +425,7 @@
       <field name="action">pull</field>
       <field name="auto">manual</field>
       <field name="location_src_id" ref="stock.stock_location_output"/>
-      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor4"/>
+      <field name="location_id" ref="cosanum_base_data.location_internal_subcontract_vendor4"/>
       <field name="procure_method">make_to_order</field>
       <field name="picking_type_id" ref="stock.picking_type_out"/>
       <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>

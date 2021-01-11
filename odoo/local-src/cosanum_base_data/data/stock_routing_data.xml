@@ -2,7 +2,7 @@
 <odoo noupdate="1">
     <!-- re-route schauffhausen -->
     <record id="stock_routing_shipping_schaffhausen" model="stock.routing">
-        <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base.warehouse_ren').view_location_id" />
+        <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_ren').view_location_id" />
         <field name="picking_type_id" ref="stock_picking_type_xfer_init_sch"/>
     </record>
     <record
@@ -18,7 +18,7 @@
     </record>
 
     <record id="stock_routing_shipping_schaffhausen_wmh" model="stock.routing">
-        <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base.warehouse_wmh').view_location_id" />
+        <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wmh').view_location_id" />
         <field name="picking_type_id" ref="stock_picking_type_xfer_init_sch"/>
     </record>
     <record
@@ -48,7 +48,7 @@
             name="picking_type_id"
             ref="stock_picking_type_shipping_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_post')]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_post')]]" />
     </record>
 
     <!-- re-route "Packing" -->
@@ -67,7 +67,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pack_op"
         />
-            <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_brauch_rollercage_op')]]" />
+            <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_brauch_rollercage_op')]]" />
     </record>
     <record
         id="stock_routing_rule_pack_rol_pull"
@@ -80,7 +80,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pack_rol"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base.delivery_carrier_coosafleet_rol'),ref('cosanum_base.delivery_carrier_brauch_rollercage')]]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base_data.delivery_carrier_coosafleet_rol'),ref('cosanum_base_data.delivery_carrier_brauch_rollercage')]]]" />
     </record>
     <record
         id="stock_routing_rule_pack_pal_pull"
@@ -111,7 +111,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_shelving_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_post')]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_post')]]" />
     </record>
     <record
         id="stock_routing_rule_shelving_rol_pull"
@@ -124,7 +124,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_shelving_rol"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base.delivery_carrier_brauch_rollercage'),ref('cosanum_base.delivery_carrier_coosafleet_rol')]]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base_data.delivery_carrier_brauch_rollercage'),ref('cosanum_base_data.delivery_carrier_coosafleet_rol')]]]" />
     </record>
     <record
         id="stock_routing_rule_shelving_pull"
@@ -137,7 +137,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_shelving_pal"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base.delivery_carrier_coosafleet'),ref('cosanum_base.delivery_carrier_brauch_pallet')]]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base_data.delivery_carrier_coosafleet'),ref('cosanum_base_data.delivery_carrier_brauch_pallet')]]]" />
     </record>
     <record
         id="stock_routing_rule_shelving_init_pull"
@@ -253,7 +253,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_ugp_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_post')]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_post')]]" />
     </record>
     <record
         id="stock_routing_rule_ugpout_spick_pull"
@@ -275,7 +275,7 @@
     <!-- > -->
     <!--     <field name="routing_id" ref="stock_routing_wereg" /> -->
     <!--     <field name="method">pull</field> -->
-    <!--     <field name="picking_type_id" model="stock.picking.type" eval="obj().env.ref('cosanum_base.warehouse_wer').pick_type_id.id"/> -->
+    <!--     <field name="picking_type_id" model="stock.picking.type" eval="obj().env.ref('cosanum_base_data.warehouse_wer').pick_type_id.id"/> -->
     <!-- </record> -->
 
     <record id="stock_routing_werug" model="stock.routing">

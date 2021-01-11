@@ -98,7 +98,7 @@
 
   <function model="stock.location.route" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_base.warehouse_wer').delivery_route_id.id"/>
+             eval="obj().env.ref('cosanum_base_data.warehouse_wer').delivery_route_id.id"/>
       <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
   </function>
 

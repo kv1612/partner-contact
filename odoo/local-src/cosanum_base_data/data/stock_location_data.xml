@@ -315,7 +315,7 @@
 
   <record id="location_area_KTLWAWER" model="stock.location">
       <field name="name">KTL-WA-WER</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
@@ -323,7 +323,7 @@
 
   <record id="location_area_WEGTRA77" model="stock.location">
       <field name="name">WEG-TRA77</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
@@ -685,10 +685,10 @@
 
   <function model="stock.location" name="write">
       <value model="stock.location"
-             eval="obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id"/>
+             eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Input',
-            'location_id': obj().env.ref('cosanum_base.location_zone_Werrikon').id,
+            'location_id': obj().env.ref('cosanum_base_data.location_zone_Werrikon').id,
             'usage': 'internal',
             'active': True,
             'vertical_lift_location': False,
@@ -708,7 +708,7 @@
 
   <function model="stock.location" name="write">
       <value model="stock.location"
-             eval="obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id"/>
+             eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_output_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Output WER',
             'location_id': obj().env.ref('stock.warehouse0').view_location_id.id,
@@ -967,14 +967,14 @@
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_base.warehouse_ren').view_location_id.id"/>
-      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_base.location_internal_schafhausen').id}"/>
+             eval="obj().env.ref('cosanum_base_data.warehouse_ren').view_location_id.id"/>
+      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_base_data.location_internal_schafhausen').id}"/>
   </function>
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_base.warehouse_wmh').view_location_id.id"/>
-      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_base.location_internal_schafhausen').id}"/>
+             eval="obj().env.ref('cosanum_base_data.warehouse_wmh').view_location_id.id"/>
+      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_base_data.location_internal_schafhausen').id}"/>
   </function>
 
   <record id="location_internal_subcontract_vendor1" model="stock.location">
