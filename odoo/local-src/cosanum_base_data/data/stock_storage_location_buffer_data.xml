@@ -1,0 +1,63 @@
+<odoo noupdate="1">
+
+    <record id="storage_buffer_a_1_2_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-1-2-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-1-2'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_3_4_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-3-4-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-3-4'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_5_6_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-5-6-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-5-6'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_7_8_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-7-8-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-7-8'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_9_10_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-9-10-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-9-10'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_11_12_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-11-12-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-11-12'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_13_14_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-13-14-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-13-14'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_15_16_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-15-16-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-15-16'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_17_20_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-17-20-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-17-20'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_21_22_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-21-22-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-21-22'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_23_24_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-23-24-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-23-24'),])]"/>
+    </record>
+
+    <record id="storage_buffer_a_25_26_in" model="stock.location.storage.buffer">
+        <field name="buffer_location_ids" eval="[(6, 0, [ref('location_area_HRL_A-25-26-IN')])]"/>
+        <field name="location_ids" eval="[(6, 0, [ref('location_area_HRL_A-25-26'),])]"/>
+    </record>
+
+</odoo>

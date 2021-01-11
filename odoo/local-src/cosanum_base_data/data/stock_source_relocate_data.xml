@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="stock_source_relocate_op" model="stock.source.relocate">
+        <field name="sequence">5</field>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+        <field name="relocate_location_id" ref="location_zone_OPLogistic"/>
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('delivery_carrier_brauch_rollercage_op')]]"/>
+    </record>
+
+    <record id="stock_source_relocate_shelving" model="stock.source.relocate">
+        <field name="sequence">10</field>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+        <field name="relocate_location_id" ref="location_zone_Shelving"/>
+    </record>
+
+    <record id="stock_source_relocate_opl" model="stock.source.relocate">
+        <field name="sequence">10</field>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pbm_type_id"/>
+        <field name="relocate_location_id" ref="location_area_OPL"/>
+    </record>
+
+</odoo>

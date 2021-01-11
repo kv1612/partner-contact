@@ -1,0 +1,285 @@
+<odoo noupdate="1">
+
+
+<record id="reserve_rule_removal_book_tra" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_input_tra_default"/>
+    <field name="name">Book all in TRA</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_TRA"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_werrikon_pick" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_werrikon_pick_full_pallet"/>
+    <field name="name">Werrikon</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_WerrikonEG"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_werrikon_ug_pick" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_werrikon_ug_pick_full_pallet"/>
+    <field name="name">Werrikon</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_WerrikonUG"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_werrikon_ug_replenish" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_werrikon_ug_replenish_full_pallet"/>
+    <field name="name">Werrikon</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_WerrikonUG"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_werrikon_eg_replenish" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_werrikon_eg_replenish_full_pallet"/>
+    <field name="name">Werrikon</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_WerrikonEG"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_highbay" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_Highbay_empty_bin"/>
+    <field name="name">Highbay</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_gp_replenish" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_GP_replenish_empty_bin"/>
+    <field name="name">Highbay</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">empty_bin</field>
+</record>
+
+<record id="reserve_rule_removal_gp_opl_replenish" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_GP_opl_replenish_empty_bin"/>
+    <field name="name">Highbay</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">empty_bin</field>
+</record>
+
+<record id="reserve_rule_removal_HRL_hpu" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_HRL_parcel_hpu_replenish_full_packaging"/>
+    <field name="name">HRL</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+
+<record id="reserve_rule_removal_HRL" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_HRL_parcel_replenish_full_packaging"/>
+    <field name="name">HRL</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+
+<record id="reserve_rule_removal_HRL_opl" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_HRL_parcel_replenish_opl_full_packaging"/>
+    <field name="name">HRL</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+
+<record id="reserve_rule_removal_kardex" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="1"/>
+    <field name="rule_id" ref="reserve_rule_kardex_pick_full_packaging"/>
+    <field name="name">Kardex</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_SHU"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+<record id="reserve_rule_removal_kardex_fallback" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="2"/>
+    <field name="rule_id" ref="reserve_rule_kardex_pick_full_packaging"/>
+    <field name="name">Kardex</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_SHU"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_shelving" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="1"/>
+    <field name="rule_id" ref="reserve_rule_shelving_pick_full_packaging"/>
+    <field name="name">Shelving</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Shelving"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+<record id="reserve_rule_removal_shelving_fallback" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="2"/>
+    <field name="rule_id" ref="reserve_rule_shelving_pick_full_packaging"/>
+    <field name="name">Shelving</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Shelving"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_sample" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_Sample_pick_defaull"/>
+    <field name="name">Sample</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Sample"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_op_log_pick" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_OP_pick_default"/>
+    <field name="name">Op Logistic</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_OPLogistic"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_op_log_order" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_OP_log_order_reservation_stock"/>
+    <field name="name">OP Log</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_OPLogistic"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<!-- <record id="reserve_rule_removal_cosafleet_1" model="stock.reserve.rule.removal"> -->
+<!--     <field name="sequence" eval="1"/> -->
+<!--     <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/> -->
+<!--     <field name="name">Preference 1 to empty TRA area</field> -->
+<!--     <field name="quant_domain">[]</field> -->
+<!--     <field name="location_id" ref="location_area_TRA"/> -->
+<!--     <field name="removal_strategy">default</field> -->
+<!-- </record> -->
+
+<record id="reserve_rule_removal_cosafleet_2" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="3"/>
+    <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/>
+    <field name="name">Preference 3 to full pallet in high bay (incl. reserve)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_cosafleet_4" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="5"/>
+    <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/>
+    <field name="name">Preference 4 to full case for products in Shelving (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Shelving"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+
+<record id="reserve_rule_removal_cosafleet_5" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="7"/>
+    <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/>
+    <field name="name">Preference 5a to bulk products in Kardex (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_SHU"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_cosafleet_6" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="8"/>
+    <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/>
+    <field name="name">Preference 5b to bulk products in Shelving (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Shelving"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_cosafleet_7" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="9"/>
+    <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/>
+    <field name="name">Preference 5c to bulk products in Sample (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Sample"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<!-- <record id="reserve_rule_removal_order_1" model="stock.reserve.rule.removal"> -->
+<!--     <field name="sequence" eval="1"/> -->
+<!--     <field name="rule_id" ref="reserve_rule_order_reservation_stock"/> -->
+<!--     <field name="name">Preference 1 to empty TRA area</field> -->
+<!--     <field name="quant_domain">[]</field> -->
+<!--     <field name="location_id" ref="location_area_TRA"/> -->
+<!--     <field name="removal_strategy">default</field> -->
+<!-- </record> -->
+
+<record id="reserve_rule_removal_order_2" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="2"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 2 to full pallet from Werrikon</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Werrikon"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_order_3" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="3"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 3 to full pallet in high bay (incl. reserve)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_HighBay"/>
+    <field name="removal_strategy">packaging</field>
+    <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
+</record>
+
+<record id="reserve_rule_removal_order_5" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="5"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 4 to full case for products in Shelving (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Shelving"/>
+    <field name="removal_strategy">packaging</field>
+</record>
+
+<record id="reserve_rule_removal_order_6" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="7"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 5a to bulk products in Kardex (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_SHU"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_order_7" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="8"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 5b to bulk products in Shelving (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Shelving"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_order_8" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="9"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 5c to bulk products in Sample (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_zone_Sample"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_order_9" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="9"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_manufacture_opl"/>
+    <field name="name">Preference to pick in OPL</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_OPL"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+
+</odoo>

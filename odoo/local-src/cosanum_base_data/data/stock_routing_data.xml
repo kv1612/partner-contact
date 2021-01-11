@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- re-route schauffhausen -->
+    <record id="stock_routing_shipping_schaffhausen" model="stock.routing">
+        <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base.warehouse_ren').view_location_id" />
+        <field name="picking_type_id" ref="stock_picking_type_xfer_init_sch"/>
+    </record>
+    <record
+        id="stock_routing_rule_ren_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shipping_schaffhausen" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_xfer_ren_sch"
+        />
+    </record>
+
+    <record id="stock_routing_shipping_schaffhausen_wmh" model="stock.routing">
+        <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base.warehouse_wmh').view_location_id" />
+        <field name="picking_type_id" ref="stock_picking_type_xfer_init_sch"/>
+    </record>
+    <record
+        id="stock_routing_rule_wmh_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shipping_schaffhausen_wmh" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_xfer_wmh_sch"
+        />
+    </record>
+
+    <!-- re-route "Delivery" -->
+    <record id="stock_routing_shipping_schlieren" model="stock.routing">
+        <field name="location_id" ref="stock.stock_location_output" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').out_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_shipping_parcel_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shipping_schlieren" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_shipping_parcel"
+        />
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_post')]]" />
+    </record>
+
+    <!-- re-route "Packing" -->
+    <record id="stock_routing_packing_schlieren" model="stock.routing">
+        <field name="location_id" ref="location_packing_Schlieren" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_pack_op_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_packing_schlieren" />
+        <field name="sequence">1</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pack_op"
+        />
+            <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_brauch_rollercage_op')]]" />
+    </record>
+    <record
+        id="stock_routing_rule_pack_rol_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_packing_schlieren" />
+        <field name="sequence">2</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pack_rol"
+        />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base.delivery_carrier_coosafleet_rol'),ref('cosanum_base.delivery_carrier_brauch_rollercage')]]]" />
+    </record>
+    <record
+        id="stock_routing_rule_pack_pal_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_packing_schlieren" />
+        <field name="sequence">3</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pack_pal"
+        />
+    </record>
+
+    <!-- re-route "Pick Initial" -->
+    <record id="stock_routing_shelving" model="stock.routing">
+        <field name="location_id" ref="location_zone_Shelving" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_shelving_parcel_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shelving" />
+        <field name="sequence">1</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_shelving_parcel"
+        />
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_post')]]" />
+    </record>
+    <record
+        id="stock_routing_rule_shelving_rol_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shelving" />
+        <field name="sequence">2</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_shelving_rol"
+        />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base.delivery_carrier_brauch_rollercage'),ref('cosanum_base.delivery_carrier_coosafleet_rol')]]]" />
+    </record>
+    <record
+        id="stock_routing_rule_shelving_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shelving" />
+        <field name="sequence">3</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_shelving_pal"
+        />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('cosanum_base.delivery_carrier_coosafleet'),ref('cosanum_base.delivery_carrier_brauch_pallet')]]]" />
+    </record>
+    <record
+        id="stock_routing_rule_shelving_init_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shelving" />
+        <field name="sequence">4</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_shelving_pal"
+        />
+    </record>
+
+    <record id="stock_routing_sample" model="stock.routing">
+        <field name="location_id" ref="location_zone_Sample" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_sample_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_sample" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_mu"
+        />
+        <field name="rule_domain">[]</field>
+    </record>
+
+    <record id="stock_routing_spick" model="stock.routing">
+        <field name="location_id" ref="location_zone_HighBay" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_spick_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_spick" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_hrl"
+        />
+        <field name="rule_domain">[]</field>
+    </record>
+
+    <record id="stock_routing_shu" model="stock.routing">
+        <field name="location_id" ref="location_area_SHU" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_pick_kardex_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shu" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_kardex"
+        />
+    </record>
+
+    <record id="stock_routing_oplogistic" model="stock.routing">
+        <field name="location_id" ref="location_zone_OPLogistic" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_pick_op_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_oplogistic" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_op"
+        />
+    </record>
+
+    <!-- re-route UGP out -->
+    <!--
+    <record id="stock_routing_ugpout_hrl" model="stock.routing">
+        <field name="location_id" ref="location_zone_UGPOut" />
+        <field name="picking_type_id" ref="stock_picking_type_pick_hrl"/>
+    </record>
+    <record
+        id="stock_routing_rule_ugpout_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_ugpout_hrl" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_ugp"
+        />
+        <field name="rule_domain">[]</field>
+    </record>
+    -->
+
+    <record id="stock_routing_ugpout_spick" model="stock.routing">
+        <field name="location_id" ref="location_zone_UGPOut" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_ugpout_parcel_spick_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_ugpout_spick" />
+        <field name="sequence">1</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_ugp_parcel"
+        />
+        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base.delivery_carrier_post')]]" />
+    </record>
+    <record
+        id="stock_routing_rule_ugpout_spick_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_ugpout_spick" />
+        <field name="sequence">2</field>
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_ugp"
+        />
+        <field name="rule_domain">[]</field>
+    </record>
+
+    <!-- <record -->
+    <!--     id="stock_routing_rule_pick_wer_pull" -->
+    <!--     model="stock.routing.rule" -->
+    <!-- > -->
+    <!--     <field name="routing_id" ref="stock_routing_wereg" /> -->
+    <!--     <field name="method">pull</field> -->
+    <!--     <field name="picking_type_id" model="stock.picking.type" eval="obj().env.ref('cosanum_base.warehouse_wer').pick_type_id.id"/> -->
+    <!-- </record> -->
+
+    <record id="stock_routing_werug" model="stock.routing">
+        <field name="location_id" ref="location_zone_WerrikonUG" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_pick_ug_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_werug" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="wer_delivery_pick_ug"
+        />
+    </record>
+    <record id="stock_routing_weregrpl" model="stock.routing">
+        <field name="location_id" ref="location_zone_WerrikonEG" />
+        <field name="picking_type_id" ref="stock_picking_type_xfer_wer_sch" />
+    </record>
+    <record
+        id="stock_routing_rule_rplpick_eg_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_weregrpl" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_replenish_eg_sch"
+        />
+    </record>
+    <record id="stock_routing_werugrpl" model="stock.routing">
+        <field name="location_id" ref="location_zone_WerrikonUG" />
+        <field name="picking_type_id" ref="stock_picking_type_xfer_wer_sch" />
+    </record>
+    <record
+        id="stock_routing_rule_rplpick_ug_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_werugrpl" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_replenish_ug_sch"
+        />
+    </record>
+
+
+    <record id="stock_routing_hrl_a_1_2" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-1-2" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_1_2_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_1_2" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_1_2"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_3_4" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-3-4" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_3_4_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_3_4" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_3_4"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_5_6" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-5-6" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_5_6_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_5_6" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_5_6"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_7_8" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-7-8" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_7_8_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_7_8" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_7_8"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_9_10" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-9-10" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_9_10_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_9_10" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_9_10"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_11_12" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-11-12" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_11_12_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_11_12" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_11_12"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_13_14" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-13-14" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_13_14_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_13_14" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_13_14"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_15_16" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-15-16" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_15_16_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_15_16" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_15_16"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_17_20" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-17-20" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_17_20_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_17_20" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_17_20"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_21_22" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-21-22" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_21_22_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_21_22" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_21_22"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_23_24" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-23-24" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_23_24_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_23_24" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_23_24"
+        />
+    </record>
+
+    <record id="stock_routing_hrl_a_25_26" model="stock.routing">
+        <field name="location_id" ref="location_area_HRL_A-25-26" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_hrl_a_25_26_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_hrl_a_25_26" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_hrl_a_25_26"
+        />
+    </record>
+
+    <record id="stock_routing_shu_put" model="stock.routing">
+        <field name="location_id" ref="location_area_SHU" />
+        <field name="picking_type_id" ref="stock_picking_type_put_away"/>
+    </record>
+    <record
+        id="stock_routing_rule_shu_spu_in_push"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_shu_put" />
+        <field name="method">push</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_put_kardex"
+        />
+    </record>
+</odoo>

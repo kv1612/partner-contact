@@ -1,0 +1,437 @@
+<odoo noupdate="1">
+
+  <record id="stock_rule_OPReplenishfromHRLtoUGPOut" model="stock.rule">
+      <field name="name">OP: Replenish from HRL to UGP Out</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_HighBay"/>
+      <field name="location_id" ref="location_zone_UGPOut"/>
+      <field name="procure_method">make_to_stock</field>
+      <field name="picking_type_id" ref="stock_picking_type_pick_gp_opl_replenish_hrl"/>
+      <field name="route_id" ref="stock_route_ReplenishOPLog"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_OPReplenishfromUGPOuttoOPLog" model="stock.rule">
+      <field name="name">OP: Replenish from UGP Out to OP Log</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_UGPOut"/>
+      <field name="location_id" ref="location_zone_OPLogistic"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_op"/>
+      <field name="route_id" ref="stock_route_ReplenishOPLog"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+<!--  -->
+  <record id="stock_rule_OP_HPU_ReplenishfromHRLtoUGPOut" model="stock.rule">
+      <field name="name">OP HPU: Replenish from HRL to UGP Out</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_HighBay"/>
+      <field name="location_id" ref="location_zone_UGPOut"/>
+      <field name="procure_method">make_to_stock</field>
+      <field name="picking_type_id" ref="stock_picking_type_pick_parcel_opl_replenish_hrl"/>
+      <field name="route_id" ref="stock_route_ReplenishOPL_HPU"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_OP_HPU_ReplenishfromUGPOuttoOPLog" model="stock.rule">
+      <field name="name">OP HPU: Replenish from UGP Out to OP Log</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_UGPOut"/>
+      <field name="location_id" ref="location_zone_OPLogistic"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_op"/>
+      <field name="route_id" ref="stock_route_ReplenishOPL_HPU"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+<!--  -->
+  <record id="stock_rule_DLRPALReplenishfromHRLtoUGPOut" model="stock.rule">
+      <field name="name">DLR/PAL: Replenish from HRL to UGP Out</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_HighBay"/>
+      <field name="location_id" ref="location_zone_UGPOut"/>
+      <field name="procure_method">make_to_stock</field>
+      <field name="picking_type_id" ref="stock_picking_type_pick_gp_replenish_hrl"/>
+      <field name="route_id" ref="stock_route_ReplenishDLRPAL"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_DLRPALReplenishfromUGPOuttoShelving" model="stock.rule">
+      <field name="name">DLR/PAL: Replenish from UGP Out to Shelving</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_UGPOut"/>
+      <field name="location_id" ref="location_zone_Shelving"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_pal_dlr"/>
+      <field name="route_id" ref="stock_route_ReplenishDLRPAL"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_FBGReplenishfromHRLtoUGPOut" model="stock.rule">
+      <field name="name">FBG: Replenish from HRL to UGP Out</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_HighBay"/>
+      <field name="location_id" ref="location_zone_UGPOut"/>
+      <field name="procure_method">make_to_stock</field>
+      <field name="picking_type_id" ref="stock_picking_type_pick_parcel_replenish_hrl"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGNSB"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_FBGReplenishfromUGPOuttoNSB" model="stock.rule">
+      <field name="name">FBG: Replenish from UGP Out to NSB</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_UGPOut"/>
+      <field name="location_id" ref="location_zone_NSB"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_nsb_fbg"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGNSB"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_FBGReplenishfromNSBtoXL" model="stock.rule">
+      <field name="name">FBG: Replenish from NSB to XL</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_NSB"/>
+      <field name="location_id" ref="location_zone_Shelving"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_fbg"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGXL"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_FBGReplenishfromNSBtoL" model="stock.rule">
+      <field name="name">FBG: Replenish from NSB to L</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_NSB"/>
+      <field name="location_id" ref="location_zone_Shelving"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_fbg"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGL"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_FBGReplenishfromNSBtoM" model="stock.rule">
+      <field name="name">FBG: Replenish from NSB to M</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_NSB"/>
+      <field name="location_id" ref="location_zone_Shelving"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_fbg"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGM"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_FBGReplenishfromNSBtoS" model="stock.rule">
+      <field name="name">FBG: Replenish from NSB to S</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_NSB"/>
+      <field name="location_id" ref="location_zone_Shelving"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_fbg"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGS"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_HPUReplenishfromHRLtoUGPOut" model="stock.rule">
+      <field name="name">HPU: Replenish from HRL to UGP Out</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_HighBay"/>
+      <field name="location_id" ref="location_zone_UGPOut"/>
+      <field name="procure_method">make_to_stock</field>
+      <field name="picking_type_id" ref="stock_picking_type_pick_parcel_hpu_replenish_hrl"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGHPU"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+  <record id="stock_rule_HPUReplenishfromUGPOuttoHPU" model="stock.rule">
+      <field name="name">HPU: Replenish from UGP Out to HPU</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_UGPOut"/>
+      <field name="location_id" ref="location_zone_Shelving"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_replenish_hpu"/>
+      <field name="route_id" ref="stock_route_ReplenishFBGHPU"/>
+      <field name="auto_create_group" eval="1"/>
+      <field name="propagate_cancel" eval="1"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', ref('stock.stock_location_company')),
+                ('location_id', '=', ref('stock.stock_location_stock')),
+             ]"/>
+      <value model="stock.rule" eval="{
+            'name': 'SCH: Input → Stock',
+            'action': 'pull',
+            'auto': 'manual',
+            'procure_method': 'make_to_order',
+            'location_src_id': obj().env.ref('stock.stock_location_company').id,
+            'location_id': obj().env.ref('stock.stock_location_stock').id,
+            'picking_type_id': obj().env.ref('cosanum_base.stock_picking_type_put_away').id,
+            'route_id': obj().env['stock.location.route'].search([('name', '=', 'Schlieren: Receive in 2 steps (input + stock)')], limit=1).id,
+            'delay_alert': False,
+      }"/>
+  </function>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id),
+                ('location_id', '=', obj().env.ref('cosanum_base.warehouse_wer').lot_stock_id.id)
+             ]"/>
+      <value model="stock.rule" eval="{
+            'name': 'WER: Input → Stock',
+            'action': 'pull',
+            'auto': 'manual',
+            'procure_method': 'make_to_order',
+            'location_src_id': obj().env.ref('cosanum_base.warehouse_wer').wh_input_stock_loc_id.id,
+            'location_id': obj().env.ref('cosanum_base.location_zone_Werrikon').id,
+            'picking_type_id': obj().env.ref('cosanum_base.stock_picking_type_put_away_wer').id,
+            'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Receive in 2 steps (input + stock)')], limit=1).id,
+            'delay_alert': False,
+      }"/>
+  </function>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').lot_stock_id.id),
+                ('location_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_pack_stock_loc_id.id)
+             ]"/>
+      <value model="stock.rule" eval="{
+            'name': 'WER: Werrikon → Packing Zone',
+            'action': 'pull',
+            'auto': 'manual',
+            'procure_method': 'make_to_stock',
+            'location_src_id': obj().env.ref('cosanum_base.location_zone_Werrikon').id,
+            'location_id': obj().env.ref('cosanum_base.location_area_CCOWER').id,
+            'picking_type_id': obj().env.ref('cosanum_base.warehouse_wer').pick_type_id.id,
+            'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Deliver in 2 steps (pick + ship)')], limit=1).id,
+            'delay_alert': False,
+      }"/>
+  </function>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_pack_stock_loc_id.id),
+                ('location_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id),
+             ]"/>
+      <value model="stock.rule" eval="{
+            'name': 'WER: Packing Zone → Output',
+            'action': 'pull',
+            'auto': 'manual',
+            'procure_method': 'make_to_order',
+            'location_src_id': obj().env.ref('cosanum_base.location_area_CCOWER').id,
+            'location_id': obj().env.ref('cosanum_base.location_area_WEGVSDShip').id,
+            'picking_type_id': obj().env.ref('cosanum_base.warehouse_wer').pack_type_id.id,
+            'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Deliver in 2 steps (pick + ship)')], limit=1).id,
+            'delay_alert': False,
+      }"/>
+  </function>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id),
+                ('location_id', '=', obj().env.ref('stock.stock_location_customers').id)
+             ]"/>
+      <value model="stock.rule" eval="{
+            'name': 'WER: Output → Customers',
+            'action': 'pull',
+            'auto': 'manual',
+            'procure_method': 'make_to_order',
+            'location_src_id': obj().env.ref('cosanum_base.warehouse_wer').wh_output_stock_loc_id.id,
+            'location_id': obj().env.ref('stock.stock_location_customers').id,
+            'picking_type_id': obj().env.ref('stock.warehouse0').out_type_id.id,
+            'route_id': obj().env['stock.location.route'].search([('name', '=', 'Werrikon: Deliver in 2 steps (pick + ship)')], limit=1).id,
+            'delay_alert': False,
+      }"/>
+  </function>
+
+  <record id="stock_rule_MTO_deliver" model="stock.rule">
+      <field name="name">Output -> Customer (MTO - no defer)</field>
+      <field name="action">pull</field>
+      <field name="location_src_id" ref="stock.stock_location_output"/>
+      <field name="location_id" ref="stock.stock_location_customers"/>
+      <field name="picking_type_id" ref="stock.picking_type_out"/>
+      <field name="route_id" ref="stock.route_warehouse0_mto"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', obj().env.ref('stock.stock_location_stock').id),
+                ('route_id', '=', obj().env.ref('stock.route_warehouse0_mto').id)
+             ]"/>
+      <value model="stock.rule" eval="{
+            'name': 'SCH: Stock → Output (MTO)',
+            'procure_method': 'make_to_order',
+      }"/>
+  </function>
+
+  <record id="stock_rule_Buy_SCH" model="stock.rule">
+      <field name="name">Buy</field>
+      <field name="action">buy</field>
+      <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').view_location_id.id"/>
+      <field name="picking_type_id" ref="stock.picking_type_in"/>
+      <field name="route_id" ref="purchase_stock.route_warehouse0_buy"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_WERPushPartialPallettoSCH" model="stock.rule">
+      <field name="name">WER: Push Partial Pallet to SCH</field>
+      <field name="action">push</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_area_WEGNSBShip"/>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="picking_type_id" ref="stock_picking_type_xfer_wer_sch"/>
+      <field name="route_id" ref="purchase_stock.route_warehouse0_buy"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_SCHReplenishfromWerrikontoWAE" model="stock.rule">
+      <field name="name">SCH: Replenish from Werrikon to WAE</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_zone_Werrikon"/>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock_picking_type_xfer_wer_sch"/>
+      <field name="route_id" ref="stock_route_ReplenishSchlieren"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_SCHReplenishfromSchaffhausentoWAE" model="stock.rule">
+      <field name="name">SCH: Replenish from Schafhausen to WAE</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="location_internal_schafhausen"/>
+      <field name="location_id" ref="location_zone_Schlieren"/>
+      <field name="procure_method">make_to_stock</field>
+      <field name="picking_type_id" ref="stock_picking_type_xfer_init_sch"/>
+      <field name="route_id" ref="stock_route_ReplenishSchlieren_from_schaffhausen"/>
+      <field name="delay_alert" eval="0"/>
+      <field name="auto_create_group" eval="1"/>
+  </record>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.rule"
+             search="[
+                ('location_src_id', '=', obj().env.ref('stock.warehouse0').wh_output_stock_loc_id.id),
+                ('location_id', '=', obj().env.ref('stock.stock_location_customers').id)
+             ]"/>
+      <value model="stock.rule" eval="{
+            'delay_alert': False,
+      }"/>
+  </function>
+
+  <record id="stock_rule_SCHManufacturefromCustomerStock" model="stock.rule">
+      <field name="name">SCH MO Output -> Customer (MTO - no defer)</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="stock.stock_location_output"/>
+      <field name="location_id" ref="stock.stock_location_customers"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock.picking_type_out"/>
+      <field name="route_id" ref="mrp.route_warehouse0_manufacture"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_SCHManufacturefromOutputStock" model="stock.rule">
+      <field name="name">SCH MO Stock -> Output (MTO - no defer)</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="stock.stock_location_stock"/>
+      <field name="location_id" ref="stock.stock_location_output"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="cosanum_base.stock_picking_type_pick_pack_mo_op"/>
+      <field name="route_id" ref="mrp.route_warehouse0_manufacture"/>
+      <field name="delay_alert" eval="0"/>
+  </record>
+
+  <record id="stock_rule_SCHsubcontract_vendor1" model="stock.rule">
+      <field name="name">SCH: Output -> Vendor Stiftung Solvita</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="stock.stock_location_output"/>
+      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor1"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock.picking_type_out"/>
+      <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
+      <field name="delay_alert" eval="0"/>
+      <field name="propagate_cancel" eval="1"/>
+  </record>
+
+  <record id="stock_rule_SCHsubcontract_vendor2" model="stock.rule">
+      <field name="name">SCH: Output -> Vendor Zuwebe</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="stock.stock_location_output"/>
+      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor2"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock.picking_type_out"/>
+      <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
+      <field name="delay_alert" eval="0"/>
+      <field name="propagate_cancel" eval="1"/>
+  </record>
+
+  <record id="stock_rule_SCHsubcontract_vendor3" model="stock.rule">
+      <field name="name">SCH: Output -> Vendor CEMED GmBH</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="stock.stock_location_output"/>
+      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor3"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock.picking_type_out"/>
+      <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
+      <field name="delay_alert" eval="0"/>
+      <field name="propagate_cancel" eval="1"/>
+  </record>
+
+  <record id="stock_rule_SCHsubcontract_vendor4" model="stock.rule">
+      <field name="name">SCH: Output -> Vendor Wagner KG Klinikbedarf</field>
+      <field name="action">pull</field>
+      <field name="auto">manual</field>
+      <field name="location_src_id" ref="stock.stock_location_output"/>
+      <field name="location_id" ref="cosanum_base.location_internal_subcontract_vendor4"/>
+      <field name="procure_method">make_to_order</field>
+      <field name="picking_type_id" ref="stock.picking_type_out"/>
+      <field name="route_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').subcontracting_route_id.id"/>
+      <field name="delay_alert" eval="0"/>
+      <field name="propagate_cancel" eval="1"/>
+  </record>
+
+
+</odoo>

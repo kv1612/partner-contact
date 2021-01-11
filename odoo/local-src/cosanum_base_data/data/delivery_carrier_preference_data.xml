@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="delivery_carrier_preference_1" model="delivery.carrier.preference">
+        <field name="sequence">1</field>
+        <field name="preference">carrier</field>
+        <field name="carrier_id" ref="delivery_carrier_post"/>
+        <field name="max_weight">60.0</field>
+        <field name="picking_domain" eval="[('carrier_id', 'in', [ref('delivery_carrier_brauch_pallet'), ref('delivery_carrier_coosafleet')])]"/>
+    </record>
+
+</odoo>

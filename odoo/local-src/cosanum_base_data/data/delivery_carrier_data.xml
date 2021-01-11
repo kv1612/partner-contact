@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="product_product_delivery_fees" model="product.product">
+        <field name="name">Additional Fees</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="list_price">24.0</field>
+    </record>
+
+    <record id="delivery_carrier_coosafleet" model="delivery.carrier">
+        <field name="name" >Coosafleet</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">coosafleet</field>
+    </record>
+
+    <record id="delivery_carrier_coosafleet_rol" model="delivery.carrier">
+        <field name="name" >Coosafleet Rollercage</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">coosafleet_rol</field>
+    </record>
+
+    <record id="delivery_carrier_brauch_pallet" model="delivery.carrier">
+        <field name="name">Brauch Pallet</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">brauch</field>
+        <field name="invoice_policy">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">brauch_pallet</field>
+    </record>
+
+    <record id="delivery_carrier_brauch_rollercage" model="delivery.carrier">
+        <field name="name">Brauch Rollercage</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">brauch</field>
+        <field name="invoice_policy">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">brauch_rollercage</field>
+    </record>
+
+    <record id="delivery_carrier_brauch_rollercage_op" model="delivery.carrier">
+        <field name="name">Brauch OP Rollercage</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">brauch</field>
+        <field name="invoice_policy">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">brauch_op_rollercage</field>
+    </record>
+
+    <record id="delivery_carrier_post" model="delivery.carrier">
+        <field name="name">DHL CH</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">fixed</field>
+        <field name="invoice_policy">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">dhl_ch</field>
+    </record>
+
+    <record id="delivery_carrier_spitex_courier" model="delivery.carrier">
+        <field name="name">Spitex Courier</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">spitex</field>
+    </record>
+
+    <record id="stock.warehouse0" model="stock.warehouse">
+        <field name="delivery_carrier_id" ref="delivery_carrier_brauch_pallet" />
+    </record>
+
+    <record id="warehouse_wer" model="stock.warehouse">
+        <field name="delivery_carrier_id" ref="delivery_carrier_brauch_pallet" />
+    </record>
+</odoo>

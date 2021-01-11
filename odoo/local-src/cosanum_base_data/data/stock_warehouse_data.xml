@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+ <odoo noupdate="1">
+
+  <!-- pylint:disable=duplicate-xml-record-id -->
+
+  <record id="stock.warehouse0" model="stock.warehouse">
+      <field name="name">Schlieren</field>
+      <field name="code">SCH</field>
+      <field name="delivery_steps">pick_ship</field>
+      <field name="reception_steps">two_steps</field>
+      <field name="manufacture_steps">pbm</field>
+      <field name="partner_id" ref="base.main_partner"/>
+  </record>
+
+  <record id="werrikon_address" model="res.partner" context="{'default_is_company': True}">
+      <field name="name">Cosanum AG Industrie Werrikon</field>
+      <field name="is_company" eval="True"/>
+      <field name="street">Tumigerstrasse 111</field>
+      <field name="city">Nänikon</field>
+      <field name="zip">8606</field>
+      <field name="phone"></field>
+      <field name="email">werrikon@cosanum.ch</field>
+  </record>
+
+  <record id="warehouse_wer" model="stock.warehouse">
+      <field name="name">Werrikon</field>
+      <field name="code">WER</field>
+      <field name="delivery_steps">pick_ship</field>
+      <field name="reception_steps">two_steps</field>
+      <field name="buy_to_resupply" eval="False"/>
+      <field name="subcontracting_to_resupply" eval="False"/>
+      <field name="manufacture_to_resupply" eval="False"/>
+      <field name="partner_id" ref="werrikon_address"/>
+  </record>
+
+  <record id="schaffhausen_ren_address" model="res.partner">
+      <field name="name">Schaffhausen - REN</field>
+      <field name="type">delivery</field>
+      <field name="street">Solenbergstrasse 7</field>
+      <field name="city">Schaffhausen</field>
+      <field name="zip">8200</field>
+      <field name="parent_id" ref="base.main_partner"/>
+  </record>
+
+  <record id="warehouse_ren" model="stock.warehouse">
+      <field name="name">Schaffhausen - REN</field>
+      <field name="code">REN</field>
+      <field name="partner_id" ref="schaffhausen_ren_address"/>
+      <field name="buy_to_resupply" eval="False"/>
+      <field name="subcontracting_to_resupply" eval="False"/>
+      <field name="manufacture_to_resupply" eval="False"/>
+  </record>
+
+  <record id="schaffhausen_wmh_address" model="res.partner">
+      <field name="name">Schaffhausen - WMH</field>
+      <field name="type">delivery</field>
+      <field name="parent_id" ref="base.main_partner"/>
+  </record>
+
+  <record id="warehouse_wmh" model="stock.warehouse">
+      <field name="name">Schaffhausen - WMH</field>
+      <field name="code">WMH</field>
+      <field name="partner_id" ref="schaffhausen_wmh_address"/>
+      <field name="buy_to_resupply" eval="False"/>
+      <field name="subcontracting_to_resupply" eval="False"/>
+      <field name="manufacture_to_resupply" eval="False"/>
+  </record>
+
+  <record id="stock.warehouse0" model="stock.warehouse">
+      <field name="block_delivery_route_update">1</field>
+      <field name="block_reception_route_update">1</field>
+      <field name="block_manufacture_route_update">1</field>
+  </record>
+
+  <record id="warehouse_wer" model="stock.warehouse">
+      <field name="block_delivery_route_update">1</field>
+      <field name="block_reception_route_update">1</field>
+      <field name="block_manufacture_route_update">1</field>
+  </record>
+
+  <record id="warehouse_ren" model="stock.warehouse">
+      <field name="block_delivery_route_update">1</field>
+      <field name="block_reception_route_update">1</field>
+      <field name="block_manufacture_route_update">1</field>
+  </record>
+
+  <record id="warehouse_wmh" model="stock.warehouse">
+      <field name="block_delivery_route_update">1</field>
+      <field name="block_reception_route_update">1</field>
+      <field name="block_manufacture_route_update">1</field>
+  </record>
+
+  <function model="stock.location.route" name="write">
+      <value model="stock.warehouse"
+             eval="obj().env.ref('stock.warehouse0').delivery_route_id.id"/>
+      <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
+  </function>
+
+  <function model="stock.location.route" name="write">
+      <value model="stock.warehouse"
+             eval="obj().env.ref('cosanum_base.warehouse_wer').delivery_route_id.id"/>
+      <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
+  </function>
+
+  <function model="stock.rule" name="write">
+      <value model="stock.warehouse"
+             eval="obj().env.ref('stock.warehouse0').subcontracting_pull_id.id"/>
+      <value model="stock.location"
+             eval="{'location_src_id': obj().env.ref('stock.stock_location_output').id,
+                    'picking_type_id': obj().env.ref('stock.warehouse0').pick_type_id.id}"/>
+  </function>
+
+</odoo>
