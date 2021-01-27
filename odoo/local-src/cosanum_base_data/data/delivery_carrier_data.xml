@@ -11,7 +11,7 @@
     </record>
 
     <record id="delivery_carrier_coosafleet" model="delivery.carrier">
-        <field name="name" >Coosafleet</field>
+        <field name="name" >Cosanum Palette</field>
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
@@ -21,7 +21,7 @@
     </record>
 
     <record id="delivery_carrier_coosafleet_rol" model="delivery.carrier">
-        <field name="name" >Coosafleet Rollercage</field>
+        <field name="name" >Cosanum cosaLog</field>
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
@@ -31,7 +31,7 @@
     </record>
 
     <record id="delivery_carrier_brauch_pallet" model="delivery.carrier">
-        <field name="name">Brauch Pallet</field>
+        <field name="name">Brauch Palette</field>
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
@@ -42,7 +42,7 @@
     </record>
 
     <record id="delivery_carrier_brauch_rollercage" model="delivery.carrier">
-        <field name="name">Brauch Rollercage</field>
+        <field name="name">Brauch cosaLog</field>
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
@@ -53,7 +53,7 @@
     </record>
 
     <record id="delivery_carrier_brauch_rollercage_op" model="delivery.carrier">
-        <field name="name">Brauch OP Rollercage</field>
+        <field name="name">Brauch cosaOPLogistik</field>
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
