@@ -56,7 +56,11 @@
            used to temporarily store packages in SHU before moving them in a kardex,
            it should accept anything
       -->
-      <field name="name">Kardex Buffer</field>
+      <field name="name">Kardex Buffer In</field>
+  </record>
+
+  <record id="location_storage_type_kardex_buffer_out" model="stock.location.storage.type">
+      <field name="name">Kardex Buffer Out</field>
   </record>
 
   <record id="location_storage_type_kardex_B10404" model="stock.location.storage.type">
