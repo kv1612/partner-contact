@@ -48,7 +48,7 @@
             name="picking_type_id"
             ref="stock_picking_type_shipping_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_post')]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon')]]]" />
     </record>
 
     <!-- re-route "Packing" -->
@@ -111,7 +111,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_shelving_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_post')]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon')]]]" />
     </record>
     <record
         id="stock_routing_rule_shelving_rol_pull"
@@ -270,7 +270,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_ugp_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','=',ref('cosanum_base_data.delivery_carrier_post')]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon')]]]" />
     </record>
     <record
         id="stock_routing_rule_ugpout_spick_pull"

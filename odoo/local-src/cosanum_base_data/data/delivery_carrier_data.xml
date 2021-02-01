@@ -84,6 +84,38 @@
         <field name="tech_name">spitex</field>
     </record>
 
+    <record id="delivery_carrier_swisspost_pri" model="delivery.carrier">
+        <field name="name">SwissPost PRI</field>
+        <field name="free_over" eval="False"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">postlogistics</field>
+        <field name="product_id" ref="delivery_postlogistics.product_postlogistics_service"/>
+        <field name="postlogistics_endpoint_url">https://wedec.post.ch/api/barcode/v1/generateAddressLabel</field>
+        <field name="postlogistics_license_id" ref="postlogistics_licence"></field>
+        <field name="postlogistics_default_packaging_id" ref="swisspost_pri_packaging"></field>
+        <field name="postlogistics_label_layout" ref="delivery_postlogistics.postlogistics_layout_option_a6"></field>
+        <field name="postlogistics_output_format" ref="delivery_postlogistics.postlogistics_output_format_option_zpl2"></field>
+        <field name="postlogistics_resolution" ref="delivery_postlogistics.postlogistics_output_resolution_option_300ppp"></field>
+        <field name="tech_name">swisspost_pri</field>
+    </record>
+
+    <record id="delivery_carrier_swisspost_express_moon" model="delivery.carrier">
+        <field name="name">SwissPost Express Moon</field>
+        <field name="free_over" eval="False"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">postlogistics</field>
+        <field name="product_id" ref="delivery_postlogistics.product_postlogistics_service"/>
+        <field name="postlogistics_endpoint_url">https://wedec.post.ch/api/barcode/v1/generateAddressLabel</field>
+        <field name="postlogistics_license_id" ref="postlogistics_licence"></field>
+        <field name="postlogistics_default_packaging_id" ref="swisspost_exp_packaging"></field>
+        <field name="postlogistics_label_layout" ref="delivery_postlogistics.postlogistics_layout_option_a6"></field>
+        <field name="postlogistics_output_format" ref="delivery_postlogistics.postlogistics_output_format_option_zpl2"></field>
+        <field name="postlogistics_resolution" ref="delivery_postlogistics.postlogistics_output_resolution_option_300ppp"></field>
+        <field name="tech_name">swisspost_express_moon</field>
+    </record>
+
     <record id="stock.warehouse0" model="stock.warehouse">
         <field name="delivery_carrier_id" ref="delivery_carrier_brauch_pallet" />
     </record>

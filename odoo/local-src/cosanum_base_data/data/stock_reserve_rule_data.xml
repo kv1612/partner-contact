@@ -151,7 +151,7 @@
       <field name="sequence" eval="20"/>
       <field name="name">Coosafleet &amp; Post Order reservation</field>
       <field name="active" eval="1"/>
-      <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_coosafleet_rol'),ref('delivery_carrier_coosafleet'),ref('delivery_carrier_post')]]]"/>
+      <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_coosafleet_rol'),ref('delivery_carrier_coosafleet'),ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon')]]]"/>
       <field name="location_id" ref="stock.stock_location_stock"/>
       <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, [obj().env.ref('stock.warehouse0').pick_type_id.id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_cep_parcel').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_pal').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_rol').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_parcel').id])]"/>
   </record>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="swisspost_pri_packaging" model="product.packaging">
+      <field name="name">Swisspost PRI</field>
+      <field name="package_carrier_type">postlogistics</field>
+      <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_transport"></field>
+      <field name="shipper_package_code">PRI</field>
+    </record>
+    <record id="swisspost_exp_packaging" model="product.packaging">
+      <field name="name">Swisspost EXPRESS</field>
+      <field name="package_carrier_type">postlogistics</field>
+      <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_transport"></field>
+      <field name="shipper_package_code">SEM</field>
+    </record>
+
+</odoo>

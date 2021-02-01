@@ -81,6 +81,8 @@
         'data/stock_rule.xml',
         'data/product_packaging_type_data.xml',
         'data/stock_putaway_rule_data.xml',
+        "data/product_packaging.xml",
+        "data/postlogistics_license.xml",
         'data/delivery_carrier_data.xml',
         'data/stock_reserve_rule_data.xml',
         'data/stock_reserve_rule_removal_data.xml',
