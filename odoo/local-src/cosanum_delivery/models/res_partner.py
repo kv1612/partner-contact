@@ -11,7 +11,11 @@ class ResPartner(models.Model):
         selection="_selection_truck_weight_limit",
         string="Truck Weight limit (in T)",
     )
-    delivery_info = fields.Text(string="Info for delivery carrier")
+    delivery_info_id = fields.Many2one(
+        "res.partner.delivery.info",
+        ondelete="restrict",
+        string="Info for Delivery Carrier",
+    )
     customs_privileged = fields.Selection(
         selection=[("gdk", "GDK"), ("no_gdk", "No GDK")],
         string="Customs privileged",
