@@ -16,14 +16,15 @@ class ResPartner(models.Model):
         "delivery_time_window_ids.time_window_end",
         "mobile",
         "phone",
-        "delivery_info",
+        "delivery_info_id",
+        "delivery_info_id.text",
     )
     def _compute_brauch_delivery_info(self):
         desc = self.with_context(lang="de_DE").get_delivery_time_description()
         for partner in self:
             delivery_info = (
-                partner.delivery_info + "\n--\n"
-                if partner.delivery_info
+                partner.delivery_info_id.text + "\n--\n"
+                if (partner.delivery_info_id and partner.delivery_info_id.text)
                 else ""
             )
             delivery_times_string = _("Delivery times: Anytime")
