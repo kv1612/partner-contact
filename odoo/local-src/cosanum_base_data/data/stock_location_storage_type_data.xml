@@ -41,6 +41,11 @@
       <field name="only_empty" eval="1"/>
   </record>
 
+  <record id="location_storage_type_cep" model="stock.location.storage.type">
+      <field name="name">CEP shelving bin</field>
+      <field name="only_empty" eval="1"/>
+  </record>
+
   <record id="location_storage_type_dlr" model="stock.location.storage.type">
       <field name="name">Pallet DLR</field>
       <field name="do_not_mix_products" eval="1"/>

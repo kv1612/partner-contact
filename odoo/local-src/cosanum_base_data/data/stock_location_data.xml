@@ -127,6 +127,16 @@
       <field name="pack_putaway_strategy">none</field>
   </record>
 
+  <record id="location_area_CEP" model="stock.location">
+      <field name="name">CEP</field>
+      <field name="location_id" ref="location_internal_sch"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
+      <field name="pack_putaway_strategy">none</field>
+  </record>
+
   <record id="location_area_FBGXL" model="stock.location">
       <field name="name">FBG XL</field>
       <field name="location_id" ref="location_zone_Shelving"/>
@@ -626,6 +636,16 @@
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
+      <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
+  </record>
+
+  <record id="location_area_CCOPOSTCEP" model="stock.location">
+      <field name="name">CCOPOST-CEP</field>
+      <field name="location_id" ref="location_area_VSDShip"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 

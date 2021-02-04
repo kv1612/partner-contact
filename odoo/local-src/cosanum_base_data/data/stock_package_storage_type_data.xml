@@ -11,6 +11,11 @@
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
   </record>
 
+  <record id="package_storage_type_cep" model="stock.package.storage.type">
+      <field name="name">CEP Shelf Box</field>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
+  </record>
+
   <!-- Used when we don't know the size of the tray type we need.
        The putaway will move the package in SHU and user will scan the tray type. -->
   <record id="package_storage_type_kardex" model="stock.package.storage.type">

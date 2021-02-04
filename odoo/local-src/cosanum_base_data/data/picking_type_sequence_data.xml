@@ -20,6 +20,15 @@
       <field name="padding" eval="7"/>
       <field name="number_increment" eval="1"/>
   </record>
+  <record id="sequence_stock_picking_type_pick_cep_parcel" model="ir.sequence">
+      <field name="name">Pick CEP Parcel</field>
+      <field name="number_next_actual" eval="1"/>
+      <field name="implementation">standard</field>
+      <field name="prefix">SCH/PICK/CPARCEL/</field>
+      <field name="code">stock.cep</field>
+      <field name="padding" eval="7"/>
+      <field name="number_increment" eval="1"/>
+  </record>
   <record id="sequence_stock_picking_type_pack_mo_op" model="ir.sequence">
       <field name="name">Pack MO OP</field>
       <field name="number_next_actual" eval="1"/>
