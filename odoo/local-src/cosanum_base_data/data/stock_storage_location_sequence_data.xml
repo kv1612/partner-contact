@@ -211,7 +211,12 @@
       <field name="location_id" ref="cosanum_base_data.location_area_LAN"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_lan"/>
   </record>
-
+  <!-- Sequences for CEP -->
+  <record id="stock_storage_location_sequence_cep_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_CEP"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_cep"/>
+  </record>
   <!-- Sequences for Kardex SHU (buffer) -->
   <record id="stock_storage_location_sequence_kardex" model="stock.storage.location.sequence">
       <field name="sequence" eval="10"/>
