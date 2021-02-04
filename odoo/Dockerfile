@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:14.0-4.1.0
+FROM camptocamp/odoo-project:14.0-latest
 LABEL maintainer="Camptocamp"
 LABEL org.opencontainers.image.source https://github.com/camptocamp/cosanum_odoo
 
@@ -62,13 +62,13 @@ RUN cd /odoo && pip install -r src_requirements.txt
 ## Environment
 # frequency: sometimes
 # cost:      very light
-ENV ADDONS_PATH="/odoo/src/addons, \
+ENV ADDONS_PATH="/odoo/external-src/odoo-cloud-platform, \
   /odoo/external-src/enterprise, \
   /odoo/external-src/server-env, \
   /odoo/external-src/server-tools, \
   /odoo/external-src/server-ux, \
   /odoo/external-src/web, \
-  /odoo/external-src/odoo-cloud-platform, \
+  /odoo/src/addons, \
   /odoo/local-src" \
   LIMIT_TIME_CPU=86400 \
   LIMIT_TIME_REAL=86400 \
