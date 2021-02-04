@@ -1,0 +1,77 @@
+migration:
+  options:
+    backup:
+      # Ask to dump-bag to backup the customer database
+      # The domain name is resolved by the internal DNS
+      command: curl --fail --silent http://server.dump-bag/dump/$database
+      stop_on_failure: true
+      ignore_if: test -z "$BACKUP_ON_MIGRATION"
+  versions:
+    - version: setup
+      operations:
+        post:
+          ## PLATFORM
+          - anthem openerp.addons.cloud_platform.songs::install_exoscale
+          #- anthem songs.install.accounting::main
+          #- anthem songs.install.logistics::main
+          - anthem songs.install.data_all::main
+      modes:
+        migration:
+          operations:
+            pre:
+              # Migration project
+              - psql -f odoo/songs/migration/pre.sql
+              - anthem songs.install.pre::main # if migration fail may be comment this songs (and fix later if it's possible)
+              - anthem songs.migration.pre::pre
+              - anthem songs.migration.pre_check_fields::pre
+              - anthem songs.migration.uninstall::pre
+              - psql -f odoo/songs/migration/pre_clean.sql
+              - psql -f odoo/songs/migration/pre_final.sql
+            post:
+              - anthem songs.install.data_full::main
+              #### import heavy stuff
+              #- importer.sh songs.install.inventory::setup_locations /odoo/data/install/stock.location.csv
+              #- anthem songs.install.inventory::location_compute_parents
+              # Migration project
+              - anthem songs.migration.uninstall::post
+              - anthem songs.migration.post::post
+              - anthem songs.migration.post_check_fields::post
+        sample:
+          operations:
+            pre:
+              - odoo -i base --stop-after-init --workers=0 --no-xmlrpc
+              - anthem songs.install.pre::main
+            post:
+              - anthem songs.sample.data_sample::main
+      addons:
+        upgrade:
+          ## PLATFORM
+          - cloud_platform_exoscale
+          ## Only if v9.0 and using attachment_s3 (exoscale) and `delivery_carrier_label`:
+          #- delivery_carrier_label_s3
+          # ---
+          #### core
+          - base  # Used for project migrations
+          #### oca/server-tools
+          - database_cleanup  # Used for project migrations
+          #### oca/server-ux
+          - base_technical_features
+          #### oca/server-env
+          - mail_environment
+          - server_environment
+          - server_environment_ir_config_parameter
+          #### oca/web
+          - web_environment_ribbon
+          #### local-src
+          # - my_addon
+    # Add a noop version used to check if build have been done with migrated database
+    - version: 14.0.0.0.0
+    # update step example
+    # - version: 14.0.x.y.z
+    #   addons:
+    #     upgrade:
+    #       - foo_module
+    #       - baz_module
+    #   operations:
+    #     post:
+    #       - anthem songs.updates.update_10_0_x_y_z::main

@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# Used for project migration.
+# Allow to launch the database migration with a specific entrypoint
+# to manage:
+# - marabunta_version table
+# - specific environment configuration when deploying on integration/production
+#
+set -e
+
+echo "Database migration started"
+
+if [ ! "$MARABUNTA_MODE" = "migration" ]
+then
+  echo "You must launch the database migration with MARABUNTA_MODE=migration"
+  exit 1
+fi
+
+wait_postgres.sh
+
+if [ "$( psql -tAc "SELECT 1 FROM pg_database WHERE datname='$DB_NAME'" )" != '1' ]
+then
+    echo "You must launch the database migration on the migrated database"
+    exit 1
+fi
+
+if [ "$( psql -tAc "SELECT 1 FROM marabunta_version WHERE number='14.0.0.0.0'" )" != '1' ]
+then
+
+    echo "Build migration not done: remove marabunta_version table"
+
+    psql -c "DROP TABLE IF EXISTS marabunta_version;"
+
+fi
+
+echo "Launch before-migrate-entrypoint"
+run-parts --verbose "/before-migrate-entrypoint.d"
+
+echo "Launch marabunta migration"
+gosu odoo migrate
+
+echo "Database migration finished"

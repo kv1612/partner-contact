@@ -1,0 +1,24 @@
+# base_dj
+Jinja2
+autopep8
+pylint
+unicodecsv
+# Improve mimetype guessing.
+# Requires `libmagic1` to be installed sys-wide
+python-magic
+
+## PLATFORM
+redis==2.10.5
+python-json-logger==0.1.5
+statsd==3.2.1
+
+## PLATFORM, for s3 storage at Exoscale
+boto3==1.9.102
+
+## FOR MIGRATIONS
+# The last release of openupgradelib (release 2.0) contains bugs and don't works with projects in version 12.0
+# We need to use the last version of master branch.
+# We use the last hash commit to keep a stable version of openupgradelib.
+https://github.com/OCA/openupgradelib/archive/3945526d1377533a0aa39d20be88edf2a03f3145.tar.gz#egg=openupgradelib
+
+## custom
