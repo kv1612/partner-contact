@@ -289,8 +289,8 @@
     <field name="removal_strategy">default</field>
 </record>
 
-<record id="reserve_rule_removal_order_9" model="stock.reserve.rule.removal">
-    <field name="sequence" eval="10"/>
+<record id="reserve_rule_removal_order_8b" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="9"/>
     <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
     <field name="name">Preference 5d to bulk products in CEP (respecting FEFO/FIFO)</field>
     <field name="quant_domain">[]</field>
