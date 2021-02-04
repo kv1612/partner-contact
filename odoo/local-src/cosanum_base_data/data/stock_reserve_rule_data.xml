@@ -120,6 +120,15 @@
       <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, obj().env.ref('cosanum_base_data.stock_picking_type_pick_mu').ids)]"/>
   </record>
 
+  <record id="reserve_rule_CEP_pick_defaull" model="stock.reserve.rule">
+      <field name="sequence" eval="16"/>
+      <field name="name">CEP Pick - Default removal</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="location_area_CEP"/>
+      <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, obj().env.ref('cosanum_base_data.stock_picking_type_pick_cep_parcel').ids)]"/>
+  </record>
+
   <record id="reserve_rule_OP_pick_default" model="stock.reserve.rule">
       <field name="sequence" eval="17"/>
       <field name="name">OP Logistic Pick - Default strategy</field>
@@ -144,7 +153,7 @@
       <field name="active" eval="1"/>
       <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_coosafleet_rol'),ref('delivery_carrier_coosafleet'),ref('delivery_carrier_post')]]]"/>
       <field name="location_id" ref="stock.stock_location_stock"/>
-      <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, [obj().env.ref('stock.warehouse0').pick_type_id.id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_pal').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_rol').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_parcel').id])]"/>
+      <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, [obj().env.ref('stock.warehouse0').pick_type_id.id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_cep_parcel').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_pal').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_rol').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_parcel').id])]"/>
   </record>
 
   <record id="reserve_rule_order_reservation_stock" model="stock.reserve.rule">
@@ -153,7 +162,7 @@
       <field name="active" eval="1"/>
       <field name="rule_domain">[]</field>
       <field name="location_id" ref="stock.stock_location_stock"/>
-      <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, [obj().env.ref('stock.warehouse0').pick_type_id.id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_pal').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_rol').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_parcel').id])]"/>
+      <field name="picking_type_ids" model="stock.warehouse" eval="[(6, 0, [obj().env.ref('stock.warehouse0').pick_type_id.id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_cep_parcel').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_pal').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_rol').id, obj().env.ref('cosanum_base_data.stock_picking_type_pick_shelving_parcel').id])]"/>
   </record>
 
   <record id="reserve_rule_order_reservation_manufacture_opl" model="stock.reserve.rule">

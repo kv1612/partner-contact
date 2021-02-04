@@ -169,6 +169,23 @@
         <field name="rule_domain">[]</field>
     </record>
 
+    <record id="stock_routing_cep" model="stock.routing">
+        <field name="location_id" ref="location_area_CEP" />
+        <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>
+    </record>
+    <record
+        id="stock_routing_rule_cep_pull"
+        model="stock.routing.rule"
+    >
+        <field name="routing_id" ref="stock_routing_cep" />
+        <field name="method">pull</field>
+        <field
+            name="picking_type_id"
+            ref="stock_picking_type_pick_cep_parcel"
+        />
+        <field name="rule_domain">[]</field>
+    </record>
+
     <record id="stock_routing_spick" model="stock.routing">
         <field name="location_id" ref="location_zone_HighBay" />
         <field name="picking_type_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').pick_type_id"/>

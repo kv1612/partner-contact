@@ -136,6 +136,14 @@
     <field name="removal_strategy">default</field>
 </record>
 
+<record id="reserve_rule_removal_cep" model="stock.reserve.rule.removal">
+    <field name="rule_id" ref="reserve_rule_CEP_pick_defaull"/>
+    <field name="name">CEP</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_CEP"/>
+    <field name="removal_strategy">default</field>
+</record>
+
 <record id="reserve_rule_removal_op_log_pick" model="stock.reserve.rule.removal">
     <field name="rule_id" ref="reserve_rule_OP_pick_default"/>
     <field name="name">Op Logistic</field>
@@ -207,6 +215,15 @@
     <field name="removal_strategy">default</field>
 </record>
 
+<record id="reserve_rule_removal_cosafleet_8" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="10"/>
+    <field name="rule_id" ref="reserve_rule_cosafleet_order_reservation_stock"/>
+    <field name="name">Preference 5d to bulk products in CEP (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_CEP"/>
+    <field name="removal_strategy">default</field>
+</record>
+
 <!-- <record id="reserve_rule_removal_order_1" model="stock.reserve.rule.removal"> -->
 <!--     <field name="sequence" eval="1"/> -->
 <!--     <field name="rule_id" ref="reserve_rule_order_reservation_stock"/> -->
@@ -269,6 +286,15 @@
     <field name="name">Preference 5c to bulk products in Sample (respecting FEFO/FIFO)</field>
     <field name="quant_domain">[]</field>
     <field name="location_id" ref="location_zone_Sample"/>
+    <field name="removal_strategy">default</field>
+</record>
+
+<record id="reserve_rule_removal_order_9" model="stock.reserve.rule.removal">
+    <field name="sequence" eval="10"/>
+    <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
+    <field name="name">Preference 5d to bulk products in CEP (respecting FEFO/FIFO)</field>
+    <field name="quant_domain">[]</field>
+    <field name="location_id" ref="location_area_CEP"/>
     <field name="removal_strategy">default</field>
 </record>
 
