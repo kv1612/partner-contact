@@ -641,6 +641,7 @@
 
   <record id="location_area_CCOPOSTCEP" model="stock.location">
       <field name="name">CCOPOST-CEP</field>
+      <field name="barcode">CCOPOST-CEP</field>
       <field name="location_id" ref="location_area_VSDShip"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
