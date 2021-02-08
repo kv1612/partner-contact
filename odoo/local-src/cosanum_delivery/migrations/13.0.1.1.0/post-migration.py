@@ -1,6 +1,5 @@
 # Copyright 2021 Camptocamp SA (https://www.camptocamp.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
-import hashlib
 import os
 
 from openupgradelib import openupgrade  # pylint: disable=W7936
@@ -8,12 +7,35 @@ from openupgradelib import openupgrade  # pylint: disable=W7936
 
 @openupgrade.migrate()
 def migrate(env, version):
+    # In Odoo V13, removing a column from the model drops the corresponding
+    # table from the database, even if it has data. So we are combining
+    # a pre- and post-migration. The pre-migration copies the column to be
+    # removed, delivery_info, into the temporary column delivery_info_tmp.
+    # Then, this post-migration takes the value stored there to create records
+    # of the new model res.partner.delivery.info, and once they have been
+    # created, the temporary column is removed at the end.
+    #
+    # The move between delivery_info_tmp to the newly created records of
+    # the model res.partner.delivery.info is intended to be done as follows:
+    #     1) Creates as many records of the type res.partner.delivery.info
+    #        as different messages are in the temporal column delivery_info_tmp
+    #        in a res.partner.
+    #            The new model has two fields, name and text. Field text
+    #        contains all the content of delivery_info_tmp, while the field
+    #        name contains only its first line.
+    #     2) For every partner that is active, assigns the record created
+    #        before. So different partners sharing the same message will
+    #        share the same record.
+    #
+    # This is done efficiently: iterates over partners and, if the text is
+    # already stored in a record of res.partner.delivery.info, links to it;
+    # otherwise creates it, and then links to it.
+
     if not version:
         return
 
     res_partner_delivery_info = env["res.partner.delivery.info"]
     res_partner = env["res.partner"]
-    ir_model_data = env["ir.model.data"]
 
     env.cr.execute(
         """
@@ -51,19 +73,5 @@ def migrate(env, version):
                     {"name": delivery_info_name, "text": delivery_info_full}
                 )
                 partner.delivery_info_id = delivery_info_record
-                xml_id_prefix = "cosanum_delivery.res_partner_delivery_info_"
-                xml_id_hash = hashlib.md5(
-                    delivery_info_full.encode("utf-8")
-                ).hexdigest()
-                ir_model_data._update_xmlids(
-                    [
-                        {
-                            "xml_id": "{}_{}".format(
-                                xml_id_prefix, xml_id_hash
-                            ),
-                            "record": delivery_info_record,
-                            "noupdate": True,
-                        }
-                    ]
-                )
+
     openupgrade.drop_columns(env.cr, [("res_partner", "delivery_info_tmp")])
