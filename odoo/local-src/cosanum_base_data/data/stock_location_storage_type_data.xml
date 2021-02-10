@@ -31,6 +31,24 @@
       <field name="max_height" eval="800"/>
   </record>
 
+  <record id="location_storage_type_top_fl_pallet16" model="stock.location.storage.type">
+      <field name="name">Top floor Pallet 1.6</field>
+      <field name="only_empty" eval="1"/>
+      <field name="max_height" eval="1600"/>
+  </record>
+
+  <record id="location_storage_type_top_fl_pallet11" model="stock.location.storage.type">
+      <field name="name">Top floor Pallet 1.1</field>
+      <field name="only_empty" eval="1"/>
+      <field name="max_height" eval="1100"/>
+  </record>
+
+  <record id="location_storage_type_top_fl_pallet08" model="stock.location.storage.type">
+      <field name="name">Top floor Pallet 0.8</field>
+      <field name="only_empty" eval="1"/>
+      <field name="max_height" eval="800"/>
+  </record>
+
   <record id="location_storage_type_pallet07" model="stock.location.storage.type">
       <field name="name">HRL Picking Location</field>
       <field name="do_not_mix_products" eval="1"/>

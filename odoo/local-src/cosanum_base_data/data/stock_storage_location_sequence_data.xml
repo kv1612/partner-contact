@@ -100,6 +100,105 @@
 
   <!-- End of Sequences for Pallets -->
 
+  <!-- Sequences for Top floor Pallets -->
+  <record id="stock_storage_location_sequence_top_fl_pallet_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_zone_HighBay"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+  
+  <record id="stock_storage_location_sequence_top_fl_pallet_3" model="stock.storage.location.sequence">
+      <field name="sequence" eval="30"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_PAL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_4" model="stock.storage.location.sequence">
+      <field name="sequence" eval="40"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_DLR"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_5" model="stock.storage.location.sequence">
+      <field name="sequence" eval="50"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_OPL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_6" model="stock.storage.location.sequence">
+      <field name="sequence" eval="60"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-1-2-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_7" model="stock.storage.location.sequence">
+      <field name="sequence" eval="61"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-3-4-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_8" model="stock.storage.location.sequence">
+      <field name="sequence" eval="62"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-5-6-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_9" model="stock.storage.location.sequence">
+      <field name="sequence" eval="63"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-7-8-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_10" model="stock.storage.location.sequence">
+      <field name="sequence" eval="64"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-9-10-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_11" model="stock.storage.location.sequence">
+      <field name="sequence" eval="65"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-11-12-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_12" model="stock.storage.location.sequence">
+      <field name="sequence" eval="66"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-13-14-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_13" model="stock.storage.location.sequence">
+      <field name="sequence" eval="67"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-15-16-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_14" model="stock.storage.location.sequence">
+      <field name="sequence" eval="68"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-17-20-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_15" model="stock.storage.location.sequence">
+      <field name="sequence" eval="69"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-21-22-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_16" model="stock.storage.location.sequence">
+      <field name="sequence" eval="70"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-23-24-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_top_fl_pallet_17" model="stock.storage.location.sequence">
+      <field name="sequence" eval="71"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-25-26-IN"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
+  </record>
+
+  <!-- End of Sequences for Top floor Pallets -->
+
   <!-- Sequences for Liquid Pallets -->
 
   <record id="stock_storage_location_sequence_liquid_pallet_1" model="stock.storage.location.sequence">
