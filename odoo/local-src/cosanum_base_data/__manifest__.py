@@ -53,6 +53,7 @@
 
         # from odoo/external-src/delivery-carrier
         'delivery_carrier_pricelist',
+        'delivery_postlogistics',
 
         # from odoo/external-src/wms
         'stock_picking_type_shipping_policy',
@@ -61,6 +62,7 @@
         'delivery_carrier_warehouse',
         'stock_storage_type_buffer',
         'stock_storage_type_putaway_abc',
+
         # from odoo/external-src/product-attribute
         'product_packaging_type_pallet',
 
