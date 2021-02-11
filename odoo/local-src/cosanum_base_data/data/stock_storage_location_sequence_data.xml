@@ -106,7 +106,7 @@
       <field name="location_id" ref="cosanum_base_data.location_zone_HighBay"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
   </record>
-  
+
   <record id="stock_storage_location_sequence_top_fl_pallet_3" model="stock.storage.location.sequence">
       <field name="sequence" eval="30"/>
       <field name="location_id" ref="cosanum_base_data.location_area_PAL"/>
@@ -281,6 +281,7 @@
 
   <!-- End of Sequences for Liquid Pallets -->
 
+  <!-- Sequences for shelf box -->
   <record id="stock_storage_location_sequence_box_1" model="stock.storage.location.sequence">
       <field name="sequence" eval="10"/>
       <field name="location_id" ref="cosanum_base_data.location_area_FBGXL"/>
@@ -304,12 +305,40 @@
       <field name="location_id" ref="cosanum_base_data.location_area_FBGS"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_box"/>
   </record>
+  <!-- End of Sequences for shelf box -->
+
+  <!-- Sequences for liquid box -->
+  <record id="stock_storage_location_sequence_liquid_box_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_FBGXL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_liquid_box_2" model="stock.storage.location.sequence">
+      <field name="sequence" eval="20"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_FBGL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_liquid_box_3" model="stock.storage.location.sequence">
+      <field name="sequence" eval="30"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_FBGM"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_liquid_box_4" model="stock.storage.location.sequence">
+      <field name="sequence" eval="40"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_FBGS"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
+  </record>
+  <!-- End of Sequences for liquid box -->
 
   <record id="stock_storage_location_sequence_lan_1" model="stock.storage.location.sequence">
       <field name="sequence" eval="10"/>
       <field name="location_id" ref="cosanum_base_data.location_area_LAN"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_lan"/>
   </record>
+
   <!-- Sequences for CEP -->
   <record id="stock_storage_location_sequence_cep_1" model="stock.storage.location.sequence">
       <field name="sequence" eval="10"/>

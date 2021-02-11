@@ -6,9 +6,20 @@
       <field name="height_required" eval="True"/>
   </record>
 
+  <record id="package_storage_type_liquidpallet" model="stock.package.storage.type">
+      <field name="name">Liquid Pallet</field>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_liquidpallet11'), ref('location_storage_type_liquidpallet13'), ref('location_storage_type_hrl_ugp_in')])]"/>
+      <field name="height_required" eval="True"/>
+  </record>
+
   <record id="package_storage_type_box" model="stock.package.storage.type">
       <field name="name">Shelf Box</field>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
+  </record>
+
+  <record id="package_storage_type_liquid_box" model="stock.package.storage.type">
+      <field name="name">Liquid Shelf Box</field>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_liquid')])]"/>
   </record>
 
   <record id="package_storage_type_cep" model="stock.package.storage.type">
