@@ -339,6 +339,13 @@
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_lan"/>
   </record>
 
+  <record id="stock_storage_location_sequence_kgl_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_KGL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
+  </record>
+
+
   <!-- Sequences for CEP -->
   <record id="stock_storage_location_sequence_cep_1" model="stock.storage.location.sequence">
       <field name="sequence" eval="10"/>
