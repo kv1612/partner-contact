@@ -1,6 +1,10 @@
 <odoo noupdate="1">
 
 
+  <record id="location_storage_type_puthrl" model="stock.location.storage.type">
+      <field name="name">Input HRL</field>
+  </record>
+
   <record id="location_storage_type_pallet21" model="stock.location.storage.type">
       <field name="name">Pallet 2.1</field>
       <field name="only_empty" eval="1"/>

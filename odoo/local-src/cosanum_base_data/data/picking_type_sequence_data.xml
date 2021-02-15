@@ -97,6 +97,46 @@
       <field name="number_increment" eval="1"/>
   </record>
 
+  <record id="sequence_stock_picking_type_putaway_quarantine" model="ir.sequence">
+      <field name="name">Put in quarantine</field>
+      <field name="number_next_actual" eval="1"/>
+      <field name="implementation">standard</field>
+      <field name="prefix">SCH/PUT/QUA/</field>
+      <field name="code">stock.put</field>
+      <field name="padding" eval="7"/>
+      <field name="number_increment" eval="1"/>
+  </record>
+
+  <record id="sequence_stock_picking_type_takeaway_quarantine" model="ir.sequence">
+      <field name="name">Take out quarantine</field>
+      <field name="number_next_actual" eval="1"/>
+      <field name="implementation">standard</field>
+      <field name="prefix">SCH/TAKE/QUA/</field>
+      <field name="code">stock.put</field>
+      <field name="padding" eval="7"/>
+      <field name="number_increment" eval="1"/>
+  </record>
+
+  <record id="sequence_stock_picking_type_wer_putaway_quarantine" model="ir.sequence">
+      <field name="name">Put in quarantine</field>
+      <field name="number_next_actual" eval="1"/>
+      <field name="implementation">standard</field>
+      <field name="prefix">SCH/PUT/QUA/</field>
+      <field name="code">stock.put</field>
+      <field name="padding" eval="7"/>
+      <field name="number_increment" eval="1"/>
+  </record>
+
+  <record id="sequence_stock_picking_type_wer_takeaway_quarantine" model="ir.sequence">
+      <field name="name">Take out quarantine</field>
+      <field name="number_next_actual" eval="1"/>
+      <field name="implementation">standard</field>
+      <field name="prefix">SCH/TAKE/QUA/</field>
+      <field name="code">stock.put</field>
+      <field name="padding" eval="7"/>
+      <field name="number_increment" eval="1"/>
+  </record>
+
   <record id="sequence_stock_picking_type_put_highbay" model="ir.sequence">
       <field name="name">Put Highbay</field>
       <field name="number_next_actual" eval="1"/>

@@ -331,6 +331,14 @@
       <field name="vertical_lift_location" eval="0"/>
   </record>
 
+  <record id="location_area_KTLWAWERQA" model="stock.location">
+      <field name="name">KTL-WA-WER-QA</field>
+      <field name="location_id" ref="location_area_KTLWAWER"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+  </record>
+
   <record id="location_area_WEGTRA77" model="stock.location">
       <field name="name">WEG-TRA77</field>
       <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
@@ -550,13 +558,75 @@
       <field name="vertical_lift_location" eval="0"/>
   </record>
 
+  <record id="location_area_PUTHRL" model="stock.location">
+      <field name="name">PUTHRL</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl')])]"/>
+  </record>
+
+  <record id="location_area_PUTFBG" model="stock.location">
+      <field name="name">PUTFBG</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">view</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
+  </record>
+
+  <record id="location_area_PUTSHU" model="stock.location">
+      <field name="name">PUTSHU</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">view</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_buffer')])]"/>
+  </record>
+
+  <record id="location_area_PUTTRA" model="stock.location">
+      <field name="name">PUTTRA</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">view</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan')])]"/>
+  </record>
+
+  <record id="location_area_PUTCEP" model="stock.location">
+      <field name="name">PUTCEP</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">view</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
+  </record>
+
+  <record id="location_area_PUTKGL" model="stock.location">
+      <field name="name">PUTKGL</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">view</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kgl')])]"/>
+  </record>
+
+  <record id="location_area_PUTLAN" model="stock.location">
+      <field name="name">PUTLAN</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">view</field>
+      <field name="active" eval="True"/>
+      <field name="vertical_lift_location" eval="0"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_lan')])]"/>
+  </record>
+
   <record id="location_area_WAEQA" model="stock.location">
       <field name="name">WAE-QA</field>
       <field name="location_id" ref="stock.stock_location_company"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
-      <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
   <record id="location_area_QUA" model="stock.location">
@@ -565,7 +635,6 @@
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
-      <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
   <record id="location_area_VSDShip" model="stock.location">

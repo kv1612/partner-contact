@@ -247,7 +247,7 @@
       <field name="sequence_code">PUT/WAE</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="stock.stock_location_company"/>
+      <field name="default_location_src_id" ref="location_area_WAE"/>
       <field name="default_location_dest_id" ref="location_internal_sch"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
@@ -257,6 +257,75 @@
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
   </record>
+
+  <record id="stock_picking_type_put_qua" model="stock.picking.type">
+      <field name="name">Put in quarantine</field>
+      <field name="sequence_id" ref="sequence_stock_picking_type_putaway_quarantine"/>
+      <field name="sequence_code">PUT/QUA</field>
+      <field name="sequence" eval="20"/>
+      <field name="warehouse_id" ref="stock.warehouse0"/>
+      <field name="default_location_src_id" ref="location_area_WAEQA"/>
+      <field name="default_location_dest_id" ref="location_area_QUA"/>
+      <field name="display_completion_info" eval="0"/>
+      <field name="show_entire_packs" eval="1"/>
+      <field name="use_create_lots" eval="0"/>
+      <field name="use_existing_lots" eval="1"/>
+      <field name="color" eval="2"/>
+      <field name="code">internal</field>
+      <field name="show_operations" eval="1"/>
+  </record>
+
+  <record id="stock_picking_type_take_qua" model="stock.picking.type">
+      <field name="name">Take out quarantine</field>
+      <field name="sequence_id" ref="sequence_stock_picking_type_takeaway_quarantine"/>
+      <field name="sequence_code">TAKE/QUA</field>
+      <field name="sequence" eval="20"/>
+      <field name="warehouse_id" ref="stock.warehouse0"/>
+      <field name="default_location_src_id" ref="location_area_QUA"/>
+      <field name="default_location_dest_id" ref="location_internal_sch"/>
+      <field name="display_completion_info" eval="0"/>
+      <field name="show_entire_packs" eval="1"/>
+      <field name="use_create_lots" eval="0"/>
+      <field name="use_existing_lots" eval="1"/>
+      <field name="color" eval="2"/>
+      <field name="code">internal</field>
+      <field name="show_operations" eval="1"/>
+  </record>
+
+  <record id="stock_picking_type_put_wegqua" model="stock.picking.type">
+      <field name="name">Put in quarantine</field>
+      <field name="sequence_id" ref="sequence_stock_picking_type_wer_putaway_quarantine"/>
+      <field name="sequence_code">PUT/QUA</field>
+      <field name="sequence" eval="20"/>
+      <field name="warehouse_id" ref="stock.warehouse0"/>
+      <field name="default_location_src_id" ref="location_area_KTLWAWERQA"/>
+      <field name="default_location_dest_id" ref="location_area_WEGQUA"/>
+      <field name="display_completion_info" eval="0"/>
+      <field name="show_entire_packs" eval="1"/>
+      <field name="use_create_lots" eval="0"/>
+      <field name="use_existing_lots" eval="1"/>
+      <field name="color" eval="2"/>
+      <field name="code">internal</field>
+      <field name="show_operations" eval="1"/>
+  </record>
+
+  <record id="stock_picking_type_take_wegqua" model="stock.picking.type">
+      <field name="name">Take out quarantine</field>
+      <field name="sequence_id" ref="sequence_stock_picking_type_wer_takeaway_quarantine"/>
+      <field name="sequence_code">TAKE/QUA</field>
+      <field name="sequence" eval="20"/>
+      <field name="warehouse_id" ref="stock.warehouse0"/>
+      <field name="default_location_src_id" ref="location_area_WEGQUA"/>
+      <field name="default_location_dest_id" ref="location_internal_wer"/>
+      <field name="display_completion_info" eval="0"/>
+      <field name="show_entire_packs" eval="1"/>
+      <field name="use_create_lots" eval="0"/>
+      <field name="use_existing_lots" eval="1"/>
+      <field name="color" eval="2"/>
+      <field name="code">internal</field>
+      <field name="show_operations" eval="1"/>
+  </record>
+
 
   <record id="stock_picking_type_put_kardex" model="stock.picking.type">
       <field name="name">Put Kardex</field>
@@ -276,12 +345,12 @@
   </record>
 
   <record id="stock_picking_type_put_highbay" model="stock.picking.type">
-      <field name="name">Put Highbay</field>
+      <field name="name">Put away HRL</field>
       <field name="sequence_id" ref="sequence_stock_picking_type_put_highbay"/>
       <field name="sequence_code">PUT/HRL</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="location_zone_UGPIn"/>
+      <field name="default_location_src_id" ref="location_area_PUTHRL"/>
       <field name="default_location_dest_id" ref="location_zone_HighBay"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
@@ -428,7 +497,7 @@
       <field name="sequence_code">PUT</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="warehouse_wer"/>
-      <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="default_location_src_id" ref="location_area_KTLWAWER"/>
       <field name="default_location_dest_id" ref="location_internal_wer"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
