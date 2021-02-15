@@ -50,7 +50,7 @@
   </record>
 
   <record id="location_storage_type_pallet07" model="stock.location.storage.type">
-      <field name="name">HRL Picking Location</field>
+      <field name="name">HRL Shelving</field>
       <field name="do_not_mix_products" eval="1"/>
   </record>
 
@@ -170,7 +170,7 @@
   </record>
 
   <record id="location_storage_type_liquid" model="stock.location.storage.type">
-      <field name="name">Liquid Shelf</field>
+      <field name="name">HRL Liquid Shelving</field>
       <field name="only_empty" eval="1"/>
   </record>
 

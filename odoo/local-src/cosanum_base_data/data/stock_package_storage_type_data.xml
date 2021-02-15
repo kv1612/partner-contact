@@ -17,6 +17,11 @@
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
   </record>
 
+  <record id="package_storage_type_hrl_box" model="stock.package.storage.type">
+      <field name="name">HRL Shelf Box</field>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet07')])]"/>
+  </record>
+
   <record id="package_storage_type_liquid_box" model="stock.package.storage.type">
       <field name="name">Liquid Shelf Box</field>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_liquid')])]"/>
