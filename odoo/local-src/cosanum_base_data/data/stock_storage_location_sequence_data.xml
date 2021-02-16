@@ -203,7 +203,7 @@
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
   </record>
 
-  <record id="stock_storage_location_sequence_pallet_qua" model="stock.storage.location.sequence">
+  <record id="stock_storage_location_sequence_top_fl_pallet_qua" model="stock.storage.location.sequence">
       <field name="sequence" eval="100"/>
       <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_top_fl_pallet"/>
