@@ -297,7 +297,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_wer_putaway_quarantine"/>
       <field name="sequence_code">PUT/QUA</field>
       <field name="sequence" eval="20"/>
-      <field name="warehouse_id" ref="stock.warehouse0"/>
+      <field name="warehouse_id" ref="warehouse_wer"/>
       <field name="default_location_src_id" ref="location_area_KTLWAWERQA"/>
       <field name="default_location_dest_id" ref="location_area_WEGQUA"/>
       <field name="display_completion_info" eval="0"/>
@@ -314,7 +314,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_wer_takeaway_quarantine"/>
       <field name="sequence_code">TAKE/QUA</field>
       <field name="sequence" eval="20"/>
-      <field name="warehouse_id" ref="stock.warehouse0"/>
+      <field name="warehouse_id" ref="warehouse_wer"/>
       <field name="default_location_src_id" ref="location_area_WEGQUA"/>
       <field name="default_location_dest_id" ref="location_internal_wer"/>
       <field name="display_completion_info" eval="0"/>

@@ -47,7 +47,7 @@
   <record id="putaway_rule_rpl6" model="stock.putaway.rule">
       <field name="location_in_id" ref="stock.stock_location_company"/>
       <field name="route_id" ref="stock.route_warehouse0_mto"/>
-      <field name="location_out_id" ref="location_area_PUTHRL"/>
+      <field name="location_out_id" ref="location_area_PUTTRA"/>
       <field name="sequence">1</field>
   </record>
 
