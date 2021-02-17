@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Camptocamp SA
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+  <report
+      string="CosaLog Package label"
+      id="action_report_cosalog_package_label"
+      model="stock.picking"
+      report_type="qweb-pdf"
+      name="cosanum_delivery_cosalog.report_cosalog_package_label"
+      file="cosanum_delivery_cosalog.report_cosalog_package_label"
+      print_report_name="'CosaLog Package label - %s - %s' % (object.partner_id.name or '', object.name)"
+  />
+
+</odoo>
