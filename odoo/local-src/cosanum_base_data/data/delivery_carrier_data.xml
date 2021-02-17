@@ -16,6 +16,7 @@
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
         <field name="delivery_type">pricelist</field>
+        <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_fees"/>
         <field name="tech_name">coosafleet</field>
     </record>
@@ -25,7 +26,8 @@
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
-        <field name="delivery_type">pricelist</field>
+        <field name="delivery_type">pricelist</field> <!-- Should be 'cosanum' but we don't want to add a dependency on 'cosanum_delivery_cosalog' here -->
+        <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_fees"/>
         <field name="tech_name">coosafleet_rol</field>
     </record>
