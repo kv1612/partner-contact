@@ -11,5 +11,5 @@ class StockQuantPackage(models.Model):
         return {
             "Ist-Anz. Pal.": 1,
             "K-PID": self.name,
-            "Gewicht (kg)": self.shipping_weight,
+            "Gewicht (kg)": round(self.shipping_weight, 3),
         }

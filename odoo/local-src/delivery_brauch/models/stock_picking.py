@@ -45,6 +45,9 @@ class StockPicking(models.Model):
             )
         return {'exact_price': 0.0, 'tracking_number': False}
 
+    def _brauch_write_csv_row(self, writer, package, pack_data):
+        writer.writerow(pack_data)
+
     def _generate_brauch_csv(self):
         dialect = csv.excel
         dialect.delimiter = ";"
@@ -58,7 +61,7 @@ class StockPicking(models.Model):
             for pack in self.package_ids:
                 pack_data = pack._brauch_get_pack_data()
                 pack_data.update(common_picking_data.copy())
-                writer.writerow(pack_data)
+                self._brauch_write_csv_row(writer, pack, pack_data)
             csvfile.seek(0)
             csvdata = csvfile.read()
             return csvdata
