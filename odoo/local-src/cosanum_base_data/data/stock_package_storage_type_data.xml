@@ -116,7 +116,7 @@
 
   <record id="package_storage_type_top_fl_pallet" model="stock.package.storage.type">
       <field name="name">Top Floor Pallet</field>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_top_fl_pallet08'), ref('location_storage_type_top_fl_pallet11'), ref('location_storage_type_top_fl_pallet16'), ref('location_storage_type_pallet21'), ref('location_storage_type_pallet16'), ref('location_storage_type_pallet13'), ref('location_storage_type_pallet11'), ref('location_storage_type_pallet08'), ref('location_storage_type_dlr'), ref('location_storage_type_pallet_block'), ref('location_storage_type_hrl_ugp_in'), ref('location_storage_type_puthrl')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_top_fl_pallet08'), ref('location_storage_type_top_fl_pallet11'), ref('location_storage_type_top_fl_pallet16'), ref('location_storage_type_pallet21'), ref('location_storage_type_pallet16'), ref('location_storage_type_pallet13'), ref('location_storage_type_pallet11'), ref('location_storage_type_pallet08'), ref('location_storage_type_dlr'), ref('location_storage_type_pallet_block'), ref('location_storage_type_hrl_ugp_in'), ref('location_storage_type_puthrl'), ref('location_storage_type_inputwer')])]"/>
       <field name="height_required" eval="True"/>
   </record>
 
