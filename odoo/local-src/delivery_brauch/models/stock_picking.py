@@ -81,9 +81,9 @@ class StockPicking(models.Model):
             "Lieferant-Adres Zusatz": self.partner_id.street2,
             "Lieferant-PLZ": self.partner_id.zip,
             "Lieferant-Ort": self.partner_id.city,
-            "Auslieferhinweis (Info 2)": self.partner_id.brauch_delivery_info.replace(
-                "\n", " "
-            ),
+            "Auslieferhinweis (Info 2)": (
+                self.partner_id.brauch_delivery_info or ""
+            ).replace("\n", " "),
         }
 
     def action_done(self):
