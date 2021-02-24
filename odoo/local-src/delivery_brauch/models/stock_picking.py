@@ -80,10 +80,10 @@ class StockPicking(models.Model):
             "Lieferschein-Nr": self.name,
             "Tour": "",
             "Lieferant-Name": self.partner_id.name,
-            "Lieferant-Strasse": self.partner_id.street,
-            "Lieferant-Adres Zusatz": self.partner_id.street2,
-            "Lieferant-PLZ": self.partner_id.zip,
-            "Lieferant-Ort": self.partner_id.city,
+            "Lieferant-Strasse": self.partner_id.street or "",
+            "Lieferant-Adres Zusatz": self.partner_id.street2 or "",
+            "Lieferant-PLZ": self.partner_id.zip or "",
+            "Lieferant-Ort": self.partner_id.city or "",
             "Auslieferhinweis (Info 2)": (
                 self.partner_id.brauch_delivery_info or ""
             ).replace("\n", " "),
