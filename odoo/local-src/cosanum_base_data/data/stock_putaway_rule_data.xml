@@ -1,12 +1,5 @@
 <odoo noupdate="1">
 
-  <record id="putaway_rule_1" model="stock.putaway.rule">
-      <field name="location_in_id" ref="stock.stock_location_company"/>
-      <field name="route_id" ref="purchase_stock.route_warehouse0_buy"/>
-      <field name="location_out_id" ref="location_area_PUTHRL"/>
-      <field name="sequence">2</field>
-  </record>
-
   <record id="putaway_rule_2" model="stock.putaway.rule">
       <field name="location_in_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="route_id" ref="purchase_stock.route_warehouse0_buy"/>
