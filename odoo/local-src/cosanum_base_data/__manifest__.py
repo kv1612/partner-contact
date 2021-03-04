@@ -23,6 +23,7 @@
         'mrp_subcontracting',
         # odoo/local-src
         'delivery_brauch',
+        'delivery_cosanum',
         'stock_warehouse_block_auto_config',
         # from odoo/external-src/sale-workflow
         'sale_by_packaging',

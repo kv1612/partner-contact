@@ -14,4 +14,27 @@
       <field name="shipper_package_code">SEM</field>
     </record>
 
+    <record id="product_packaging_brauchpal" model="product.packaging">
+      <field name="name">Brauch Palette</field>
+      <field name="package_carrier_type">brauch</field>
+      <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_pallet"/>
+      <field name="barcode">BRAUCH-PAL-PACK-TYPE</field>
+      <field name="shipper_package_code">PAL</field>
+    </record>
+    <record id="product_packaging_cosapal" model="product.packaging">
+      <field name="name">Cosanum Palette</field>
+      <field name="package_carrier_type">cosanum</field>
+      <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_pallet"/>
+      <field name="barcode">COSA-PAL-PACK-TYPE</field>
+      <field name="shipper_package_code">PAL</field>
+    </record>
+
+    <record id="product_packaging_brauchoprollercage" model="product.packaging">
+      <field name="name">Brauch OP Rollercage</field>
+      <field name="package_carrier_type">brauch</field>
+      <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_pallet"/>
+      <field name="barcode">BRAUCH-OPR-PACK-TYPE</field>
+      <field name="shipper_package_code">OPR</field>
+    </record>
+
 </odoo>
