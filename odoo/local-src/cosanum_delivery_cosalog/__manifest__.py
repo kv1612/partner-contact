@@ -17,6 +17,7 @@
         "delivery_package_fee",
         # local-src
         "cosanum_delivery",
+        "delivery_cosanum",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
