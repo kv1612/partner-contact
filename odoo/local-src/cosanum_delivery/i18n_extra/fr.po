@@ -12,6 +12,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.report_delivery_document
+#: model_terms:ir.ui.view,arch_db:stock.report_picking
+msgid "<strong>Order:</strong>"
+msgstr "<strong>Ordre:</strong>"
+
+#. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.report_package_barcode
 msgid "<strong>Package Type:</strong>"
 msgstr "<strong>Type de colis</strong>"
