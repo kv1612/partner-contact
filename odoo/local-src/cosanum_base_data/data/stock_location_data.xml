@@ -259,7 +259,6 @@
 
   <record id="location_area_WEG" model="stock.location">
       <field name="name">WEG</field>
-      <field name="location_id" ref="location_zone_WerrikonEG"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
@@ -270,7 +269,6 @@
   <record id="location_area_WEGQUA" model="stock.location">
       <field name="name">WEG-QUA</field>
       <field name="barcode">WEG-QUA</field>
-      <field name="location_id" ref="stock.stock_location_locations" />
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
