@@ -10,8 +10,11 @@
     "application": False,
     "installable": True,
     "depends": [
-        "cosanum_base", "delivery", "sale_partner_delivery_window",
-        "sales_team"],
+        "cosanum_base",
+        "delivery",
+        "sale_partner_delivery_window",
+        "sales_team",
+    ],
     "data": [
         "security/ir.model.access.csv",
         "views/res_partner.xml",

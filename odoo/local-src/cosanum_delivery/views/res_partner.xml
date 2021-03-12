@@ -19,7 +19,6 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="arch" type="xml">
-            <field name="company_group_id" position="replace"/>
             <field name="name" position="after" >
                 <field name="customs_privileged" />
             </field>
