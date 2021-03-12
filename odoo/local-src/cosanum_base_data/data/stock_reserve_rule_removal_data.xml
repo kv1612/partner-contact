@@ -238,7 +238,7 @@
     <field name="rule_id" ref="reserve_rule_order_reservation_stock"/>
     <field name="name">Preference 2 to full pallet from Werrikon</field>
     <field name="quant_domain">[]</field>
-    <field name="location_id" ref="location_zone_Werrikon"/>
+    <field name="location_id" ref="location_internal_wer"/>
     <field name="removal_strategy">packaging</field>
     <field name="packaging_type_ids" eval="[(6, 0, [ref('product_packaging_type_pallet')])]"/>
 </record>
