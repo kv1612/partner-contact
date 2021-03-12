@@ -118,6 +118,17 @@
         <field name="tech_name">swisspost_express_moon</field>
     </record>
 
+    <record id="delivery_carrier_pandemic_stock" model="delivery.carrier">
+        <field name="name">Pandemic Stock</field>
+        <field name="free_over" eval="True"/>
+        <field name="amount">30.0</field>
+        <field name="sequence">1</field>
+        <field name="delivery_type">brauch</field>
+        <field name="invoice_policy">pricelist</field>
+        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="tech_name">pandemic_stock</field>
+    </record>
+
     <record id="stock.warehouse0" model="stock.warehouse">
         <field name="delivery_carrier_id" ref="delivery_carrier_brauch_pallet" />
     </record>
