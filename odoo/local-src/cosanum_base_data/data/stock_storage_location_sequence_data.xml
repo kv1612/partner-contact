@@ -330,99 +330,6 @@
 
   <!-- End of Sequences for HRL Shelf box -->
 
-  <!-- Sequences for HRL Liquid Shelf box -->
-  <record id="stock_storage_location_sequence_liquid_hrl_box_1" model="stock.storage.location.sequence">
-      <field name="sequence" eval="10"/>
-      <field name="location_id" ref="cosanum_base_data.location_zone_HighBay"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_2" model="stock.storage.location.sequence">
-      <field name="sequence" eval="60"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-1-2-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_3" model="stock.storage.location.sequence">
-      <field name="sequence" eval="61"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-3-4-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_4" model="stock.storage.location.sequence">
-      <field name="sequence" eval="62"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-5-6-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_5" model="stock.storage.location.sequence">
-      <field name="sequence" eval="63"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-7-8-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_6" model="stock.storage.location.sequence">
-      <field name="sequence" eval="64"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-9-10-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_7" model="stock.storage.location.sequence">
-      <field name="sequence" eval="65"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-11-12-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_8" model="stock.storage.location.sequence">
-      <field name="sequence" eval="66"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-13-14-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_9" model="stock.storage.location.sequence">
-      <field name="sequence" eval="67"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-15-16-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_10" model="stock.storage.location.sequence">
-      <field name="sequence" eval="68"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-17-20-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_11" model="stock.storage.location.sequence">
-      <field name="sequence" eval="69"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-21-22-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_12" model="stock.storage.location.sequence">
-      <field name="sequence" eval="70"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-23-24-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_13" model="stock.storage.location.sequence">
-      <field name="sequence" eval="71"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_HRL_A-25-26-IN"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_wae" model="stock.storage.location.sequence">
-      <field name="sequence" eval="90"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_PUTHRL"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_hrl_box_qua" model="stock.storage.location.sequence">
-      <field name="sequence" eval="100"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <!-- End of Sequences for HRL Liquid Shelf box -->
-
   <!-- Sequences for Liquid Pallets -->
 
   <record id="stock_storage_location_sequence_liquid_pallet_1" model="stock.storage.location.sequence">
@@ -555,33 +462,6 @@
   </record>
   <!-- End of Sequences for shelf box -->
 
-  <!-- Sequences for liquid box -->
-  <record id="stock_storage_location_sequence_liquid_box_1" model="stock.storage.location.sequence">
-      <field name="sequence" eval="10"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_FBGXL"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_box_2" model="stock.storage.location.sequence">
-      <field name="sequence" eval="20"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_FBGL"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_box_3" model="stock.storage.location.sequence">
-      <field name="sequence" eval="30"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_FBGM"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_liquid_box_4" model="stock.storage.location.sequence">
-      <field name="sequence" eval="40"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_FBGS"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_liquid_box"/>
-  </record>
-
-  <!-- End of Sequences for liquid box -->
-
   <record id="stock_storage_location_sequence_lan_1" model="stock.storage.location.sequence">
       <field name="sequence" eval="10"/>
       <field name="location_id" ref="cosanum_base_data.location_area_LAN"/>
@@ -599,25 +479,6 @@
       <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_lan"/>
   </record>
-
-  <record id="stock_storage_location_sequence_kgl_1" model="stock.storage.location.sequence">
-      <field name="sequence" eval="10"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_KGL"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_kgl_wae" model="stock.storage.location.sequence">
-      <field name="sequence" eval="90"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_PUTKGL"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
-  </record>
-
-  <record id="stock_storage_location_sequence_kgl_qua" model="stock.storage.location.sequence">
-      <field name="sequence" eval="100"/>
-      <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
-      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
-  </record>
-
 
   <!-- Sequences for CEP -->
   <record id="stock_storage_location_sequence_cep_1" model="stock.storage.location.sequence">

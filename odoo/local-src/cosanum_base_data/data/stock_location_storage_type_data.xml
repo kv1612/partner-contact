@@ -159,12 +159,6 @@
       <field name="only_empty" eval="1"/>
   </record>
 
-  <record id="location_storage_type_kgl" model="stock.location.storage.type">
-      <field name="name">Dangerous goods</field>
-      <field name="do_not_mix_lots" eval="1"/>
-      <field name="do_not_mix_products" eval="1"/>
-  </record>
-
   <record id="location_storage_type_liquidpallet11" model="stock.location.storage.type">
       <field name="name">Liquid Pallet 1.1</field>
       <field name="only_empty" eval="1"/>
@@ -175,11 +169,6 @@
       <field name="name">Liquid Pallet 1.3</field>
       <field name="only_empty" eval="1"/>
       <field name="max_height" eval="1300"/>
-  </record>
-
-  <record id="location_storage_type_liquid" model="stock.location.storage.type">
-      <field name="name">HRL Liquid Shelving</field>
-      <field name="only_empty" eval="1"/>
   </record>
 
   <record id="location_storage_type_pallet_block" model="stock.location.storage.type">

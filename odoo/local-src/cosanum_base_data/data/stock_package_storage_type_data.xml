@@ -22,11 +22,6 @@
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet07'), ref('location_storage_type_hrl_ugp_in'), ref('location_storage_type_puthrl')])]"/>
   </record>
 
-  <record id="package_storage_type_liquid_box" model="stock.package.storage.type">
-      <field name="name">Liquid Shelf Box</field>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_liquid'), ref('location_storage_type_hrl_ugp_in'), ref('location_storage_type_puthrl')])]"/>
-  </record>
-
   <record id="package_storage_type_cep" model="stock.package.storage.type">
       <field name="name">CEP Shelf Box</field>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
@@ -107,11 +102,6 @@
   <record id="package_storage_type_lan" model="stock.package.storage.type">
       <field name="name">Long goods</field>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_lan')])]"/>
-  </record>
-
-  <record id="package_storage_type_kgl" model="stock.package.storage.type">
-      <field name="name">Dangerous goods</field>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kgl')])]"/>
   </record>
 
   <record id="package_storage_type_top_fl_pallet" model="stock.package.storage.type">

@@ -218,16 +218,6 @@
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
-  <record id="location_area_KGL" model="stock.location">
-      <field name="name">KGL</field>
-      <field name="location_id" ref="location_zone_Shelving"/>
-      <field name="usage">internal</field>
-      <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kgl')])]"/>
-      <field name="pack_putaway_strategy">ordered_locations</field>
-  </record>
-
   <record id="location_area_TRA" model="stock.location">
       <field name="name">TRA</field>
       <field name="location_id" ref="stock.stock_location_company"/>
@@ -350,7 +340,7 @@
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kgl'), ref('location_storage_type_kardex_buffer')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kardex_buffer')])]"/>
   </record>
 
   <record id="location_shuttle_SHUSH1" model="stock.location">
@@ -609,15 +599,6 @@
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
   </record>
 
-  <record id="location_area_PUTKGL" model="stock.location">
-      <field name="name">PUTKGL</field>
-      <field name="location_id" ref="location_area_WAE"/>
-      <field name="usage">view</field>
-      <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kgl')])]"/>
-  </record>
-
   <record id="location_area_PUTLAN" model="stock.location">
       <field name="name">PUTLAN</field>
       <field name="location_id" ref="location_area_WAE"/>
@@ -634,7 +615,7 @@
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kgl'), ref('location_storage_type_kardex_buffer')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kardex_buffer')])]"/>
   </record>
 
   <record id="location_area_QUA" model="stock.location">
@@ -643,7 +624,7 @@
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kgl'), ref('location_storage_type_kardex_buffer'), ref('location_storage_type_cep')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kardex_buffer'), ref('location_storage_type_cep')])]"/>
   </record>
 
   <record id="location_area_VSDShip" model="stock.location">
