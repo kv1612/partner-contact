@@ -315,7 +315,7 @@
       <field name="action">push</field>
       <field name="auto">manual</field>
       <field name="location_src_id" ref="location_area_WEGNSBShip"/>
-      <field name="location_id" ref="location_area_WAE"/>
+      <field name="location_id" ref="stock.stock_location_company"/>
       <field name="picking_type_id" ref="stock_picking_type_xfer_wer_sch"/>
       <field name="route_id" ref="purchase_stock.route_warehouse0_buy"/>
       <field name="delay_alert" eval="0"/>

@@ -350,7 +350,7 @@
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="vertical_lift_location" eval="0"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_inputwer')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kgl'), ref('location_storage_type_kardex_buffer')])]"/>
   </record>
 
   <record id="location_shuttle_SHUSH1" model="stock.location">
@@ -629,6 +629,7 @@
 
   <record id="location_area_WAEQA" model="stock.location">
       <field name="name">WAE-QA</field>
+      <field name="barcode">WAE-QA</field>
       <field name="location_id" ref="stock.stock_location_company"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>

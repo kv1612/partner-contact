@@ -764,7 +764,7 @@
       <field name="sequence" eval="70"/>
       <field name="warehouse_id" ref="warehouse_wer"/>
       <field name="default_location_src_id" ref="location_area_WEGNSBShip"/>
-      <field name="default_location_dest_id" ref="location_area_WAE"/>
+      <field name="default_location_dest_id" ref="stock.stock_location_company"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
