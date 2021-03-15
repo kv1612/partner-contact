@@ -125,7 +125,7 @@
         <field name="sequence">1</field>
         <field name="delivery_type">brauch</field>
         <field name="invoice_policy">pricelist</field>
-        <field name="product_id" ref="product_product_delivery_fees"/>
+        <field name="product_id" ref="__setup__.product_product_delivery_lsva_pallet"/>
         <field name="tech_name">pandemic_stock</field>
     </record>
 
