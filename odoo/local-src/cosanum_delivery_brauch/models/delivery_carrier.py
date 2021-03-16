@@ -12,6 +12,8 @@ class DeliveryCarrier(models.Model):
         res.append("LKW-Gewicht")
         res.append("Schlieren")
         res.append("Werrikon")
+        res.append("Avise Tel")
+        res.append("Package Code")
         return res
 
     def _brauch_get_common_picking_data(self):
