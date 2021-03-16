@@ -16,6 +16,9 @@ class ResPartner(models.Model):
         ondelete="restrict",
         string="Info for Delivery Carrier",
     )
+    delivery_notifications_phone = fields.Char(
+        string="Phone for Delivery Carrier Notifications"
+    )
     customs_privileged = fields.Selection(
         selection=[("gdk", "GDK"), ("no_gdk", "No GDK")],
         string="Customs privileged",

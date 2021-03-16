@@ -8,6 +8,7 @@
             <xpath expr="//page[@name='sales_purchases']//group[@name='sale']" position="inside">
                 <field name="truck_weight_limit" />
                 <field name="delivery_info_id" />
+                <field name="delivery_notifications_phone"/>
                 <field name="customs_privileged" />
             </xpath>
         </field>
