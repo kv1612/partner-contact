@@ -9,11 +9,11 @@ class DeliveryCarrier(models.Model):
 
     def _brauch_get_csv_columns(self):
         res = super()._brauch_get_csv_columns()
-        res.append("LKW-Gewicht")
         res.append("Schlieren")
         res.append("Werrikon")
         res.append("Avise Tel")
         res.append("Package Code")
+        res.append("LKW-Gewicht")
         return res
 
     def _brauch_get_common_picking_data(self):
