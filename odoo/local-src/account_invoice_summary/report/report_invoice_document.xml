@@ -4,10 +4,12 @@
 <odoo>
 
   <template id="report_invoice_document" inherit_id="account.report_invoice_document">
-    <xpath expr="//div[@id='total']" position="after">
-      <!-- Summaries go on its own page. -->
-      <p style="page-break-after: always;"/>
-      <div id="ending_summaries"/>
+    <xpath expr="//div[hasclass('page')]/div[last()]" position="after">
+      <!-- Summaries go on its own page, if we have summaries. -->
+      <t t-if="o._report_has_ending_summaries()">
+        <p style="page-break-after: always;"/>
+        <div id="ending_summaries"/>
+      </t>
     </xpath>
   </template>
 
