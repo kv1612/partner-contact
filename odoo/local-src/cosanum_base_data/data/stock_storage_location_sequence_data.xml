@@ -1,5 +1,24 @@
 <odoo noupdate="1">
 
+  <!-- Sequences for OPL Pallets -->
+  <record id="stock_storage_location_sequence_opl_pallet_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_OPL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_opl_pallet"/>
+  </record>
+  <record id="stock_storage_location_sequence_opl_pallet_2" model="stock.storage.location.sequence">
+      <field name="sequence" eval="20"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_PUTOPL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_opl_pallet"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_opl_pallet_3" model="stock.storage.location.sequence">
+      <field name="sequence" eval="30"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_opl_pallet"/>
+  </record>
+
+
   <!-- Sequences for Pallets -->
 
   <record id="stock_storage_location_sequence_pallet_1" model="stock.storage.location.sequence">
@@ -479,6 +498,43 @@
       <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
       <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_lan"/>
   </record>
+
+  <record id="stock_storage_location_sequence_kgl_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_KGL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_kgl_wae" model="stock.storage.location.sequence">
+      <field name="sequence" eval="90"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_PUTKGL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_kgl_qua" model="stock.storage.location.sequence">
+      <field name="sequence" eval="100"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_kgl"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_medi_1" model="stock.storage.location.sequence">
+      <field name="sequence" eval="10"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_KGL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_medi"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_medi_wae" model="stock.storage.location.sequence">
+      <field name="sequence" eval="90"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_PUTKGL"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_medi"/>
+  </record>
+
+  <record id="stock_storage_location_sequence_medi_qua" model="stock.storage.location.sequence">
+      <field name="sequence" eval="100"/>
+      <field name="location_id" ref="cosanum_base_data.location_area_QUA"/>
+      <field name="package_storage_type_id" ref="cosanum_base_data.package_storage_type_medi"/>
+  </record>
+
 
   <!-- Sequences for CEP -->
   <record id="stock_storage_location_sequence_cep_1" model="stock.storage.location.sequence">

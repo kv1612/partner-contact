@@ -39,6 +39,12 @@
       <field name="max_height" eval="800"/>
   </record>
 
+  <record id="location_storage_type_opl_pallet21" model="stock.location.storage.type">
+      <field name="name">OPL Pallet 2.1</field>
+      <field name="only_empty" eval="1"/>
+      <field name="max_height" eval="2100"/>
+  </record>
+
   <record id="location_storage_type_top_fl_pallet16" model="stock.location.storage.type">
       <field name="name">Top floor Pallet 1.6</field>
       <field name="only_empty" eval="1"/>
@@ -156,6 +162,16 @@
 
   <record id="location_storage_type_kardex_B40802" model="stock.location.storage.type">
       <field name="name">Kardex B40802</field>
+      <field name="only_empty" eval="1"/>
+  </record>
+
+  <record id="location_storage_type_kgl" model="stock.location.storage.type">
+      <field name="name">TC DG Shelving</field>
+      <field name="only_empty" eval="1"/>
+  </record>
+
+  <record id="location_storage_type_medi" model="stock.location.storage.type">
+      <field name="name">TC Medi Shelving</field>
       <field name="only_empty" eval="1"/>
   </record>
 

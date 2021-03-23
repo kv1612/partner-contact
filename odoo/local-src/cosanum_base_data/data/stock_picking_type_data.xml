@@ -242,12 +242,13 @@
   </function>
 
   <record id="stock_picking_type_put_away" model="stock.picking.type">
-      <field name="name">Put away</field>
+      <field name="name">Put away HRL</field>
       <field name="sequence_id" ref="sequence_stock_picking_type_putaway_stock"/>
-      <field name="sequence_code">PUT/WAE</field>
+      <field name="sequence_code">PUT/HRL</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
       <field name="default_location_src_id" ref="location_area_WAE"/>
+      <!-- On production it use "Highbay" manually created location -->
       <field name="default_location_dest_id" ref="location_internal_sch"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
