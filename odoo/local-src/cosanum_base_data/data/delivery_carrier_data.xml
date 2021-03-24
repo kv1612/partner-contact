@@ -52,7 +52,7 @@
         <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_fees"/>
         <field name="tech_name">brauch_pallet</field>
-        <field name="brauch_default_packaging_id" ref="cosanum_base_data.product_packaging_brauchpal"/>
+        <field name="brauch_default_packaging_id" ref="product_packaging_brauchpal"/>
     </record>
 
     <record id="delivery_carrier_brauch_rollercage" model="delivery.carrier">
