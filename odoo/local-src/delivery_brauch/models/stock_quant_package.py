@@ -7,7 +7,7 @@ class StockQuantPackage(models.Model):
 
     _inherit = "stock.quant.package"
 
-    def _brauch_get_pack_data(self):
+    def _brauch_get_pack_data(self, picking):
         return {
             "Ist-Anz. Pal.": 1,
             "K-PID": self.name,

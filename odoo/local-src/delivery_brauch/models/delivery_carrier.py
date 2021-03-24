@@ -14,7 +14,9 @@ class DeliveryCarrier(models.Model):
         selection_add=[('brauch', "Brauch Transporte")]
     )
     brauch_default_packaging_id = fields.Many2one(
-        "product.packaging", string="Default Packaging"
+        "product.packaging",
+        domain=[("package_carrier_type", "=", "brauch")],
+        string="Default Packaging",
     )
     brauch_ftp_uri = fields.Char()
     brauch_ftp_path = fields.Char()

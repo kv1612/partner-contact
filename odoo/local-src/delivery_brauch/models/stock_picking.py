@@ -59,7 +59,7 @@ class StockPicking(models.Model):
             )
             writer.writeheader()
             for pack in self.package_ids:
-                pack_data = pack._brauch_get_pack_data()
+                pack_data = pack._brauch_get_pack_data(self)
                 pack_data.update(common_picking_data.copy())
                 self._brauch_write_csv_row(writer, pack, pack_data)
             csvfile.seek(0)

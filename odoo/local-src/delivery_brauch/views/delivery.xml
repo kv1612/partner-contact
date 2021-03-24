@@ -16,13 +16,13 @@
                         </group>
                     </group>
                     <group>
-                        <group name="ftp">
+                        <group name="ftp" string="FTP credentials">
                             <field name="brauch_ftp_uri" />
                             <field name="brauch_ftp_path" />
                             <field name="brauch_ftp_login" />
                             <field name="brauch_ftp_password" />
                         </group>
-                        <group name="file">
+                        <group name="file" string="Output configuration">
                             <field name="brauch_filename" />
                             <field name="brauch_datetime_format" />
                         </group>
