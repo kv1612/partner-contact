@@ -39,9 +39,9 @@
       <attribute name="t-foreach">parcels</attribute>
     </t>
     <!-- Display the parcels count -->
-    <h1 t-field="o.name" position="after">
-      <h2>(Parcel <span t-esc="parcel_number"/>/<span t-esc="o.packaging_id.cosalog_number_of_parcels"/>)</h2>
-    </h1>
+    <xpath expr="//h1[@t-field='o.name']/.." position="inside">
+      <h2 class="mt-2">(Parcel <span t-esc="parcel_number"/>/<span t-esc="o.packaging_id.cosalog_number_of_parcels"/>)</h2>
+    </xpath>
     <!-- Remove package content (we target the <table> tag displaying
          the related quants here)
     -->
