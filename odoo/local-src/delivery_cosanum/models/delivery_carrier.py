@@ -8,3 +8,6 @@ class DeliveryCarrier(models.Model):
     _inherit = "delivery.carrier"
 
     delivery_type = fields.Selection(selection_add=[("cosanum", "Cosanum")])
+    cosanum_default_packaging_id = fields.Many2one(
+        "product.packaging", string="Default Packaging"
+    )

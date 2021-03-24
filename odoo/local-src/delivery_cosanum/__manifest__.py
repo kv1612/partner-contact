@@ -10,5 +10,5 @@
     "application": False,
     "installable": True,
     "depends": ["delivery"],
-    "data": [],
+    "data": ["views/delivery_carrier_views.xml"],
 }
