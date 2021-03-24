@@ -8,13 +8,21 @@
             <xpath expr="//page[@name='destination']" position='before'>
                 <page string="Brauch Configuration" attrs="{'invisible': [('delivery_type', '!=', 'brauch')]}">
                     <group>
-                        <group>
+                        <group name="packaging" string="Packaging">
+                            <field
+                                name="brauch_default_packaging_id"
+                                attrs="{'required': [('delivery_type', '=', 'brauch')]}"
+                            />
+                        </group>
+                    </group>
+                    <group>
+                        <group name="ftp">
                             <field name="brauch_ftp_uri" />
                             <field name="brauch_ftp_path" />
                             <field name="brauch_ftp_login" />
                             <field name="brauch_ftp_password" />
                         </group>
-                        <group>
+                        <group name="file">
                             <field name="brauch_filename" />
                             <field name="brauch_datetime_format" />
                         </group>
