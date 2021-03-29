@@ -3,6 +3,7 @@
 from psycopg2 import IntegrityError
 
 from odoo.tests.common import SavepointCase
+from odoo.tools import mute_logger
 
 
 class TestResPartnerDeliveryInfo(SavepointCase):
@@ -14,5 +15,6 @@ class TestResPartnerDeliveryInfo(SavepointCase):
         partner.delivery_info_id = delivery_info
         self.assertTrue(delivery_info.active)
         self.assertEqual(partner.delivery_info_id, delivery_info)
-        with self.assertRaises(IntegrityError):
-            delivery_info.unlink()
+        with mute_logger("odoo.sql_db"):
+            with self.assertRaises(IntegrityError):
+                delivery_info.unlink()
