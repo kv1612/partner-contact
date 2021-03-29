@@ -11,5 +11,5 @@ class DeliveryCarrier(models.Model):
     cosanum_default_packaging_id = fields.Many2one(
         "product.packaging",
         domain=[("package_carrier_type", "=", "cosanum")],
-        string="Default Packaging",
+        string="Cosanum Default Packaging",
     )
