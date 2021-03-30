@@ -96,4 +96,5 @@ class DeliveryCarrier(models.Model):
             "Lieferant-Adres Zusatz",
             "Lieferant-Strasse",
             "Auslieferhinweis (Info 2)",
+            "Lieferfenster",
         ]

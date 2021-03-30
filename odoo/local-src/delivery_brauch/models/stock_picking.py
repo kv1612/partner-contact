@@ -20,11 +20,15 @@ class StockPicking(models.Model):
         compute="_compute_brauch_exported_file_display"
     )
 
+    def _brauch_get_carrier(self):
+        self.ensure_one()
+        return self.carrier_id
+
     def _compute_brauch_exported_file_display(self):
         for pick in self:
             pick.brauch_exported_file_display = (
                 pick.state == "done"
-                and (pick.carrier_id.delivery_type == "brauch")
+                and (pick._brauch_get_carrier().delivery_type == "brauch")
                 and pick.brauch_exported_file
             )
 
@@ -70,9 +74,14 @@ class StockPicking(models.Model):
         auftrags_prio = (
             "Fixtermin" if self.sale_id.commitment_date else "Standard"
         )
-        delivery_date = self.sale_id.commitment_date or self.scheduled_date
+        delivery_date = (
+            self.sale_id.commitment_date or self.sale_id.expected_date
+        )
+        date_done = self.date_done or self.scheduled_date
         return {
-            "Verladedatum": "",
+            "Verladedatum": date_done.strftime(
+                self.carrier_id.brauch_datetime_format
+            ),
             "Auftrags-Prio": auftrags_prio,
             "Lieferdatum": delivery_date.strftime(
                 self.carrier_id.brauch_datetime_format
@@ -85,6 +94,9 @@ class StockPicking(models.Model):
             "Lieferant-PLZ": self.partner_id.zip or "",
             "Lieferant-Ort": self.partner_id.city or "",
             "Auslieferhinweis (Info 2)": (
+                self.partner_id.delivery_info_id.text or ""
+            ).replace("\n", " "),
+            "Lieferfenster": (
                 self.partner_id.brauch_delivery_info or ""
             ).replace("\n", " "),
         }
