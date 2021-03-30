@@ -14,40 +14,17 @@ class ResPartner(models.Model):
         "delivery_time_window_ids.time_window_weekday_ids",
         "delivery_time_window_ids.time_window_start",
         "delivery_time_window_ids.time_window_end",
-        "mobile",
-        "phone",
         "delivery_info_id",
         "delivery_info_id.text",
     )
     def _compute_brauch_delivery_info(self):
         desc = self.with_context(lang="de_DE").get_delivery_time_description()
         for partner in self:
-            delivery_info = (
-                partner.delivery_info_id.text + "\n--\n"
-                if (partner.delivery_info_id and partner.delivery_info_id.text)
-                else ""
-            )
-            delivery_times_string = _("Delivery times: Anytime")
+            delivery_times_string = _("Anytime")
             if partner.delivery_time_preference == "time_windows":
-                delivery_times_string = _("Delivery times:\n%s") % desc.get(
-                    partner.id
-                )
-            delivery_phone_string = False
-            delivery_mobile_string = False
-            if partner.phone:
-                delivery_phone_string = _("Phone number: %s") % partner.phone
-            if partner.mobile:
-                delivery_mobile_string = (
-                    _("Mobile number: %s") % partner.mobile
-                )
-            partner.brauch_delivery_info = "\n".join(
-                filter(
-                    None,
-                    [
-                        delivery_info,
-                        delivery_phone_string,
-                        delivery_mobile_string,
-                        delivery_times_string,
-                    ],
-                )
-            )
+                delivery_times_string = desc.get(partner.id)
+            partner.brauch_delivery_info = delivery_times_string
+
+    def _get_delivery_time_format_string(self):
+        # Override the method of 'stock_partner_delivery_window'
+        return "%s - %s"
