@@ -30,6 +30,7 @@
         'sale_order_line_packaging_qty',
         'sale_stock_mto_as_mts_orderpoint',
         # from odoo/external-src/stock-logistics-workflow
+        'delivery_send_to_shipper_at_operation',
         'stock_picking_group_by_partner_by_carrier',
         'stock_putaway_by_route',
         'stock_picking_backorder_strategy',
