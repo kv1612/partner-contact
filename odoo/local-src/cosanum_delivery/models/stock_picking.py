@@ -23,6 +23,9 @@ class StockPicking(models.Model):
         if (
             os.getenv("RUNNING_ENV") == "dev"
             and not tools.config['test_enable']
+            # Exception for Brauch as we generate a CSV file which can not
+            # be sent on the SFTP (disabled on dev by server_env)
+            and self.carrier_id.delivery_type not in ["brauch"]
         ):
             _logger.info("DEV MODE detected: skip send shipping")
             return
