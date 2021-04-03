@@ -88,7 +88,7 @@ class StockPicking(models.Model):
             ),
             "Lieferschein-Nr": self.name,
             "Tour": "",
-            "Lieferant-Name": self.partner_id.name,
+            "Lieferant-Name": self.partner_id.display_name,
             "Lieferant-Strasse": self.partner_id.street or "",
             "Lieferant-Adres Zusatz": self.partner_id.street2 or "",
             "Lieferant-PLZ": self.partner_id.zip or "",
