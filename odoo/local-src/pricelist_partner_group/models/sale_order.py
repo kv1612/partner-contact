@@ -51,6 +51,11 @@ class SaleOrder(models.Model):
                 group_pricelist
             )
             for line in order.order_line:
+                # Since the golive, there's grey lines on sale orders which don't
+                # have a product_id. We do not want those lines to trigger
+                # the creation of pricelist items
+                if not line.product_id:
+                    continue
                 partner_fixed_price = partner_pricelist_lines_by_product.get(
                     line.product_id.id
                 )
