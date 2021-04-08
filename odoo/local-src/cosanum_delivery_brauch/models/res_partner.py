@@ -23,6 +23,8 @@ class ResPartner(models.Model):
             delivery_times_string = _("Anytime")
             if partner.delivery_time_preference == "time_windows":
                 delivery_times_string = desc.get(partner.id)
+            elif partner.delivery_time_preference == "workdays":
+                delivery_times_string = _("On working days")
             partner.brauch_delivery_info = delivery_times_string
 
     def _get_delivery_time_format_string(self):
