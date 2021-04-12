@@ -25,4 +25,6 @@ latest (unreleased)
 
 **Build**
 
+* BSMNT-153: Switch dop to ghcr.io
+
 **Documentation**

@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:14.0-latest
+FROM ghcr.io/camptocamp/odoo-project:14.0-latest
 LABEL maintainer="Camptocamp"
 LABEL org.opencontainers.image.source https://github.com/camptocamp/cosanum_odoo
 
