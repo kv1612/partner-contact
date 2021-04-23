@@ -13,6 +13,13 @@
       <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_transport"></field>
       <field name="shipper_package_code">SEM</field>
     </record>
+    <record id="swisspost_thermocare_packaging" model="product.packaging">
+      <field name="name">Thermocare box (1)</field>
+      <field name="package_carrier_type">postlogistics</field>
+      <field name="packaging_type_id" ref="cosanum_base_data.product_packaging_type_transport"></field>
+      <field name="barcode">CCO-THERMOBOX-1</field>
+      <field name="shipper_package_code">PRI,AMB</field>
+    </record>
 
     <record id="product_packaging_brauchpal" model="product.packaging">
       <field name="name">Brauch Palette</field>
