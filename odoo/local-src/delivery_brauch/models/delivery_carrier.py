@@ -30,6 +30,7 @@ class DeliveryCarrier(models.Model):
     )
 
     def brauch_rate_shipment(self, order):
+        self.ensure_one()
         carrier = self._match_address(order.partner_shipping_id)
         if not carrier:
             return {
@@ -40,9 +41,12 @@ class DeliveryCarrier(models.Model):
                 ),
                 "warning_message": False,
             }
+        delivery_product_price = (
+            self.product_id and self.product_id.lst_price or 0
+        )
         return {
             "success": True,
-            "price": 0.0,
+            "price": delivery_product_price,
             "error_message": False,
             "warning_message": False,
         }
