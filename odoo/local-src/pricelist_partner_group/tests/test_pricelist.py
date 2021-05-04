@@ -91,6 +91,19 @@ class TestPricelist(SavepointCase):
         company = cls.env["res.company"].search([])
         company.write({"pricelist_industry_ids": [(6, 0, industries.ids)]})
 
+    def test_pricelist_sale_line_price_zero(self):
+        customer = self.env.ref("pricelist_partner_group.customer_00")
+        pricelist = customer.property_product_pricelist
+        products = [self.product_00]
+        order = self._create_order(customer, products)
+        order.order_line.price_unit = 0
+        prices_mapping = [(self.product_00, 0)]
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
+        items_mapping = [(self.product_00, 0, None)]
+        # If price is none on the SOL, no pricelist item is created.
+        self.check_pricelist_items(pricelist, items_mapping)
+
     def test_pricelist_partner_group(self):
         self.case_01()
         self.case_02()

@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
 from odoo import api, models
+from odoo.tools import float_is_zero
 
 
 class SaleOrder(models.Model):
@@ -55,6 +56,9 @@ class SaleOrder(models.Model):
                 # have a product_id. We do not want those lines to trigger
                 # the creation of pricelist items
                 if not line.product_id:
+                    continue
+                # Do not store the price if it is 0.0
+                if float_is_zero(line.price_unit, order.currency_id.rounding):
                     continue
                 partner_fixed_price = partner_pricelist_lines_by_product.get(
                     line.product_id.id
