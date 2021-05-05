@@ -68,6 +68,9 @@
         # from odoo/external-src/product-attribute
         'product_packaging_type_pallet',
 
+        # from odoo/external-src/delivery-carrier
+        'delivery_package_fee',
+
         # from odoo/src
         'product_expiry',
     ],
