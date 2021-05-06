@@ -75,7 +75,9 @@ class StockPicking(models.Model):
             "Fixtermin" if self.sale_id.commitment_date else "Standard"
         )
         delivery_date = (
-            self.sale_id.commitment_date or self.sale_id.expected_date
+            self.sale_id.commitment_date
+            or self.sale_id.expected_date
+            or self.scheduled_date
         )
         date_done = self.date_done or self.scheduled_date
         return {
