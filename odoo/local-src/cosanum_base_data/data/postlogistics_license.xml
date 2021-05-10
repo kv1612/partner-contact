@@ -6,4 +6,9 @@
         <field name="number">42109738</field>
     </record>
 
+    <record id="postlogistics_cerebral_licence" model="postlogistics.license">
+        <field name="name">Stiftung-Cerebral</field>
+        <field name="number">60006327</field>
+    </record>
+
 </odoo>

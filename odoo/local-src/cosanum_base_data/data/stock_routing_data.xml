@@ -48,7 +48,7 @@
             name="picking_type_id"
             ref="stock_picking_type_shipping_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon'),ref('delivery_carrier_swisspost_thermocare')]]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon'),ref('delivery_carrier_swisspost_thermocare'),ref('delivery_carrier_swisspost_cerebral')]]]" />
     </record>
 
     <!-- re-route "Packing" -->
@@ -111,7 +111,7 @@
             name="picking_type_id"
             ref="stock_picking_type_pick_shelving_parcel"
         />
-        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon'),ref('delivery_carrier_swisspost_thermocare')]]]" />
+        <field name="rule_domain" eval="[['group_id.carrier_id','in',[ref('delivery_carrier_post'),ref('delivery_carrier_swisspost_pri'),ref('delivery_carrier_swisspost_express_moon'),ref('delivery_carrier_swisspost_thermocare'),ref('delivery_carrier_swisspost_cerebral')]]]" />
     </record>
     <record
         id="stock_routing_rule_shelving_rol_pull"
