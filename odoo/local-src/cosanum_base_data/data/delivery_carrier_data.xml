@@ -142,7 +142,7 @@
         <field name="postlogistics_default_packaging_id" ref="swisspost_thermocare_packaging"></field>
         <field name="postlogistics_label_layout" ref="delivery_postlogistics.postlogistics_layout_option_a6"></field>
         <field name="postlogistics_output_format" ref="delivery_postlogistics.postlogistics_output_format_option_zpl2"></field>
-        <field name="postlogistics_resolution" ref="delivery_postlogistics.postlogistics_output_resolution_option_300ppp"></field>
+        <field name="postlogistics_resolution" ref="delivery_postlogistics.postlogistics_output_resolution_option_200ppp"></field>
         <field name="tech_name">swisspost_thermocare</field>
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
