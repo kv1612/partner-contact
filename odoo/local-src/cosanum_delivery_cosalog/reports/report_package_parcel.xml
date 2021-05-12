@@ -40,7 +40,7 @@
     </t>
     <!-- Display the parcels count -->
     <xpath expr="//h1[@t-field='o.name']/.." position="inside">
-      <h2 class="mt-2">(Parcel <span t-esc="parcel_number"/>/<span t-esc="o.packaging_id.cosalog_number_of_parcels"/>)</h2>
+      <h2 class="mt-2">(Parcel <span t-esc="parcel_number"/>/<span t-esc="o.packaging_id.cosalog_number_of_parcels or 1"/>)</h2>
     </xpath>
     <!-- Remove package content (we target the <table> tag displaying
          the related quants here)

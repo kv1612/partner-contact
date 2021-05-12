@@ -24,8 +24,11 @@ class StockPicking(models.Model):
                 # the parcels recordsets: it's on purpose!
                 packaging = package.packaging_id
                 if packaging.packaging_type_id.code == "CLOG":
-                    parcel_ids.extend(
-                        package.ids * packaging.cosalog_number_of_parcels
-                    )
+                    # NOTE: even for CosaLog packages configured with a number
+                    # of parcels of 0 we consider it is 1 to also print them.
+                    # Such parcels will be printed differently than others to
+                    # identify them easily.
+                    nb_of_parcels = packaging.cosalog_number_of_parcels or 1
+                    parcel_ids.extend(package.ids * nb_of_parcels)
             parcels = self.env["stock.quant.package"].browse(parcel_ids)
             picking.report_cosalog_parcel_ids = parcels
