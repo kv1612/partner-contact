@@ -34,19 +34,26 @@ class StockPicking(models.Model):
 
     def _send_delivery_to_brauch(self):
         csv_data = self._generate_brauch_csv()
-        csv_file_name = safe_eval(
-            self.carrier_id.brauch_filename, {"object": self, "time": time}
-        )
-        self.write(
-            {
-                'brauch_exported_file': base64.b64encode(csv_data.encode()),
-                'brauch_exported_filename': csv_file_name,
-            }
-        )
-        if self.carrier_id.prod_environment:
-            self.carrier_id.with_delay()._brauch_push_to_ftp(
-                csv_data, csv_file_name
+        # Do not send the csv if it just contains the header
+        # Check for empty lines, since a "\n" is automatically appended on
+        # the header.
+        csv_lines = [line for line in csv_data.split("\n", 2) if line.strip()]
+        if len(csv_lines) > 1:
+            csv_file_name = safe_eval(
+                self.carrier_id.brauch_filename, {"object": self, "time": time}
             )
+            self.write(
+                {
+                    'brauch_exported_file': base64.b64encode(
+                        csv_data.encode()
+                    ),
+                    'brauch_exported_filename': csv_file_name,
+                }
+            )
+            if self.carrier_id.prod_environment:
+                self.carrier_id.with_delay()._brauch_push_to_ftp(
+                    csv_data, csv_file_name
+                )
         return {'exact_price': 0.0, 'tracking_number': False}
 
     def _brauch_write_csv_row(self, writer, package, pack_data):
