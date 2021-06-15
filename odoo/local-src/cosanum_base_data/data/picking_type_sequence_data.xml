@@ -374,4 +374,15 @@
       <field name="number_increment" eval="1"/>
   </record>
 
+  <record id="sequence_stock_picking_type_receive_opw" model="ir.sequence">
+      <field name="name">Receive OPW</field>
+      <field name="number_next_actual" eval="1"/>
+      <field name="implementation">standard</field>
+      <field name="prefix">SCH/IN/OPW/</field>
+      <field name="code">stock.inopw</field>
+      <field name="padding" eval="7"/>
+      <field name="number_increment" eval="1"/>
+  </record>
+
+
 </odoo>
