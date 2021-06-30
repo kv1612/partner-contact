@@ -23,6 +23,8 @@ class ResPartner(models.Model):
         selection=[("gdk", "GDK"), ("no_gdk", "No GDK")],
         string="Customs privileged",
     )
+    # Change default value
+    delivery_time_preference = fields.Selection(default="workdays")
 
     @api.model
     def _selection_truck_weight_limit(self):
