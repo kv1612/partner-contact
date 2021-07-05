@@ -35,3 +35,8 @@ class DeliveryCarrier(models.Model):
             "error_message": False,
             "warning_message": False,
         }
+
+    def cosanum_send_shipping(self, pickings):
+        return [
+            {'exact_price': 0.0, 'tracking_number': False} for p in pickings
+        ]
