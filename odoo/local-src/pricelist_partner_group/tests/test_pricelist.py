@@ -1,8 +1,13 @@
 # Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
+from datetime import timedelta
+
+from freezegun import freeze_time
+from odoo import fields
 from odoo.tests.common import Form, SavepointCase
 from odoo.tools import convert_file
+from odoo.tools.float_utils import float_compare
 
 DATA_FILES = [
     "tests/data/res.partner.industry.csv",
@@ -13,6 +18,7 @@ DATA_FILES = [
 ]
 
 
+@freeze_time("2021-07-01")
 class TestPricelist(SavepointCase):
     at_install = False
     post_install = True
@@ -33,9 +39,19 @@ class TestPricelist(SavepointCase):
         Given a list of (product, price) mapping, check that orer lines price units
         are valid.
         """
-        for product, price in prices_mapping:
-            line = order.order_line.filtered(lambda l: l.product_id == product)
-            self.assertEqual(line.price_unit, price)
+        for product, price, qty in prices_mapping:
+            lines = order.order_line.filtered(
+                lambda l: l.product_id == product
+            )
+            self.assertEqual(len(lines), qty)
+            self.assertEqual(
+                float_compare(
+                    fields.first(lines).price_unit,
+                    price,
+                    precision_rounding=order.currency_id.rounding,
+                ),
+                0,
+            )
 
     def check_pricelist_items(self, pricelist, items_mapping):
         """
@@ -44,11 +60,22 @@ class TestPricelist(SavepointCase):
         """
         for product, nb_lines, price in items_mapping:
             item = pricelist.item_ids.filtered(
-                lambda i: i.product_id == product
+                lambda i: (
+                    i.product_id == product
+                    and (not i.date_start or i.date_start <= self.today)
+                    and (not i.date_end or i.date_end >= self.today)
+                )
             )
             self.assertEqual(len(item), nb_lines)
             if price is not None:
-                self.assertEqual(item.fixed_price, price)
+                self.assertEqual(
+                    float_compare(
+                        item.fixed_price,
+                        price,
+                        precision_rounding=pricelist.currency_id.rounding,
+                    ),
+                    0,
+                )
 
     @classmethod
     def set_currency(cls):
@@ -84,12 +111,20 @@ class TestPricelist(SavepointCase):
         cls.product_10 = cls.env.ref("pricelist_partner_group.product_10")
         cls.product_11 = cls.env.ref("pricelist_partner_group.product_11")
         cls.product_12 = cls.env.ref("pricelist_partner_group.product_12")
+        cls.product_13 = cls.env.ref("pricelist_partner_group.product_13")
+        cls.product_14 = cls.env.ref("pricelist_partner_group.product_14")
+        cls.product_15 = cls.env.ref("pricelist_partner_group.product_15")
+        cls.product_16 = cls.env.ref("pricelist_partner_group.product_16")
         # Pricelists industries configuration
         industries = cls.env["res.partner.industry"]
         industries |= cls.env.ref("pricelist_partner_group.industry_hospital")
         industries |= cls.env.ref("pricelist_partner_group.industry_ems")
         company = cls.env["res.company"].search([])
         company.write({"pricelist_industry_ids": [(6, 0, industries.ids)]})
+        # dates
+        cls.today = fields.Date.today()
+        cls.yesterday = cls.today - timedelta(days=1)
+        cls.tomorrow = cls.today + timedelta(days=1)
 
     def test_pricelist_sale_line_price_zero(self):
         customer = self.env.ref("pricelist_partner_group.customer_00")
@@ -97,7 +132,7 @@ class TestPricelist(SavepointCase):
         products = [self.product_00]
         order = self._create_order(customer, products)
         order.order_line.price_unit = 0
-        prices_mapping = [(self.product_00, 0)]
+        prices_mapping = [(self.product_00, 0, 1)]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
         items_mapping = [(self.product_00, 0, None)]
@@ -116,13 +151,17 @@ class TestPricelist(SavepointCase):
         self.case_09()
         self.case_10()
         self.case_11()
+        self.case_12()
+        self.case_13()
+        self.case_14()
+        self.case_15()
 
     def case_01(self):
         customer = self.env.ref("pricelist_partner_group.customer_00")
         pricelist = customer.property_product_pricelist
         products = [self.product_00, self.product_02]
         order = self._create_order(customer, products)
-        prices_mapping = [(self.product_00, 110), (self.product_02, 128)]
+        prices_mapping = [(self.product_00, 110, 1), (self.product_02, 128, 1)]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
         items_mapping = [(self.product_00, 1, 110)]
@@ -132,7 +171,7 @@ class TestPricelist(SavepointCase):
         customer = self.env.ref("pricelist_partner_group.customer_01")
         products = [self.product_00, self.product_03]
         order = self._create_order(customer, products)
-        prices_mapping = [(self.product_00, 90), (self.product_03, 12.6)]
+        prices_mapping = [(self.product_00, 90, 1), (self.product_03, 12.6, 1)]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
 
@@ -141,7 +180,7 @@ class TestPricelist(SavepointCase):
         pricelist = customer.property_product_pricelist
         products = [self.product_00]
         order = self._create_order(customer, products)
-        prices_mapping = [(self.product_00, 120)]
+        prices_mapping = [(self.product_00, 120, 1)]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
         items_mapping = [(self.product_00, 1, 120)]
@@ -151,7 +190,7 @@ class TestPricelist(SavepointCase):
         customer = self.env.ref("pricelist_partner_group.customer_03")
         products = [self.product_00]
         order = self._create_order(customer, products)
-        prices_mapping = [(self.product_00, 100)]
+        prices_mapping = [(self.product_00, 100, 1)]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
 
@@ -166,10 +205,10 @@ class TestPricelist(SavepointCase):
         ]
         order = self._create_order(customer, products)
         prices_mapping = [
-            (self.product_05, 85.12),
-            (self.product_02, 118.96),
-            (self.product_00, 90),
-            (self.product_12, 70.35),
+            (self.product_05, 85.12, 1),
+            (self.product_02, 118.96, 1),
+            (self.product_00, 90, 1),
+            (self.product_12, 70.35, 1),
         ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
@@ -187,10 +226,10 @@ class TestPricelist(SavepointCase):
         ]
         order = self._create_order(customer, products)
         prices_mapping = [
-            (self.product_05, 90.72),
-            (self.product_12, 59.12),
-            (self.product_02, 118.96),
-            (self.product_00, 90),
+            (self.product_05, 90.72, 1),
+            (self.product_12, 59.12, 1),
+            (self.product_02, 118.96, 1),
+            (self.product_00, 90, 1),
         ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
@@ -207,10 +246,10 @@ class TestPricelist(SavepointCase):
         ]
         order = self._create_order(customer, products)
         prices_mapping = [
-            (self.product_10, 2.38),
-            (self.product_12, 70.35),
-            (self.product_00, 90),
-            (self.product_05, 90.72),
+            (self.product_10, 2.38, 1),
+            (self.product_12, 70.35, 1),
+            (self.product_00, 90, 1),
+            (self.product_05, 90.72, 1),
         ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
@@ -220,7 +259,10 @@ class TestPricelist(SavepointCase):
         pricelist = customer.company_group_id.property_product_pricelist
         products = [self.product_01, self.product_00]
         order = self._create_order(customer, products)
-        prices_mapping = [(self.product_01, 2.93), (self.product_00, 100)]
+        prices_mapping = [
+            (self.product_01, 2.93, 1),
+            (self.product_00, 100, 1),
+        ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
         items_mapping = [
@@ -234,7 +276,10 @@ class TestPricelist(SavepointCase):
         pricelist = customer.company_group_id.property_product_pricelist
         products = [self.product_01, self.product_00]
         order = self._create_order(customer, products)
-        prices_mapping = [(self.product_01, 7.17), (self.product_00, 100)]
+        prices_mapping = [
+            (self.product_01, 7.17, 1),
+            (self.product_00, 100, 1),
+        ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
         items_mapping = [
@@ -249,9 +294,9 @@ class TestPricelist(SavepointCase):
         products = [self.product_12, self.product_00, self.product_06]
         order = self._create_order(customer, products)
         prices_mapping = [
-            (self.product_12, 46),
-            (self.product_00, 90),
-            (self.product_06, 14),
+            (self.product_12, 46, 1),
+            (self.product_00, 90, 1),
+            (self.product_06, 14, 1),
         ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
@@ -263,9 +308,110 @@ class TestPricelist(SavepointCase):
         products = [self.product_12, self.product_11, self.product_06]
         order = self._create_order(customer, products)
         prices_mapping = [
-            (self.product_12, 46),
-            (self.product_11, 5.13),
-            (self.product_06, 16.96),
+            (self.product_12, 46, 1),
+            (self.product_11, 5.13, 1),
+            (self.product_06, 16.96, 1),
         ]
         self._check_order_prices(order, prices_mapping)
         order.action_confirm()
+
+    def case_12(self):
+        # Ensure prices near 0 creates a line
+        customer = self.env.ref("pricelist_partner_group.customer_07")
+        pricelist = customer.company_group_id.property_product_pricelist
+        products = [self.product_13]
+        order = self._create_order(customer, products)
+        # applied pricelist factor_09
+        prices_mapping = [(self.product_13, 0.11, 1)]
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
+        items_mapping = [(self.product_13, 1, 0.11)]
+        self.check_pricelist_items(pricelist, items_mapping)
+
+    def case_13(self):
+        # Ensure multiple order lines for a same product do not creates multiple items
+        customer = self.env.ref("pricelist_partner_group.customer_07")
+        pricelist = customer.company_group_id.property_product_pricelist
+        products = [self.product_14, self.product_14]
+        order = self._create_order(customer, products)
+        # applied pricelist factor_09
+        prices_mapping = [(self.product_14, 9.0, 2)]
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
+        items_mapping = [(self.product_14, 1, 9.0)]
+        self.check_pricelist_items(pricelist, items_mapping)
+
+    def case_14(self):
+        # Ensure that template and variant pricelist items are handled correctly
+        customer = self.env.ref("pricelist_partner_group.customer_12")
+        pricelist = customer.company_group_id.property_product_pricelist
+        self.env["product.pricelist.item"].create(
+            {
+                "pricelist_id": pricelist.id,
+                "product_tmpl_id": self.product_15.product_tmpl_id.id,
+                "applied_on": "1_product",
+                "compute_price": "fixed",
+                "fixed_price": 8,
+            }
+        )
+        products = [self.product_15]
+        order = self._create_order(customer, products)
+        prices_mapping = [(self.product_15, 8.0, 1)]
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
+        # Ensure that there's no item for product_15, since there's already
+        # on for its template
+        items_mapping = [(self.product_15, 0, None)]
+        self.check_pricelist_items(pricelist, items_mapping)
+
+    def case_15(self):
+        # Ensure that pricelist items are handled correctly
+        customer = self.env.ref("pricelist_partner_group.customer_07")
+        pricelist = customer.company_group_id.property_product_pricelist
+        self.env["product.pricelist.item"].create(
+            [
+                # expired pricelist item
+                {
+                    "pricelist_id": pricelist.id,
+                    "product_id": self.product_14.id,
+                    "compute_price": "fixed",
+                    "applied_on": "0_product_variant",
+                    "fixed_price": 8.0,
+                    "date_end": self.yesterday,
+                },
+                # not active yet
+                {
+                    "pricelist_id": pricelist.id,
+                    "product_id": self.product_15.id,
+                    "compute_price": "fixed",
+                    "applied_on": "0_product_variant",
+                    "fixed_price": 8.0,
+                    "date_start": self.tomorrow,
+                },
+                # ok
+                {
+                    "pricelist_id": pricelist.id,
+                    "product_id": self.product_16.id,
+                    "compute_price": "fixed",
+                    "applied_on": "0_product_variant",
+                    "fixed_price": 8.0,
+                    "date_start": self.today,
+                    "date_end": self.today,
+                },
+            ]
+        )
+        products = [self.product_14, self.product_15, self.product_16]
+        order = self._create_order(customer, products)
+        prices_mapping = [
+            (self.product_14, 9.0, 1),
+            (self.product_15, 9.0, 1),
+            (self.product_16, 8.0, 1),
+        ]
+        self._check_order_prices(order, prices_mapping)
+        order.action_confirm()
+        items_mapping = [
+            (self.product_14, 1, 9.0),
+            (self.product_15, 1, 9.0),
+            (self.product_16, 1, 8.0),
+        ]
+        self.check_pricelist_items(pricelist, items_mapping)

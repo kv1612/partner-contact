@@ -1,7 +1,7 @@
 # Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
-from odoo import api, models
+from odoo import api, fields, models
 from odoo.tools import float_is_zero
 
 
@@ -17,14 +17,45 @@ class SaleOrder(models.Model):
             self.pricelist_id = self.partner_id.partner_group_pricelist_id
         return result
 
-    @staticmethod
-    def _pricelist_fixed_price_lines_by_product(pricelist):
-        """Return mapping of pricelist lines by product."""
-        return {
-            line.product_id.id: line
-            for line in pricelist.item_ids
-            if line.compute_price == "fixed"
+    def _product_ids_with_fixed_prices(self, pricelists):
+        order_products = self.order_line.mapped("product_id")
+        product_ids = []
+        today = fields.Date.today()
+        query = """
+            SELECT product_id
+            FROM product_pricelist_item
+            WHERE compute_price = 'fixed'
+                AND pricelist_id in %(pricelist_ids)s
+                AND product_id IN %(product_ids)s
+                AND applied_on = '0_product_variant'
+                AND active = TRUE
+                AND (date_start IS NULL or date_start <= %(today)s)
+                AND (date_end IS NULL or date_end >= %(today)s)
+            UNION
+            SELECT pp.id
+            FROM product_product pp
+            JOIN product_pricelist_item ppi
+                ON pp.product_tmpl_id = ppi.product_tmpl_id
+            WHERE ppi.compute_price = 'fixed'
+                AND ppi.pricelist_id in %(pricelist_ids)s
+                AND ppi.product_tmpl_id IN %(template_ids)s
+                AND ppi.applied_on = '1_product'
+                AND ppi.active = TRUE
+                AND (ppi.date_start IS NULL OR ppi.date_start <= %(today)s)
+                AND (ppi.date_end IS NULL OR ppi.date_end >= %(today)s);
+        """
+        args = {
+            "pricelist_ids": tuple(pricelists.ids),
+            "product_ids": tuple(order_products.ids),
+            "template_ids": tuple(
+                order_products.mapped("product_tmpl_id").ids
+            ),
+            "today": today,
         }
+        self.env.cr.execute(query, args)
+        res = self.env.cr.fetchall()
+        product_ids = [row[0] for row in res]
+        return product_ids
 
     def action_confirm(self):
         """Handle pricelist based on industry.
@@ -37,6 +68,7 @@ class SaleOrder(models.Model):
         industries = self.env.user.company_id.pricelist_industry_ids
         pricelist_item_vals = []
         for order in self:
+            seen_products = []
             company = order.partner_id.commercial_partner_id
             # Company not in specified industries
             if company.industry_id not in industries:
@@ -45,36 +77,34 @@ class SaleOrder(models.Model):
             group_pricelist = (
                 company.company_group_id.property_product_pricelist
             )
-            partner_pricelist_lines_by_product = self._pricelist_fixed_price_lines_by_product(
-                partner_pricelist
-            )
-            group_pricelist_lines_by_product = self._pricelist_fixed_price_lines_by_product(
-                group_pricelist
+            product_ids_in_pricelist = order._product_ids_with_fixed_prices(
+                group_pricelist | partner_pricelist
             )
             for line in order.order_line:
                 # Since the golive, there's grey lines on sale orders which don't
                 # have a product_id. We do not want those lines to trigger
                 # the creation of pricelist items
-                if not line.product_id:
+                product_id = line.product_id.id
+                if line.display_type or product_id in product_ids_in_pricelist:
                     continue
                 # Do not store the price if it is 0.0
-                if float_is_zero(line.price_unit, order.currency_id.rounding):
+                if float_is_zero(
+                    line.price_unit,
+                    precision_rounding=order.currency_id.rounding,
+                ):
                     continue
-                partner_fixed_price = partner_pricelist_lines_by_product.get(
-                    line.product_id.id
-                )
-                group_fixed_price = group_pricelist_lines_by_product.get(
-                    line.product_id.id
-                )
-                if partner_fixed_price or group_fixed_price:
+                # We do not want to create multiple pricelist items for a single
+                # product
+                if product_id in seen_products:
                     continue
+                seen_products.append(product_id)
                 # No fixed price for product, create a new one
                 pricelist_item_vals.append(
                     {
                         "applied_on": "0_product_variant",
                         "compute_price": "fixed",
                         "fixed_price": line.price_unit,
-                        "product_id": line.product_id.id,
+                        "product_id": product_id,
                         "pricelist_id": group_pricelist.id
                         or partner_pricelist.id,
                     }
