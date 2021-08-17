@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Camptocamp SA
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+  <record id="view_quant_package_kanban" model="ir.ui.view">
+    <field name="name">stock.quant.package.kanban.inherit</field>
+    <field name="model">stock.quant.package</field>
+    <field name="inherit_id" ref="stock.view_quant_package_kanban"/>
+    <field name="arch" type="xml">
+      <xpath expr="//strong[hasclass('o_kanban_record_title')]/field[@name='name']" position="attributes">
+        <attribute name="name">display_name</attribute>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

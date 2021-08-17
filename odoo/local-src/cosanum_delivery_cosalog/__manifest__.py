@@ -24,6 +24,7 @@
         "data/product_packaging_type.xml",
         "data/product_packaging.xml",
         "views/product_packaging.xml",
+        "views/stock_quant_package.xml",
         "reports/report_package_parcel.xml",
         "reports/reports.xml",
     ],
