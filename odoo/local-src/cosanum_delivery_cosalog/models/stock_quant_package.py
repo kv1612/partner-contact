@@ -17,10 +17,13 @@ class StockQuantPackage(models.Model):
         for package in self:
             packaging = package.packaging_id
             if packaging.packaging_type_id.code == "CLOG":
-                parcel_numbers = range(
-                    1, packaging.cosalog_number_of_parcels + 1
-                )
-                names = [f"{package.name}-{i}" for i in parcel_numbers]
+                if packaging.cosalog_number_of_parcels:
+                    parcel_numbers = range(
+                        1, packaging.cosalog_number_of_parcels + 1
+                    )
+                    names = [f"{package.name}-{i}" for i in parcel_numbers]
+                else:
+                    names = [f"{package.name}-0"]
                 package.display_name = ", ".join(names)
             else:
                 super(StockQuantPackage, package)._compute_display_name()
