@@ -5,6 +5,8 @@ from odoo import models
 
 class DeliveryCarrier(models.Model):
     _name = "delivery.carrier"
+    # server_environment_delivery already makes carrier inherit from env mixin
+    # is this needed here?
     _inherit = ["delivery.carrier", "server.env.mixin"]
 
     def _brauch_get_csv_columns(self):

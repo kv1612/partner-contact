@@ -12,6 +12,9 @@ class StockPicking(models.Model):
         schlieren_wh = self.env.ref(
             "stock.warehouse0", raise_if_not_found=False
         )
+        # TODO: move warehouse definitions to `cosanum_data_stock`
+        # and drop dependency w/ cosanum_base_data.
+        # Also this is a broken dependency, not declared anywhere.
         werrikon_wh = self.env.ref(
             "cosanum_base_data.warehouse_wer", raise_if_not_found=False
         )
