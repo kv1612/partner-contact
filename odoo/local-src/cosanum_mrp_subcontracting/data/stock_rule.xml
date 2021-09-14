@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+  <function model="stock.rule" name="write">
+      <value model="stock.warehouse"
+             eval="obj().env.ref('stock.warehouse0').subcontracting_pull_id.id"/>
+      <value model="stock.location"
+             eval="{'location_src_id': obj().env.ref('stock.stock_location_output').id,
+                    'picking_type_id': obj().env.ref('stock.warehouse0').pick_type_id.id}"/>
+  </function>
+
+</odoo>

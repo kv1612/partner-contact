@@ -1,9 +1,5 @@
 <odoo noupdate="1">
 
-    <record id="mrp.route_warehouse0_manufacture" model="stock.location.route">
-        <field name="name">Manufacture MTO</field>
-    </record>
-
   <record id="stock_route_ReplenishFBGNSB" model="stock.location.route">
       <field name="name">Replenish FBG NSB</field>
       <field name="sequence" eval="10"/>
@@ -91,5 +87,17 @@
       <field name="warehouse_selectable" eval="1"/>
       <field name="warehouse_ids" eval="[(6, 0, [ref('stock.warehouse0')])]"/>
   </record>
+
+  <function model="stock.location.route" name="write">
+      <value model="stock.warehouse"
+             eval="obj().env.ref('stock.warehouse0').delivery_route_id.id"/>
+      <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
+  </function>
+
+  <function model="stock.location.route" name="write">
+      <value model="stock.warehouse"
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').delivery_route_id.id"/>
+      <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
+  </function>
 
 </odoo>
