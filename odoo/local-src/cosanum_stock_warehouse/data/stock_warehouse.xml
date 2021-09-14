@@ -67,47 +67,35 @@
   </record>
 
   <record id="stock.warehouse0" model="stock.warehouse">
+      <!-- FIXME: migrate 'stock_warehouse_block_auto_config'
       <field name="block_delivery_route_update">1</field>
       <field name="block_reception_route_update">1</field>
       <field name="block_manufacture_route_update">1</field>
+      -->
   </record>
 
   <record id="warehouse_wer" model="stock.warehouse">
+      <!-- FIXME: migrate 'stock_warehouse_block_auto_config'
       <field name="block_delivery_route_update">1</field>
       <field name="block_reception_route_update">1</field>
       <field name="block_manufacture_route_update">1</field>
+      -->
   </record>
 
   <record id="warehouse_ren" model="stock.warehouse">
+      <!-- FIXME: migrate 'stock_warehouse_block_auto_config'
       <field name="block_delivery_route_update">1</field>
       <field name="block_reception_route_update">1</field>
       <field name="block_manufacture_route_update">1</field>
+      -->
   </record>
 
   <record id="warehouse_wmh" model="stock.warehouse">
+      <!-- FIXME: migrate 'stock_warehouse_block_auto_config'
       <field name="block_delivery_route_update">1</field>
       <field name="block_reception_route_update">1</field>
       <field name="block_manufacture_route_update">1</field>
+      -->
   </record>
-
-  <function model="stock.location.route" name="write">
-      <value model="stock.warehouse"
-             eval="obj().env.ref('stock.warehouse0').delivery_route_id.id"/>
-      <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
-  </function>
-
-  <function model="stock.location.route" name="write">
-      <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_base_data.warehouse_wer').delivery_route_id.id"/>
-      <value eval="{'available_to_promise_defer_pull': True, 'force_recompute_preferred_carrier_on_release': True}"/>
-  </function>
-
-  <function model="stock.rule" name="write">
-      <value model="stock.warehouse"
-             eval="obj().env.ref('stock.warehouse0').subcontracting_pull_id.id"/>
-      <value model="stock.location"
-             eval="{'location_src_id': obj().env.ref('stock.stock_location_output').id,
-                    'picking_type_id': obj().env.ref('stock.warehouse0').pick_type_id.id}"/>
-  </function>
 
 </odoo>
