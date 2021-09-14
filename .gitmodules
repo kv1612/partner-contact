@@ -119,10 +119,10 @@
 ;	path = odoo/external-src/pos
 ;	url = git@github.com:OCA/pos.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/product-attribute"]
-;	path = odoo/external-src/product-attribute
-;	url = git@github.com:OCA/product-attribute.git
-;	branch = 14.0
+[submodule "odoo/external-src/product-attribute"]
+	path = odoo/external-src/product-attribute
+	url = git@github.com:OCA/product-attribute.git
+	branch = 14.0
 ;[submodule "odoo/external-src/product-variant"]
 ;	path = odoo/external-src/product-variant
 ;	url = git@github.com:OCA/product-variant.git
@@ -147,10 +147,10 @@
 ;	path = odoo/external-src/reporting-engine
 ;	url = git@github.com:OCA/reporting-engine.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/sale-workflow"]
-;	path = odoo/external-src/sale-workflow
-;	url = git@github.com:OCA/sale-workflow.git
-;	branch = 14.0
+[submodule "odoo/external-src/sale-workflow"]
+	path = odoo/external-src/sale-workflow
+	url = git@github.com:OCA/sale-workflow.git
+	branch = 14.0
 ;[submodule "odoo/external-src/server-auth"]
 ;	path = odoo/external-src/server-auth
 ;	url = git@github.com:OCA/server-auth.git

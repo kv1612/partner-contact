@@ -52,6 +52,12 @@ migration:
           # ---
           #### core
           - base  # Used for project migrations
+          #### oca/product-attribute
+          - product_packaging_type
+          - product_packaging_type_pallet
+          - product_packaging_type_required
+          #### oca/sale-workflow
+          - sale_by_packaging
           #### oca/server-tools
           - database_cleanup  # Used for project migrations
           #### oca/server-ux
@@ -63,7 +69,7 @@ migration:
           #### oca/web
           - web_environment_ribbon
           #### local-src
-          # - my_addon
+          - cosanum_product_packaging
     # Add a noop version used to check if build have been done with migrated database
     - version: 14.0.0.0.0
     # update step example

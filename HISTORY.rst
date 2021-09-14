@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BSCOS-2797: Migrate product packaging data
+
 **Bugfixes**
 
 **Build**
