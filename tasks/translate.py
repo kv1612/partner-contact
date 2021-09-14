@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# This file has been generated with 'invoke project.sync'.
+# Do not modify. Any manual change will be lost.
+# Please propose your modification on
+# https://github.com/camptocamp/odoo-template instead.
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 from __future__ import print_function
@@ -28,20 +32,28 @@ def generate(ctx, addon_path, update_po=True):
         os.mkdir(i18n_dir)
     container_po_path = os.path.join(container_path, '%s.po' % addon)
     user_id = ctx.run('id --user', hide='both').stdout.strip()
-    cmd = (
+    cmd_init = (
+        'docker-compose run --rm  -e LOCAL_USER_ID=%(user)s '
+        '-e DEMO=False -e MIGRATE=False odoo odoo '
+        '--log-level=warn --workers=0 '
+        '--database %(dbname)s '
+        '--stop-after-init --without-demo=all '
+        '--init=%(addon)s'
+    ) % {'user': user_id, 'dbname': dbname, 'addon': addon}
+    cmd_gen = (
         'docker-compose run --rm  -e LOCAL_USER_ID=%(user)s '
         '-e DEMO=False -e MIGRATE=False odoo odoo '
         '--log-level=warn --workers=0 '
         '--database %(dbname)s --i18n-export=%(path)s '
         '--modules=%(addon)s --stop-after-init --without-demo=all '
-        '--init=%(addon)s'
     ) % {
         'user': user_id,
         'path': container_po_path,
         'dbname': dbname,
         'addon': addon,
     }
-    ctx.run(cmd)
+    ctx.run(cmd_init)
+    ctx.run(cmd_gen)
 
     ctx.run(
         'docker-compose run --rm -e PGPASSWORD=odoo odoo '

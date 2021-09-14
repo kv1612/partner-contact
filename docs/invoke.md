@@ -1,3 +1,9 @@
+<!--
+This file has been generated with 'invoke project.sync'.
+Do not modify. Any manual change will be lost.
+Please propose your modification on
+https://github.com/camptocamp/odoo-template instead.
+-->
 # Using automated tasks with Invoke
 
 This project uses `invoke` to run some automated tasks.
@@ -26,6 +32,7 @@ The tasks are defined in `tasks.py`.
 * [Project sync](#projectsync)
 * [Translate generate](#translategenerate)
 * [Test PR](#testpr)
+* [Clean after PR test](#cleanpr)
 * [Submodule](#submodule)
     * [Init](#submoduleinit)
     * [Update](#submoduleupdate)
@@ -104,11 +111,22 @@ invoke translate.generate odoo/external-src/sale-workflow/my_addon
 -----
 #### pr.test
 
-Script to handle a database and code from pull request, its provide possibility
+Script to handle a database and code from pull request, it provides possibility
 to test code with database
 
 ```
 invoke pr.test 539 --get-integration-db=database_name --create-template=True  --base-branch=12.0
+```
+
+### Clean after PR test
+
+-----
+#### pr.clean
+
+Script to remove git branch and databases after PR test
+
+```
+invoke pr.clean 539
 ```
 
 
@@ -164,7 +182,7 @@ To prevent issue with an upgrade on a submodule which is in a detached HEAD
 without any link with a current working remote HEAD (or just master), the command
 will ask to fallback in a branch named as Odoo version (90% cases).
 
-This behavior need improvement, but needs also a better way to specify branches
+This behavior needs improvement, but needs also a better way to specify branches
 for submodules in a formalist manner (maybe using `.gitmodules` in a more
 precise way).
 

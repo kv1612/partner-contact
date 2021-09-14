@@ -1,3 +1,9 @@
+<!--
+This file has been generated with 'invoke project.sync'.
+Do not modify. Any manual change will be lost.
+Please propose your modification on
+https://github.com/camptocamp/odoo-template instead.
+-->
 # How to integrate an open pull request of an external repository
 
 First, ensure that you have installed all `tasks/requirements.txt`.
@@ -132,9 +138,11 @@ To do so, we have to:
 
 1. grab the current base commit from the submodule:
 
+```bash
     $ cd ./odoo/external-src/{repo-name}
     $ git fetch OCA  # (considering you have this remote)
     $ git merge-base OCA/13.0 HEAD
+```
 
 2. update the base commit in `pending-merges.d/<repo-name>.yml` file with it:
 
@@ -149,8 +157,10 @@ To do so, we have to:
 branch (in the submodule) from this base commit instead of the latest upstream
 commit:
 
+```bash
     $ git checkout -b 13.0-fix-module <SHA-1>
     [then work as usual...]
+```
 
 This way the development branch won't contain latest commits from upstream.
 

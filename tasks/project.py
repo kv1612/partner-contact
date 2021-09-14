@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# This file has been generated with 'invoke project.sync'.
+# Do not modify. Any manual change will be lost.
+# Please propose your modification on
+# https://github.com/camptocamp/odoo-template instead.
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 from __future__ import print_function
@@ -246,10 +250,10 @@ def sync(ctx, commit=True, version=None, fork=None, fork_url=None):
     if fork or fork_url:
         print('Using fork:', git_repo)
 
-    _do_sync(ctx, cc_context, version, git_repo, sync_metadata, commit=commit)
+    _do_sync(ctx, cc_context, version, git_repo, commit=commit)
 
 
-def _do_sync(ctx, cc_context, version, git_repo, sync_metadata, commit=True):
+def _do_sync(ctx, cc_context, version, git_repo, commit=True):
     # dirty hack to make sure we don't call the cookiecutter post script.
     os.environ["DO_SYNC"] = "True"
     with tempdir() as tmp:
@@ -264,16 +268,21 @@ def _do_sync(ctx, cc_context, version, git_repo, sync_metadata, commit=True):
         template = os.path.join(tmp, cc_context['repo_name'])
         selected_files = set()
         with cd(template):
-            include = sync_metadata['sync'].get('include', [])
-            exclude = sync_metadata['sync'].get('exclude', []) + GIT_IGNORES
-            comment = sync_metadata['sync'].get('comment', '')
-            for root, dirs, files in os.walk('.', topdown=True):
-                if exclude:
-                    dirs[:] = _exclude_fnmatch(root, dirs, exclude)
-                    files[:] = _exclude_fnmatch(root, files, exclude)
-                syncfiles = [os.path.join(root, f) for f in files]
-                for incl in include:
-                    selected_files.update(fnmatch.filter(syncfiles, incl))
+            # Read the synchronization list from the *template*, never from
+            # the local file which is ignored. Otherwise, the list of files
+            # to synchronize is obsolete and need manual synchronization.
+            with open(os.path.join(template, '.sync.yml'), 'rU') as syncfile:
+                sync = yaml.load(syncfile.read())
+                include = sync['sync'].get('include', [])
+                exclude = sync['sync'].get('exclude', []) + GIT_IGNORES
+                comment = sync['sync'].get('comment', '')
+                for root, dirs, files in os.walk('.', topdown=True):
+                    if exclude:
+                        dirs[:] = _exclude_fnmatch(root, dirs, exclude)
+                        files[:] = _exclude_fnmatch(root, files, exclude)
+                    syncfiles = [os.path.join(root, f) for f in files]
+                    for incl in include:
+                        selected_files.update(fnmatch.filter(syncfiles, incl))
 
             print('Syncing files:')
             for s in sorted(selected_files):

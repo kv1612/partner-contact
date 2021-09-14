@@ -25,6 +25,8 @@ latest (unreleased)
 
 **Build**
 
+* Sync project from odoo-template the 2021-09-14
+
 * BSMNT-153: Switch dop to ghcr.io
 
 **Documentation**
