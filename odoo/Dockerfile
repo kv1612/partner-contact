@@ -72,7 +72,10 @@ ENV ADDONS_PATH="/odoo/external-src/odoo-cloud-platform, \
   /odoo/external-src/server-env, \
   /odoo/external-src/server-tools, \
   /odoo/external-src/server-ux, \
+  /odoo/external-src/stock-logistics-warehouse, \
+  /odoo/external-src/stock-logistics-workflow, \
   /odoo/external-src/web, \
+  /odoo/external-src/wms, \
   /odoo/src/addons, \
   /odoo/local-src" \
   LIMIT_TIME_CPU=86400 \

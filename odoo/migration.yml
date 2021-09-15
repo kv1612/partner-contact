@@ -73,8 +73,17 @@ migration:
           - mail_environment
           - server_environment
           - server_environment_ir_config_parameter
+          #### oca/stock-logistics-warehouse
+          - stock_location_bin_name
+          - stock_location_position
+          - stock_location_zone
+          #### oca/stock-logistics-workflow
+          - stock_putaway_hook
           #### oca/web
           - web_environment_ribbon
+          #### oca/wms
+          - stock_storage_type
+          - stock_storage_type_putaway_abc
           #### local-src
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
           # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
@@ -84,6 +93,7 @@ migration:
           - cosanum_mrp
           - cosanum_mrp_subcontracting
           - cosanum_purchase_stock
+          - cosanum_stock_location
           - cosanum_stock_warehouse
     # Add a noop version used to check if build have been done with migrated database
     - version: 14.0.0.0.0

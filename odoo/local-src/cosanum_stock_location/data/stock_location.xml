@@ -5,7 +5,6 @@
       <field name="location_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').view_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -14,7 +13,6 @@
       <field name="location_id" ref="stock.stock_location_stock"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -23,7 +21,6 @@
       <field name="location_id" ref="location_zone_Schlieren"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -32,7 +29,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -43,7 +39,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="False"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.rack}.{self.level:0>3}.{self.posx}.{self.posy}</field>
   </record>
@@ -53,7 +48,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -63,7 +57,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -73,7 +66,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -83,7 +75,6 @@
       <field name="location_id" ref="stock.stock_location_stock"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -93,7 +84,6 @@
       <field name="location_id" ref="location_zone_Werrikon"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -102,7 +92,6 @@
       <field name="location_id" ref="location_internal_wer"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -112,7 +101,6 @@
       <field name="location_id" ref="location_internal_wer"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -122,7 +110,9 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
+      <!-- FIXME: move to 'cosanum_stock_vertical_list'
       <field name="vertical_lift_location" eval="1"/>
+      -->
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_buffer')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -132,7 +122,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -142,7 +131,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
       <field name="pack_putaway_strategy">abc</field>
   </record>
@@ -152,7 +140,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
       <field name="pack_putaway_strategy">abc</field>
   </record>
@@ -162,7 +149,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
       <field name="pack_putaway_strategy">abc</field>
   </record>
@@ -172,7 +158,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
       <field name="pack_putaway_strategy">abc</field>
   </record>
@@ -182,7 +167,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -192,7 +176,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_dlr')])]"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
       <field name="removal_strategy_id" ref="stock.removal_fifo"/>
@@ -203,7 +186,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -213,7 +195,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_lan')])]"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -223,7 +204,6 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [])]"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -233,7 +213,6 @@
       <field name="location_id" ref="stock.stock_location_company"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -242,7 +221,6 @@
       <field name="location_id" ref="location_zone_OPLogistic"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_opl_pallet21'), ref('location_storage_type_pallet21'), ref('location_storage_type_top_fl_pallet16')])]"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -252,7 +230,6 @@
       <field name="location_id" ref="location_zone_Sample"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -261,7 +238,6 @@
       <field name="name">WEG</field>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -271,7 +247,6 @@
       <field name="barcode">WEG-QUA</field>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -280,7 +255,6 @@
       <field name="location_id" ref="location_zone_WerrikonUG"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -290,7 +264,6 @@
       <field name="location_id" ref="location_zone_WerrikonUG"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -300,7 +273,6 @@
       <field name="location_id" ref="location_zone_WerrikonEG"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
@@ -311,7 +283,6 @@
       <field name="location_id" ref="stock.stock_location_output"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_area_WEGNSBShip" model="stock.location">
@@ -320,36 +291,32 @@
       <field name="location_id" ref="stock.stock_location_output"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_area_KTLWAWER" model="stock.location">
       <field name="name">WER-WAE</field>
       <field name="barcode">WER-WAE</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_inputwer')])]"/>
   </record>
 
   <record id="location_area_KTLWAWERQA" model="stock.location">
       <field name="name">WER-WAE-QA</field>
       <field name="barcode">WER-WAE-QA</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_inputwer')])]"/>
   </record>
 
   <record id="location_area_WEGTRA77" model="stock.location">
       <field name="name">WER-WAE-TRANSIT</field>
       <field name="barcode">WER-WAE-TRANSIT</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kardex_buffer')])]"/>
   </record>
 
@@ -358,7 +325,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -367,7 +333,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -376,7 +341,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -385,7 +349,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -394,7 +357,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -403,7 +365,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -412,7 +373,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -421,7 +381,6 @@
       <field name="location_id" ref="location_area_SHU"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
 
@@ -430,7 +389,6 @@
       <field name="location_id" ref="stock.stock_location_customers"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -439,7 +397,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR2" model="stock.location">
@@ -447,7 +404,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR3" model="stock.location">
@@ -455,7 +411,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR4" model="stock.location">
@@ -463,7 +418,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR5" model="stock.location">
@@ -471,7 +425,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR6" model="stock.location">
@@ -479,7 +432,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR7" model="stock.location">
@@ -487,7 +439,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR8" model="stock.location">
@@ -495,7 +446,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_SchlierenTOR9" model="stock.location">
@@ -503,7 +453,6 @@
       <field name="location_id" ref="location_zone_SCHOut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_zone_WEROut" model="stock.location">
@@ -511,7 +460,6 @@
       <field name="location_id" ref="stock.stock_location_customers"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -520,7 +468,6 @@
       <field name="location_id" ref="location_zone_WEROut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_WEGTOR2" model="stock.location">
@@ -528,7 +475,6 @@
       <field name="location_id" ref="location_zone_WEROut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_WEGTOR3" model="stock.location">
@@ -536,7 +482,6 @@
       <field name="location_id" ref="location_zone_WEROut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_gate_WEGTOR4" model="stock.location">
@@ -544,7 +489,6 @@
       <field name="location_id" ref="location_zone_WEROut"/>
       <field name="usage">customer</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="stock.stock_location_company" model="stock.location">
@@ -552,7 +496,6 @@
       <field name="location_id" ref="location_zone_Schlieren"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -561,7 +504,6 @@
       <field name="location_id" ref="stock.stock_location_company"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_area_PUTHRL" model="stock.location">
@@ -569,7 +511,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl')])]"/>
   </record>
 
@@ -623,7 +564,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_opl_pallet21')])]"/>
   </record>
 
@@ -632,7 +572,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving')])]"/>
   </record>
 
@@ -641,7 +580,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_buffer')])]"/>
   </record>
 
@@ -650,7 +588,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan')])]"/>
   </record>
 
@@ -659,7 +596,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_cep')])]"/>
   </record>
 
@@ -668,7 +604,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kgl'), ref('location_storage_type_medi')])]"/>
   </record>
 
@@ -677,7 +612,6 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_lan')])]"/>
   </record>
 
@@ -687,7 +621,6 @@
       <field name="location_id" ref="stock.stock_location_company"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kgl'), ref('location_storage_type_medi'), ref('location_storage_type_kardex_buffer'), ref('location_storage_type_opl_pallet21')])]"/>
   </record>
 
@@ -696,7 +629,6 @@
       <field name="location_id" ref="stock.stock_location_locations" />
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kgl'), ref('location_storage_type_medi'), ref('location_storage_type_kardex_buffer'), ref('location_storage_type_cep'), ref('location_storage_type_opl_pallet21')])]"/>
   </record>
 
@@ -706,7 +638,6 @@
       <field name="location_id" ref="stock.stock_location_output"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_area_OPship" model="stock.location">
@@ -715,7 +646,6 @@
       <field name="location_id" ref="stock.stock_location_output"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="stock.location_pack_zone" model="stock.location">
@@ -723,7 +653,6 @@
       <field name="location_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').view_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -732,7 +661,6 @@
       <field name="location_id" ref="stock.location_pack_zone"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_area_CCOROL" model="stock.location">
@@ -740,7 +668,6 @@
       <field name="location_id" ref="location_packing_Schlieren"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -749,7 +676,6 @@
       <field name="location_id" ref="location_packing_Schlieren"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -758,7 +684,6 @@
       <field name="location_id" ref="location_packing_Schlieren"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -767,7 +692,6 @@
       <field name="location_id" ref="location_area_VSDShip"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -777,7 +701,6 @@
       <field name="location_id" ref="location_area_VSDShip"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
 
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
@@ -787,7 +710,6 @@
       <field name="location_id" ref="stock.location_pack_zone"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_name_format">{self.area}-{self.corridor:0>2}.{self.rack:0>3}.{self.level:0>2}.{self.posx}</field>
   </record>
 
@@ -796,7 +718,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_hrl_ugp_in')])]"/>
       <field name="is_zone" eval="True"/>
   </record>
@@ -806,7 +727,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -815,7 +735,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -824,7 +743,6 @@
       <field name="location_id" ref="location_internal_sch"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -833,15 +751,14 @@
       <field name="location_id" ref="location_zone_Shelving"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <function model="stock.location" name="write">
       <value model="stock.location"
-             eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_input_stock_loc_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Input',
-            'location_id': obj().env.ref('cosanum_base_data.location_zone_Werrikon').id,
+            'location_id': obj().env.ref('cosanum_stock_location.location_zone_Werrikon').id,
             'usage': 'internal',
             'active': True,
             'vertical_lift_location': False,
@@ -854,14 +771,13 @@
       <field name="location_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').view_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
       <field name="removal_strategy_id" ref="product_expiry.removal_fefo"/>
   </record>
 
   <function model="stock.location" name="write">
       <value model="stock.location"
-             eval="obj().env.ref('cosanum_base_data.warehouse_wer').wh_output_stock_loc_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_output_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Output WER',
             'location_id': obj().env.ref('stock.warehouse0').view_location_id.id,
@@ -877,7 +793,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -886,7 +801,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -895,7 +809,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -904,7 +817,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -913,7 +825,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -922,7 +833,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -931,7 +841,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -940,7 +849,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -949,7 +857,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -958,7 +865,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -967,7 +873,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -976,7 +881,6 @@
       <field name="location_id" ref="location_zone_HighBay"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
   </record>
 
@@ -985,7 +889,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -995,7 +898,6 @@
       <field name="location_id" ref="location_area_HRL_A-1-2-IN"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1005,7 +907,6 @@
       <field name="location_id" ref="location_area_HRL_A-1-2-IN"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1015,7 +916,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1025,7 +925,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1035,7 +934,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1045,7 +943,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1055,7 +952,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1065,7 +961,6 @@
       <field name="location_id" ref="location_zone_UGPIn"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1075,7 +970,6 @@
       <field name="location_id" ref="location_area_HRL_A-17-20-IN"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1085,7 +979,6 @@
       <field name="location_id" ref="location_area_HRL_A-17-20-IN"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1095,7 +988,6 @@
       <field name="location_id" ref="location_area_HRL_A-17-20-IN"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="False"/>
       <field name="pack_putaway_strategy">ordered_locations</field>
   </record>
@@ -1105,7 +997,6 @@
       <field name="location_id" model="stock.warehouse" eval="obj().env.ref('stock.warehouse0').view_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
@@ -1114,20 +1005,19 @@
       <field name="location_id" ref="location_zone_ext_warehouse"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
       <field name="is_zone" eval="True"/>
   </record>
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_base_data.warehouse_ren').view_location_id.id"/>
-      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_base_data.location_internal_schafhausen').id}"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_ren').view_location_id.id"/>
+      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location.location_internal_schafhausen').id}"/>
   </function>
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_base_data.warehouse_wmh').view_location_id.id"/>
-      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_base_data.location_internal_schafhausen').id}"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wmh').view_location_id.id"/>
+      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location.location_internal_schafhausen').id}"/>
   </function>
 
   <record id="location_internal_subcontract_vendor1" model="stock.location">
@@ -1135,7 +1025,6 @@
       <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_internal_subcontract_vendor2" model="stock.location">
@@ -1143,7 +1032,6 @@
       <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_internal_subcontract_vendor3" model="stock.location">
@@ -1151,7 +1039,6 @@
       <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
   <record id="location_internal_subcontract_vendor4" model="stock.location">
@@ -1159,7 +1046,6 @@
       <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="vertical_lift_location" eval="0"/>
   </record>
 
 
