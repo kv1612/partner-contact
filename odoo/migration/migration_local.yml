@@ -35,8 +35,12 @@ migration:
           - cosanum_mrp
           - cosanum_mrp_subcontracting
           - cosanum_purchase_stock
+          - cosanum_stock_checkout_sync
           - cosanum_stock_location
           - cosanum_stock_vertical_lift
+          - cosanum_stock_picking_backorder_strategy
+          - cosanum_stock_picking_type
+          - cosanum_stock_picking_consolidation_priority
           - cosanum_stock_warehouse
           # - ddmrp_priority              # TODO migrate
           # - ddmrp_sale_exclude_from_adu # TODO migrate

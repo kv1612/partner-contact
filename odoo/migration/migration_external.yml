@@ -232,7 +232,9 @@ migration:
           - stock_dynamic_routing
           - stock_move_source_relocate
           - stock_move_source_relocate_dynamic_routing
+          - stock_picking_completion_info
           - stock_picking_consolidation_priority
+          - stock_picking_type_shipping_policy
           - stock_reception_screen
           - stock_storage_type
           - stock_storage_type_buffer
