@@ -5,6 +5,10 @@
       <field name="name">Input HRL</field>
   </record>
 
+  <record id="location_storage_type_puthrl_shelving" model="stock.location.storage.type">
+      <field name="name">Input HRL Shelving</field>
+  </record>
+
   <record id="location_storage_type_inputwer" model="stock.location.storage.type">
       <field name="name">Input WER</field>
   </record>

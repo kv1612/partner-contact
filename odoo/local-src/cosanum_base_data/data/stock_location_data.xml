@@ -573,6 +573,51 @@
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl')])]"/>
   </record>
 
+  <record id="location_area_PUTHRL_shelving_1" model="stock.location">
+      <field name="name">PUTHRL-Shelving 1</field>
+      <field name="barcode">PUTHRLSHELV1</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl_shelving')])]"/>
+  </record>
+
+  <record id="location_area_PUTHRL_shelving_2" model="stock.location">
+      <field name="name">PUTHRL-Shelving 2</field>
+      <field name="barcode">PUTHRLSHELV2</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl_shelving')])]"/>
+  </record>
+
+  <record id="location_area_PUTHRL_shelving_3" model="stock.location">
+      <field name="name">PUTHRL-Shelving 3</field>
+      <field name="barcode">PUTHRLSHELV3</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl_shelving')])]"/>
+  </record>
+
+  <record id="location_area_PUTHRL_shelving_4" model="stock.location">
+      <field name="name">PUTHRL-Shelving 4</field>
+      <field name="barcode">PUTHRLSHELV4</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl_shelving')])]"/>
+  </record>
+
+  <record id="location_area_PUTHRL_shelving_5" model="stock.location">
+      <field name="name">PUTHRL-Shelving 5</field>
+      <field name="barcode">PUTHRLSHELV5</field>
+      <field name="location_id" ref="location_area_WAE"/>
+      <field name="usage">internal</field>
+      <field name="active" eval="True"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_puthrl_shelving')])]"/>
+  </record>
+
   <record id="location_area_PUTOPL" model="stock.location">
       <field name="name">PUTOPL</field>
       <field name="location_id" ref="location_area_WAE"/>

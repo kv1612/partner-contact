@@ -25,7 +25,7 @@
 
   <record id="package_storage_type_hrl_box" model="stock.package.storage.type">
       <field name="name">HRL Shelf Box</field>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet07'), ref('location_storage_type_hrl_ugp_in'), ref('location_storage_type_puthrl')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet07'), ref('location_storage_type_puthrl_shelving')])]"/>
   </record>
 
   <record id="package_storage_type_cep" model="stock.package.storage.type">
