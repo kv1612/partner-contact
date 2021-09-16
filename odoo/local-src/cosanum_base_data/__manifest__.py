@@ -102,5 +102,5 @@
         # Data
         "data/res.lang.csv",
     ],
-    'installable': True,
+    'installable': False,
 }
