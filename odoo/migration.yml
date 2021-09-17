@@ -73,6 +73,7 @@ migration:
           # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
           # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
           - cosanum_product_packaging
+          - cosanum_mrp
           - cosanum_purchase_stock
           - cosanum_stock_warehouse
     # Add a noop version used to check if build have been done with migrated database

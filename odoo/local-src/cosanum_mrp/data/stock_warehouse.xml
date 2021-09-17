@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+  <record id="stock.warehouse0" model="stock.warehouse">
+      <field name="manufacture_steps">pbm</field>
+  </record>
+
+  <record id="cosanum_stock_warehouse.warehouse_wer" model="stock.warehouse">
+      <field name="manufacture_to_resupply" eval="False"/>
+  </record>
+
+  <record id="cosanum_stock_warehouse.warehouse_ren" model="stock.warehouse">
+      <field name="manufacture_to_resupply" eval="False"/>
+  </record>
+
+  <record id="cosanum_stock_warehouse.warehouse_wmh" model="stock.warehouse">
+      <field name="manufacture_to_resupply" eval="False"/>
+  </record>
+
+</odoo>

@@ -6,7 +6,6 @@
       <field name="code">SCH</field>
       <field name="delivery_steps">pick_ship</field>
       <field name="reception_steps">two_steps</field>
-      <field name="manufacture_steps">pbm</field>
       <field name="partner_id" ref="base.main_partner"/>
   </record>
 
@@ -26,7 +25,6 @@
       <field name="delivery_steps">pick_ship</field>
       <field name="reception_steps">two_steps</field>
       <field name="subcontracting_to_resupply" eval="False"/>
-      <field name="manufacture_to_resupply" eval="False"/>
       <field name="partner_id" ref="werrikon_address"/>
   </record>
 
@@ -44,7 +42,6 @@
       <field name="code">REN</field>
       <field name="partner_id" ref="schaffhausen_ren_address"/>
       <field name="subcontracting_to_resupply" eval="False"/>
-      <field name="manufacture_to_resupply" eval="False"/>
   </record>
 
   <record id="schaffhausen_wmh_address" model="res.partner">
@@ -58,7 +55,6 @@
       <field name="code">WMH</field>
       <field name="partner_id" ref="schaffhausen_wmh_address"/>
       <field name="subcontracting_to_resupply" eval="False"/>
-      <field name="manufacture_to_resupply" eval="False"/>
   </record>
 
 </odoo>
