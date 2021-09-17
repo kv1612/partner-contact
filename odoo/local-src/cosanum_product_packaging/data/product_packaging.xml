@@ -3,25 +3,16 @@
 
     <record id="swisspost_pri_packaging" model="product.packaging">
       <field name="name">Swisspost PRI</field>
-      <!-- FIXME: to move in `cosanum_delivery_postlogistics`
-      <field name="package_carrier_type">postlogistics</field>
-      -->
       <field name="packaging_type_id" ref="product_packaging_type_transport"></field>
       <field name="shipper_package_code">PRI</field>
     </record>
     <record id="swisspost_exp_packaging" model="product.packaging">
       <field name="name">Swisspost EXPRESS</field>
-      <!-- FIXME: to move in `cosanum_delivery_postlogistics`
-      <field name="package_carrier_type">postlogistics</field>
-      -->
       <field name="packaging_type_id" ref="product_packaging_type_transport"></field>
       <field name="shipper_package_code">SEM</field>
     </record>
     <record id="swisspost_thermocare_packaging" model="product.packaging">
       <field name="name">Thermocare box (1)</field>
-      <!-- FIXME: to move in `cosanum_delivery_postlogistics`
-      <field name="package_carrier_type">postlogistics</field>
-      -->
       <field name="packaging_type_id" ref="product_packaging_type_transport"></field>
       <field name="barcode">CCO-THERMOBOX-1</field>
       <field name="shipper_package_code">PRI,AMB</field>
@@ -29,18 +20,13 @@
 
     <record id="product_packaging_brauchpal" model="product.packaging">
       <field name="name">Brauch Palette</field>
-      <!-- FIXME: to move in `cosanum_delivery_brauch`
-      <field name="package_carrier_type">brauch</field>
-      -->
       <field name="packaging_type_id" ref="product_packaging_type_pallet"/>
       <field name="barcode">BRAUCH-PAL-PACK-TYPE</field>
       <field name="shipper_package_code">PAL</field>
     </record>
+
     <record id="product_packaging_cosapal" model="product.packaging">
       <field name="name">Cosanum Palette</field>
-      <!-- FIXME: to move in `cosanum_delivery_cosanum`
-      <field name="package_carrier_type">cosanum</field>
-      -->
       <field name="packaging_type_id" ref="product_packaging_type_pallet"/>
       <field name="barcode">COSA-PAL-PACK-TYPE</field>
       <field name="shipper_package_code">PAL</field>
@@ -48,9 +34,6 @@
 
     <record id="product_packaging_brauchoprollercage" model="product.packaging">
       <field name="name">Brauch OP Rollercage</field>
-      <!-- FIXME: to move in `cosanum_delivery_brauch`
-      <field name="package_carrier_type">brauch</field>
-      -->
       <field name="packaging_type_id" ref="product_packaging_type_pallet"/>
       <field name="barcode">BRAUCH-OPR-PACK-TYPE</field>
       <field name="shipper_package_code">OPR</field>

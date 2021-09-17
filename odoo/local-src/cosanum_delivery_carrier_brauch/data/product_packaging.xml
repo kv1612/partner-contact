@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+  <record id="cosanum_product_packaging.product_packaging_brauchpal" model="product.packaging">
+    <field name="package_carrier_type">brauch</field>
+  </record>
+
+  <record id="cosanum_product_packaging.product_packaging_brauchoprollercage" model="product.packaging">
+    <field name="package_carrier_type">brauch</field>
+  </record>
+
+</odoo>

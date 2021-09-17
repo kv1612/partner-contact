@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+  <record id="cosanum_product_packaging.product_packaging_cosapal" model="product.packaging">
+    <field name="package_carrier_type">cosanum</field>
+  </record>
+
+</odoo>

@@ -69,6 +69,9 @@ migration:
           #### oca/web
           - web_environment_ribbon
           #### local-src
+          # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
+          # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
+          # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
           - cosanum_product_packaging
     # Add a noop version used to check if build have been done with migrated database
     - version: 14.0.0.0.0
