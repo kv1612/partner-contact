@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="product_product_delivery_fees" model="product.product">
+        <field name="name">Additional Fees</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="list_price">24.0</field>
+    </record>
+
+    <record id="product_product_delivery_fees_thermocare" model="product.product">
+        <field name="name">Thermocare Box</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="list_price">25.0</field>
+    </record>
+
+    <record id="product_product_delivery_lsva_pallet" model="product.product">
+        <field name="name">Pallet LSVA Tax</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="list_price">9.40</field>
+    </record>
+
+</odoo>

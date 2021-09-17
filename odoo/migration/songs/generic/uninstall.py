@@ -46,8 +46,6 @@ UNINSTALL_MODULES_LIST = [
     'delivery_postlogistics',
     'delivery_postlogistics_dangerous_goods',
     'delivery_postlogistics_server_env',
-    'delivery_send_to_shipper_at_operation',
-    'server_environment_delivery',
     # oca/edi
     'account_e-invoice_generate',
     'account_invoice_export',

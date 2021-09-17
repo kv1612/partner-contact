@@ -244,6 +244,8 @@ migration:
           - delivery_carrier_pricelist
           - delivery_free_fee_removal
           - delivery_package_fee
+          - delivery_send_to_shipper_at_operation
+          - server_environment_delivery
           - stock_picking_delivery_link
           #### oca/e-commerce
           - product_variant_multi_link
@@ -378,6 +380,7 @@ migration:
           - web_environment_ribbon
           #### oca/wms
           - delivery_carrier_preference
+          - delivery_carrier_warehouse
           - shopfloor
           - shopfloor_base
           - shopfloor_batch_automatic_creation
@@ -437,6 +440,7 @@ migration:
           - delivery_brauch
           - delivery_cosanum
           - stock_warehouse_block_auto_config
+          - cosanum_delivery_data
           - cosanum_product_logistics_uom
           - cosanum_product_packaging
           - cosanum_mrp

@@ -81,7 +81,8 @@ migration:
           - delivery_carrier_pricelist
           - delivery_free_fee_removal
           - delivery_package_fee
-          #- delivery_send_to_shipper_at_operation  # TODO
+          - delivery_send_to_shipper_at_operation
+          - server_environment_delivery
           - stock_picking_delivery_link
           #### oca/e-commerce
           - product_variant_multi_link
@@ -218,6 +219,7 @@ migration:
           - web_environment_ribbon
           #### oca/wms
           - delivery_carrier_preference
+          - delivery_carrier_warehouse
           #- delivery_preference_glue_stock_picking_group  # TODO
           - shopfloor
           - shopfloor_base

@@ -121,6 +121,30 @@ def migrate_stock_location_route_from_cosanum_base_data(ctx):
     )
 
 
+def migrate_delivery_carrier_from_cosanum_base_data(ctx):
+    """Migrate 'delivery.carrier' records from 'cosanum_base_data'
+    to 'cosanum_delivery_data'.
+    """
+    # The only 'product.product' records were delivery fee related to
+    # 'cosanum_base_data'
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_model_data
+        SET module='cosanum_delivery_data'
+        WHERE module='cosanum_base_data'
+        AND model IN ('delivery.carrier', 'product.product')
+        """
+    )
+    # Flag the new module 'cosanum_delivery_data' as installed to avoid
+    # overwritting existing configuration data
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_module_module SET state='installed'
+        WHERE name='cosanum_delivery_data'
+        """
+    )
+
+
 @anthem.log
 def pre(ctx):
     migrate_product_packaging_from_cosanum_base_data(ctx)
@@ -128,3 +152,4 @@ def pre(ctx):
     migrate_stock_location_from_cosanum_base_data(ctx)
     migrate_stock_picking_type_from_cosanum_base_data(ctx)
     migrate_stock_location_route_from_cosanum_base_data(ctx)
+    migrate_delivery_carrier_from_cosanum_base_data(ctx)
