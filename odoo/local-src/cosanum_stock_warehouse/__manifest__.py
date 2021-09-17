@@ -10,7 +10,6 @@
     "depends": [
         # core
         "stock",
-        "mrp_subcontracting",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
