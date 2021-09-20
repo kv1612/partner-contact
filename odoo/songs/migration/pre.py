@@ -41,17 +41,18 @@ def fix_path_on_attachments(ctx):
         """
         args = (store_fname_root, AsIs(store_type))
         ctx.env.cr.execute(query, args)
-    else:
-        # Remove the attachments
-        query = """
-            DELETE FROM
-                ir_attachment
-            WHERE
-                store_fname IS NOT NULL
-            AND store_fname LIKE '%s://%%';
-        """
-        args = (AsIs(store_type),)
-        ctx.env.cr.execute(query, args)
+    # FIXME: commented, deletion of attachments is taking too long
+    # else:
+    #     # Remove the attachments
+    #     query = """
+    #         DELETE FROM
+    #             ir_attachment
+    #         WHERE
+    #             store_fname IS NOT NULL
+    #         AND store_fname LIKE '%s://%%';
+    #     """
+    #     args = (AsIs(store_type),)
+    #     ctx.env.cr.execute(query, args)
 
 
 @anthem.log
