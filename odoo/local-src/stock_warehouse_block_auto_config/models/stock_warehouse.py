@@ -50,3 +50,13 @@ class StockWarehouse(models.Model):
         if self.block_manufacture_route_update:
             values.pop('pbm_route_id', None)
         return values
+
+    def _update_location_reception(self, new_reception_step):
+        if self.block_reception_route_update:
+            return
+        return super()._update_location_reception(new_reception_step)
+
+    def _update_location_delivery(self, new_delivery_step):
+        if self.block_delivery_route_update:
+            return
+        return super()._update_location_delivery(new_delivery_step)
