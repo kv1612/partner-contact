@@ -20,5 +20,21 @@ def migrate_product_packaging_from_cosanum_base_data(ctx):
 
 
 @anthem.log
+def migrate_stock_warehouse_from_cosanum_base_data(ctx):
+    """Migrate 'stock.warehouse' records from 'cosanum_base_data'
+    to 'cosanum_stock_warehouse'.
+    """
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_model_data
+        SET module='cosanum_stock_warehouse'
+        WHERE module='cosanum_base_data'
+        AND model IN ('stock.warehouse', 'res.partner')
+        """
+    )
+
+
+@anthem.log
 def pre(ctx):
     migrate_product_packaging_from_cosanum_base_data(ctx)
+    migrate_stock_warehouse_from_cosanum_base_data(ctx)
