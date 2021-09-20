@@ -23,6 +23,7 @@ migration:
               - psql -f odoo/songs/migration/pre.sql
               - anthem songs.install.pre::main # if migration fail may be comment this songs (and fix later if it's possible)
               - anthem songs.migration.pre::pre
+              - anthem songs.migration.pre_logistics::pre
               - anthem songs.migration.pre_check_fields::pre
               - anthem songs.migration.uninstall::pre
               - psql -f odoo/songs/migration/pre_clean.sql
