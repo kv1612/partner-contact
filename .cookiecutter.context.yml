@@ -6,5 +6,5 @@ project_id: '2477'
 project_name: cosanum_odoo
 odoo_company_name: Cosanum
 odoo_main_lang: de_DE
-odoo_aux_langs: fr_FR;it_IT
+odoo_aux_langs: fr_CH;it_IT
 platform_name: ch

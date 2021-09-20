@@ -7,7 +7,7 @@ from base64 import b64encode
 import anthem
 
 MAIN_LANG = "de_DE"
-OPT_LANG = "fr_FR;it_IT"
+OPT_LANG = "fr_CH;it_IT"
 ALL_LANG = [MAIN_LANG] + (OPT_LANG.split(';') if OPT_LANG else [])
 
 
@@ -24,15 +24,17 @@ def setup_company(ctx):
 
     values = {
         'name': "Cosanum",
-        'street': "",
-        'zip': "",
-        'city': "",
+        'street': "Brandstrasse 28",
+        'zip': "8952",
+        'city': "Schlieren",
         'country_id': ctx.env.ref('base.ch').id,
-        'phone': "+41 00 000 00 00",
-        'currency_id': ctx.env.ref('base.CHF').id,
-        'email': "contact@cosanum.ch",
+        'phone': "+41 43 433 66 00",
+        # NOTE: commented for migration, updating the company currency
+        # generates a MemoryError as it triggers heavy pricelists computation
+        # 'currency_id': ctx.env.ref('base.CHF').id,
+        'email': "cosa@cosanum.ch",
         'website': "http://www.cosanum.ch",
-        'vat': "VAT",
+        'vat': "CHE-107.967.501 MWST",
         'logo': b64_logo,
     }
     ctx.env.ref('base.main_company').write(values)
@@ -43,9 +45,17 @@ def setup_language(ctx):
     """ Installing language and configuring locale formatting """
     for code in ALL_LANG:
         ctx.env['base.language.install'].create({'lang': code}).lang_install()
-    # TODO check your date format
-    ctx.env['res.lang'].search([]).write(
-        {'grouping': [3, 0], 'date_format': '%d/%m/%Y'}
+    ctx.env.ref("base.lang_en").write(
+        {"grouping": [3, 0], "date_format": "%d/%m/%y"}
+    )
+    ctx.env.ref("base.lang_fr_CH").write(
+        {"grouping": [3, 0], "date_format": "%d.%m.%Y"}
+    )
+    ctx.env.ref("base.lang_de").write(
+        {"grouping": [3, 0], "date_format": "%d.%m.%Y"}
+    )
+    ctx.env.ref("base.lang_it").write(
+        {"grouping": [3, 0], "date_format": "%d/%m/%Y"}
     )
 
 
