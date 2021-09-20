@@ -8,10 +8,10 @@ class StockWarehouse(models.Model):
     _inherit = "stock.warehouse"
 
     block_delivery_route_update = fields.Boolean(
-        string="Block Incoming Shipments Configuration"
+        string="Block Outgoing Shipments Configuration"
     )
     block_reception_route_update = fields.Boolean(
-        string="Block Outgoing Shipments Configuration"
+        string="Block Incoming Shipments Configuration"
     )
     block_manufacture_route_update = fields.Boolean(
         string="Block Manufacture Configuration"
