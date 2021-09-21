@@ -22,3 +22,4 @@ boto3==1.9.102
 https://github.com/OCA/openupgradelib/archive/3945526d1377533a0aa39d20be88edf2a03f3145.tar.gz#egg=openupgradelib
 
 ## custom
+pyyaml==5.4.1
