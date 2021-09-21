@@ -158,6 +158,24 @@ def remove_all_custom_exports(ctx):
 
 
 @anthem.log
+def remove_models(ctx):
+    """Remove data models.
+
+    If a module has removed one of its model we still need to remove it from
+    the database.
+    """
+    model_names = ["connector.checkpoint"]
+    queries = [
+        """DELETE FROM ir_ui_view WHERE model IN %s;""",
+        """DELETE FROM ir_model_fields WHERE model IN %s;""",
+        """DELETE FROM ir_model WHERE name IN %s;""",
+    ]
+    for query in queries:
+        args = (tuple(model_names),)
+        ctx.env.cr.execute(query, args)
+
+
+@anthem.log
 def delete_automated_actions(ctx):
     """ Delete all automated actions."""
     ctx.env['base.automation'].search([]).unlink()
@@ -174,4 +192,5 @@ def pre(ctx):
     remove_all_custom_views(ctx)
     remove_all_custom_filters(ctx)
     remove_all_custom_exports(ctx)
+    remove_models(ctx)
     delete_automated_actions(ctx)
