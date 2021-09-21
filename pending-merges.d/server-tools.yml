@@ -1,0 +1,9 @@
+../odoo/external-src/server-tools:
+  remotes:
+    camptocamp: git@github.com:camptocamp/server-tools.git
+    OCA: git@github.com:OCA/server-tools.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [MIG] database_cleanup: Migration to 14.0
+  - OCA refs/pull/1990/head
