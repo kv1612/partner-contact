@@ -35,7 +35,7 @@ migration:
               #- anthem songs.install.inventory::location_compute_parents
               # Migration project
               - anthem songs.migration.uninstall::post
-              - anthem songs.migration.post::post
+              #- anthem songs.migration.post::post  # TODO: temporary disabled to not uninstall non-migrated modules
               - anthem songs.migration.post_check_fields::post
         sample:
           operations:
