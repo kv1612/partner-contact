@@ -63,8 +63,11 @@ RUN cd /odoo && pip install -r src_requirements.txt
 # frequency: sometimes
 # cost:      very light
 ENV ADDONS_PATH="/odoo/external-src/odoo-cloud-platform, \
+  /odoo/external-src/connector, \
+  /odoo/external-src/connector-interfaces, \
   /odoo/external-src/enterprise, \
   /odoo/external-src/product-attribute, \
+  /odoo/external-src/queue, \
   /odoo/external-src/sale-workflow, \
   /odoo/external-src/server-env, \
   /odoo/external-src/server-tools, \

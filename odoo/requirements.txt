@@ -21,5 +21,8 @@ boto3==1.9.102
 # We use the last hash commit to keep a stable version of openupgradelib.
 https://github.com/OCA/openupgradelib/archive/3945526d1377533a0aa39d20be88edf2a03f3145.tar.gz#egg=openupgradelib
 
+# connector
+cachetools==4.2.2
+
 ## custom
 pyyaml==5.4.1

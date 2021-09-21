@@ -53,10 +53,16 @@ migration:
           # ---
           #### core
           - base  # Used for project migrations
+          #### oca/connector
+          - connector
+          #### oca/connector-interfaces
+          - connector_importer
           #### oca/product-attribute
           - product_packaging_type
           - product_packaging_type_pallet
           - product_packaging_type_required
+          #### oca/queue
+          - queue_job
           #### oca/sale-workflow
           - sale_by_packaging
           #### oca/server-tools

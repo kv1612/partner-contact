@@ -207,18 +207,22 @@
 ;	branch = 14.0
 
 ; Connectors
-;[submodule "odoo/external-src/queue"]
-;	path = odoo/external-src/queue
-;	url = git@github.com:OCA/queue.git
-;	branch = 14.0
-;[submodule "odoo/external-src/connector"]
-;	path = odoo/external-src/connector
-;	url = git@github.com:OCA/connector.git
-;	branch = 14.0
+[submodule "odoo/external-src/queue"]
+	path = odoo/external-src/queue
+	url = git@github.com:OCA/queue.git
+	branch = 14.0
+[submodule "odoo/external-src/connector"]
+	path = odoo/external-src/connector
+	url = git@github.com:OCA/connector.git
+	branch = 14.0
 ;[submodule "odoo/external-src/connector-ecommerce"]
 ;	path = odoo/external-src/connector-ecommerce
 ;	url = git@github.com:OCA/connector-ecommerce.git
 ;	branch = 14.0
+[submodule "odoo/external-src/connector-interfaces"]
+	path = odoo/external-src/connector-interfaces
+	url = git@github.com:OCA/connector-interfaces.git
+	branch = 14.0
 ;[submodule "odoo/external-src/connector-magento"]
 ;	path = odoo/external-src/connector-magento
 ;	url = git@github.com:OCA/connector-magento.git
