@@ -94,6 +94,7 @@ migration:
           - cosanum_mrp_subcontracting
           - cosanum_purchase_stock
           - cosanum_stock_location
+          - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse
     # Add a noop version used to check if build have been done with migrated database
     - version: 14.0.0.0.0
