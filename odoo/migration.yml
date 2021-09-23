@@ -53,18 +53,300 @@ migration:
           # ---
           #### core
           - base  # Used for project migrations
+          - account
+          - account_payment
+          - analytic
+          - attachment_indexation
+          - auth_signup
+          - barcodes
+          - base_address_city
+          - base_automation
+          - base_iban
+          - base_import
+          - base_setup
+          - base_sparse_field
+          - base_vat
+          - board
+          - bus
+          - calendar
+          - calendar_sms
+          - contacts
+          - crm
+          - crm_sms
+          - delivery
+          - digest
+          - event
+          - event_sale
+          - event_sms
+          - fetchmail
+          - fleet
+          - gamification
+          - gamification_sale_crm
+          - hr
+          - hr_attendance
+          - hr_contract
+          - hr_expense
+          - hr_fleet
+          - hr_gamification
+          - hr_holidays
+          - hr_holidays_attendance
+          - hr_org_chart
+          - hr_recruitment
+          - hr_work_entry
+          - http_routing
+          - iap
+          - l10n_ch
+          - l10n_ch_qriban
+          - l10n_multilang
+          - link_tracker
+          - mail
+          - mail_bot
+          - mass_mailing
+          - mass_mailing_crm
+          - mass_mailing_event
+          - mass_mailing_sale
+          - mrp
+          - mrp_account
+          - mrp_subcontracting
+          - mrp_subcontracting_account
+          - mrp_subcontracting_dropshipping
+          - odoo_referral
+          - payment
+          - payment_transfer
+          - phone_validation
+          - portal
+          - procurement_jit
+          - product
+          - product_expiry
+          - project
+          - purchase
+          - purchase_mrp
+          - purchase_requisition
+          - purchase_requisition_stock
+          - purchase_stock
+          - rating
+          - resource
+          - sale
+          - sale_crm
+          - sale_expense
+          - sale_management
+          - sale_mrp
+          - sale_purchase
+          - sale_stock
+          - sales_team
+          - sms
+          - snailmail
+          - snailmail_account
+          - social_media
+          - stock
+          - stock_account
+          - stock_dropshipping
+          - stock_picking_batch
+          - stock_sms
+          - survey
+          - uom
+          - utm
+          - web
+          - web_editor
+          - web_kanban_gauge
+          - web_tour
+          - web_unsplash
+          #### enterprise
+          - account_accountant
+          - account_asset
+          - account_auto_transfer
+          - account_bank_statement_import
+          - account_bank_statement_import_camt
+          - account_bank_statement_import_csv
+          - account_bank_statement_import_ofx
+          - account_batch_payment
+          - account_followup
+          - account_invoice_extract
+          - account_invoice_extract_purchase
+          - account_online_sync
+          - account_plaid
+          - account_ponto
+          - account_predictive_bills
+          - account_reports
+          - account_sepa
+          - account_sepa_direct_debit
+          - account_yodlee
+          - analytic_enterprise
+          - barcodes_mobile
+          - base_automation_hr_contract
+          - contacts_enterprise
+          - crm_enterprise
+          - currency_rate_live
+          - delivery_dhl
+          - documents_account
+          - documents_fleet
+          - documents_hr
+          - documents_hr_contract
+          - documents_hr_holidays
+          - documents_hr_recruitment
+          - documents_product
+          - documents_project
+          - event_enterprise
+          - helpdesk
+          - helpdesk_sale
+          - hr_appraisal
+          - hr_contract_reports
+          - hr_holidays_gantt
+          - l10n_ch_reports
+          - mail_enterprise
+          - mass_mailing_themes
+          - mrp_account_enterprise
+          - project_enterprise
+          - purchase_enterprise
+          - sale_enterprise
+          - snailmail_account_followup
+          - stock_account_enterprise
+          - stock_enterprise
+          - web_cohort
+          - web_dashboard
+          - web_enterprise
+          - web_gantt
+          - web_grid
+          - web_map
+          - web_mobile
+          #### oca/account-closing
+          - account_cutoff_accrual_picking
+          - account_cutoff_base
+          - account_invoice_start_end_dates
+          #### oca/account-financial-reporting
+          - account_financial_report
+          #### oca/account-invoicing
+          - account_invoice_base_invoicing_mode
+          - account_invoice_mode_at_shipping
+          - account_invoice_mode_monthly
+          - account_invoice_section_sale_order
+          - account_invoice_transmit_method
+          - account_move_tier_validation
+          #### oca/bank-payment
+          - account_invoice_select_for_payment
+          - account_payment_mode
+          - account_payment_partner
+          - account_payment_purchase
+          - account_payment_purchase_stock
+          - account_payment_sale
+          #### oca/brand
+          - product_brand
+          #### oca/community-data-files
+          - account_payment_unece
+          - account_tax_unece
+          - base_unece
+          - uom_unece
           #### oca/connector
           - connector
           #### oca/connector-interfaces
           - connector_importer
+          #### oca/connector
+          - agreement
+          - agreement_sale
+          #### oca/ddmrp
+          - ddmrp
+          - ddmrp_adjustment
+          - ddmrp_chatter
+          - ddmrp_coverage_days
+          - ddmrp_cron_actions_as_job
+          - ddmrp_exclude_moves_adu_calc
+          - ddmrp_history
+          - ddmrp_packaging
+          #- ddmrp_product_replace          # TODO migrate
+          #- ddmrp_warning                  # TODO migrate
+          - stock_buffer_capacity_limit
+          - stock_buffer_route
+          - stock_buffer_sales_analysis
+          #### ddmrp-professional
+          - ddmrp_advanced_sizing
+          #- ddmrp_packaging_calculator       # TODO
+          - ddmrp_prioritized_share
+          #- ddmrp_prioritized_share_warning  # TODO
+          - ddmrp_responsible
+          #- ddmrp_workorder                  # TODO
+          #### oca/delivery-carrier
+          - delivery_carrier_pricelist
+          - delivery_free_fee_removal
+          - delivery_package_fee
+          #- delivery_send_to_shipper_at_operation  # TODO
+          - stock_picking_delivery_link
+          #### oca/e-commerce
+          - product_variant_multi_link
+          - product_template_multi_link
+          - product_template_multi_link_date_span
+          #### oca/edi
+          - base_business_document_import
+          - base_ubl
+          - base_ubl_payment
+          - partner_identification_import
+          - sale_order_import
+          - sale_order_import_ubl
+          #### oca/hr-attendance
+          - hr_attendance_report_theoretical_time
+          #### oca/hr-holidays
+          - hr_holidays_public
+          #### oca/intrastat-extrastat
+          - product_harmonized_system
+          - product_harmonized_system_delivery
+          - product_harmonized_system_stock
+          #### oca/knowledge
+          - document_page
+          - knowledge
+          #### oca/l10n-switzerland
+          - l10n_ch_account_tags
+          - l10n_ch_base_bank
+          - l10n_ch_states
+          #### oca/management-system
+          - document_page_procedure
+          - document_page_quality_manual
+          - document_page_work_instruction
+          - mgmtsystem
+          - mgmtsystem_action
+          - mgmtsystem_manual
+          - mgmtsystem_nonconformity
+          - mgmtsystem_review
+          - mgmtsystem_survey
+          #### oca/manufacture
+          - mrp_bom_location
+          - mrp_multi_level
+          - mrp_warehouse_calendar
+          #### oca/mis-builder
+          - mis_builder
+          - mis_builder_budget
+          #### oca/partner-contact
+          - base_location
+          - base_location_geonames_import
+          - base_partner_sequence
+          - partner_company_group
+          - partner_identification
+          - partner_identification_unique_by_category
+          - partner_tz
           #### oca/product-attribute
           - product_packaging_type
           - product_packaging_type_pallet
           - product_packaging_type_required
+          #### oca/purchase-workflow
+          - purchase_propagate_qty
+          - purchase_order_line_packaging_qty
+          - purchase_delivery_split_date
           #### oca/queue
           - queue_job
+          - queue_job_subscribe
+          #### oca/rest-framework
+          - base_rest
+          - rest_log
+          #### oca/report-print-send
+          - base_report_to_printer
+          #### oca/reporting-engine
+          - bi_sql_editor
+          - report_xlsx
           #### oca/sale-workflow
           - sale_by_packaging
+          #### oca/search-engine
+          - connector_algolia
+          - connector_search_engine
+          #### oca/server-auth
+          - auth_api_key
           #### oca/server-tools
           - database_cleanup  # Used for project migrations
           #### oca/server-ux
@@ -73,17 +355,92 @@ migration:
           - mail_environment
           - server_environment
           - server_environment_ir_config_parameter
+          #### oca/social
+          - email_template_qweb
+          - mail_layout_preview
+          - mail_inline_css
+          #### oca/stock-logistics-transport
+          - stock_dock
           #### oca/stock-logistics-warehouse
           - stock_location_bin_name
+          - stock_location_last_inventory_date
           - stock_location_position
           - stock_location_zone
+          - stock_orderpoint_purchase_link
+          - stock_packaging_calculator_packaging_type
+          - stock_product_qty_by_packaging
+          - stock_vertical_lift
+          - stock_vertical_lift_server_env
+          - stock_vertical_lift_storage_type
           #### oca/stock-logistics-workflow
+          - delivery_package_default_shipping_weight
+          #- delivery_total_weight_from_packaging  # TODO
           - stock_putaway_hook
+          #### oca/storage
+          - storage_backend
+          - storage_backend_s3
+          - storage_backend_sftp
+          - storage_file
+          - storage_image
+          - storage_image_product
+          - storage_media
+          - storage_media_product
+          - storage_thumbnail
           #### oca/web
           - web_environment_ribbon
           #### oca/wms
+          #- delivery_preference_glue_stock_picking_group  # TODO
+          - shopfloor
+          - shopfloor_base
+          - shopfloor_checkout_sync
+          - shopfloor_mobile
+          - shopfloor_mobile_base
+          - shopfloor_packing_info
+          - shopfloor_workstation
+          - shopfloor_workstation_mobile
+          - stock_available_to_promise_release
+          - stock_available_to_promise_release_dynamic_routing
+          - stock_checkout_sync
+          - stock_dynamic_routing
+          - stock_move_source_relocate
+          - stock_move_source_relocate_dynamic_routing
+          - stock_picking_consolidation_priority
           - stock_storage_type
           - stock_storage_type_putaway_abc
+          #### shopinvader/odoo-shopinvader
+          - base_url
+          - shopinvader
+          - shopinvader_algolia
+          - shopinvader_assortment
+          - shopinvader_cart_expiry
+          - shopinvader_customer_multi_user
+          - shopinvader_customer_multi_user_wishlist
+          - shopinvader_customer_price
+          - shopinvader_customer_validate
+          - shopinvader_delivery_carrier
+          - shopinvader_image
+          - shopinvader_import_image
+          - shopinvader_locomotive
+          - shopinvader_locomotive_algolia
+          - shopinvader_locomotive_sale_profile
+          - shopinvader_locomotive_wishlist
+          - shopinvader_notification_default
+          - shopinvader_product_media
+          - shopinvader_product_stock
+          - shopinvader_product_stock_state
+          - shopinvader_product_template_multi_link
+          - shopinvader_product_variant_multi_link
+          - shopinvader_product_variant_selector
+          - shopinvader_sale_packaging
+          - shopinvader_sale_packaging_wishlist
+          - shopinvader_sale_profile
+          - shopinvader_search_engine
+          - shopinvader_wishlist
+          #### shopinvader/odoo-shopinvader-payment
+          - invader_payment
+          - invader_payment_manual
+          - shopinvader_payment
+          - shopinvader_payment_manual
           #### local-src
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
           # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
@@ -96,6 +453,10 @@ migration:
           - cosanum_stock_location
           - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse
+          # - ddmrp_priority              # TODO migrate
+          # - ddmrp_sale_exclude_from_adu # TODO migrate
+          # - partner_title_order         # TODO migrate
+          # - sale_address                # TODO migrate
     # Add a noop version used to check if build have been done with migrated database
     - version: 14.0.0.0.0
     # update step example

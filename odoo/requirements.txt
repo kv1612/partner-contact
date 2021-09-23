@@ -24,5 +24,45 @@ https://github.com/OCA/openupgradelib/archive/3945526d1377533a0aa39d20be88edf2a0
 # connector
 cachetools==4.2.2
 
+# ddmrp
+bokeh==2.3.1
+numpy==1.21.*
+pandas==0.25.*
+
+# base_report_to_printer
+pycups==2.0.1
+
+# base_rest
+cerberus==1.3.*
+pyquerystring==1.1
+parse-accept-language==0.1.2
+apispec==5.1.*
+
+# base_view_inheritance_extension
+pyyaml==5.4.*
+
+# connector_algolia
+algoliasearch>=2.0,<3.0
+
+# mail_inline_css
+premailer==3.10.*
+cssselect==1.1.*    # premailer dependency
+cssutils==2.3.*     # premailer dependency
+
+# shopinvader
+unidecode==1.3.*
+python-magic==0.4.24    # Requires `libmagic1` to be installed sys-wide
+requests_mock
+#locomotivecms
+# Fix response status handling
+# https://github.com/shopinvader/locomotivecms-python-client/pull/4
+https://github.com/simahawk/locomotivecms-python-client/archive/master.tar.gz#egg=locomotivecms
+validators==0.18.*
+
+# storage_backend_sftp
+paramiko==2.7.*
+
+# storage_file
+python-slugify==5.0.*
+
 ## custom
-pyyaml==5.4.1

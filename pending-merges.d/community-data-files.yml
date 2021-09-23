@@ -1,0 +1,9 @@
+../odoo/external-src/community-data-files:
+  remotes:
+    camptocamp: git@github.com:camptocamp/community-data-files.git
+    OCA: git@github.com:OCA/community-data-files.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [FIX] account_tax_unece: fix migration path from 13.0
+  - OCA refs/pull/115/head

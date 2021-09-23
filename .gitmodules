@@ -23,10 +23,10 @@
 	url = git@github.com:odoo/enterprise.git
 	branch = 14.0
 ; OCA
-;[submodule "odoo/external-src/account-closing"]
-;	path = odoo/external-src/account-closing
-;	url = git@github.com:OCA/account-closing.git
-;	branch = 14.0
+[submodule "odoo/external-src/account-closing"]
+	path = odoo/external-src/account-closing
+	url = git@github.com:OCA/account-closing.git
+	branch = 14.0
 ;[submodule "odoo/external-src/account-consolidation"]
 ;	path = odoo/external-src/account-consolidation
 ;	url = git@github.com:OCA/account-consolidation.git
@@ -35,34 +35,46 @@
 ;	path = odoo/external-src/account-analytic
 ;	url = git@github.com:OCA/account-analytic.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/account-financial-reporting"]
-;	path = odoo/external-src/account-financial-reporting
-;	url = git@github.com:OCA/account-financial-reporting.git
-;	branch = 14.0
-;[submodule "odoo/external-src/account-financial-tools"]
-;	path = odoo/external-src/account-financial-tools
-;	url = git@github.com:OCA/account-financial-tools.git
-;	branch = 14.0
-;[submodule "odoo/external-src/account-invoicing"]
-;	path = odoo/external-src/account-invoicing
-;	url = git@github.com:OCA/account-invoicing.git
-;	branch = 14.0
-;[submodule "odoo/external-src/account-reconcile"]
-;	path = odoo/external-src/account-reconcile
-;	url = git@github.com:OCA/account-reconcile.git
-;	branch = 14.0
-;[submodule "odoo/external-src/bank-payment"]
-;	path = odoo/external-src/bank-payment
-;	url = git@github.com:OCA/bank-payment.git
-;	branch = 14.0
-;[submodule "odoo/external-src/bank-statement-import"]
-;	path = odoo/external-src/bank-statement-import
-;	url = git@github.com:OCA/bank-statement-import.git
-;	branch = 14.0
-;[submodule "odoo/external-src/community-data-files"]
-;	path = odoo/external-src/community-data-files
-;	url = git@github.com:OCA/community-data-files.git
-;	branch = 14.0
+[submodule "odoo/external-src/account-financial-reporting"]
+	path = odoo/external-src/account-financial-reporting
+	url = git@github.com:OCA/account-financial-reporting.git
+	branch = 14.0
+[submodule "odoo/external-src/account-financial-tools"]
+	path = odoo/external-src/account-financial-tools
+	url = git@github.com:OCA/account-financial-tools.git
+	branch = 14.0
+[submodule "odoo/external-src/account-invoicing"]
+	path = odoo/external-src/account-invoicing
+	url = git@github.com:OCA/account-invoicing.git
+	branch = 14.0
+[submodule "odoo/external-src/account-invoice-reporting"]
+	path = odoo/external-src/account-invoice-reporting
+	url = git@github.com:OCA/account-invoice-reporting.git
+	branch = 14.0
+[submodule "odoo/external-src/account-reconcile"]
+	path = odoo/external-src/account-reconcile
+	url = git@github.com:OCA/account-reconcile.git
+	branch = 14.0
+[submodule "odoo/external-src/bank-payment"]
+	path = odoo/external-src/bank-payment
+	url = git@github.com:OCA/bank-payment.git
+	branch = 14.0
+[submodule "odoo/external-src/bank-statement-import"]
+	path = odoo/external-src/bank-statement-import
+	url = git@github.com:OCA/bank-statement-import.git
+	branch = 14.0
+[submodule "odoo/external-src/brand"]
+	path = odoo/external-src/brand
+	url = git@github.com:OCA/brand.git
+	branch = 14.0
+[submodule "odoo/external-src/community-data-files"]
+	path = odoo/external-src/community-data-files
+	url = git@github.com:camptocamp/community-data-files.git
+	branch = 14.0
+[submodule "odoo/external-src/contract"]
+	path = odoo/external-src/contract
+	url = git@github.com:OCA/contract.git
+	branch = 14.0
 ;[submodule "odoo/external-src/credit-control"]
 ;	path = odoo/external-src/credit-control
 ;	url = git@github.com:OCA/credit-control.git
@@ -75,18 +87,22 @@
 ;	path = odoo/external-src/currency
 ;	url = git@github.com:OCA/currency.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/ddmrp"]
-;	path = odoo/external-src/ddmrp
-;	url = git@github.com:OCA/ddmrp.git
-;	branch = 14.0
-;[submodule "odoo/external-src/delivery-carrier"]
-;	path = odoo/external-src/delivery-carrier
-;	url = git@github.com:OCA/delivery-carrier.git
-;	branch = 14.0
-;[submodule "odoo/external-src/edi"]
-;	path = odoo/external-src/edi
-;	url = git@github.com:OCA/edi.git
-;	branch = 14.0
+[submodule "odoo/external-src/ddmrp"]
+	path = odoo/external-src/ddmrp
+	url = git@github.com:OCA/ddmrp.git
+	branch = 14.0
+[submodule "odoo/external-src/delivery-carrier"]
+	path = odoo/external-src/delivery-carrier
+	url = git@github.com:OCA/delivery-carrier.git
+	branch = 14.0
+[submodule "odoo/external-src/e-commerce"]
+	path = odoo/external-src/e-commerce
+	url = git@github.com:OCA/e-commerce.git
+	branch = 14.0
+[submodule "odoo/external-src/edi"]
+	path = odoo/external-src/edi
+	url = git@github.com:OCA/edi.git
+	branch = 14.0
 ;[submodule "odoo/external-src/event"]
 ;	path = odoo/external-src/event
 ;	url = git@github.com:OCA/event.git
@@ -95,26 +111,46 @@
 ;	path = odoo/external-src/hr
 ;	url = git@github.com:OCA/hr.git
 ;	branch = 14.0
+[submodule "odoo/external-src/hr-holidays"]
+	path = odoo/external-src/hr-holidays
+	url = git@github.com:OCA/hr-holidays.git
+	branch = 14.0
+[submodule "odoo/external-src/hr-attendance"]
+	path = odoo/external-src/hr-attendance
+	url = git@github.com:OCA/hr-attendance.git
+	branch = 14.0
 ;[submodule "odoo/external-src/intrastat"]
 ;	path = odoo/external-src/intrastat
 ;	url = git@github.com:OCA/intrastat.git
 ;	branch = 14.0
+[submodule "odoo/external-src/intrastat-extrastat"]
+	path = odoo/external-src/intrastat-extrastat
+	url = git@github.com:OCA/intrastat-extrastat.git
+	branch = 14.0
+[submodule "odoo/external-src/knowledge"]
+	path = odoo/external-src/knowledge
+	url = git@github.com:OCA/knowledge.git
+	branch = 14.0
 ;[submodule "odoo/external-src/maintenance"]
 ;	path = odoo/external-src/maintenance
 ;	url = git@github.com:OCA/maintenance.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/manufacture"]
-;	path = odoo/external-src/manufacture
-;	url = git@github.com:OCA/manufacture.git
-;	branch = 14.0
-;[submodule "odoo/external-src/mis-builder"]
-;	path = odoo/external-src/mis-builder
-;	url = git@github.com:OCA/mis-builder.git
-;	branch = 14.0
-;[submodule "odoo/external-src/partner-contact"]
-;	path = odoo/external-src/partner-contact
-;	url = git@github.com:OCA/partner-contact.git
-;	branch = 14.0
+[submodule "odoo/external-src/management-system"]
+	path = odoo/external-src/management-system
+	url = git@github.com:OCA/management-system.git
+	branch = 14.0
+[submodule "odoo/external-src/manufacture"]
+	path = odoo/external-src/manufacture
+	url = git@github.com:OCA/manufacture.git
+	branch = 14.0
+[submodule "odoo/external-src/mis-builder"]
+	path = odoo/external-src/mis-builder
+	url = git@github.com:OCA/mis-builder.git
+	branch = 14.0
+[submodule "odoo/external-src/partner-contact"]
+	path = odoo/external-src/partner-contact
+	url = git@github.com:OCA/partner-contact.git
+	branch = 14.0
 ;[submodule "odoo/external-src/pos"]
 ;	path = odoo/external-src/pos
 ;	url = git@github.com:OCA/pos.git
@@ -123,42 +159,46 @@
 	path = odoo/external-src/product-attribute
 	url = git@github.com:OCA/product-attribute.git
 	branch = 14.0
-;[submodule "odoo/external-src/product-variant"]
-;	path = odoo/external-src/product-variant
-;	url = git@github.com:OCA/product-variant.git
-;	branch = 14.0
+[submodule "odoo/external-src/product-variant"]
+	path = odoo/external-src/product-variant
+	url = git@github.com:OCA/product-variant.git
+	branch = 14.0
 ;[submodule "odoo/external-src/project"]
 ;	path = odoo/external-src/project
 ;	url = git@github.com:OCA/project.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/purchase-workflow"]
-;	path = odoo/external-src/purchase-workflow
-;	url = git@github.com:OCA/purchase-workflow.git
-;	branch = 14.0
+[submodule "odoo/external-src/purchase-workflow"]
+	path = odoo/external-src/purchase-workflow
+	url = git@github.com:OCA/purchase-workflow.git
+	branch = 14.0
 ;[submodule "odoo/external-src/rma"]
 ;	path = odoo/external-src/rma
 ;	url = git@github.com:OCA/rma.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/report-print-send"]
-;	path = odoo/external-src/report-print-send
-;	url = git@github.com:OCA/report-print-send.git
-;	branch = 14.0
-;[submodule "odoo/external-src/reporting-engine"]
-;	path = odoo/external-src/reporting-engine
-;	url = git@github.com:OCA/reporting-engine.git
-;	branch = 14.0
+[submodule "odoo/external-src/report-print-send"]
+	path = odoo/external-src/report-print-send
+	url = git@github.com:OCA/report-print-send.git
+	branch = 14.0
+[submodule "odoo/external-src/reporting-engine"]
+	path = odoo/external-src/reporting-engine
+	url = git@github.com:OCA/reporting-engine.git
+	branch = 14.0
 [submodule "odoo/external-src/sale-workflow"]
 	path = odoo/external-src/sale-workflow
 	url = git@github.com:OCA/sale-workflow.git
 	branch = 14.0
-;[submodule "odoo/external-src/server-auth"]
-;	path = odoo/external-src/server-auth
-;	url = git@github.com:OCA/server-auth.git
-;	branch = 14.0
-;[submodule "odoo/external-src/server-brand"]
-;	path = odoo/external-src/server-brand
-;	url = git@github.com:OCA/server-brand.git
-;	branch = 14.0
+[submodule "odoo/external-src/search-engine"]
+	path = odoo/external-src/search-engine
+	url = git@github.com:OCA/search-engine.git
+	branch = 14.0
+[submodule "odoo/external-src/server-auth"]
+	path = odoo/external-src/server-auth
+	url = git@github.com:OCA/server-auth.git
+	branch = 14.0
+[submodule "odoo/external-src/server-brand"]
+	path = odoo/external-src/server-brand
+	url = git@github.com:OCA/server-brand.git
+	branch = 14.0
 [submodule "odoo/external-src/server-env"]
 	path = odoo/external-src/server-env
 	url = git@github.com:OCA/server-env.git
@@ -171,18 +211,34 @@
 	path = odoo/external-src/server-ux
 	url = git@github.com:OCA/server-ux.git
 	branch = 14.0
+[submodule "odoo/external-src/social"]
+	path = odoo/external-src/social
+	url = git@github.com:OCA/social.git
+	branch = 14.0
+[submodule "odoo/external-src/stock-logistics-reporting"]
+	path = odoo/external-src/stock-logistics-reporting
+	url = git@github.com:OCA/stock-logistics-reporting.git
+	branch = 14.0
+[submodule "odoo/external-src/stock-logistics-transport"]
+	path = odoo/external-src/stock-logistics-transport
+	url = git@github.com:OCA/stock-logistics-transport.git
+	branch = 14.0
 [submodule "odoo/external-src/stock-logistics-workflow"]
 	path = odoo/external-src/stock-logistics-workflow
 	url = git@github.com:OCA/stock-logistics-workflow.git
+	branch = 14.0
+[submodule "odoo/external-src/stock-logistics-warehouse"]
+	path = odoo/external-src/stock-logistics-warehouse
+	url = git@github.com:OCA/stock-logistics-warehouse.git
+	branch = 14.0
+[submodule "odoo/external-src/storage"]
+	path = odoo/external-src/storage
+	url = git@github.com:OCA/storage.git
 	branch = 14.0
 ;[submodule "odoo/external-src/timesheet"]
 ;	path = odoo/external-src/timesheet
 ;	url = git@github.com:OCA/timesheet.git
 ;	branch = 14.0
-[submodule "odoo/external-src/stock-logistics-warehouse"]
-	path = odoo/external-src/stock-logistics-warehouse
-	url = git@github.com:OCA/stock-logistics-warehouse.git
-	branch = 14.0
 [submodule "odoo/external-src/web"]
 	path = odoo/external-src/web
 	url = git@github.com:OCA/web.git
@@ -193,7 +249,7 @@
 ;	branch = 14.0
 [submodule "odoo/external-src/wms"]
 	path = odoo/external-src/wms
-	url = git@github.com:OCA/wms.git
+	url = git@github.com:camptocamp/wms.git
 	branch = 14.0
 
 ;	Localizations
@@ -205,10 +261,10 @@
 ;	path = odoo/external-src/l10n-germany
 ;	url = git@github.com:OCA/l10n-germany.git
 ;	branch = 14.0
-;[submodule "odoo/external-src/l10n-switzerland"]
-;	path = odoo/external-src/l10n-switzerland
-;	url = git@github.com:OCA/l10n-switzerland.git
-;	branch = 14.0
+[submodule "odoo/external-src/l10n-switzerland"]
+	path = odoo/external-src/l10n-switzerland
+	url = git@github.com:OCA/l10n-switzerland.git
+	branch = 14.0
 
 ; Connectors
 [submodule "odoo/external-src/queue"]
@@ -235,3 +291,23 @@
 ;	path = odoo/external-src/connector-prestashop
 ;	url = git@github.com:OCA/connector-prestashop.git
 ;	branch = 14.0
+[submodule "odoo/external-src/rest-framework"]
+	path = odoo/external-src/rest-framework
+	url = git@github.com:OCA/rest-framework.git
+	branch = 14.0
+[submodule "odoo/external-src/ddmrp-professional"]
+	path = odoo/external-src/ddmrp-professional
+	url = git@github.com:camptocamp/forgeflow-ddmrp-professional-private.git
+	branch = 14.0
+[submodule "odoo/external-src/odoo-shopinvader"]
+	path = odoo/external-src/odoo-shopinvader
+	url = git@github.com:shopinvader/odoo-shopinvader.git
+	branch = 14.0
+[submodule "odoo/external-src/odoo-shopinvader-payment"]
+	path = odoo/external-src/odoo-shopinvader-payment
+	url = git@github.com:shopinvader/odoo-shopinvader-payment.git
+	branch = 14.0
+[submodule "odoo/external-src/wms-workload"]
+	path = odoo/external-src/wms-workload
+	url = git@github.com:camptocamp/wms-workload.git
+	branch = 14.0
