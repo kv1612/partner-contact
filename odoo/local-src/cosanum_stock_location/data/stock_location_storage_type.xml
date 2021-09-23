@@ -69,7 +69,7 @@
 
   <record id="location_storage_type_pallet07" model="stock.location.storage.type">
       <field name="name">HRL Shelving</field>
-      <field name="do_not_mix_products" eval="1"/>
+      <field name="only_empty" eval="1"/>
   </record>
 
   <record id="location_storage_type_shelving" model="stock.location.storage.type">
@@ -79,7 +79,7 @@
 
   <record id="location_storage_type_cep" model="stock.location.storage.type">
       <field name="name">CEP shelving bin</field>
-      <field name="only_empty" eval="1"/>
+      <field name="do_not_mix_products" eval="1"/>
   </record>
 
   <record id="location_storage_type_dlr" model="stock.location.storage.type">
@@ -89,7 +89,7 @@
 
   <record id="location_storage_type_lan" model="stock.location.storage.type">
       <field name="name">Long goods bin</field>
-      <field name="do_not_mix_products" eval="1"/>
+      <field name="only_empty" eval="1"/>
   </record>
 
   <record id="location_storage_type_kardex_buffer" model="stock.location.storage.type">
@@ -102,6 +102,8 @@
 
   <record id="location_storage_type_kardex_buffer_out" model="stock.location.storage.type">
       <field name="name">Kardex Buffer Out</field>
+      <field name="do_not_mix_products" eval="1"/>
+      <field name="do_not_mix_lots" eval="1"/>
   </record>
 
   <record id="location_storage_type_kardex_B10404" model="stock.location.storage.type">
@@ -176,7 +178,8 @@
 
   <record id="location_storage_type_medi" model="stock.location.storage.type">
       <field name="name">TC Medi Shelving</field>
-      <field name="only_empty" eval="1"/>
+      <field name="do_not_mix_products" eval="1"/>
+      <field name="do_not_mix_lots" eval="1"/>
   </record>
 
   <record id="location_storage_type_liquidpallet11" model="stock.location.storage.type">
@@ -193,7 +196,6 @@
 
   <record id="location_storage_type_pallet_block" model="stock.location.storage.type">
       <field name="name">Pallet block (same lot)</field>
-      <field name="only_empty" eval="0"/>
       <field name="do_not_mix_lots" eval="1"/>
       <field name="do_not_mix_products" eval="1"/>
   </record>
