@@ -1,0 +1,43 @@
+# This Marabunta migration file aims to provide an upgrade path from an
+# 'external' migrated database (standard modules + external ones upgraded,
+# see 'migration_external.yml' file) to a database migrated with all the local
+# addons used by the instance (specific ones).
+# It is used by the 'migrate-local' script.
+migration:
+  versions:
+    - version: setup
+      modes:
+        migration:
+          operations:
+            pre:
+              - psql -f odoo/migration/songs/generic/disable_addons_upgrade.sql
+              - anthem migration.songs.generic::update_available_addons
+              # ==== Put pre-scripts here ====
+              - anthem migration.songs.cosanum_base_data::pre
+              # ==============================
+              - psql -f odoo/migration/songs/generic/enable_addons_upgrade.sql
+            post:
+              # ==== Put post-scripts here ====
+              # - anthem migration.songs.MY_MODULE::post
+              # ===============================
+              - anthem migration.songs.generic.uninstall::post
+              #- anthem songs.migration.generic.post::post  # TODO: temporary disabled to not uninstall non-migrated modules
+              - anthem migration.songs.generic.post_check_fields::post
+      addons:
+        upgrade:
+          #### local-src
+          # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
+          # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
+          # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
+          - stock_warehouse_block_auto_config
+          - cosanum_product_packaging
+          - cosanum_mrp
+          - cosanum_mrp_subcontracting
+          - cosanum_purchase_stock
+          - cosanum_stock_location
+          - cosanum_stock_vertical_lift
+          - cosanum_stock_warehouse
+          # - ddmrp_priority              # TODO migrate
+          # - ddmrp_sale_exclude_from_adu # TODO migrate
+          # - partner_title_order         # TODO migrate
+          # - sale_address                # TODO migrate

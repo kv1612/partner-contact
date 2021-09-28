@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+export MARABUNTA_MODE=migration
+export MARABUNTA_MIGRATION_FILE="/odoo/migration/migration_local.yml"
+export MARABUNTA_DB_HOST=$DB_HOST
+export MARABUNTA_DATABASE=$DB_NAME
+export MARABUNTA_DB_USER=$DB_USER
+export MARABUNTA_DB_PASSWORD=$DB_PASSWORD
+export MARABUNTA_DB_PORT=$DB_PORT
+DB_NAME_BACKUP="${DB_NAME}_local"
+
+echo "Starting local migration..."
+
+wait_postgres.sh
+
+echo "Removing 'marabunta_version' table..."
+psql -c "DROP TABLE IF EXISTS marabunta_version;"
+
+echo "Launching marabunta migration..."
+gosu odoo unbuffer marabunta
+echo "Local migration finished"
+
+if [[ $MAKE_DB_SNAPSHOT ]]; then
+    echo "Creating database snapshot '$DB_NAME_BACKUP'..."
+    if [ "$( psql -tAc "SELECT 1 FROM pg_database WHERE datname='$DB_NAME_BACKUP'" )" = '1' ]
+    then
+        dropdb $DB_NAME_BACKUP
+    fi
+    createdb $DB_NAME_BACKUP -T $DB_NAME
+fi

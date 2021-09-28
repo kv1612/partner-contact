@@ -1,4 +1,4 @@
--- See explanations on `pre.sql`.
+-- See explanations on `disable_addons_upgrade.sql`.
 
 UPDATE
     ir_module_module

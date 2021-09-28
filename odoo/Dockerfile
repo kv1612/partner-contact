@@ -42,6 +42,7 @@ RUN chmod +x /before-migrate-entrypoint.d/* \
 COPY ./bin/importer.sh /odoo-bin/
 # Migration project
 COPY ./bin/rundatabasemigration /odoo-bin/
+COPY ./bin/migrate-* /odoo-bin/
 ## Prepare pip install
 # frequency: never
 # cost     : very light
@@ -57,6 +58,7 @@ COPY ./data /odoo/data
 COPY ./songs /odoo/songs
 COPY ./VERSION /odoo/
 COPY ./migration.yml /odoo/
+COPY ./migration /odoo/migration
 
 # depends on ./setup.py ./src, ./songs and ./VERSION
 RUN cd /odoo && pip install -r src_requirements.txt

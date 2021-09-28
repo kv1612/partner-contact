@@ -21,6 +21,7 @@ services:
       - "data-odoo:/data/odoo"
       - "data-odoo-db-cache:/.cachedb"
       - "data-odoo-pytest-cache:/odoo/.cache"
+      - "./odoo/migration:/odoo/migration"
       - "./odoo/src:/odoo/src"
       - "./odoo/local-src:/odoo/local-src"
       - "./odoo/external-src:/odoo/external-src"
