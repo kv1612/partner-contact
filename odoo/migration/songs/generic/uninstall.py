@@ -117,6 +117,9 @@ UNINSTALL_MODULES_LIST = [
     'shopinvader_delivery_state',
     'shopinvader_portal_mode',
     'shopinvader_product_template_multi_link_date_span',
+    'shopinvader_product_variant_multi_link',
+    'shopinvader_sale_packaging',
+    'shopinvader_sale_packaging_wishlist',
     # camptocamp/odoo-enterprise-addons
     'account_followup_communication_override',
     'account_followup_partner_query_materialized',
