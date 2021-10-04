@@ -14,11 +14,12 @@ migration:
               - anthem migration.songs.generic::update_available_addons
               # ==== Put pre-scripts here ====
               - anthem migration.songs.cosanum_base_data::pre
+              - anthem migration.songs.shopinvader::pre
               # ==============================
               - psql -f odoo/migration/songs/generic/enable_addons_upgrade.sql
             post:
               # ==== Put post-scripts here ====
-              # - anthem migration.songs.MY_MODULE::post
+              - anthem migration.songs.shopinvader::post
               # ===============================
               - anthem migration.songs.generic.uninstall::post
               #- anthem songs.migration.generic.post::post  # TODO: temporary disabled to not uninstall non-migrated modules
