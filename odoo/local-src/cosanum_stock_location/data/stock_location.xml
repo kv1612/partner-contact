@@ -261,7 +261,7 @@
       <field name="location_id" ref="location_zone_WerrikonUG"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet_block')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
 
@@ -270,7 +270,7 @@
       <field name="location_id" ref="location_zone_WerrikonEG"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet_block')])]"/>
       <field name="pack_putaway_strategy">none</field>
   </record>
 
@@ -585,7 +585,7 @@
       <field name="location_id" ref="location_area_WAE"/>
       <field name="usage">view</field>
       <field name="active" eval="True"/>
-      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan')])]"/>
+      <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_pallet21'), ref('location_storage_type_shelving')])]"/>
   </record>
 
   <record id="location_area_PUTCEP" model="stock.location">
