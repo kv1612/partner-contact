@@ -42,9 +42,6 @@ UNINSTALL_MODULES_LIST = [
     'account_bank_statement_import_transfer_move',
     # oca/community-data-files
     'l10n_eu_product_adr',
-    # oca/ddmrp
-    'ddmrp_product_replace',
-    'ddmrp_warning',
     # oca/delivery-carrier
     'delivery_postlogistics',
     'delivery_postlogistics_dangerous_goods',
@@ -131,10 +128,7 @@ UNINSTALL_MODULES_LIST = [
     'stock_release_channel',
     'stock_release_channel_ddmrp',
     # forgeflow/ddmrp-professional
-    'ddmrp_packaging_calculator',
-    'ddmrp_prioritized_share_warning',
     'ddmrp_simulation',
-    'ddmrp_workorder',
     # forgeflow/forecasting
     'forecast_base',
     'forecast_fbprophet',

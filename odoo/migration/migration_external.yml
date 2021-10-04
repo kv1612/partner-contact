@@ -65,18 +65,18 @@ migration:
           - ddmrp_exclude_moves_adu_calc
           - ddmrp_history
           - ddmrp_packaging
-          #- ddmrp_product_replace          # TODO migrate
-          #- ddmrp_warning                  # TODO migrate
+          - ddmrp_product_replace
+          - ddmrp_warning
           - stock_buffer_capacity_limit
           - stock_buffer_route
           - stock_buffer_sales_analysis
           #### ddmrp-professional
           - ddmrp_advanced_sizing
-          #- ddmrp_packaging_calculator       # TODO
+          - ddmrp_packaging_calculator
           - ddmrp_prioritized_share
-          #- ddmrp_prioritized_share_warning  # TODO
+          - ddmrp_prioritized_share_warning
           - ddmrp_responsible
-          #- ddmrp_workorder                  # TODO
+          - ddmrp_workorder
           #### oca/delivery-carrier
           - delivery_carrier_pricelist
           - delivery_free_fee_removal

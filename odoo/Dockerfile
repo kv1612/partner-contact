@@ -82,6 +82,7 @@ ENV ADDONS_PATH="/odoo/external-src/odoo-cloud-platform, \
   /odoo/external-src/contract, \
   /odoo/external-src/delivery-carrier, \
   /odoo/external-src/ddmrp, \
+  /odoo/external-src/ddmrp-professional, \
   /odoo/external-src/e-commerce, \
   /odoo/external-src/edi, \
   /odoo/external-src/enterprise, \

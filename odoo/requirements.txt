@@ -29,6 +29,10 @@ bokeh==2.3.1
 numpy==1.21.*
 pandas==0.25.*
 
+# ddmrp_prioritized_share
+pulp==2.4
+pyparsing==2.2.*  # pulp dependency
+
 # base_report_to_printer
 pycups==2.0.1
 
