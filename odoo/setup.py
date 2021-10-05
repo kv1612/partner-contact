@@ -13,7 +13,12 @@ setup(
     author="Camptocamp",
     author_email="info@camptocamp.com",
     url="www.camptocamp.com",
-    packages=['songs'] + ['songs.%s' % p for p in find_packages('./songs')],
+    packages=(
+        ['songs']
+        + ['songs.%s' % p for p in find_packages('./songs')]
+        + ['migration']
+        + ['migration.%s' % p for p in find_packages('./migration')]
+    ),
     include_package_data=True,
     classifiers=[
         'Development Status :: 4 - Beta',

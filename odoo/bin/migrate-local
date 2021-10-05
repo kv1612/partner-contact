@@ -7,7 +7,7 @@ export MARABUNTA_DATABASE=$DB_NAME
 export MARABUNTA_DB_USER=$DB_USER
 export MARABUNTA_DB_PASSWORD=$DB_PASSWORD
 export MARABUNTA_DB_PORT=$DB_PORT
-DB_NAME_BACKUP="${DB_NAME}_local"
+DB_NAME_BACKUP="${DB_NAME}_local_`date +%Y%m%d`"
 
 echo "Starting local migration..."
 
