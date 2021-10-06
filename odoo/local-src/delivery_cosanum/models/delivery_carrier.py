@@ -7,7 +7,10 @@ from odoo import _, fields, models
 class DeliveryCarrier(models.Model):
     _inherit = "delivery.carrier"
 
-    delivery_type = fields.Selection(selection_add=[("cosanum", "Cosanum")])
+    delivery_type = fields.Selection(
+        selection_add=[("cosanum", "Cosanum")],
+        ondelete={"cosanum": "set default"},
+    )
     cosanum_default_packaging_id = fields.Many2one(
         "product.packaging",
         domain=[("package_carrier_type", "=", "cosanum")],
