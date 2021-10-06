@@ -104,6 +104,7 @@ ENV ADDONS_PATH="/odoo/external-src/odoo-cloud-platform, \
   /odoo/external-src/rest-framework, \
   /odoo/external-src/report-print-send, \
   /odoo/external-src/reporting-engine, \
+  /odoo/external-src/sale-reporting, \
   /odoo/external-src/sale-workflow, \
   /odoo/external-src/search-engine, \
   /odoo/external-src/server-auth, \

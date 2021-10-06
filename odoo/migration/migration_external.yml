@@ -156,6 +156,8 @@ migration:
           #### oca/reporting-engine
           - bi_sql_editor
           - report_xlsx
+          #### oca/sale-reporting
+          - sale_order_line_position
           #### oca/sale-workflow
           - sale_by_packaging
           - sale_order_disable_user_autosubscribe
@@ -230,6 +232,7 @@ migration:
           - stock_available_to_promise_release_dynamic_routing
           - stock_checkout_sync
           - stock_dynamic_routing
+          - stock_dynamic_routing_reserve_rule
           - stock_move_source_relocate
           - stock_move_source_relocate_dynamic_routing
           - stock_picking_completion_info

@@ -183,6 +183,10 @@
 	path = odoo/external-src/reporting-engine
 	url = git@github.com:OCA/reporting-engine.git
 	branch = 14.0
+[submodule "odoo/external-src/sale-reporting"]
+	path = odoo/external-src/sale-reporting
+	url = git@github.com:OCA/sale-reporting.git
+	branch = 14.0
 [submodule "odoo/external-src/sale-workflow"]
 	path = odoo/external-src/sale-workflow
 	url = git@github.com:OCA/sale-workflow.git

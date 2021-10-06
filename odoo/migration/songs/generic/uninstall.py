@@ -75,7 +75,6 @@ UNINSTALL_MODULES_LIST = [
     'queue_job_subscribe',
     # oca/sale-workflow
     'sale_cutoff_time_delivery',
-    'sale_order_line_position',
     'sale_order_line_replacement',
     'sale_partner_cutoff_delivery_window',
     'sale_partner_delivery_window',
