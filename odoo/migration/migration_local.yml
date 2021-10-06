@@ -31,6 +31,7 @@ migration:
           # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
           # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
           - stock_warehouse_block_auto_config
+          - cosanum_product_logistics_uom
           - cosanum_product_packaging
           - cosanum_mrp
           - cosanum_mrp_subcontracting
