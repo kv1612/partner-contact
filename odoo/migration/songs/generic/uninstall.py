@@ -71,16 +71,16 @@ UNINSTALL_MODULES_LIST = [
     'product_variant_change_attribute_value',
     # oca/purchase-workflow
     'vendor_transport_lead_time',
+    # oca/queue
+    'queue_job_subscribe',
     # oca/sale-workflow
     'sale_cutoff_time_delivery',
-    'sale_order_disable_user_autosubscribe',
     'sale_order_line_position',
     'sale_order_line_replacement',
     'sale_partner_cutoff_delivery_window',
     'sale_partner_delivery_window',
     'sale_product_set_sale_by_packaging',
     # oca/stock-logistics-reporting
-    'delivery_line_sale_line_position',
     'stock_picking_group_by_partner_by_carrier_sale_line_position',
     # oca/stock-logistics-workflow
     'delivery_total_weight_from_packaging',
@@ -90,10 +90,7 @@ UNINSTALL_MODULES_LIST = [
     'stock_partner_delivery_window',
     'stock_picking_group_by_partner_by_carrier_by_date',
     # oca/stock-logistics-warehouse
-    'procurement_auto_create_group',
     'stock_move_auto_assign',
-    'stock_orderpoint_manual_procurement',
-    'stock_orderpoint_route',
     'stock_vertical_lift_empty_tray_check',
     'stock_vertical_lift_packaging_type',
     'stock_vertical_lift_qty_by_packaging',
@@ -101,14 +98,12 @@ UNINSTALL_MODULES_LIST = [
     'delivery_preference_glue_stock_picking_group',
     'sale_stock_available_to_promise_release_cutoff',
     'sale_stock_available_to_promise_release_dropshipping',
-    'shopfloor_batch_automatic_creation',
     'shopfloor_dangerous_goods',
     'shopfloor_dangerous_goods_mobile',
     'shopfloor_delivery_shipment',
     'shopfloor_delivery_shipment_mobile',
     'shopfloor_rest_log',
     'stock_dynamic_routing_checkout_sync',
-    'stock_reception_screen',
     'stock_reception_screen_measuring_device',
     'stock_reception_screen_mrp_subcontracting',
     'stock_reception_screen_qty_by_packaging',

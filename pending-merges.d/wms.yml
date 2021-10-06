@@ -1,9 +1,0 @@
-../odoo/external-src/wms:
-  remotes:
-    camptocamp: git@github.com:camptocamp/wms.git
-    OCA: git@github.com:OCA/wms.git
-  target: camptocamp merge-branch-2477-14.0
-  merges:
-  - OCA 14.0
-  # [14.0][FIX] s_storage_type: allowed location storage types
-  - OCA refs/pull/299/head

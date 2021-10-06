@@ -249,7 +249,7 @@
 ;	branch = 14.0
 [submodule "odoo/external-src/wms"]
 	path = odoo/external-src/wms
-	url = git@github.com:camptocamp/wms.git
+	url = git@github.com:OCA/wms.git
 	branch = 14.0
 
 ;	Localizations

@@ -147,7 +147,7 @@ migration:
           - purchase_delivery_split_date
           #### oca/queue
           - queue_job
-          - queue_job_subscribe
+          #- queue_job_subscribe  # TODO to migrate
           #### oca/rest-framework
           - base_rest
           - rest_log
@@ -158,6 +158,7 @@ migration:
           - report_xlsx
           #### oca/sale-workflow
           - sale_by_packaging
+          - sale_order_disable_user_autosubscribe
           #### oca/search-engine
           - connector_algolia
           - connector_search_engine
@@ -175,16 +176,21 @@ migration:
           - email_template_qweb
           - mail_layout_preview
           - mail_inline_css
+          #### oca/stock-logistics-reporting
+          - delivery_line_sale_line_position
           #### oca/stock-logistics-transport
           - stock_dock
           #### oca/stock-logistics-warehouse
+          - procurement_auto_create_group
           - stock_location_bin_name
           - stock_location_last_inventory_date
           - stock_location_position
           - stock_location_zone
           - stock_measuring_device
           - stock_measuring_device_zippcube
+          - stock_orderpoint_manual_procurement
           - stock_orderpoint_purchase_link
+          - stock_orderpoint_route
           - stock_packaging_calculator_packaging_type
           - stock_product_qty_by_packaging
           - stock_vertical_lift
@@ -213,6 +219,7 @@ migration:
           #- delivery_preference_glue_stock_picking_group  # TODO
           - shopfloor
           - shopfloor_base
+          - shopfloor_batch_automatic_creation
           - shopfloor_checkout_sync
           - shopfloor_mobile
           - shopfloor_mobile_base
@@ -226,6 +233,7 @@ migration:
           - stock_move_source_relocate
           - stock_move_source_relocate_dynamic_routing
           - stock_picking_consolidation_priority
+          - stock_reception_screen
           - stock_storage_type
           - stock_storage_type_buffer
           - stock_storage_type_putaway_abc
