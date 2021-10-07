@@ -12,7 +12,6 @@
         "stock",
         "delivery",
         # OCA/delivery-carrier
-        "delivery_send_to_shipper_at_operation",
         "server_environment_delivery",
         # OCA/wms
         "delivery_carrier_warehouse",

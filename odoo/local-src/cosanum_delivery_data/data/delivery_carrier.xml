@@ -26,10 +26,6 @@
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
-        <!-- FIXME: move to a new module 'cosanum_delivery_send_to_shipper_at_operation'
-        <field name="send_delivery_notice_on">custom</field>
-        <field name="send_delivery_notice_picking_type_ids" eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_pal')])]"/>
-        -->
         <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_fees"/>
         <field name="tech_name">brauch_pallet</field>
@@ -40,10 +36,6 @@
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
-        <!-- FIXME: move to a new module 'cosanum_delivery_send_to_shipper_at_operation'
-        <field name="send_delivery_notice_on">custom</field>
-        <field name="send_delivery_notice_picking_type_ids" eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_rol')])]"/>
-        -->
         <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_fees"/>
         <field name="tech_name">brauch_rollercage</field>
@@ -54,10 +46,6 @@
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
-        <!-- FIXME: move to a new module 'cosanum_delivery_send_to_shipper_at_operation'
-        <field name="send_delivery_notice_on">custom</field>
-        <field name="send_delivery_notice_picking_type_ids" eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_op'), ref('cosanum_stock_picking_type.stock_picking_type_pick_pack_mo_op')])]"/>
-        -->
         <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_fees"/>
         <field name="tech_name">brauch_op_rollercage</field>
@@ -130,10 +118,6 @@
         <field name="free_over" eval="True"/>
         <field name="amount">30.0</field>
         <field name="sequence">1</field>
-        <!-- FIXME: move to a new module 'cosanum_delivery_send_to_shipper_at_operation'
-        <field name="send_delivery_notice_on">custom</field>
-        <field name="send_delivery_notice_picking_type_ids" eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_pal')])]"/>
-        -->
         <field name="invoice_policy">pricelist</field>
         <field name="product_id" ref="product_product_delivery_lsva_pallet"/>
         <field name="tech_name">pandemic_stock</field>

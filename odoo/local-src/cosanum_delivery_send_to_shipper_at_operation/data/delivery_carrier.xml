@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Camptocamp SA
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="cosanum_delivery_data.delivery_carrier_brauch_pallet" model="delivery.carrier">
+        <field name="send_delivery_notice_on">custom</field>
+        <field name="send_delivery_notice_picking_type_ids"
+          eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_pal')])]"/>
+    </record>
+
+    <record id="cosanum_delivery_data.delivery_carrier_brauch_rollercage" model="delivery.carrier">
+        <field name="send_delivery_notice_on">custom</field>
+        <field name="send_delivery_notice_picking_type_ids"
+          eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_rol')])]"/>
+    </record>
+
+    <record id="cosanum_delivery_data.delivery_carrier_brauch_rollercage_op" model="delivery.carrier">
+        <field name="send_delivery_notice_on">custom</field>
+        <field name="send_delivery_notice_picking_type_ids"
+          eval="[(6, 0, [
+            ref('cosanum_stock_picking_type.stock_picking_type_pack_op'),
+          ref('cosanum_stock_picking_type.stock_picking_type_pick_pack_mo_op'),
+          ])]"/>
+    </record>
+
+    <record id="cosanum_delivery_data.delivery_carrier_pandemic_stock" model="delivery.carrier">
+        <field name="send_delivery_notice_on">custom</field>
+        <field name="send_delivery_notice_picking_type_ids" eval="[(6, 0, [ref('cosanum_stock_picking_type.stock_picking_type_pack_pal')])]"/>
+    </record>
+
+</odoo>
