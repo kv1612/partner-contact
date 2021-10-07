@@ -7,5 +7,6 @@ class ProductPackaging(models.Model):
     _inherit = 'product.packaging'
 
     package_carrier_type = fields.Selection(
-        selection_add=[('brauch', "Brauch Transporte")]
+        selection_add=[('brauch', "Brauch Transporte")],
+        ondelete={"brauch": "set default"},
     )

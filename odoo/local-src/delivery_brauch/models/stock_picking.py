@@ -110,7 +110,7 @@ class StockPicking(models.Model):
             ).replace("\n", " "),
         }
 
-    def action_done(self):
+    def _action_done(self):
         brauch_pickings = self.filtered(
             lambda p: p.carrier_id.delivery_type == "brauch"
         )
@@ -126,4 +126,4 @@ class StockPicking(models.Model):
                         "\n- %s" % "\n- ".join(brauch_pickings.mapped("name"))
                     )
                 )
-        return super().action_done()
+        return super()._action_done()

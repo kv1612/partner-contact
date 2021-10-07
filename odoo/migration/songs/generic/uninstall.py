@@ -205,8 +205,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_translation',
     'ddmrp_priority',
     'ddmrp_sale_exclude_from_adu',
-    'delivery_brauch',
-    'delivery_cosanum',
     'delivery_dhl_archive_doc',
     'delivery_dhl_server_env',
     'delivery_send_to_shipper_at_operation_brauch',

@@ -4,14 +4,16 @@ import ftplib
 from io import BytesIO
 
 from odoo import _, exceptions, fields, models
-from odoo.addons.queue_job.job import job
+
+# TODO: could we leverage OCA/storage here?
 
 
 class DeliveryCarrier(models.Model):
     _inherit = 'delivery.carrier'
 
     delivery_type = fields.Selection(
-        selection_add=[('brauch', "Brauch Transporte")]
+        selection_add=[('brauch', "Brauch Transporte")],
+        ondelete={"brauch": "set default"},
     )
     brauch_default_packaging_id = fields.Many2one(
         "product.packaging",
@@ -63,8 +65,8 @@ class DeliveryCarrier(models.Model):
             res.append(pick._send_delivery_to_brauch())
         return res
 
-    @job
     def _brauch_push_to_ftp(self, csv_data, csv_file_name):
+        """Push the CSV file on the Brauch FTP through a job."""
         if not (
             self.brauch_ftp_uri
             and self.brauch_ftp_login

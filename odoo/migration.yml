@@ -434,6 +434,7 @@ migration:
           - shopinvader_payment_manual
 
           #### local-src
+          - delivery_brauch
           - delivery_cosanum
           - stock_warehouse_block_auto_config
           - cosanum_product_logistics_uom

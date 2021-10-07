@@ -27,6 +27,7 @@ migration:
       addons:
         upgrade:
           #### local-src
+          - delivery_brauch
           - delivery_cosanum
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
           # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
