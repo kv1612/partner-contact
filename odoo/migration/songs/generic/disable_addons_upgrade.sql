@@ -8,7 +8,7 @@
 --
 -- Disabling the install/upgrade of addons in 'pre' allows us to safely fix data.
 --
--- To restore the state of the addons, see the script 'restore_addons_state'
+-- To restore the state of the addons, see the script 'enable_addons_upgrade.sql'
 
 UPDATE
     ir_module_module

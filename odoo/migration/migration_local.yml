@@ -12,6 +12,10 @@ migration:
             pre:
               - psql -f odoo/migration/songs/generic/disable_addons_upgrade.sql
               - anthem migration.songs.generic::update_available_addons
+              # Set all addons to uninstall as 'uninstalled'
+              # + clean up metadata related to 'uninstalled' addons
+              - anthem migration.songs.generic.uninstall::pre
+              - psql -f odoo/migration/songs/generic/pre_clean.sql
               # ==== Put pre-scripts here ====
               - anthem migration.songs.cosanum_base_data::pre
               - anthem migration.songs.shopinvader::pre
@@ -21,7 +25,7 @@ migration:
               # ==== Put post-scripts here ====
               - anthem migration.songs.shopinvader::post
               # ===============================
-              - anthem migration.songs.generic.uninstall::post
+              #- anthem migration.songs.generic.uninstall::post
               #- anthem songs.migration.generic.post::post  # TODO: temporary disabled to not uninstall non-migrated modules
               - anthem migration.songs.generic.post_check_fields::post
       addons:

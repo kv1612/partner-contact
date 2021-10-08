@@ -16,7 +16,6 @@ migration:
               - anthem songs.install.pre::main
               - anthem migration.songs.generic.pre::pre
               - anthem migration.songs.generic.pre_check_fields::pre
-              - anthem migration.songs.generic.uninstall::pre
               - psql -f odoo/migration/songs/generic/pre_clean.sql
               - psql -f odoo/migration/songs/generic/enable_addons_upgrade.sql
       addons:
