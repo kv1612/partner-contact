@@ -93,7 +93,7 @@
 	branch = 14.0
 [submodule "odoo/external-src/delivery-carrier"]
 	path = odoo/external-src/delivery-carrier
-	url = git@github.com:OCA/delivery-carrier.git
+	url = git@github.com:camptocamp/delivery-carrier.git
 	branch = 14.0
 [submodule "odoo/external-src/e-commerce"]
 	path = odoo/external-src/e-commerce

@@ -241,6 +241,7 @@ migration:
           - ddmrp_responsible
           - ddmrp_workorder
           #### oca/delivery-carrier
+          - delivery_carrier_customer_info
           - delivery_carrier_pricelist
           - delivery_free_fee_removal
           - delivery_package_fee
@@ -440,6 +441,7 @@ migration:
           - delivery_brauch
           - delivery_cosanum
           - stock_warehouse_block_auto_config
+          - cosanum_delivery
           - cosanum_delivery_data
           - cosanum_delivery_send_to_shipper_at_operation
           - cosanum_product_logistics_uom

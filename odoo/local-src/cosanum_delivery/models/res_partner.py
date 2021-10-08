@@ -4,17 +4,11 @@ from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
-
     _inherit = "res.partner"
 
     truck_weight_limit = fields.Selection(
         selection="_selection_truck_weight_limit",
         string="Truck Weight limit (in T)",
-    )
-    delivery_info_id = fields.Many2one(
-        "res.partner.delivery.info",
-        ondelete="restrict",
-        string="Info for Delivery Carrier",
     )
     delivery_notifications_phone = fields.Char(
         string="Phone for Delivery Carrier Notifications"
@@ -24,7 +18,9 @@ class ResPartner(models.Model):
         string="Customs privileged",
     )
     # Change default value
-    delivery_time_preference = fields.Selection(default="workdays")
+    # Field coming from `sale_partner_delivery_window`
+    # TODO: to enable once the addon is migrated (check `sale_delivery_dates`?)
+    # delivery_time_preference = fields.Selection(default="workdays")
 
     @api.model
     def _selection_truck_weight_limit(self):

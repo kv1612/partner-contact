@@ -1,0 +1,9 @@
+../odoo/external-src/delivery-carrier:
+  remotes:
+    camptocamp: git@github.com:camptocamp/delivery-carrier.git
+    OCA: git@github.com:OCA/delivery-carrier.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [14.0][ADD] delivery_carrier_customer_info
+  - OCA refs/pull/424/head

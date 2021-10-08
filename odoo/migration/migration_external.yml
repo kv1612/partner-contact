@@ -13,7 +13,7 @@ migration:
               - psql -f odoo/migration/songs/generic/disable_addons_upgrade.sql
               - anthem migration.songs.generic::update_available_addons
               # ==== Put pre-scripts here ====
-              # - anthem migration.songs.my_module::pre
+              - anthem migration.songs.delivery_carrier_customer_info::pre
               # ==============================
               - psql -f odoo/migration/songs/generic/enable_addons_upgrade.sql
             #post:
@@ -78,6 +78,7 @@ migration:
           - ddmrp_responsible
           - ddmrp_workorder
           #### oca/delivery-carrier
+          - delivery_carrier_customer_info
           - delivery_carrier_pricelist
           - delivery_free_fee_removal
           - delivery_package_fee

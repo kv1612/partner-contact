@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 07:49+0000\n"
+"POT-Creation-Date: 2021-10-11 11:56+0000\n"
 "PO-Revision-Date: 2020-08-27 07:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_stock_picking__carrier_id
+msgid "Carrier"
+msgstr ""
 
 #. module: cosanum_delivery
 #: model:ir.model,name:cosanum_delivery.model_res_partner
@@ -23,9 +29,15 @@ msgstr "Kontakt"
 #. module: cosanum_delivery
 #: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__customs_privileged
 #: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__customs_privileged
-#: model:ir.model.fields,field_description:cosanum_delivery.field_shopinvader_partner__customs_privileged
 msgid "Customs privileged"
 msgstr "Zollbegünstigt"
+
+#. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__display_name
+#: model:ir.model.fields,field_description:cosanum_delivery.field_sale_order__display_name
+#: model:ir.model.fields,field_description:cosanum_delivery.field_stock_picking__display_name
+msgid "Display Name"
+msgstr ""
 
 #. module: cosanum_delivery
 #: model:ir.model.fields.selection,name:cosanum_delivery.selection__res_partner__customs_privileged__gdk
@@ -33,10 +45,17 @@ msgid "GDK"
 msgstr ""
 
 #. module: cosanum_delivery
-#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__delivery_info
-#: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__delivery_info
-#: model:ir.model.fields,field_description:cosanum_delivery.field_shopinvader_partner__delivery_info
-msgid "Info for delivery carrier"
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__id
+#: model:ir.model.fields,field_description:cosanum_delivery.field_sale_order__id
+#: model:ir.model.fields,field_description:cosanum_delivery.field_stock_picking__id
+msgid "ID"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner____last_update
+#: model:ir.model.fields,field_description:cosanum_delivery.field_sale_order____last_update
+#: model:ir.model.fields,field_description:cosanum_delivery.field_stock_picking____last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: cosanum_delivery
@@ -45,8 +64,23 @@ msgid "No GDK"
 msgstr ""
 
 #. module: cosanum_delivery
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__delivery_notifications_phone
+#: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__delivery_notifications_phone
+msgid "Phone for Delivery Carrier Notifications"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model,name:cosanum_delivery.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: cosanum_delivery
+#: model:ir.model,name:cosanum_delivery.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: cosanum_delivery
 #: model:ir.model.fields,field_description:cosanum_delivery.field_res_partner__truck_weight_limit
 #: model:ir.model.fields,field_description:cosanum_delivery.field_res_users__truck_weight_limit
-#: model:ir.model.fields,field_description:cosanum_delivery.field_shopinvader_partner__truck_weight_limit
 msgid "Truck Weight limit (in T)"
 msgstr ""

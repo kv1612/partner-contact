@@ -3,22 +3,25 @@
 {
     "name": "Cosanum Delivery",
     "summary": "Cosanum customization for Delivery module",
-    "version": "13.0.1.1.0",
+    "version": "14.0.1.0.0",
     "category": "Operations/Inventory/Delivery",
     "author": "Camptocamp",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": [
-        "cosanum_base",
+        # core
         "delivery",
-        "sale_partner_delivery_window",
         "sales_team",
+        # OCA/delivery-carrier
+        "delivery_carrier_customer_info",
+        # OCA/sale-workflow
+        # "sale_partner_delivery_window",   # TODO to migrate
+        # local-src
+        "cosanum_delivery_data",
     ],
     "data": [
-        "security/ir.model.access.csv",
         "views/res_partner.xml",
         "views/packaging_views.xml",
-        "views/res_partner_delivery_info_views.xml",
-        "views/menus.xml"],
+    ],
 }
