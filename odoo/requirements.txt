@@ -69,4 +69,7 @@ paramiko==2.7.*
 # storage_file
 python-slugify==5.0.*
 
+# web_widget_mpld3_chart
+mpld3==0.5.5
+
 ## custom

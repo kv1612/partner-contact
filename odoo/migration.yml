@@ -379,6 +379,7 @@ migration:
           - storage_thumbnail
           #### oca/web
           - web_environment_ribbon
+          - web_widget_mpld3_chart
           #### oca/wms
           - delivery_carrier_preference
           - delivery_carrier_warehouse
