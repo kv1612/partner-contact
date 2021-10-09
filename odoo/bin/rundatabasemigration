@@ -3,3 +3,4 @@ set -e
 migrate-core
 migrate-external
 migrate-local
+migrate-cleanup

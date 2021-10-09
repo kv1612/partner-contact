@@ -262,7 +262,7 @@ def uninstall_modules(ctx):
         # call can imply un-installation errors (and then, build failure).
         # We uninstall modules one by one
         # to have less possible failures when migration build.
-        # This way we also ee which modules take more time to uninstall.
+        # This way we also see which modules take more time to uninstall.
 
         for module_name in UNINSTALL_MODULES_LIST:
             ctx.log_line(
@@ -289,6 +289,7 @@ def uninstall_modules(ctx):
                         )
                     )
                 (module + deps).write({'state': 'to remove'})
+                module.flush()
 
                 module._button_immediate_function(function=lambda x: {})
             else:
