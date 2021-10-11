@@ -12,6 +12,8 @@
         "stock",
         "delivery",
         # OCA/delivery-carrier
+        "delivery_carrier_pricelist",
+        "delivery_package_fee",
         "server_environment_delivery",
         # OCA/wms
         "delivery_carrier_warehouse",
