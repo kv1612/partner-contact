@@ -145,6 +145,32 @@ def migrate_delivery_carrier_from_cosanum_base_data(ctx):
     )
 
 
+def migrate_stock_storage_type_from_cosanum_base_data(ctx):
+    """Migrate storage type records from 'cosanum_base_data'
+    to 'cosanum_stock_storage_type_data'.
+    """
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_model_data
+        SET module='cosanum_stock_storage_type_data'
+        WHERE module='cosanum_base_data'
+        AND model IN (
+            'stock.package.storage.type',
+            'stock.storage.location.sequence',
+            'stock.location.storage.buffer'
+        )
+        """
+    )
+    # Flag the new module 'cosanum_stock_storage_type_data' as installed to avoid
+    # overwritting existing configuration data
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_module_module SET state='installed'
+        WHERE name='cosanum_stock_storage_type_data'
+        """
+    )
+
+
 @anthem.log
 def pre(ctx):
     migrate_product_packaging_from_cosanum_base_data(ctx)
@@ -153,3 +179,4 @@ def pre(ctx):
     migrate_stock_picking_type_from_cosanum_base_data(ctx)
     migrate_stock_location_route_from_cosanum_base_data(ctx)
     migrate_delivery_carrier_from_cosanum_base_data(ctx)
+    migrate_stock_storage_type_from_cosanum_base_data(ctx)

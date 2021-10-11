@@ -41,10 +41,11 @@ migration:
           - cosanum_stock_checkout_sync
           - cosanum_stock_location_data
           - cosanum_stock_location_route_data
-          - cosanum_stock_vertical_lift
           - cosanum_stock_picking_backorder_strategy
           - cosanum_stock_picking_type_data
           - cosanum_stock_picking_consolidation_priority
+          - cosanum_stock_storage_type_data
+          - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse_data
           # - ddmrp_priority              # TODO migrate
           # - ddmrp_sale_exclude_from_adu # TODO migrate
