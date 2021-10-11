@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <odoo noupdate="1">
 
-  <record id="cosanum_stock_warehouse.warehouse_wer" model="stock.warehouse">
+  <record id="cosanum_stock_warehouse_data.warehouse_wer" model="stock.warehouse">
       <field name="buy_to_resupply" eval="False"/>
   </record>
 
-  <record id="cosanum_stock_warehouse.warehouse_ren" model="stock.warehouse">
+  <record id="cosanum_stock_warehouse_data.warehouse_ren" model="stock.warehouse">
       <field name="buy_to_resupply" eval="False"/>
   </record>
 
-  <record id="cosanum_stock_warehouse.warehouse_wmh" model="stock.warehouse">
+  <record id="cosanum_stock_warehouse_data.warehouse_wmh" model="stock.warehouse">
       <field name="buy_to_resupply" eval="False"/>
   </record>
 

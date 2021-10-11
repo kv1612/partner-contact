@@ -293,7 +293,7 @@
   <record id="location_area_KTLWAWER" model="stock.location">
       <field name="name">WER-WAE</field>
       <field name="barcode">WER-WAE</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_inputwer')])]"/>
@@ -302,7 +302,7 @@
   <record id="location_area_KTLWAWERQA" model="stock.location">
       <field name="name">WER-WAE-QA</field>
       <field name="barcode">WER-WAE-QA</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_inputwer')])]"/>
@@ -311,7 +311,7 @@
   <record id="location_area_WEGTRA77" model="stock.location">
       <field name="name">WER-WAE-TRANSIT</field>
       <field name="barcode">WER-WAE-TRANSIT</field>
-      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
+      <field name="location_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
       <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_shelving'), ref('location_storage_type_puthrl'), ref('location_storage_type_lan'), ref('location_storage_type_kardex_buffer')])]"/>
@@ -752,7 +752,7 @@
 
   <function model="stock.location" name="write">
       <value model="stock.location"
-             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').wh_input_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Input',
             'location_id': obj().env.ref('cosanum_stock_location_data.location_zone_Werrikon').id,
@@ -773,7 +773,7 @@
 
   <function model="stock.location" name="write">
       <value model="stock.location"
-             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_output_stock_loc_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').wh_output_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Output WER',
             'location_id': obj().env.ref('stock.warehouse0').view_location_id.id,
@@ -1005,13 +1005,13 @@
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_ren').view_location_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_ren').view_location_id.id"/>
       <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location_data.location_internal_schafhausen').id}"/>
   </function>
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
-             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wmh').view_location_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wmh').view_location_id.id"/>
       <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location_data.location_internal_schafhausen').id}"/>
   </function>
 

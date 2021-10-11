@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "depends": [
         # local-src
-        "cosanum_stock_warehouse",
+        "cosanum_stock_warehouse_data",
         "stock_warehouse_block_auto_config"   # TODO to migrate
     ],
     "website": "https://www.camptocamp.com",

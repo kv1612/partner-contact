@@ -18,7 +18,7 @@
         "stock_storage_type",
         "stock_storage_type_putaway_abc",
         # local-src
-        "cosanum_stock_warehouse",
+        "cosanum_stock_warehouse_data",
     ],
     "website": "https://www.camptocamp.com",
     "data": [

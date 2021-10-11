@@ -127,7 +127,7 @@
         <field name="delivery_carrier_id" ref="delivery_carrier_brauch_pallet" />
     </record>
 
-    <record id="cosanum_stock_warehouse.warehouse_wer" model="stock.warehouse">
+    <record id="cosanum_stock_warehouse_data.warehouse_wer" model="stock.warehouse">
         <field name="delivery_carrier_id" ref="delivery_carrier_brauch_pallet" />
     </record>
 

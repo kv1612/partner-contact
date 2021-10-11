@@ -30,22 +30,22 @@ def migrate_product_packaging_from_cosanum_base_data(ctx):
 @anthem.log
 def migrate_stock_warehouse_from_cosanum_base_data(ctx):
     """Migrate 'stock.warehouse' records from 'cosanum_base_data'
-    to 'cosanum_stock_warehouse'.
+    to 'cosanum_stock_warehouse_data'.
     """
     ctx.env.cr.execute(
         """
         UPDATE ir_model_data
-        SET module='cosanum_stock_warehouse'
+        SET module='cosanum_stock_warehouse_data'
         WHERE module='cosanum_base_data'
         AND model IN ('stock.warehouse', 'res.partner')
         """
     )
-    # Flag the new module 'cosanum_stock_warehouse' as installed to avoid
+    # Flag the new module 'cosanum_stock_warehouse_data' as installed to avoid
     # overwritting existing configuration data
     ctx.env.cr.execute(
         """
         UPDATE ir_module_module SET state='installed'
-        WHERE name='cosanum_stock_warehouse'
+        WHERE name='cosanum_stock_warehouse_data'
         """
     )
 
@@ -63,7 +63,7 @@ def migrate_stock_location_from_cosanum_base_data(ctx):
         AND model IN ('stock.location', 'stock.location.storage.type')
         """
     )
-    # Flag the new module 'cosanum_stock_warehouse' as installed to
+    # Flag the new module 'cosanum_stock_location_data' as installed to
     #   - avoid overwritting existing configuration data
     #   - greatly improve migration speed (~30min of recomputation of 30k
     #     locations in the database)

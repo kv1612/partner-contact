@@ -45,7 +45,7 @@ migration:
           - cosanum_stock_picking_backorder_strategy
           - cosanum_stock_picking_type
           - cosanum_stock_picking_consolidation_priority
-          - cosanum_stock_warehouse
+          - cosanum_stock_warehouse_data
           # - ddmrp_priority              # TODO migrate
           # - ddmrp_sale_exclude_from_adu # TODO migrate
           # - partner_title_order         # TODO migrate
