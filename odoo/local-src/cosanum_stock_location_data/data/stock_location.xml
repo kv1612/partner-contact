@@ -1017,28 +1017,24 @@
 
   <record id="location_internal_subcontract_vendor1" model="stock.location">
       <field name="name">Stiftung Solvita</field>
-      <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
   </record>
 
   <record id="location_internal_subcontract_vendor2" model="stock.location">
       <field name="name">Zuwebe</field>
-      <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
   </record>
 
   <record id="location_internal_subcontract_vendor3" model="stock.location">
       <field name="name">CEMED GmBH</field>
-      <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
   </record>
 
   <record id="location_internal_subcontract_vendor4" model="stock.location">
       <field name="name">Wagner KG Klinikbedarf</field>
-      <field name="location_id" model="res.company" eval="obj().env.ref('base.main_company').subcontracting_location_id.id"/>
       <field name="usage">internal</field>
       <field name="active" eval="True"/>
   </record>

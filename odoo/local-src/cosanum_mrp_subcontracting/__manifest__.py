@@ -12,11 +12,13 @@
         "mrp_subcontracting",
         # local-src
         "cosanum_stock_warehouse",
+        "cosanum_stock_location_data",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
         "data/stock_warehouse.xml",
         "data/stock_rule.xml",
+        "data/stock_location.xml",
     ],
     # NOTE: as original records are flagged with 'noupdate', the only way to get
     # them updated is to read the XML data file manually when the module is installed
