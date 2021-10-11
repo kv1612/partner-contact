@@ -10,7 +10,7 @@
     "depends": [
         # local-src
         # "delivery_cosanum", # TODO to migrate
-        "cosanum_product_packaging",
+        "cosanum_product_packaging_data",
         # "cosanum_delivery_carrier",   # TODO
     ],
     "website": "https://www.camptocamp.com",

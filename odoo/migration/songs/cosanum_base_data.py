@@ -7,22 +7,22 @@ import anthem
 @anthem.log
 def migrate_product_packaging_from_cosanum_base_data(ctx):
     """Migrate 'product.packaging' records from 'cosanum_base_data'
-    to 'cosanum_product_packaging'.
+    to 'cosanum_product_packaging_data'.
     """
     ctx.env.cr.execute(
         """
         UPDATE ir_model_data
-        SET module='cosanum_product_packaging'
+        SET module='cosanum_product_packaging_data'
         WHERE module='cosanum_base_data'
         AND model='product.packaging'
         """
     )
-    # Flag the new module 'cosanum_product_packaging' as installed to avoid
+    # Flag the new module 'cosanum_product_packaging_data' as installed to avoid
     # overwritting existing configuration data
     ctx.env.cr.execute(
         """
         UPDATE ir_module_module SET state='installed'
-        WHERE name='cosanum_product_packaging'
+        WHERE name='cosanum_product_packaging_data'
         """
     )
 

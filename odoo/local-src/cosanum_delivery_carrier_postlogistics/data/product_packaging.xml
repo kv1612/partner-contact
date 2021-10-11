@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <odoo noupdate="1">
 
-  <record id="cosanum_product_packaging.swisspost_pri_packaging" model="product.packaging">
+  <record id="cosanum_product_packaging_data.swisspost_pri_packaging" model="product.packaging">
     <field name="package_carrier_type">postlogistics</field>
   </record>
 
-  <record id="cosanum_product_packaging.swisspost_exp_packaging" model="product.packaging">
+  <record id="cosanum_product_packaging_data.swisspost_exp_packaging" model="product.packaging">
     <field name="package_carrier_type">postlogistics</field>
   </record>
 
-  <record id="cosanum_product_packaging.swisspost_thermocare_packaging" model="product.packaging">
+  <record id="cosanum_product_packaging_data.swisspost_thermocare_packaging" model="product.packaging">
     <field name="package_carrier_type">postlogistics</field>
   </record>
 
