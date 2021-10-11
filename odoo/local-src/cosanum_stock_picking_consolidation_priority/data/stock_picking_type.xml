@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <odoo noupdate="1">
 
-  <record id="cosanum_stock_picking_type.stock_picking_type_pack_op" model="stock.picking.type">
+  <record id="cosanum_stock_picking_type_data.stock_picking_type_pack_op" model="stock.picking.type">
       <field name="consolidate_priority" eval="1"/>
   </record>
 
-  <record id="cosanum_stock_picking_type.stock_picking_type_pack_pal" model="stock.picking.type">
+  <record id="cosanum_stock_picking_type_data.stock_picking_type_pack_pal" model="stock.picking.type">
       <field name="consolidate_priority" eval="1"/>
   </record>
 
-  <record id="cosanum_stock_picking_type.stock_picking_type_pack_rol" model="stock.picking.type">
+  <record id="cosanum_stock_picking_type_data.stock_picking_type_pack_rol" model="stock.picking.type">
       <field name="consolidate_priority" eval="1"/>
   </record>
 
-  <record id="cosanum_stock_picking_type.stock_picking_type_shipping_parcel" model="stock.picking.type">
+  <record id="cosanum_stock_picking_type_data.stock_picking_type_shipping_parcel" model="stock.picking.type">
       <field name="consolidate_priority" eval="1"/>
   </record>
 

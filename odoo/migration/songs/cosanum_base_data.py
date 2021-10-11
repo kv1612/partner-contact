@@ -78,22 +78,22 @@ def migrate_stock_location_from_cosanum_base_data(ctx):
 @anthem.log
 def migrate_stock_picking_type_from_cosanum_base_data(ctx):
     """Migrate 'stock.picking.type' records from 'cosanum_base_data'
-    to 'cosanum_stock_picking_type'.
+    to 'cosanum_stock_picking_type_data'.
     """
     ctx.env.cr.execute(
         """
         UPDATE ir_model_data
-        SET module='cosanum_stock_picking_type'
+        SET module='cosanum_stock_picking_type_data'
         WHERE module='cosanum_base_data'
         AND model IN ('stock.picking.type', 'ir.sequence')
         """
     )
-    # Flag the new module 'cosanum_stock_picking_type' as installed to avoid
+    # Flag the new module 'cosanum_stock_picking_type_data' as installed to avoid
     # overwritting existing configuration data
     ctx.env.cr.execute(
         """
         UPDATE ir_module_module SET state='installed'
-        WHERE name='cosanum_stock_picking_type'
+        WHERE name='cosanum_stock_picking_type_data'
         """
     )
 

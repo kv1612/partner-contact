@@ -11,7 +11,7 @@
         # OCA/wms
         "stock_picking_consolidation_priority",
         # local-src
-        "cosanum_stock_picking_type",
+        "cosanum_stock_picking_type_data",
     ],
     "website": "https://www.camptocamp.com",
     "data": [

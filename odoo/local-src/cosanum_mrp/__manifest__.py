@@ -12,7 +12,7 @@
         "mrp",
         # local-src
         "cosanum_stock_warehouse_data",
-        "cosanum_stock_picking_type",
+        "cosanum_stock_picking_type_data",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
