@@ -7,8 +7,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-1-2-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-1-2"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-1-2-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-1-2"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -24,8 +24,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-3-4-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-3-4"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-3-4-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-3-4"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -41,8 +41,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-5-6-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-5-6"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-5-6-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-5-6"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -58,8 +58,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-7-8-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-7-8"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-7-8-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-7-8"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -75,8 +75,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-9-10-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-9-10"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-9-10-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-9-10"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -92,8 +92,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-11-12-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-11-12"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-11-12-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-11-12"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -109,8 +109,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-13-14-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-13-14"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-13-14-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-13-14"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -126,8 +126,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-15-16-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-15-16"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-15-16-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-15-16"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -143,8 +143,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-17-20-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-17-20"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-17-20-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-17-20"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -160,8 +160,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-21-22-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-21-22"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-21-22-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-21-22"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -177,8 +177,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-23-24-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-23-24"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-23-24-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-23-24"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>
@@ -194,8 +194,8 @@
     <field name="sequence_code">PHRL</field>
     <field name="sequence" eval="22"/>
     <field name="warehouse_id" ref="stock.warehouse0"/>
-    <field name="default_location_src_id" ref="cosanum_stock_location.location_area_HRL_A-25-26-IN"/>
-    <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_HRL_A-25-26"/>
+    <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_HRL_A-25-26-IN"/>
+    <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_HRL_A-25-26"/>
     <field name="display_completion_info" eval="0"/>
     <field name="show_entire_packs" eval="1"/>
     <field name="use_create_lots" eval="0"/>

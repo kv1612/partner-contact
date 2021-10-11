@@ -53,12 +53,12 @@ def migrate_stock_warehouse_from_cosanum_base_data(ctx):
 @anthem.log
 def migrate_stock_location_from_cosanum_base_data(ctx):
     """Migrate 'stock.location' records from 'cosanum_base_data'
-    to 'cosanum_stock_location'.
+    to 'cosanum_stock_location_data'.
     """
     ctx.env.cr.execute(
         """
         UPDATE ir_model_data
-        SET module='cosanum_stock_location'
+        SET module='cosanum_stock_location_data'
         WHERE module='cosanum_base_data'
         AND model IN ('stock.location', 'stock.location.storage.type')
         """
@@ -70,7 +70,7 @@ def migrate_stock_location_from_cosanum_base_data(ctx):
     ctx.env.cr.execute(
         """
         UPDATE ir_module_module SET state='installed'
-        WHERE name='cosanum_stock_location'
+        WHERE name='cosanum_stock_location_data'
         """
     )
 

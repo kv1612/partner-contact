@@ -755,7 +755,7 @@
              eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id"/>
       <value model="stock.location" eval="{
             'name': 'Input',
-            'location_id': obj().env.ref('cosanum_stock_location.location_zone_Werrikon').id,
+            'location_id': obj().env.ref('cosanum_stock_location_data.location_zone_Werrikon').id,
             'usage': 'internal',
             'active': True,
             'is_zone': False,
@@ -1006,13 +1006,13 @@
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
              eval="obj().env.ref('cosanum_stock_warehouse.warehouse_ren').view_location_id.id"/>
-      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location.location_internal_schafhausen').id}"/>
+      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location_data.location_internal_schafhausen').id}"/>
   </function>
 
   <function model="stock.location" name="write">
       <value model="stock.warehouse"
              eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wmh').view_location_id.id"/>
-      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location.location_internal_schafhausen').id}"/>
+      <value model="stock.location" eval="{'location_id': obj().env.ref('cosanum_stock_location_data.location_internal_schafhausen').id}"/>
   </function>
 
   <record id="location_internal_subcontract_vendor1" model="stock.location">

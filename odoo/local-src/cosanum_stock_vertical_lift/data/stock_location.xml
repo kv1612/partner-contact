@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
 
-  <record id="cosanum_stock_location.location_area_SHU" model="stock.location">
+  <record id="cosanum_stock_location_data.location_area_SHU" model="stock.location">
       <field name="vertical_lift_location" eval="1"/>
   </record>
 
