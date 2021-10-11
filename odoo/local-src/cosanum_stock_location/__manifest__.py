@@ -8,6 +8,8 @@
     "author": "Camptocamp",
     "license": "AGPL-3",
     "depends": [
+        # core
+        "product_expiry",
         # OCA/stock-logistics-warehouse
         "stock_location_bin_name",
         "stock_location_position",

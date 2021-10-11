@@ -758,7 +758,6 @@
             'location_id': obj().env.ref('cosanum_stock_location.location_zone_Werrikon').id,
             'usage': 'internal',
             'active': True,
-            'vertical_lift_location': False,
             'is_zone': False,
       }"/>
   </function>
@@ -780,7 +779,6 @@
             'location_id': obj().env.ref('stock.warehouse0').view_location_id.id,
             'usage': 'internal',
             'active': True,
-            'vertical_lift_location': False,
             'is_zone': False,
       }"/>
   </function>
