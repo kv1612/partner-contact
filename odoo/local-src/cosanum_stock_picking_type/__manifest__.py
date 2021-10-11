@@ -10,6 +10,8 @@
     "depends": [
         # core
         "stock",
+        # OCA/stock-logistics-workflow
+        "stock_picking_group_by_partner_by_carrier",
         # OCA/wms
         "stock_picking_completion_info",
         "stock_picking_type_shipping_policy",

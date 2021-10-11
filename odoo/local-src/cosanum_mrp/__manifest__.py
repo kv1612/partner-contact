@@ -12,11 +12,13 @@
         "mrp",
         # local-src
         "cosanum_stock_warehouse",
+        "cosanum_stock_picking_type",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
         "data/stock_warehouse.xml",
         "data/stock_location_route.xml",
+        "data/stock_picking_type.xml",
     ],
     # NOTE: as original records are flagged with 'noupdate', the only way to get
     # them updated is to read the XML data file manually when the module is installed

@@ -827,28 +827,6 @@
       }"/>
   </function>
 
-  <function model="stock.picking.type" name="write">
-      <value model="stock.picking.type"
-          eval="obj().env.ref('stock.warehouse0').manu_type_id.id"/>
-      <value model="stock.picking.type" eval="{
-            'sequence': 100,
-            'show_operations': True,
-            'show_entire_packs': False,
-            'color': 9,
-      }"/>
-  </function>
-
-  <function model="stock.picking.type" name="write">
-      <value model="stock.picking.type"
-             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').manu_type_id.id"/>
-      <value model="stock.picking.type" eval="{
-            'sequence': 100,
-            'show_operations': True,
-            'show_entire_packs': False,
-            'color': 9,
-      }"/>
-  </function>
-
   <record id="stock_picking_type_pick_pack_mo_op" model="stock.picking.type">
       <field name="name">Pack MO OP</field>
       <field name="sequence_id" ref="sequence_stock_picking_type_pack_mo_op"/>
@@ -884,13 +862,5 @@
       <field name="code">internal</field>
       <field name="show_operations" eval="1"/>
   </record>
-
-  <function model="stock.picking.type" name="write">
-      <value model="stock.picking.type"
-             eval="obj().env.ref('stock.warehouse0').pbm_type_id.id"/>
-      <value model="stock.picking.type" eval="{
-                    'name': 'Pre-Pick MO OPL',
-                    }"/>
-  </function>
 
 </odoo>
