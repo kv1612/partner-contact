@@ -100,7 +100,6 @@ UNINSTALL_MODULES_LIST = [
     'forecast_fbprophet',
     'forecast_stock',
     # local-src
-    'account_financial_report_salesperson',
     'account_invoice_line_migel_number',
     'account_invoice_mode_monthly_report',
     'account_invoice_qr_report',

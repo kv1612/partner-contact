@@ -3,7 +3,7 @@
 {
     'name': 'Account financial report salesperson',
     'summary': 'Inprove OCA account financial report with the salesperson',
-    'version': '13.0.1.0.0',
+    'version': '14.0.1.0.0',
     'category': 'Accounting',
     'author': 'Camptocamp',
     'license': 'AGPL-3',
