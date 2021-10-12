@@ -35,6 +35,9 @@ migration:
           - account_invoice_section_sale_order
           - account_invoice_transmit_method
           - account_move_tier_validation
+          #### oca/account-reconcile
+          - account_partner_reconcile
+          - account_reconcile_restrict_partner_mismatch
           #### oca/bank-payment
           - account_invoice_select_for_payment
           - account_payment_mode
@@ -91,6 +94,7 @@ migration:
           - product_template_multi_link_date_span
           #### oca/edi
           - base_business_document_import
+          - base_ebill_payment_contract
           - base_ubl
           - base_ubl_payment
           - partner_identification_import
@@ -142,11 +146,13 @@ migration:
           - product_packaging_type
           - product_packaging_type_pallet
           - product_packaging_type_required
+          - product_packaging_unit_price_calculator
           - product_total_weight_from_packaging
           #### oca/purchase-workflow
           - purchase_propagate_qty
           - purchase_order_line_packaging_qty
           - purchase_delivery_split_date
+          - vendor_transport_lead_time
           #### oca/queue
           - queue_job
           #- queue_job_subscribe  # TODO to migrate
@@ -192,17 +198,22 @@ migration:
           - stock_location_zone
           - stock_measuring_device
           - stock_measuring_device_zippcube
+          - stock_move_auto_assign
           - stock_orderpoint_manual_procurement
           - stock_orderpoint_purchase_link
           - stock_orderpoint_route
           - stock_packaging_calculator_packaging_type
           - stock_product_qty_by_packaging
           - stock_vertical_lift
+          - stock_vertical_lift_empty_tray_check
+          - stock_vertical_lift_packaging_type
+          - stock_vertical_lift_qty_by_packaging
           - stock_vertical_lift_server_env
           - stock_vertical_lift_storage_type
           #### oca/stock-logistics-workflow
           - delivery_package_default_shipping_weight
-          #- delivery_total_weight_from_packaging  # TODO
+          - delivery_total_weight_from_packaging
+          - sale_stock_mto_as_mts_orderpoint
           - stock_quant_package_dimension
           - stock_quant_package_dimension_total_weight_from_packaging
           - stock_putaway_hook

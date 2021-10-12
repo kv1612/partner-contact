@@ -33,9 +33,7 @@ UNINSTALL_MODULES_LIST = [
     'account_cutoff_prepaid',
     'account_multicurrency_revaluation',
     # oca/account-reconcile
-    'account_partner_reconcile',
     'account_reconcile_model_strict_match_amount',
-    'account_reconcile_restrict_partner_mismatch',
     # oca/bank-statement-import
     'account_bank_statement_import_camt_oca',
     'account_bank_statement_import_oca_camt54',
@@ -51,7 +49,6 @@ UNINSTALL_MODULES_LIST = [
     'account_invoice_export',
     'account_invoice_export_server_env',
     'account_invoice_ubl',
-    'base_ebill_payment_contract',
     'sale_order_customer_free_ref',
     'sale_order_import_ubl_customer_free_ref',
     'sale_order_import_ubl_http',
@@ -63,12 +60,8 @@ UNINSTALL_MODULES_LIST = [
     'l10n_ch_isr_payment_grouping',
     'l10n_ch_isrb',
     'server_env_ebill_paynet',
-    # oca/product-attribute
-    'product_packaging_unit_price_calculator',
     # oca/product-variant
     'product_variant_change_attribute_value',
-    # oca/purchase-workflow
-    'vendor_transport_lead_time',
     # oca/queue
     'queue_job_subscribe',
     # oca/sale-workflow
@@ -80,17 +73,10 @@ UNINSTALL_MODULES_LIST = [
     # oca/stock-logistics-reporting
     'stock_picking_group_by_partner_by_carrier_sale_line_position',
     # oca/stock-logistics-workflow
-    'delivery_total_weight_from_packaging',
-    'sale_stock_mto_as_mts_orderpoint',
     'stock_dangerous_goods',
     'stock_lock_lot',
     'stock_partner_delivery_window',
     'stock_picking_group_by_partner_by_carrier_by_date',
-    # oca/stock-logistics-warehouse
-    'stock_move_auto_assign',
-    'stock_vertical_lift_empty_tray_check',
-    'stock_vertical_lift_packaging_type',
-    'stock_vertical_lift_qty_by_packaging',
     # oca/wms
     'delivery_preference_glue_stock_picking_group',
     'sale_stock_available_to_promise_release_cutoff',
