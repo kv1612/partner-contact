@@ -51,4 +51,4 @@ migration:
           # - ddmrp_priority              # TODO migrate
           # - ddmrp_sale_exclude_from_adu # TODO migrate
           # - partner_title_order         # TODO migrate
-          # - sale_address                # TODO migrate
+          - sale_address                

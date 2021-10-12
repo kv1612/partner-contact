@@ -11,11 +11,7 @@ class SaleOrder(models.Model):
     def onchange_partner_id(self):
         res = super().onchange_partner_id() or {}
         values = {}
-        partner = self.partner_id
-        if self.partner_id.is_company:
-            partner = self.partner_id
-        elif self.partner_id.parent_id:
-            partner = self.partner_id.parent_id
+        partner = self.partner_id.commercial_partner_id
         if partner:
             if partner.partner_invoicing_id:
                 values['partner_invoice_id'] = partner.partner_invoicing_id.id

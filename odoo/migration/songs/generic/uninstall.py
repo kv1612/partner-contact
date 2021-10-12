@@ -202,7 +202,6 @@ UNINSTALL_MODULES_LIST = [
     'product_set_sale_manufactured_for',
     'product_status',
     'purchase_incoterm',
-    'sale_address',
     'sale_exception_product_sale_manufactured_for',
     'sale_order_import_spitex',
     'sale_order_import_ubl_http_ortho',

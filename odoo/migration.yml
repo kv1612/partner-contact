@@ -483,6 +483,7 @@ migration:
           - cosanum_stock_storage_type_data
           - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse_data
+          - sale_address
     # update step example
     # - version: 14.0.x.y.z
     #   addons:
