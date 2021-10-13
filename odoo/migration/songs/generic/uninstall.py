@@ -41,9 +41,7 @@ UNINSTALL_MODULES_LIST = [
     # oca/community-data-files
     'l10n_eu_product_adr',
     # oca/delivery-carrier
-    'delivery_postlogistics',
     'delivery_postlogistics_dangerous_goods',
-    'delivery_postlogistics_server_env',
     # oca/edi
     'account_e-invoice_generate',
     'account_invoice_export',
@@ -56,9 +54,6 @@ UNINSTALL_MODULES_LIST = [
     'ebill_paynet',
     'ebill_paynet_account_financial_discount',
     'ebill_paynet_customer_free_ref',
-    'l10n_ch_invoice_reports',
-    'l10n_ch_isr_payment_grouping',
-    'l10n_ch_isrb',
     'server_env_ebill_paynet',
     # oca/product-variant
     'product_variant_change_attribute_value',
@@ -74,7 +69,6 @@ UNINSTALL_MODULES_LIST = [
     'stock_picking_group_by_partner_by_carrier_sale_line_position',
     # oca/stock-logistics-workflow
     'stock_dangerous_goods',
-    'stock_lock_lot',
     'stock_picking_group_by_partner_by_carrier_by_date',
     # oca/wms
     'delivery_preference_glue_stock_picking_group',
@@ -94,8 +88,6 @@ UNINSTALL_MODULES_LIST = [
     'shopinvader_delivery_state',
     'shopinvader_portal_mode',
     'shopinvader_product_template_multi_link_date_span',
-    'shopinvader_product_variant_multi_link',
-    'shopinvader_sale_packaging',
     'shopinvader_sale_packaging_wishlist',
     # camptocamp/odoo-enterprise-addons
     'account_followup_communication_override',

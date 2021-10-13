@@ -1,0 +1,13 @@
+../odoo/external-src/l10n-switzerland:
+  remotes:
+    camptocamp: git@github.com:camptocamp/l10n-switzerland.git
+    OCA: git@github.com:OCA/l10n-switzerland.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [14.0] [MIG] l10n_ch_invoice_reports: Migrate to version 14.0
+  - OCA refs/pull/620/head
+  # [14.0] [MIG] l10n_ch_isrb: Migrate to version 14.0
+  - OCA refs/pull/621/head
+  # [14.0] [MIG] l10n_ch_isr_payment_grouping: Migrate to version 14.0
+  - OCA refs/pull/622/head

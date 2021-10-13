@@ -1,0 +1,9 @@
+../odoo/external-src/stock-logistics-workflow:
+  remotes:
+    camptocamp: git@github.com:camptocamp/stock-logistics-workflow.git
+    OCA: git@github.com:OCA/stock-logistics-workflow.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [14.0][MIG] stock_lock_lot: Migration to 14.0
+  - OCA refs/pull/831/head

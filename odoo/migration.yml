@@ -248,8 +248,11 @@ migration:
           - delivery_carrier_pricelist
           - delivery_free_fee_removal
           - delivery_package_fee
+          - delivery_postlogistics
+          - delivery_postlogistics_server_env
           - delivery_send_to_shipper_at_operation
           - server_environment_delivery
+          - stock_picking_carrier_from_rule
           - stock_picking_delivery_link
           #### oca/e-commerce
           - product_variant_multi_link
@@ -277,6 +280,9 @@ migration:
           #### oca/l10n-switzerland
           - l10n_ch_account_tags
           - l10n_ch_base_bank
+          - l10n_ch_invoice_reports
+          - l10n_ch_isr_payment_grouping
+          - l10n_ch_isrb
           - l10n_ch_states
           #### oca/management-system
           - document_page_procedure
@@ -376,10 +382,11 @@ migration:
           - delivery_package_default_shipping_weight
           - delivery_total_weight_from_packaging
           - sale_stock_mto_as_mts_orderpoint
-          - stock_quant_package_dimension
-          - stock_quant_package_dimension_total_weight_from_packaging
+          - stock_lock_lot
           - stock_partner_delivery_window
           - stock_putaway_hook
+          - stock_quant_package_dimension
+          - stock_quant_package_dimension_total_weight_from_packaging
           #### oca/storage
           - storage_backend
           - storage_backend_s3
@@ -441,7 +448,9 @@ migration:
           - shopinvader_product_stock
           - shopinvader_product_stock_state
           - shopinvader_product_template_multi_link
+          - shopinvader_product_variant_multi_link
           - shopinvader_product_variant_selector
+          - shopinvader_sale_packaging
           - shopinvader_sale_profile
           - shopinvader_search_engine
           - shopinvader_wishlist

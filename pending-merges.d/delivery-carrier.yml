@@ -7,3 +7,9 @@
   - OCA 14.0
   # [14.0][ADD] delivery_carrier_customer_info
   - OCA refs/pull/424/head
+  # [14.0][MIG] stock_picking_carrier_from_rule: Migration to 14.0
+  - OCA refs/pull/425/head
+  # [14.0][MIG] delivery_postlogistics to 14.0
+  - OCA refs/pull/377/head
+  # [14.0][MIG] delivery_postlogistics_server_env
+  - OCA refs/pull/422/head

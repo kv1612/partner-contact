@@ -229,7 +229,7 @@
 	branch = 14.0
 [submodule "odoo/external-src/stock-logistics-workflow"]
 	path = odoo/external-src/stock-logistics-workflow
-	url = git@github.com:OCA/stock-logistics-workflow.git
+	url = git@github.com:camptocamp/stock-logistics-workflow.git
 	branch = 14.0
 [submodule "odoo/external-src/stock-logistics-warehouse"]
 	path = odoo/external-src/stock-logistics-warehouse
@@ -267,7 +267,7 @@
 ;	branch = 14.0
 [submodule "odoo/external-src/l10n-switzerland"]
 	path = odoo/external-src/l10n-switzerland
-	url = git@github.com:OCA/l10n-switzerland.git
+	url = git@github.com:camptocamp/l10n-switzerland.git
 	branch = 14.0
 
 ; Connectors
