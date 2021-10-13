@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="cosanum_delivery_data.delivery_carrier_brauch_pallet" model="delivery.carrier">
+        <field name="delivery_type">brauch</field>
+        <field name="brauch_default_packaging_id"
+          ref="cosanum_product_packaging_data.product_packaging_brauchpal"/>
+    </record>
+
+    <record id="cosanum_delivery_data.delivery_carrier_brauch_rollercage" model="delivery.carrier">
+        <field name="delivery_type">brauch</field>
+        <field name="brauch_default_packaging_id"
+          ref="cosanum_product_packaging_data.product_packaging_brauchpal"/>
+    </record>
+
+    <record id="cosanum_delivery_data.delivery_carrier_brauch_rollercage_op" model="delivery.carrier">
+        <field name="delivery_type">brauch</field>
+        <field name="brauch_default_packaging_id"
+          ref="cosanum_product_packaging_data.product_packaging_brauchoprollercage"/>
+    </record>
+
+    <record id="cosanum_delivery_data.delivery_carrier_pandemic_stock" model="delivery.carrier">
+        <field name="delivery_type">brauch</field>
+    </record>
+
+</odoo>

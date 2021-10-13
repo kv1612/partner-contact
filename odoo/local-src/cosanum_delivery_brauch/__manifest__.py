@@ -17,9 +17,17 @@
         # OCA/sale-workflow
         "sale_delivery_date",
         # local-src
-        "cosanum_stock_warehouse_data",
         "cosanum_delivery",
+        "cosanum_delivery_data",
+        "cosanum_product_packaging_data",
+        "cosanum_stock_warehouse_data",
         "delivery_brauch",
     ],
-    "data": [],
+    "data": [
+        "data/delivery_carrier.xml",
+        "data/product_packaging.xml",
+    ],
+    # NOTE: as original records are flagged with 'noupdate', the only way to get
+    # them updated is to read the XML data file manually when the module is installed
+    "post_init_hook": "update_data",
 }

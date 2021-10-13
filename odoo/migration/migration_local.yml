@@ -27,7 +27,6 @@ migration:
           - delivery_brauch
           - delivery_cosanum
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
-          # - cosanum_delivery_carrier_brauch   # TODO migrate dependencies
           # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
           - stock_warehouse_block_auto_config
           - cosanum_delivery
