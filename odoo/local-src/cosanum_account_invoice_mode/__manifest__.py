@@ -4,7 +4,7 @@
 {
     "name": "Cosanum Account Invoicing Mode",
     "summary": "Cosanum customization for account invoicing modes.",
-    "version": "13.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Hidden",
     "author": "Camptocamp",
     "license": "AGPL-3",

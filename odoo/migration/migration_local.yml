@@ -27,6 +27,7 @@ migration:
           #### local-src
           - delivery_brauch
           - delivery_cosanum
+          - cosanum_account_invoice_mode
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
           # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
           - cosanum_delivery
