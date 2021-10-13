@@ -16,6 +16,7 @@
         # OCA/delivery-carrier
         "delivery_package_fee",
         # local-src
+        "cosanum_product_packaging_data",
         "cosanum_delivery",
         "delivery_cosanum",
     ],
@@ -23,10 +24,14 @@
     "data": [
         "data/product_packaging_type.xml",
         "data/product_packaging.xml",
+        "data/delivery_carrier.xml",
         "views/product_packaging.xml",
         "views/stock_quant_package.xml",
         "reports/report_package_parcel.xml",
         "reports/reports.xml",
     ],
+    # NOTE: as original records are flagged with 'noupdate', the only way to get
+    # them updated is to read the XML data file manually when the module is installed
+    "post_init_hook": "update_data",
     "installable": True,
 }

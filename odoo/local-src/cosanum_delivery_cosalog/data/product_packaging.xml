@@ -3,7 +3,11 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo noupdate="1">
 
-  <!-- Cosanum delivery packages -->
+  <record id="cosanum_product_packaging_data.product_packaging_cosapal" model="product.packaging">
+    <field name="package_carrier_type">cosanum</field>
+  </record>
+
+  <!-- Cosanum Rollercage delivery packages -->
   <record id="product_packaging_cosalog_0" model="product.packaging">
     <field name="name">Cosanum Rollercage (0)</field>
     <field name="package_carrier_type">cosanum</field>
