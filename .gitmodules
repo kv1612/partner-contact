@@ -189,7 +189,7 @@
 	branch = 14.0
 [submodule "odoo/external-src/sale-workflow"]
 	path = odoo/external-src/sale-workflow
-	url = git@github.com:OCA/sale-workflow.git
+	url = git@github.com:camptocamp/sale-workflow.git
 	branch = 14.0
 [submodule "odoo/external-src/search-engine"]
 	path = odoo/external-src/search-engine

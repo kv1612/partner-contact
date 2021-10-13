@@ -216,6 +216,7 @@ migration:
           - sale_stock_mto_as_mts_orderpoint
           - stock_quant_package_dimension
           - stock_quant_package_dimension_total_weight_from_packaging
+          - stock_partner_delivery_window
           - stock_putaway_hook
           #### oca/storage
           - storage_backend

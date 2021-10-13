@@ -1,0 +1,9 @@
+../odoo/external-src/sale-workflow:
+  remotes:
+    camptocamp: git@github.com:camptocamp/sale-workflow.git
+    OCA: git@github.com:OCA/sale-workflow.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [14.0][ADD] sale_delivery_date
+  - OCA refs/pull/1736/head

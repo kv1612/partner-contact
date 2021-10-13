@@ -378,6 +378,7 @@ migration:
           - sale_stock_mto_as_mts_orderpoint
           - stock_quant_package_dimension
           - stock_quant_package_dimension_total_weight_from_packaging
+          - stock_partner_delivery_window
           - stock_putaway_hook
           #### oca/storage
           - storage_backend
@@ -455,6 +456,7 @@ migration:
           - delivery_cosanum
           - stock_warehouse_block_auto_config
           - cosanum_delivery
+          - cosanum_delivery_brauch
           - cosanum_delivery_data
           - cosanum_delivery_send_to_shipper_at_operation
           - cosanum_product_logistics_uom
