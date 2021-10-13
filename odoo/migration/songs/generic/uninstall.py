@@ -128,7 +128,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_ddmrp_chatter',
     'cosanum_delivery_brauch',
     'cosanum_delivery_carrier_preference',
-    'cosanum_delivery_cosalog',
     'cosanum_delivery_cosalog_brauch',
     'cosanum_delivery_dhl',
     'cosanum_delivery_postlogistics',
