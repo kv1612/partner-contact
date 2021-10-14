@@ -171,6 +171,20 @@ def migrate_stock_storage_type_from_cosanum_base_data(ctx):
     )
 
 
+def migrate_delivery_carrier_preference_from_cosanum_base_data(ctx):
+    """Migrate delivery carrier preferences records from 'cosanum_base_data'
+    to 'cosanum_delivery_carrier_preference'.
+    """
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_model_data
+        SET module='cosanum_delivery_carrier_preference'
+        WHERE module='cosanum_base_data'
+        AND model = 'delivery.carrier.preference'
+        """
+    )
+
+
 @anthem.log
 def pre(ctx):
     migrate_product_packaging_from_cosanum_base_data(ctx)
@@ -180,3 +194,4 @@ def pre(ctx):
     migrate_stock_location_route_from_cosanum_base_data(ctx)
     migrate_delivery_carrier_from_cosanum_base_data(ctx)
     migrate_stock_storage_type_from_cosanum_base_data(ctx)
+    migrate_delivery_carrier_preference_from_cosanum_base_data(ctx)

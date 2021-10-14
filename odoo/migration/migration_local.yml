@@ -31,6 +31,7 @@ migration:
           - stock_warehouse_block_auto_config
           - cosanum_delivery
           - cosanum_delivery_brauch
+          - cosanum_delivery_carrier_preference
           - cosanum_delivery_cosalog
           - cosanum_delivery_data
           - cosanum_delivery_send_to_shipper_at_operation
