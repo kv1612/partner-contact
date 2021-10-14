@@ -1,0 +1,9 @@
+../odoo/external-src/product-attribute:
+  remotes:
+    camptocamp: git@github.com:camptocamp/product-attribute.git
+    OCA: git@github.com:OCA/product-attribute.git
+  target: camptocamp merge-branch-2477-14.0
+  merges:
+  - OCA 14.0
+  # [FIX] product_packaging_unit_price_calculator: fix access rights
+  - OCA refs/pull/917/head
