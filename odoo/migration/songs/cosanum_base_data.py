@@ -63,7 +63,10 @@ def migrate_stock_location_from_cosanum_base_data(ctx):
         AND model IN (
             'stock.location',
             'stock.location.storage.type',
-            'stock.location.tray.type'
+            'stock.location.tray.type',
+            'stock.package.storage.type',
+            'stock.storage.location.sequence',
+            'stock.location.storage.buffer'
         )
         """
     )
@@ -149,32 +152,6 @@ def migrate_delivery_carrier_from_cosanum_base_data(ctx):
     )
 
 
-def migrate_stock_storage_type_from_cosanum_base_data(ctx):
-    """Migrate storage type records from 'cosanum_base_data'
-    to 'cosanum_stock_storage_type'.
-    """
-    ctx.env.cr.execute(
-        """
-        UPDATE ir_model_data
-        SET module='cosanum_stock_storage_type'
-        WHERE module='cosanum_base_data'
-        AND model IN (
-            'stock.package.storage.type',
-            'stock.storage.location.sequence',
-            'stock.location.storage.buffer'
-        )
-        """
-    )
-    # Flag the new module 'cosanum_stock_storage_type' as installed to avoid
-    # overwritting existing configuration data
-    ctx.env.cr.execute(
-        """
-        UPDATE ir_module_module SET state='installed'
-        WHERE name='cosanum_stock_storage_type'
-        """
-    )
-
-
 def migrate_delivery_carrier_preference_from_cosanum_base_data(ctx):
     """Migrate delivery carrier preferences records from 'cosanum_base_data'
     to 'cosanum_delivery_carrier_preference'.
@@ -201,7 +178,7 @@ def migrate_stock_putaway_rule_from_cosanum_base_data(ctx):
         AND model = 'stock.putaway.rule'
         """
     )
-    # Flag the new module 'cosanum_stock_storage_type' as installed to avoid
+    # Flag the new module 'cosanum_stock_putaway_rule' as installed to avoid
     # overwritting existing configuration data
     ctx.env.cr.execute(
         """
@@ -219,6 +196,5 @@ def pre(ctx):
     migrate_stock_picking_type_from_cosanum_base_data(ctx)
     migrate_stock_location_route_from_cosanum_base_data(ctx)
     migrate_delivery_carrier_from_cosanum_base_data(ctx)
-    migrate_stock_storage_type_from_cosanum_base_data(ctx)
     migrate_delivery_carrier_preference_from_cosanum_base_data(ctx)
     migrate_stock_putaway_rule_from_cosanum_base_data(ctx)

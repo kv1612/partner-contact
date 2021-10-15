@@ -17,6 +17,7 @@
         "stock_location_zone",
         # OCA/wms
         "stock_storage_type",
+        "stock_storage_type_buffer",
         "stock_storage_type_putaway_abc",
         # local-src
         "cosanum_stock_warehouse",
@@ -26,6 +27,9 @@
         "data/stock_location_storage_type.xml",
         "data/stock_location_tray_type.xml",
         "data/stock_location.xml",
+        "data/stock_package_storage_type.xml",
+        "data/stock_storage_location_sequence.xml",
+        "data/stock_location_storage_buffer.xml",
     ],
     "installable": True,
 }
