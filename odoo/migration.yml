@@ -484,7 +484,7 @@ migration:
           - cosanum_stock_picking_backorder_strategy
           - cosanum_stock_picking_type
           - cosanum_stock_picking_consolidation_priority
-          - cosanum_stock_storage_type_data
+          - cosanum_stock_storage_type
           - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse
           - cosanum_stock_warehouse_block_auto_config
