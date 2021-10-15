@@ -26,7 +26,7 @@
         # local-src
         "cosanum_product_packaging",
         "cosanum_stock_warehouse",
-        "cosanum_stock_picking_type_data",
+        "cosanum_stock_picking_type",
     ],
     "data": [
         "data/product_product.xml",

@@ -15,7 +15,7 @@
         "delivery_carrier_preference",
         # local-src
         "cosanum_stock_warehouse",
-        "cosanum_stock_picking_type_data",
+        "cosanum_stock_picking_type",
     ],
     "website": "https://www.camptocamp.com",
     "data": [

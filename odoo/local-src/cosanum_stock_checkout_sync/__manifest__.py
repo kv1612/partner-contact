@@ -11,7 +11,7 @@
         # OCA/wms
         "stock_checkout_sync",
         # local-src
-        "cosanum_stock_picking_type_data",
+        "cosanum_stock_picking_type",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
