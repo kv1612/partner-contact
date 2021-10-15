@@ -213,6 +213,28 @@ def migrate_stock_reserve_rule_from_cosanum_base_data(ctx):
     )
 
 
+def migrate_vertical_lift_shuttle_from_cosanum_base_data(ctx):
+    """Migrate vertical lift shuttle records from 'cosanum_base_data'
+    to 'cosanum_stock_vertical_lift'.
+    """
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_model_data
+        SET module='cosanum_stock_vertical_lift'
+        WHERE module='cosanum_base_data'
+        AND model = 'vertical.lift.shuttle'
+        """
+    )
+    # Flag the new module 'cosanum_stock_storage_type' as installed to avoid
+    # overwritting existing configuration data
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_module_module SET state='installed'
+        WHERE name='cosanum_stock_vertical_lift'
+        """
+    )
+
+
 @anthem.log
 def pre(ctx):
     migrate_product_packaging_from_cosanum_base_data(ctx)
@@ -224,3 +246,4 @@ def pre(ctx):
     migrate_delivery_carrier_preference_from_cosanum_base_data(ctx)
     migrate_stock_putaway_rule_from_cosanum_base_data(ctx)
     migrate_stock_reserve_rule_from_cosanum_base_data(ctx)
+    migrate_vertical_lift_shuttle_from_cosanum_base_data(ctx)

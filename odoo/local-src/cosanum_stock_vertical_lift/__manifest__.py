@@ -16,6 +16,7 @@
     "website": "https://www.camptocamp.com",
     "data": [
         "data/stock_location.xml",
+        "data/vertical_lift_shuttle.xml",
     ],
     # NOTE: as original records are flagged with 'noupdate', the only way to get
     # them updated is to read the XML data file manually when the module is installed
