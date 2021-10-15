@@ -41,7 +41,7 @@ migration:
           - cosanum_purchase_stock
           - cosanum_stock_checkout_sync
           - cosanum_stock_location
-          - cosanum_stock_location_route_data
+          - cosanum_stock_location_route
           - cosanum_stock_picking_backorder_strategy
           - cosanum_stock_picking_type_data
           - cosanum_stock_picking_consolidation_priority
