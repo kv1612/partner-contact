@@ -125,7 +125,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_delivery_dhl',
     'cosanum_delivery_postlogistics',
     'cosanum_followup_report',
-    'cosanum_helpdesk',
     'cosanum_hr',
     'cosanum_importer',
     'cosanum_kardex',

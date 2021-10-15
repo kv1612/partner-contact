@@ -3,12 +3,11 @@
 {
     'name': 'Cosanum Helpdesk',
     'summary': 'Specific Helpdesk features for Cosanum',
-    'version': '13.0.1.0.0',
+    'version': '14.0.1.0.0',
     'category': 'Helpdesk',
     'author': 'Camptocamp',
     'license': 'LGPL-3',
     'depends': [
-        'cosanum_base',
         'helpdesk',
     ],
     'website': 'http://www.camptocamp.com',
