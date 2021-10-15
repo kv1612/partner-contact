@@ -43,11 +43,6 @@ UNINSTALL_MODULES_LIST = [
     # oca/delivery-carrier
     'delivery_postlogistics_dangerous_goods',
     # oca/edi
-    'account_e-invoice_generate',
-    'account_invoice_export',
-    'account_invoice_export_server_env',
-    'account_invoice_ubl',
-    'sale_order_customer_free_ref',
     'sale_order_import_ubl_customer_free_ref',
     'sale_order_import_ubl_http',
     # oca/l10n-switzerland

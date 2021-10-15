@@ -1,0 +1,11 @@
+../odoo/external-src/edi:
+  remotes:
+    camptocamp: git@github.com:camptocamp/edi.git
+    OCA: git@github.com:OCA/edi.git
+  target: camptocamp merge-branch-2477-master
+  merges:
+  - OCA 14.0
+  # Add account_invoice_export_server_env
+  - OCA refs/pull/464/head
+  # Add account_invoice_ubl
+  - OCA refs/pull/330/head

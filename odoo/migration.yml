@@ -259,11 +259,16 @@ migration:
           - product_template_multi_link
           - product_template_multi_link_date_span
           #### oca/edi
+          - account_einvoice_generate
+          - account_invoice_export
+          - account_invoice_export_server_env
+          - account_invoice_ubl
           - base_business_document_import
           - base_ebill_payment_contract
           - base_ubl
           - base_ubl_payment
           - partner_identification_import
+          - sale_order_customer_free_ref
           - sale_order_import
           - sale_order_import_ubl
           #### oca/hr-attendance

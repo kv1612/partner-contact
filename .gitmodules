@@ -101,7 +101,7 @@
 	branch = 14.0
 [submodule "odoo/external-src/edi"]
 	path = odoo/external-src/edi
-	url = git@github.com:OCA/edi.git
+	url = git@github.com:camptocamp/edi.git
 	branch = 14.0
 ;[submodule "odoo/external-src/event"]
 ;	path = odoo/external-src/event
