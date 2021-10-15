@@ -175,7 +175,6 @@ UNINSTALL_MODULES_LIST = [
     'pricelist_cache_partner_group',
     'pricelist_cache_product_manufactured_for',
     'pricelist_cache_rest',
-    'pricelist_partner_group',
     'product_conformity',
     'product_pricelist_code',
     'product_pricelist_default',

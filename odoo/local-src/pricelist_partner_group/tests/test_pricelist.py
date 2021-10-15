@@ -62,8 +62,8 @@ class TestPricelist(SavepointCase):
             item = pricelist.item_ids.filtered(
                 lambda i: (
                     i.product_id == product
-                    and (not i.date_start or i.date_start <= self.today)
-                    and (not i.date_end or i.date_end >= self.today)
+                    and (not i.date_start or i.date_start.date() <= self.today)
+                    and (not i.date_end or i.date_end.date() >= self.today)
                 )
             )
             self.assertEqual(len(item), nb_lines)

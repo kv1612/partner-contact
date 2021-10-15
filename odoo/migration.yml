@@ -501,6 +501,7 @@ migration:
           - sale_address
           - sale_order_line_replacement
           - stock_warehouse_block_auto_config
+          - pricelist_partner_group
     # update step example
     # - version: 14.0.x.y.z
     #   addons:

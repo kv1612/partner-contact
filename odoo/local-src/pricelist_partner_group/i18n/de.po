@@ -47,8 +47,8 @@ msgid "Industries for which fixed prices are automatically set."
 msgstr ""
 
 #. module: pricelist_partner_group
-#: model:ir.model.fields,field_description:pricelist_partner_group.field_res_partner__factor_pricelist_item
-#: model:ir.model.fields,field_description:pricelist_partner_group.field_res_users__factor_pricelist_item
+#: model:ir.model.fields,field_description:pricelist_partner_group.field_res_partner__factor_pricelist_item_id
+#: model:ir.model.fields,field_description:pricelist_partner_group.field_res_users__factor_pricelist_item_id
 msgid "Market Factor Applied"
 msgstr ""
 

@@ -8,11 +8,10 @@ class ResPartner(models.Model):
 
     _inherit = "res.partner"
 
-    # TODO: this should be renamed to *_id
-    factor_pricelist_item = fields.Many2one(
+    factor_pricelist_item_id = fields.Many2one(
         string="Market Factor Applied",
         comodel_name="product.pricelist",
-        compute="_compute_factor_pricelist",
+        compute="_compute_factor_pricelist_id",
     )
     partner_group_pricelist_id = fields.Many2one(
         string="Pricelist for partner group",
@@ -21,7 +20,7 @@ class ResPartner(models.Model):
     )
 
     @api.depends("is_company", "company_group_id")
-    def _compute_factor_pricelist(self):
+    def _compute_factor_pricelist_id(self):
         """Compute pricelist on partner.
 
         For a given partner, if part of a partner group,
@@ -29,7 +28,7 @@ class ResPartner(models.Model):
         applied pricelist is it's own pricelist.
         """
         for record in self:
-            record.factor_pricelist_item = False
+            record.factor_pricelist_item_id = False
             if not record.is_company:
                 continue
             if record.company_group_id:
@@ -47,7 +46,7 @@ class ResPartner(models.Model):
                         "There is more than one factor price in pricelist {}"
                     ).format(pricelist.name)
                 )
-            record.factor_pricelist_item = factor_item.base_pricelist_id.id
+            record.factor_pricelist_item_id = factor_item.base_pricelist_id.id
 
     @api.depends(
         "is_company",
