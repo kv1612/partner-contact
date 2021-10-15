@@ -16,7 +16,7 @@
         "stock_picking_completion_info",
         "stock_picking_type_shipping_policy",
         # local-src
-        "cosanum_stock_warehouse_data",
+        "cosanum_stock_warehouse",
         "cosanum_stock_location_data",
     ],
     "website": "https://www.camptocamp.com",

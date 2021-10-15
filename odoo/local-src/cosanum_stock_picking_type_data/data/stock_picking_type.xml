@@ -272,7 +272,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_wer_putaway_quarantine"/>
       <field name="sequence_code">PUT/QUA</field>
       <field name="sequence" eval="20"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_KTLWAWERQA"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGQUA"/>
       <field name="display_completion_info" eval="0"/>
@@ -289,7 +289,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_wer_takeaway_quarantine"/>
       <field name="sequence_code">TAKE/QUA</field>
       <field name="sequence" eval="20"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WEGQUA"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_internal_wer"/>
       <field name="display_completion_info" eval="0"/>
@@ -407,7 +407,7 @@
 
   <function model="stock.picking.type" name="write">
       <value model="stock.picking.type"
-             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').out_type_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').out_type_id.id"/>
       <value model="stock.picking.type" eval="{
             'name': 'Delivery Orders',
             'sequence_code': 'OUT',
@@ -445,14 +445,14 @@
 
   <function model="stock.picking.type" name="write">
       <value model="stock.picking.type"
-             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').in_type_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').in_type_id.id"/>
       <value model="stock.picking.type" eval="{
             'name': 'Receipts',
-            'sequence_id': obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').in_type_id.sequence_id.id,
+            'sequence_id': obj().env.ref('cosanum_stock_warehouse.warehouse_wer').in_type_id.sequence_id.id,
             'sequence_code': 'IN',
             'sequence': 10,
-            'warehouse_id': obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').id,
-            'default_location_dest_id': obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').wh_input_stock_loc_id.id,
+            'warehouse_id': obj().env.ref('cosanum_stock_warehouse.warehouse_wer').id,
+            'default_location_dest_id': obj().env.ref('cosanum_stock_warehouse.warehouse_wer').wh_input_stock_loc_id.id,
             'display_completion_info': False,
             'show_entire_packs': False,
             'use_create_lots': True,
@@ -468,7 +468,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_putaway_stock_wer"/>
       <field name="sequence_code">PUT</field>
       <field name="sequence" eval="20"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_KTLWAWER"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_internal_wer"/>
       <field name="display_completion_info" eval="0"/>
@@ -482,13 +482,13 @@
 
   <function model="stock.picking.type" name="write">
       <value model="stock.picking.type"
-             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').pick_type_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').pick_type_id.id"/>
       <value model="stock.picking.type" eval="{
             'name': 'Pick WER EG',
-            'sequence_id': obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').pick_type_id.sequence_id.id,
+            'sequence_id': obj().env.ref('cosanum_stock_warehouse.warehouse_wer').pick_type_id.sequence_id.id,
             'sequence_code': 'WEPICK',
             'sequence': 50,
-            'warehouse_id': obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').id,
+            'warehouse_id': obj().env.ref('cosanum_stock_warehouse.warehouse_wer').id,
             'default_location_src_id': obj().env.ref('cosanum_stock_location_data.location_zone_WerrikonEG').id,
             'default_location_dest_id': obj().env.ref('cosanum_stock_location_data.location_area_WEGVSDShip').id,
             'display_completion_info': True,
@@ -505,7 +505,7 @@
       <field name="sequence_id" ref="sequence_wer_pick_picking"/>
       <field name="sequence_code">WUPICK</field>
       <field name="sequence" eval="50"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_WerrikonUG"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGVSDShip"/>
       <field name="display_completion_info" eval="1"/>
@@ -691,7 +691,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_replenish_sch"/>
       <field name="sequence_code">RPL/SCH</field>
       <field name="sequence" eval="30"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_WerrikonUG"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
       <field name="display_completion_info" eval="0"/>
@@ -708,7 +708,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_replenish_sch"/>
       <field name="sequence_code">RPL/SCH</field>
       <field name="sequence" eval="30"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_WerrikonEG"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
       <field name="display_completion_info" eval="0"/>
@@ -725,7 +725,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_receipt_from_wer"/>
       <field name="sequence_code">IN</field>
       <field name="sequence" eval="70"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
       <field name="default_location_dest_id" ref="stock.stock_location_company"/>
       <field name="display_completion_info" eval="0"/>
@@ -742,7 +742,7 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_wer_77_nsb"/>
       <field name="sequence_code">TRA77</field>
       <field name="sequence" eval="40"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wer"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
       <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WEGTRA77"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
       <field name="display_completion_info" eval="0"/>
@@ -775,8 +775,8 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_replenish_sch_ren"/>
       <field name="sequence_code">TRA/SCH/</field>
       <field name="sequence" eval="70"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_ren"/>
-      <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_ren').view_location_id.id"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_ren"/>
+      <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_ren').view_location_id.id"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WAE"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
@@ -792,8 +792,8 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_replenish_sch_wmh"/>
       <field name="sequence_code">TRA/SCH/</field>
       <field name="sequence" eval="70"/>
-      <field name="warehouse_id" ref="cosanum_stock_warehouse_data.warehouse_wmh"/>
-      <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wmh').view_location_id.id"/>
+      <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wmh"/>
+      <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wmh').view_location_id.id"/>
       <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WAE"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
@@ -818,7 +818,7 @@
 
   <function model="stock.picking.type" name="write">
       <value model="stock.picking.type"
-             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').int_type_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').int_type_id.id"/>
       <value model="stock.picking.type" eval="{
             'sequence': 40,
             'show_operations': True,

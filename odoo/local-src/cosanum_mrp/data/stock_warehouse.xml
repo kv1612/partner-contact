@@ -5,15 +5,15 @@
       <field name="manufacture_steps">pbm</field>
   </record>
 
-  <record id="cosanum_stock_warehouse_data.warehouse_wer" model="stock.warehouse">
+  <record id="cosanum_stock_warehouse.warehouse_wer" model="stock.warehouse">
       <field name="manufacture_to_resupply" eval="False"/>
   </record>
 
-  <record id="cosanum_stock_warehouse_data.warehouse_ren" model="stock.warehouse">
+  <record id="cosanum_stock_warehouse.warehouse_ren" model="stock.warehouse">
       <field name="manufacture_to_resupply" eval="False"/>
   </record>
 
-  <record id="cosanum_stock_warehouse_data.warehouse_wmh" model="stock.warehouse">
+  <record id="cosanum_stock_warehouse.warehouse_wmh" model="stock.warehouse">
       <field name="manufacture_to_resupply" eval="False"/>
   </record>
 

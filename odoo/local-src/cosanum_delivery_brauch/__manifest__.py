@@ -20,7 +20,7 @@
         "cosanum_delivery",
         "cosanum_delivery_data",
         "cosanum_product_packaging_data",
-        "cosanum_stock_warehouse_data",
+        "cosanum_stock_warehouse",
         "delivery_brauch",
     ],
     "data": [

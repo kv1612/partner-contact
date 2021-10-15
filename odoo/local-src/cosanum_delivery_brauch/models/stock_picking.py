@@ -13,8 +13,7 @@ class StockPicking(models.Model):
             "stock.warehouse0", raise_if_not_found=False
         )
         werrikon_wh = self.env.ref(
-            "cosanum_stock_warehouse_data.warehouse_wer",
-            raise_if_not_found=False,
+            "cosanum_stock_warehouse.warehouse_wer", raise_if_not_found=False
         )
         wh = self.picking_type_id.warehouse_id
         res["Schlieren"] = "10" if wh == schlieren_wh else ""

@@ -14,7 +14,7 @@
 
   <function model="stock.picking.type" name="write">
       <value model="stock.picking.type"
-             eval="obj().env.ref('cosanum_stock_warehouse_data.warehouse_wer').manu_type_id.id"/>
+             eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wer').manu_type_id.id"/>
       <value model="stock.picking.type" eval="{
             'sequence': 100,
             'show_operations': True,

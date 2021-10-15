@@ -11,7 +11,7 @@
         # core
         "purchase_stock",
         # local-src
-        "cosanum_stock_warehouse_data",
+        "cosanum_stock_warehouse",
     ],
     "website": "https://www.camptocamp.com",
     "data": [
