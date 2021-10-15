@@ -30,6 +30,7 @@ migration:
           - cosanum_account_invoice_mode
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
           # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
+          - cosanum_account_payment_mode
           - cosanum_delivery
           - cosanum_delivery_brauch
           - cosanum_delivery_carrier_preference

@@ -8,12 +8,12 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     @api.depends("partner_id", "payment_mode_id")
-    def _compute_invoice_partner_bank(self):
-        super()._compute_invoice_partner_bank()
+    def _compute_partner_bank(self):
+        super()._compute_partner_bank()
         for move in self:
             bank = move._get_payment_mode_bank_id()
             if bank:
-                move.invoice_partner_bank_id = bank
+                move.partner_bank_id = bank
         return
 
     @api.onchange("partner_id")
@@ -28,7 +28,7 @@ class AccountMove(models.Model):
         res = super()._onchange_partner_id()
         bank = self._get_payment_mode_bank_id()
         if bank:
-            self.invoice_partner_bank_id = bank
+            self.partner_bank_id = bank
         return res
 
     def _get_payment_mode_bank_id(self):
@@ -41,7 +41,7 @@ class AccountMove(models.Model):
         if (
             self.partner_id
             and self.payment_mode_id
-            and self.type == "out_invoice"
+            and self.move_type == "out_invoice"
         ):
             return self.payment_mode_id.fixed_journal_id.bank_account_id
         else:

@@ -111,7 +111,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_account_bank_statement_import_camt54',
     'cosanum_account_invoice_export',
     'cosanum_account_move_tier_validation',
-    'cosanum_account_payment_mode',
     'cosanum_account_sale',
     'cosanum_base_data',
     'cosanum_contact',
