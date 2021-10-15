@@ -466,6 +466,7 @@ migration:
           - shopinvader_payment_manual
 
           #### local-src
+          - account_invoice_summary
           - delivery_brauch
           - delivery_cosanum
           - cosanum_delivery

@@ -25,6 +25,7 @@ migration:
       addons:
         upgrade:
           #### local-src
+          - account_invoice_summary
           - delivery_brauch
           - delivery_cosanum
           - cosanum_account_invoice_mode

@@ -104,7 +104,6 @@ UNINSTALL_MODULES_LIST = [
     'account_invoice_line_migel_number',
     'account_invoice_mode_monthly_report',
     'account_invoice_qr_report',
-    'account_invoice_summary',
     'account_invoice_summary_delivery_address',
     'account_invoice_summary_migel_number',
     'cosanum_account',
