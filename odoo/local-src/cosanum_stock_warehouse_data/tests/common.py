@@ -10,7 +10,7 @@ class CosanumLogisticsCase(common.SavepointCase):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
         cls.sch_wh = cls.env.ref("stock.warehouse0")
-        cls.wer_wh = cls.env.ref("cosanum_base_data.warehouse_wer")
+        cls.wer_wh = cls.env.ref("cosanum_stock_warehouse_data.warehouse_wer")
         cls.customer_location = cls.env.ref("stock.stock_location_customers")
         cls._create_base_data()
 

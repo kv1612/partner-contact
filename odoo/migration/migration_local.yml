@@ -13,6 +13,7 @@ migration:
               - psql -f odoo/migration/songs/generic/disable_addons_upgrade.sql
               - anthem migration.songs.generic::update_available_addons
               # ==== Put pre-scripts here ====
+              - anthem migration.songs.cosanum_base::pre
               - anthem migration.songs.cosanum_base_data::pre
               - anthem migration.songs.shopinvader::pre
               # ==============================

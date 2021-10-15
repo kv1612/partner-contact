@@ -15,6 +15,7 @@
     ],
     "website": "https://www.camptocamp.com",
     "data": [
+        "security/res_groups.xml",
         "data/stock_warehouse.xml",
     ],
     # NOTE: as original records are flagged with 'noupdate', the only way to get

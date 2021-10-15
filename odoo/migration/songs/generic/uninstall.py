@@ -120,7 +120,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_account_move_tier_validation',
     'cosanum_account_payment_mode',
     'cosanum_account_sale',
-    'cosanum_base',
     'cosanum_base_data',
     'cosanum_contact',
     'cosanum_crm',
