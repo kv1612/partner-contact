@@ -188,6 +188,31 @@ def migrate_stock_putaway_rule_from_cosanum_base_data(ctx):
     )
 
 
+def migrate_stock_reserve_rule_from_cosanum_base_data(ctx):
+    """Migrate reserve_rule records from 'cosanum_base_data'
+    to 'cosanum_stock_reserve_rule'.
+    """
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_model_data
+        SET module='cosanum_stock_reserve_rule'
+        WHERE module='cosanum_base_data'
+        AND model IN (
+            'stock.reserve.rule',
+            'stock.reserve.rule.removal'
+        )
+        """
+    )
+    # Flag the new module 'cosanum_stock_reserve_rule' as installed to avoid
+    # overwritting existing configuration data
+    ctx.env.cr.execute(
+        """
+        UPDATE ir_module_module SET state='installed'
+        WHERE name='cosanum_stock_reserve_rule'
+        """
+    )
+
+
 @anthem.log
 def pre(ctx):
     migrate_product_packaging_from_cosanum_base_data(ctx)
@@ -198,3 +223,4 @@ def pre(ctx):
     migrate_delivery_carrier_from_cosanum_base_data(ctx)
     migrate_delivery_carrier_preference_from_cosanum_base_data(ctx)
     migrate_stock_putaway_rule_from_cosanum_base_data(ctx)
+    migrate_stock_reserve_rule_from_cosanum_base_data(ctx)

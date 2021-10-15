@@ -1,0 +1,226 @@
+<odoo noupdate="1">
+
+  <record id="reserve_rule_input_tra_default" model="stock.reserve.rule">
+      <field name="sequence" eval="10"/>
+      <field name="name">Input TRA - Default removal</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_area_TRA"/>
+  </record>
+
+  <record id="reserve_rule_werrikon_pick_full_pallet" model="stock.reserve.rule">
+      <field name="sequence" eval="11"/>
+      <field name="name">Werrikon EG Pick - Full pallet</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_WerrikonEG"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_warehouse.warehouse_wer').pick_type_id.ids)]"/>
+  </record>
+  <record id="reserve_rule_werrikon_ug_pick_full_pallet" model="stock.reserve.rule">
+      <field name="sequence" eval="11"/>
+      <field name="name">Werrikon UG Pick Full pallet</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_WerrikonUG"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.wer_delivery_pick_ug').ids)]"/>
+  </record>
+  <record id="reserve_rule_werrikon_ug_replenish_full_pallet" model="stock.reserve.rule">
+      <field name="sequence" eval="11"/>
+      <field name="name">Werrikon UG Replenish - Full pallet</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_WerrikonUG"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_replenish_ug_sch').ids)]"/>
+  </record>
+  <record id="reserve_rule_werrikon_eg_replenish_full_pallet" model="stock.reserve.rule">
+      <field name="sequence" eval="11"/>
+      <field name="name">Werrikon EG Replenish - Full pallet</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_WerrikonEG"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_replenish_eg_sch').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_Highbay_empty_bin" model="stock.reserve.rule">
+      <field name="sequence" eval="12"/>
+      <field name="name">Highbay - Full pallet</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_hrl').ids)]"/>
+  </record>
+  <record id="reserve_rule_GP_replenish_empty_bin" model="stock.reserve.rule">
+      <field name="sequence" eval="12"/>
+      <field name="name">GP replenish - Empty bin</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_gp_replenish_hrl').ids)]"/>
+  </record>
+  <record id="reserve_rule_GP_opl_replenish_empty_bin" model="stock.reserve.rule">
+      <field name="sequence" eval="12"/>
+      <field name="name">GP OPL replenish - Empty bin</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_gp_opl_replenish_hrl').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_HRL_parcel_hpu_replenish_full_packaging" model="stock.reserve.rule">
+      <field name="sequence" eval="13"/>
+      <field name="name">HRL HPU Parcel Replenish- Full packaging</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_parcel_hpu_replenish_hrl').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_HRL_parcel_replenish_full_packaging" model="stock.reserve.rule">
+      <field name="sequence" eval="13"/>
+      <field name="name">HRL Parcel Replenish- Full packaging</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_parcel_replenish_hrl').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_HRL_parcel_replenish_opl_full_packaging" model="stock.reserve.rule">
+      <field name="sequence" eval="13"/>
+      <field name="name">HRL Parcel Replenish-OPL Full packaging</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_parcel_opl_replenish_hrl').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_kardex_pick_full_packaging" model="stock.reserve.rule">
+      <field name="sequence" eval="14"/>
+      <field name="name">Kardex Pick - Full packaging</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_area_SHU"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_kardex').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_shelving_pick_full_packaging" model="stock.reserve.rule">
+      <field name="sequence" eval="15"/>
+      <field name="name">Shelving Pick - Full packaging</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_Shelving"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, [
+          obj().env.ref('stock.warehouse0').pick_type_id.id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_pal').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_rol').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_parcel').id,
+        ])]"/>
+  </record>
+
+  <record id="reserve_rule_Sample_pick_defaull" model="stock.reserve.rule">
+      <field name="sequence" eval="16"/>
+      <field name="name">Sample Pick - Default removal</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_Sample"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_mu').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_CEP_pick_defaull" model="stock.reserve.rule">
+      <field name="sequence" eval="16"/>
+      <field name="name">CEP Pick - Default removal</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_area_CEP"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_cep_parcel').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_OP_pick_default" model="stock.reserve.rule">
+      <field name="sequence" eval="17"/>
+      <field name="name">OP Logistic Pick - Default strategy</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="cosanum_stock_location.location_zone_OPLogistic"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_op').ids)]"/>
+  </record>
+
+  <record id="reserve_rule_OP_log_order_reservation_stock" model="stock.reserve.rule">
+      <field name="sequence" eval="19"/>
+      <field name="name">Coosa OP Order reservation</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain"
+        eval="[['group_id.carrier_id','=',ref('cosanum_delivery.delivery_carrier_brauch_rollercage_op')]]"/>
+      <field name="location_id" ref="stock.stock_location_stock"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, [
+          obj().env.ref('stock.warehouse0').pick_type_id.id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_pal').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_rol').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_parcel').id,
+        ])]"/>
+  </record>
+
+  <record id="reserve_rule_cosafleet_order_reservation_stock" model="stock.reserve.rule">
+      <field name="sequence" eval="20"/>
+      <field name="name">Coosafleet &amp; Post Order reservation</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain"
+        eval="[['group_id.carrier_id','in',[
+          ref('cosanum_delivery.delivery_carrier_coosafleet_rol'),
+          ref('cosanum_delivery.delivery_carrier_coosafleet'),
+          ref('cosanum_delivery.delivery_carrier_post'),
+          ref('cosanum_delivery.delivery_carrier_swisspost_pri'),
+          ref('cosanum_delivery.delivery_carrier_swisspost_express_moon'),
+        ]]]"/>
+      <field name="location_id" ref="stock.stock_location_stock"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, [
+          obj().env.ref('stock.warehouse0').pick_type_id.id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_cep_parcel').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_pal').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_rol').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_parcel').id,
+        ])]"/>
+  </record>
+
+  <record id="reserve_rule_order_reservation_stock" model="stock.reserve.rule">
+      <field name="sequence" eval="21"/>
+      <field name="name">Order reservation</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="stock.stock_location_stock"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, [
+          obj().env.ref('stock.warehouse0').pick_type_id.id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_cep_parcel').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_pal').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_rol').id,
+          obj().env.ref('cosanum_stock_picking_type.stock_picking_type_pick_shelving_parcel').id,
+        ])]"/>
+  </record>
+
+  <record id="reserve_rule_order_reservation_manufacture_opl" model="stock.reserve.rule">
+      <field name="sequence" eval="22"/>
+      <field name="name">Reserve components</field>
+      <field name="active" eval="1"/>
+      <field name="rule_domain">[]</field>
+      <field name="location_id" ref="stock.stock_location_stock"/>
+      <field name="picking_type_ids" model="stock.warehouse"
+        eval="[(6, 0, obj().env.ref('stock.warehouse0').pbm_type_id.ids)]"/>
+  </record>
+
+</odoo>
