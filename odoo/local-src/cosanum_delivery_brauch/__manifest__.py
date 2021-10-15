@@ -19,7 +19,7 @@
         # local-src
         "cosanum_delivery",
         "cosanum_delivery",
-        "cosanum_product_packaging_data",
+        "cosanum_product_packaging",
         "cosanum_stock_warehouse",
         "delivery_brauch",
     ],

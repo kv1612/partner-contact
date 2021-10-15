@@ -35,7 +35,7 @@ migration:
           - cosanum_delivery_cosalog
           - cosanum_delivery_send_to_shipper_at_operation
           - cosanum_product_logistics_uom
-          - cosanum_product_packaging_data
+          - cosanum_product_packaging
           - cosanum_mrp
           - cosanum_mrp_subcontracting
           - cosanum_purchase_stock

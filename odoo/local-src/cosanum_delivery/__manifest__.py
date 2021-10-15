@@ -24,7 +24,7 @@
         # OCA/wms
         "delivery_carrier_warehouse",
         # local-src
-        "cosanum_product_packaging_data",
+        "cosanum_product_packaging",
         "cosanum_stock_warehouse",
         "cosanum_stock_picking_type_data",
     ],

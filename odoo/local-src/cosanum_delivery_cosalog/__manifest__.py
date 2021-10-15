@@ -16,7 +16,7 @@
         # OCA/delivery-carrier
         "delivery_package_fee",
         # local-src
-        "cosanum_product_packaging_data",
+        "cosanum_product_packaging",
         "cosanum_delivery",
         "delivery_cosanum",
     ],

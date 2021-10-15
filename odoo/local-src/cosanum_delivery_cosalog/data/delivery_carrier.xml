@@ -4,13 +4,13 @@
     <record id="cosanum_delivery.delivery_carrier_coosafleet" model="delivery.carrier">
         <field name="delivery_type">cosanum</field>
         <field name="cosanum_default_packaging_id"
-          ref="cosanum_product_packaging_data.product_packaging_cosapal"/>
+          ref="cosanum_product_packaging.product_packaging_cosapal"/>
     </record>
 
     <record id="cosanum_delivery.delivery_carrier_coosafleet_rol" model="delivery.carrier">
         <field name="delivery_type">cosanum</field>
         <field name="cosanum_default_packaging_id"
-          ref="cosanum_product_packaging_data.product_packaging_cosapal"/>
+          ref="cosanum_product_packaging.product_packaging_cosapal"/>
     </record>
 
 </odoo>
