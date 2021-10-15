@@ -12,7 +12,7 @@
         "mrp_subcontracting",
         # local-src
         "cosanum_stock_warehouse",
-        "cosanum_stock_location_data",
+        "cosanum_stock_location",
     ],
     "website": "https://www.camptocamp.com",
     "data": [

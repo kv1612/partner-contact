@@ -11,7 +11,7 @@
         # OCA/stock-logistics-warehouse
         "stock_vertical_lift",
         # local-src
-        "cosanum_stock_location_data",
+        "cosanum_stock_location",
     ],
     "website": "https://www.camptocamp.com",
     "data": [

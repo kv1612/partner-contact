@@ -7,8 +7,8 @@
       <field name="sequence" eval="50"/>
       <field name="sequence_code">SCPICK</field>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_Shelving"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_CCOPOST"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_Shelving"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_CCOPOST"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -24,8 +24,8 @@
       <field name="sequence" eval="50"/>
       <field name="sequence_code">SCCPICK</field>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_CEP"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_CCOPOSTCEP"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_CEP"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_CCOPOSTCEP"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -41,8 +41,8 @@
       <field name="sequence" eval="50"/>
       <field name="sequence_code">SRPICK</field>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_Shelving"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_packing_Schlieren"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_Shelving"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_packing_Schlieren"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -58,8 +58,8 @@
       <field name="sequence" eval="50"/>
       <field name="sequence_code">SPPICK</field>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_Shelving"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_packing_Schlieren"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_Shelving"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_packing_Schlieren"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -76,8 +76,8 @@
       <field name="sequence" eval="50"/>
       <field name="sequence_code">HBHO</field>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_Sample"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_packing_Schlieren"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_Sample"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_packing_Schlieren"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -93,8 +93,8 @@
       <field name="sequence_code">HRL</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -110,8 +110,8 @@
       <field name="sequence_code">SHU</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_SHU"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_buffer_SPUOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_SHU"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_buffer_SPUOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -127,8 +127,8 @@
       <field name="sequence_code">OP</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_OPLogistic"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_CCOOP"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_OPLogistic"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_CCOOP"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -144,8 +144,8 @@
       <field name="sequence_code">PACK</field>
       <field name="sequence" eval="60"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_CCOOP"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_OPship"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_CCOOP"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_OPship"/>
       <field name="display_completion_info" eval="1"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -163,8 +163,8 @@
       <field name="sequence_code">PACK</field>
       <field name="sequence" eval="60"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_CCOPAL"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_VSDShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_CCOPAL"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_VSDShip"/>
       <field name="display_completion_info" eval="1"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -182,8 +182,8 @@
       <field name="sequence_code">PACK/ROL</field>
       <field name="sequence" eval="60"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_CCOROL"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_VSDShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_CCOROL"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_VSDShip"/>
       <field name="display_completion_info" eval="1"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -221,9 +221,9 @@
       <field name="sequence_code">PUT/HRL</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WAE"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_WAE"/>
       <!-- On production it use "Highbay" manually created location -->
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_internal_sch"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_internal_sch"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -239,8 +239,8 @@
       <field name="sequence_code">PUT/QUA</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WAEQA"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_QUA"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_WAEQA"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_QUA"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -256,8 +256,8 @@
       <field name="sequence_code">TAKE/QUA</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_QUA"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WAE"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_QUA"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WAE"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -273,8 +273,8 @@
       <field name="sequence_code">PUT/QUA</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_KTLWAWERQA"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGQUA"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_KTLWAWERQA"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WEGQUA"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -290,8 +290,8 @@
       <field name="sequence_code">TAKE/QUA</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WEGQUA"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_internal_wer"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_WEGQUA"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_internal_wer"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -308,8 +308,8 @@
       <field name="sequence_code">PUT/SHU</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_SPUIn"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_SHU"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_SPUIn"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_SHU"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -325,8 +325,8 @@
       <field name="sequence_code">PUT/HRL</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_PUTHRL"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_PUTHRL"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_HighBay"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -342,8 +342,8 @@
       <field name="sequence_code">UGP/PAL</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_packing_Schlieren"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_packing_Schlieren"/>
       <field name="display_completion_info" eval="1"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -358,8 +358,8 @@
       <field name="sequence_code">UGP/PARCEL</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_CCOPOST"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_CCOPOST"/>
       <field name="display_completion_info" eval="1"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -393,7 +393,7 @@
       <field name="sequence_code">OUTP</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_CCOPOST"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_CCOPOST"/>
       <field name="default_location_dest_id" ref="stock.stock_location_customers"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
@@ -469,8 +469,8 @@
       <field name="sequence_code">PUT</field>
       <field name="sequence" eval="20"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_KTLWAWER"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_internal_wer"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_KTLWAWER"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_internal_wer"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -489,8 +489,8 @@
             'sequence_code': 'WEPICK',
             'sequence': 50,
             'warehouse_id': obj().env.ref('cosanum_stock_warehouse.warehouse_wer').id,
-            'default_location_src_id': obj().env.ref('cosanum_stock_location_data.location_zone_WerrikonEG').id,
-            'default_location_dest_id': obj().env.ref('cosanum_stock_location_data.location_area_WEGVSDShip').id,
+            'default_location_src_id': obj().env.ref('cosanum_stock_location.location_zone_WerrikonEG').id,
+            'default_location_dest_id': obj().env.ref('cosanum_stock_location.location_area_WEGVSDShip').id,
             'display_completion_info': True,
             'show_entire_packs': False,
             'use_create_lots': False,
@@ -506,8 +506,8 @@
       <field name="sequence_code">WUPICK</field>
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_WerrikonUG"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGVSDShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_WerrikonUG"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WEGVSDShip"/>
       <field name="display_completion_info" eval="1"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -523,8 +523,8 @@
       <field name="sequence_code">RPL/PHRL</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -539,8 +539,8 @@
       <field name="sequence_code">RPL/PHPUHRL</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -556,8 +556,8 @@
       <field name="sequence_code">RPL/POPLHRL</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -573,8 +573,8 @@
       <field name="sequence_code">RPL/NSB</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_NSB"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_NSB"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -590,8 +590,8 @@
       <field name="sequence_code">RPL/FBG</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_NSB"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_Shelving"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_NSB"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_Shelving"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -607,8 +607,8 @@
       <field name="sequence_code">RPL/GPHRL</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -624,8 +624,8 @@
       <field name="sequence_code">RPL/GPOPLHRL</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_HighBay"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_HighBay"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
       <field name="use_create_lots" eval="0"/>
@@ -641,8 +641,8 @@
       <field name="sequence_code">RPL/HPU</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_Shelving"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_Shelving"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -658,8 +658,8 @@
       <field name="sequence_code">RPL/PALDLR</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_Shelving"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_Shelving"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -675,8 +675,8 @@
       <field name="sequence_code">RPL/OP</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_UGPOut"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_OPLogistic"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_UGPOut"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_OPLogistic"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -692,8 +692,8 @@
       <field name="sequence_code">RPL/SCH</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_WerrikonUG"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_WerrikonUG"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WEGNSBShip"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -709,8 +709,8 @@
       <field name="sequence_code">RPL/SCH</field>
       <field name="sequence" eval="30"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_zone_WerrikonEG"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_zone_WerrikonEG"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WEGNSBShip"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -726,7 +726,7 @@
       <field name="sequence_code">IN</field>
       <field name="sequence" eval="70"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_WEGNSBShip"/>
       <field name="default_location_dest_id" ref="stock.stock_location_company"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="1"/>
@@ -743,8 +743,8 @@
       <field name="sequence_code">TRA77</field>
       <field name="sequence" eval="40"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wer"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_area_WEGTRA77"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WEGNSBShip"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_area_WEGTRA77"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WEGNSBShip"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -759,8 +759,8 @@
       <field name="sequence_id" ref="sequence_stock_picking_type_replenish_sch_init"/>
       <field name="sequence_code">INI/TRA/</field>
       <field name="sequence" eval="70"/>
-      <field name="default_location_src_id" ref="cosanum_stock_location_data.location_internal_schafhausen"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_Schlieren"/>
+      <field name="default_location_src_id" ref="cosanum_stock_location.location_internal_schafhausen"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_Schlieren"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -777,7 +777,7 @@
       <field name="sequence" eval="70"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_ren"/>
       <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_ren').view_location_id.id"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WAE"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WAE"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -794,7 +794,7 @@
       <field name="sequence" eval="70"/>
       <field name="warehouse_id" ref="cosanum_stock_warehouse.warehouse_wmh"/>
       <field name="default_location_src_id" model="stock.warehouse" eval="obj().env.ref('cosanum_stock_warehouse.warehouse_wmh').view_location_id.id"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_area_WAE"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_area_WAE"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
@@ -853,7 +853,7 @@
       <field name="sequence" eval="50"/>
       <field name="warehouse_id" ref="stock.warehouse0"/>
       <field name="default_location_src_id" ref="stock.stock_location_customers"/>
-      <field name="default_location_dest_id" ref="cosanum_stock_location_data.location_zone_OPLogistic"/>
+      <field name="default_location_dest_id" ref="cosanum_stock_location.location_zone_OPLogistic"/>
       <field name="display_completion_info" eval="0"/>
       <field name="show_entire_packs" eval="0"/>
       <field name="use_create_lots" eval="0"/>
