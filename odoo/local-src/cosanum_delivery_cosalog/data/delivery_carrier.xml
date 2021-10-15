@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <odoo noupdate="1">
 
-    <record id="cosanum_delivery_data.delivery_carrier_coosafleet" model="delivery.carrier">
+    <record id="cosanum_delivery.delivery_carrier_coosafleet" model="delivery.carrier">
         <field name="delivery_type">cosanum</field>
         <field name="cosanum_default_packaging_id"
           ref="cosanum_product_packaging_data.product_packaging_cosapal"/>
     </record>
 
-    <record id="cosanum_delivery_data.delivery_carrier_coosafleet_rol" model="delivery.carrier">
+    <record id="cosanum_delivery.delivery_carrier_coosafleet_rol" model="delivery.carrier">
         <field name="delivery_type">cosanum</field>
         <field name="cosanum_default_packaging_id"
           ref="cosanum_product_packaging_data.product_packaging_cosapal"/>

@@ -13,14 +13,24 @@
         # core
         "delivery",
         "sales_team",
+        "stock",
         # OCA/delivery-carrier
         "delivery_carrier_customer_info",
+        "delivery_carrier_pricelist",
+        "delivery_package_fee",
+        "server_environment_delivery",
         # OCA/sale-workflow
         # "sale_partner_delivery_window",   # TODO to migrate
+        # OCA/wms
+        "delivery_carrier_warehouse",
         # local-src
-        "cosanum_delivery_data",
+        "cosanum_product_packaging_data",
+        "cosanum_stock_warehouse",
+        "cosanum_stock_picking_type_data",
     ],
     "data": [
+        "data/product_product.xml",
+        "data/delivery_carrier.xml",
         "views/res_partner.xml",
         "views/packaging_views.xml",
     ],

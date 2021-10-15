@@ -13,7 +13,7 @@
         # OCA/wms
         "delivery_carrier_preference",
         # local-src
-        "cosanum_delivery_data",
+        "cosanum_delivery",
     ],
     "data": [
         "data/delivery_carrier_preference.xml",

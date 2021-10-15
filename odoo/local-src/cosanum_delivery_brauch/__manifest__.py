@@ -18,7 +18,7 @@
         "sale_delivery_date",
         # local-src
         "cosanum_delivery",
-        "cosanum_delivery_data",
+        "cosanum_delivery",
         "cosanum_product_packaging_data",
         "cosanum_stock_warehouse",
         "delivery_brauch",

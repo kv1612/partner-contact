@@ -11,7 +11,7 @@
         # OCA/delivery-carrier
         "delivery_send_to_shipper_at_operation",
         # local-src
-        "cosanum_delivery_data",
+        "cosanum_delivery",
     ],
     "website": "https://www.camptocamp.com",
     "data": [

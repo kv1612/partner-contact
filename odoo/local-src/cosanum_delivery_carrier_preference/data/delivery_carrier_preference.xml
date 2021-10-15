@@ -4,12 +4,12 @@
     <record id="delivery_carrier_preference_1" model="delivery.carrier.preference">
         <field name="sequence">1</field>
         <field name="preference">carrier</field>
-        <field name="carrier_id" ref="cosanum_delivery_data.delivery_carrier_post"/>
+        <field name="carrier_id" ref="cosanum_delivery.delivery_carrier_post"/>
         <field name="max_weight">60.0</field>
         <field name="picking_domain" eval="[
             ('carrier_id', 'in', [
-              ref('cosanum_delivery_data.delivery_carrier_brauch_pallet'),
-              ref('cosanum_delivery_data.delivery_carrier_coosafleet'),
+              ref('cosanum_delivery.delivery_carrier_brauch_pallet'),
+              ref('cosanum_delivery.delivery_carrier_coosafleet'),
           ])]"/>
     </record>
 
