@@ -9,7 +9,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">80</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B10404')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B10404')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B10804">
@@ -20,7 +21,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">80</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B10804')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B10804')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B10902">
@@ -31,7 +33,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">80</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B10902')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B10902')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B20402">
@@ -42,7 +45,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">170</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B20402')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B20402')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B20601">
@@ -53,7 +57,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">170</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B20601')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B20601')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B20802">
@@ -64,7 +69,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">170</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B20802')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B20802')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B20804">
@@ -75,7 +81,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">170</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B20804')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B20804')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B30401">
@@ -86,7 +93,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">320</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B30401')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B30401')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B30402">
@@ -97,7 +105,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">320</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B30402')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B30402')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B30404">
@@ -108,7 +117,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">320</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B30404')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B30404')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B30802">
@@ -119,7 +129,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">320</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B30802')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B30802')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B40401">
@@ -130,7 +141,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">70</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B40401')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B40401')])]"/>
   </record>
 
   <record model="stock.location.tray.type" id="stock_location_tray_type_B40802">
@@ -141,7 +153,8 @@
     <field name="width">2400</field>
     <field name="depth">800</field>
     <field name="height">70</field>
-    <field name="location_storage_type_ids" eval="[(6, 0, [ref('location_storage_type_kardex_B40802')])]"/>
+    <field name="location_storage_type_ids"
+      eval="[(6, 0, [ref('location_storage_type_kardex_B40802')])]"/>
   </record>
 
 </odoo>

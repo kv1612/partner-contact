@@ -60,7 +60,11 @@ def migrate_stock_location_from_cosanum_base_data(ctx):
         UPDATE ir_model_data
         SET module='cosanum_stock_location'
         WHERE module='cosanum_base_data'
-        AND model IN ('stock.location', 'stock.location.storage.type')
+        AND model IN (
+            'stock.location',
+            'stock.location.storage.type',
+            'stock.location.tray.type'
+        )
         """
     )
     # Flag the new module 'cosanum_stock_location' as installed to

@@ -13,6 +13,7 @@
         # OCA/stock-logistics-warehouse
         "stock_location_bin_name",
         "stock_location_position",
+        "stock_location_tray",
         "stock_location_zone",
         # OCA/wms
         "stock_storage_type",
@@ -23,6 +24,7 @@
     "website": "https://www.camptocamp.com",
     "data": [
         "data/stock_location_storage_type.xml",
+        "data/stock_location_tray_type.xml",
         "data/stock_location.xml",
     ],
     "installable": True,
