@@ -7,6 +7,10 @@ from odoo import tools
 def update_data(cr, registry):
     """Force the update of XML records as they are flagged as 'noupdate'."""
     tools.convert.convert_file(
-        cr, "cosanum_stock_warehouse_block_auto_config", "data/stock_warehouse.xml",
-        None, mode="init", kind="data"
+        cr,
+        "cosanum_stock_warehouse_block_auto_config",
+        "data/stock_warehouse.xml",
+        None,
+        mode="init",
+        kind="data",
     )
