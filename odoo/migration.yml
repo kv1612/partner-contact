@@ -463,7 +463,6 @@ migration:
           #### local-src
           - delivery_brauch
           - delivery_cosanum
-          - stock_warehouse_block_auto_config
           - cosanum_delivery
           - cosanum_delivery_brauch
           - cosanum_delivery_carrier_preference
@@ -484,7 +483,9 @@ migration:
           - cosanum_stock_storage_type_data
           - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse_data
+          - cosanum_stock_warehouse_block_auto_config
           - sale_address
+          - stock_warehouse_block_auto_config
     # update step example
     # - version: 14.0.x.y.z
     #   addons:

@@ -10,7 +10,7 @@
     "depends": [
         # local-src
         "cosanum_stock_warehouse_data",
-        "stock_warehouse_block_auto_config"   # TODO to migrate
+        "stock_warehouse_block_auto_config"
     ],
     "website": "https://www.camptocamp.com",
     "data": [
@@ -19,5 +19,5 @@
     # NOTE: as original records are flagged with 'noupdate', the only way to get
     # them updated is to read the XML data file manually when the module is installed
     "post_init_hook": "update_data",
-    "installable": False,
+    "installable": True,
 }

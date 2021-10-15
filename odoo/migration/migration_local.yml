@@ -28,7 +28,6 @@ migration:
           - delivery_cosanum
           # - cosanum_delivery_carrier_cosanum  # TODO migrate dependencies
           # - cosanum_delivery_carrier_postlogistics  # TODO migrate dependencies
-          - stock_warehouse_block_auto_config
           - cosanum_delivery
           - cosanum_delivery_brauch
           - cosanum_delivery_carrier_preference
@@ -49,7 +48,9 @@ migration:
           - cosanum_stock_storage_type_data
           - cosanum_stock_vertical_lift
           - cosanum_stock_warehouse_data
+          - cosanum_stock_warehouse_block_auto_config
           # - ddmrp_priority              # TODO migrate
           # - ddmrp_sale_exclude_from_adu # TODO migrate
           # - partner_title_order         # TODO migrate
           - sale_address                
+          - stock_warehouse_block_auto_config
