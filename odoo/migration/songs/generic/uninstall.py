@@ -124,7 +124,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_followup_report',
     'cosanum_importer',
     'cosanum_kardex',
-    'cosanum_knowledge',
     'cosanum_l10n_eu_product_adr',
     'cosanum_product',
     'cosanum_product_medical',
