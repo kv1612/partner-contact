@@ -38,7 +38,7 @@
     <menuitem
         id="menu_open_manager_allocation_summary"
         name="Summary"
-        parent="hr_holidays.hr_holidays_menu_manager_all"
+        parent="hr_holidays.menu_hr_holidays_report"
         action="act_hr_manager_holiday_request_summary"
         sequence="20"/>
 

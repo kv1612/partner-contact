@@ -8,5 +8,6 @@ class HrLeave(models.Model):
 
     def _prepare_holidays_meeting_values(self):
         values = super()._prepare_holidays_meeting_values()
-        values.update({'name': _('On leave'), 'description': ''})
+        for value in values:
+            value.update({'name': _('On leave'), 'description': ''})
         return values
