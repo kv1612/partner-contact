@@ -36,6 +36,7 @@ migration:
           - cosanum_delivery_cosalog
           - cosanum_delivery_send_to_shipper_at_operation
           - cosanum_helpdesk
+          - cosanum_hr
           - cosanum_product_logistics_uom
           - cosanum_product_packaging
           - cosanum_mrp
