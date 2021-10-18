@@ -130,7 +130,6 @@ UNINSTALL_MODULES_LIST = [
     'cosanum_management_system',
     'cosanum_product',
     'cosanum_product_medical',
-    'cosanum_product_multi_link',
     'cosanum_product_packaging_dimension',
     'cosanum_purchase',
     'cosanum_purchase_propagate_qty',

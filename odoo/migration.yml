@@ -479,6 +479,7 @@ migration:
           - cosanum_product_packaging
           - cosanum_mrp
           - cosanum_mrp_subcontracting
+          - cosanum_product_multi_link
           - cosanum_purchase_stock
           - cosanum_stock_checkout_sync
           - cosanum_stock_location

@@ -4,7 +4,7 @@
 {
     "name": "Cosanum Product Multi Link",
     "summary": "Specific type of multi link for Cosanum",
-    "version": "13.0.2.0.0",
+    "version": "14.0.1.0.0",
     "category": "Product",
     "author": "Camptocamp",
     "website": "https://www.camptocamp.com",
