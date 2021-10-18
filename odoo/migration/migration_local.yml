@@ -57,4 +57,5 @@ migration:
           # - ddmrp_sale_exclude_from_adu # TODO migrate
           # - partner_title_order         # TODO migrate
           - sale_address
+          - sale_order_line_replacement
           - stock_warehouse_block_auto_config
