@@ -470,11 +470,7 @@ migration:
           - shopinvader_payment_manual
 
           #### local-src
-<<<<<<< HEAD
           - account_invoice_summary
-=======
-          - account_financial_report_salesperson          
->>>>>>> 5c916f9c... [MIG] account_financial_report_salesperson: Migration to 14.0
           - delivery_brauch
           - delivery_cosanum
           - cosanum_delivery
