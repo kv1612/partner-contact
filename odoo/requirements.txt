@@ -21,18 +21,6 @@ boto3==1.9.102
 # We use the last hash commit to keep a stable version of openupgradelib.
 https://github.com/OCA/openupgradelib/archive/3945526d1377533a0aa39d20be88edf2a03f3145.tar.gz#egg=openupgradelib
 
-# connector
-cachetools==4.2.2
-
-# ddmrp
-bokeh==2.3.1
-numpy==1.21.*
-pandas==0.25.*
-
-# ddmrp_prioritized_share
-pulp==2.4
-pyparsing==2.2.*  # pulp dependency
-
 # base_report_to_printer
 pycups==2.0.1
 
@@ -45,8 +33,30 @@ apispec==5.1.*
 # base_view_inheritance_extension
 pyyaml==5.4.*
 
+# connector
+cachetools==4.2.2
+
 # connector_algolia
 algoliasearch>=2.0,<3.0
+
+# ddmrp
+bokeh==2.3.1
+numpy==1.21.*
+pandas==0.25.*
+
+# ddmrp_prioritized_share
+pulp==2.4
+pyparsing==2.2.*  # pulp dependency
+
+# forecast_fbprophet
+fbprophet==0.6
+LunarCalendar==0.0.9  # fbprophet dependency
+ephem==3.7.7.*  # fbprophet; LunarCalendar dependency
+cmdstanpy==0.4.0  # fbprophet dependency
+convertdate>=2.2.1   # fbprophet dependency
+matplotlib==3.2.*  # fbprophet dependency
+pystan==2.19.1.1  # fbprophet dependency
+holidays==0.10.2  # fbprophet dependency
 
 # mail_inline_css
 premailer==3.10.*

@@ -86,6 +86,7 @@ ENV ADDONS_PATH="/odoo/external-src/odoo-cloud-platform, \
   /odoo/external-src/e-commerce, \
   /odoo/external-src/edi, \
   /odoo/external-src/enterprise, \
+  /odoo/external-src/forecasting, \
   /odoo/external-src/hr-attendance, \
   /odoo/external-src/hr-holidays, \
   /odoo/external-src/intrastat-extrastat, \

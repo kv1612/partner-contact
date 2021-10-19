@@ -431,6 +431,10 @@ migration:
           - stock_storage_type
           - stock_storage_type_buffer
           - stock_storage_type_putaway_abc
+          #### forgeflow/forecasting
+          - forecast_base
+          - forecast_fbprophet
+          - forecast_stock
           #### shopinvader/odoo-shopinvader
           - base_url
           - shopinvader

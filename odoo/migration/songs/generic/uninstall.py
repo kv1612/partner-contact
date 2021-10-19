@@ -95,10 +95,6 @@ UNINSTALL_MODULES_LIST = [
     'stock_release_channel_ddmrp',
     # forgeflow/ddmrp-professional
     'ddmrp_simulation',
-    # forgeflow/forecasting
-    'forecast_base',
-    'forecast_fbprophet',
-    'forecast_stock',
     # local-src
     'account_invoice_line_migel_number',
     'account_invoice_mode_monthly_report',

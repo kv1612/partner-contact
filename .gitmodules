@@ -303,6 +303,10 @@
 	path = odoo/external-src/ddmrp-professional
 	url = git@github.com:camptocamp/forgeflow-ddmrp-professional-private.git
 	branch = 14.0
+[submodule "odoo/external-src/forecasting"]
+	path = odoo/external-src/forecasting
+	url = git@github.com:camptocamp/forgeflow-forecasting-private.git
+	branch = 14.0
 [submodule "odoo/external-src/odoo-shopinvader"]
 	path = odoo/external-src/odoo-shopinvader
 	url = git@github.com:shopinvader/odoo-shopinvader.git
