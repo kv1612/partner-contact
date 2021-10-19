@@ -14,7 +14,7 @@ do
     ADDONS_PATH=("${ADDONS_PATH[@]/$addons_path}")
 done
 ADDONS_PATH=$(IFS=, ; echo "${ADDONS_PATH[*]}")
-DB_NAME_BACKUP="${DB_NAME}_external_`date +%Y%m%d`"
+DB_NAME_BACKUP="${DB_NAME}_external"
 
 echo "Starting external migration..."
 

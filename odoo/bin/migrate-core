@@ -9,7 +9,7 @@ export MARABUNTA_DB_PASSWORD=$DB_PASSWORD
 export MARABUNTA_DB_PORT=$DB_PORT
 # Restrict ADDONS_PATH to core+enterprise
 ADDONS_PATH="/odoo/src/addons,/odoo/external-src/enterprise"
-DB_NAME_BACKUP="${DB_NAME}_core_`date +%Y%m%d`"
+DB_NAME_BACKUP="${DB_NAME}_core"
 
 echo "Starting core migration..."
 

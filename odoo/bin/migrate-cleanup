@@ -7,7 +7,7 @@ export MARABUNTA_DATABASE=$DB_NAME
 export MARABUNTA_DB_USER=$DB_USER
 export MARABUNTA_DB_PASSWORD=$DB_PASSWORD
 export MARABUNTA_DB_PORT=$DB_PORT
-DB_NAME_BACKUP="${DB_NAME}_clean_`date +%Y%m%d`"
+DB_NAME_BACKUP="${DB_NAME}_cleanup"
 
 echo "Starting cleanup migration..."
 
